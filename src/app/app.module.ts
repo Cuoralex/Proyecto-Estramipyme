@@ -6,14 +6,16 @@ import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 import { LoginComponent } from './inicio/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BarraComponent } from './comunes/barra/barra.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    RouterModule,
     HeaderComponent,
+    DashboardComponent,
     FooterComponent,
     BarraComponent,
     LoginComponent,
@@ -21,4 +23,6 @@ import { BarraComponent } from './comunes/barra/barra.component';
 
   ]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-barra',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './barra.component.html',
   styleUrl: './barra.component.css'
 })
@@ -13,4 +14,4 @@ export class BarraComponent implements OnInit {
       constructor () {}
       ngOnInit(): void {
           }
-        }
+}
