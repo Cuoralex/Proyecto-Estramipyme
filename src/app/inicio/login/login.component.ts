@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../../servicios/inicio/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
       password:['',[Validators.required]]
   })
 
-  constructor (private formBuilder:FormBuilder, private router:Router){}
+  constructor (private formBuilder:FormBuilder, private router:Router, private loginService: LoginService){}
     ngOnInit(): void {}
 
     get email(){
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     login(){
       if(this.loginForm.valid){
-        console.log("Llamar al servicio de login");
+        this.loginService.login(this.loginForm.value)
         this.router.navigateByUrl("/inicio");
         this.loginForm.reset();
       }else{
