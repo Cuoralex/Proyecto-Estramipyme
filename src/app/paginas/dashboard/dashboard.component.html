@@ -1,4 +1,4 @@
 <app-barra></app-barra>
-<p >Usuario NO autenticado</p>
-<p >Usuario Autenticado</p>
+<p *ngIf="!userLoginOn">Usuario NO autenticado</p>
+<p *ngIf="userLoginOn">Usuario Autenticado</p>
 

@@ -15,7 +15,6 @@ import { BarraComponent } from './comunes/barra/barra.component';
     CommonModule,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent,
     BarraComponent,
     LoginComponent,
     HttpClientModule,

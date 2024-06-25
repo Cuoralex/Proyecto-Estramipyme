@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BarraComponent } from '../../comunes/barra/barra.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BarraComponent],
+  imports: [BarraComponent,CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit{
+  userLoginOn:boolean=false;
+    constructor () {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+    
+    ngOninit(): void {
+    }
 }
