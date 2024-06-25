@@ -12,10 +12,7 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit{
   userLoginOn:boolean=false;
     constructor () {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
     
-    ngOninit(): void {
+   ngOnInit(): void {
     }
 }

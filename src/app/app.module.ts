@@ -7,6 +7,7 @@ import { LoginComponent } from './inicio/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BarraComponent } from './comunes/barra/barra.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     BarraComponent,
     LoginComponent,
+    ReactiveFormsModule,
     HttpClientModule,
 
   ]
