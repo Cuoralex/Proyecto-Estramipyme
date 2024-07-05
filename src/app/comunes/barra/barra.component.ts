@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule,RouterModule],
   templateUrl: './barra.component.html',
-  styleUrl: './barra.component.css'
+  styleUrl: './barra.component.scss'
 })
 export class BarraComponent implements OnInit {
       userLoginOn:boolean=false;

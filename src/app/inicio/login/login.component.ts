@@ -9,7 +9,7 @@ import { LoginService } from '../../servicios/inicio/login.service';
   standalone: true,
   imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
     loginForm=this.formBuilder.group({

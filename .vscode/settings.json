@@ -1,0 +1,9 @@
+{
+    "remote.portsAttributes": {
+      "4200": {
+        "label": "Angular Dev Server",
+        "onAutoForward": "openBrowser"
+      }
+    }
+  }
+  
