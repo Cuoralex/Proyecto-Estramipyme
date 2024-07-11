@@ -6,6 +6,8 @@ import { LoginComponent } from './inicio/login/login.component';
 import { BarraComponent } from './comunes/barra/barra.component';
 import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 
+
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -15,4 +17,6 @@ import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 })
 export class AppComponent {
   title = 'Proyecto-Estramipyme';
+
+  
 }
