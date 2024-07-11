@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../servicios/inicio/login.service';
+import { BarraComponent } from "../../comunes/barra/barra.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, BarraComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
       email:['alexa@gmail.com', [Validators.email, Validators.required]],
       password:['',[Validators.required]]
   })
+userLoginOn: any;
 
   constructor (private formBuilder:FormBuilder, private router:Router, private loginService: LoginService){}
     ngOnInit(): void {}
