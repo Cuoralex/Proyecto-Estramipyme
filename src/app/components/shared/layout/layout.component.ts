@@ -8,8 +8,8 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-layout',
   standalone: true,
   imports: [HeaderComponent, SidebarComponent, FooterComponent, RouterOutlet],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  templateUrl: '../layout/layout.component.html',
+  styleUrl: '../layout/layout.component.scss'
 })
 export default class LayoutComponent {
 

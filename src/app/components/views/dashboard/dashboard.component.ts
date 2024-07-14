@@ -5,6 +5,7 @@ import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import LayoutComponent from '../../shared/layout/layout.component';
 
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
