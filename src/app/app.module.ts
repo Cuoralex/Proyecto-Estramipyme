@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
+import { FormComponent } from './components/views/form/form.component';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
+    FormComponent,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),

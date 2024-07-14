@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-form',
   standalone: true,
   imports: [],
-  templateUrl: './form/form.component.html',
-  styleUrl: './form/form.component.scss'
+  templateUrl: './form.component.html',
+  styleUrl: './form.component.scss'
 })
 export class FormComponent {
 

@@ -4,9 +4,9 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
 
 export const routes: Routes = [
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
-    {path: 'inicio', component:DashboardComponent},
+    {path: 'dashboard', component:DashboardComponent},
     {path:'iniciar-sesion', component:LoginComponent},
-    {path: '',
+    {path: 'dasboard',
         loadComponent: () => import('./components/shared/layout/layout.component'),
         children: [
             {
@@ -29,7 +29,4 @@ export const routes: Routes = [
 
         ]
     },
-    {
-        path: '**',
-        redirectTo: 'dashboard'}
 ];
