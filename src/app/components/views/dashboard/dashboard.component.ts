@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
+import LayoutComponent from '../../shared/layout/layout.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NavbarComponent, CommonModule, NgxEchartsDirective],
+  imports: [NavbarComponent, CommonModule, NgxEchartsDirective, SidebarComponent, LayoutComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   providers:[provideEcharts()],
