@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/inicio/login.service';
-import { BarraComponent } from "../../common/barra/barra.component";
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, BarraComponent],
+  imports: [ReactiveFormsModule, CommonModule, NavbarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

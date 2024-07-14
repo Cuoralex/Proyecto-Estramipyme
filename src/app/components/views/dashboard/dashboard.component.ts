@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarComponent } from '../../components/shared/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-dashboard',
