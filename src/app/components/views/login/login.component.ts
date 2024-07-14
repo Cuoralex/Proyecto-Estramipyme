@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../servicios/inicio/login.service';
-import { BarraComponent } from "../../comunes/barra/barra.component";
+import { LoginService } from '../../services/inicio/login.service';
+import { BarraComponent } from "../../common/barra/barra.component";
+
 
 @Component({
   selector: 'app-login',

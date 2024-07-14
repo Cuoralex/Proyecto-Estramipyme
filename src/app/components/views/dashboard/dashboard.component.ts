@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BarraComponent } from '../../comunes/barra/barra.component';
+import { NavbarComponent } from '../../components/shared/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BarraComponent, CommonModule, NgxEchartsDirective],
+  imports: [NavbarComponent, CommonModule, NgxEchartsDirective],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   providers:[provideEcharts()],
@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   userLoginOn: boolean = false;
   pieChartOptions: any = {};
   lineChartOptions: any = {};
+  relojChartOptions: any = {};
 
   constructor() {}
 
@@ -84,6 +85,33 @@ export class DashboardComponent implements OnInit {
           ]
         }
       ]
+   };
+
+    this.relojChartOptions = {
+      tooltip: {},
+      radar: {
+        shape: 'polygon',
+        indicator: [
+          { name: 'Product Quality', max: 10 },
+          { name: 'Customer Satisfaction', max: 10 },
+          { name: 'Market Share', max: 10 },
+          { name: 'Innovation', max: 10 },
+          { name: 'Brand Strength', max: 10 }
+        ],
+        radius: '80%'
+      },
+      series: [{
+        type: 'radar',
+        data: [
+          {
+            value: [7, 8, 6, 9, 8], // Valores de ejemplo
+            name: 'Current Position'
+          }
+        ]
+      }]
     };
   }
 }
+
+
+

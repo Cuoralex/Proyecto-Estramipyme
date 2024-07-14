@@ -1,4 +1,4 @@
-<app-barra></app-barra>
+<app-navbar></app-navbar>
 <p *ngIf="!userLoginOn">Usuario NO autenticado</p>
 <p *ngIf="userLoginOn">Usuario Autenticado</p>
 
@@ -10,5 +10,7 @@
   <div class="line">
     <div echarts [options]="lineChartOptions" class="echart"></div>
   </div>
+  <div class="Reloj">
+  <div echarts [options]="relojChartOptions" class="demo-chart"></div>
 </div>
-
+</div>

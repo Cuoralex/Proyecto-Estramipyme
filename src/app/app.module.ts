@@ -1,11 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './comunes/header/header.component';
-import { FooterComponent } from './comunes/footer/footer.component';
-import { DashboardComponent } from './paginas/dashboard/dashboard.component';
-import { LoginComponent } from './inicio/login/login.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { DashboardComponent } from './components/views/dashboard/dashboard.component';
+import { LoginComponent } from './components/models/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BarraComponent } from './comunes/barra/barra.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -24,7 +24,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
       echarts: () => import('echarts'),
     }),
     FooterComponent,
-    BarraComponent,
+    NavbarComponent,
     LoginComponent,
     ReactiveFormsModule,
     HttpClientModule,

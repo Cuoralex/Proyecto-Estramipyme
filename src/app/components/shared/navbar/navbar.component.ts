@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-barra',
+  selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule,RouterModule],
-  templateUrl: './barra.component.html',
-  styleUrl: './barra.component.scss'
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class BarraComponent implements OnInit {
+export class NavbarComponent implements OnInit {
       userLoginOn:boolean=false;
       constructor () {}
       ngOnInit(): void {
