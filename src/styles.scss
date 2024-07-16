@@ -1,6 +1,6 @@
 @import 'tailwindcss/base';
-@import 'tailwind components';
-@import 'tailwind utilities';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 .ng-valid:not(form).ng-touched   {
     border-left: 5px solid #42A948; /* green */

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/shared/header/header.component";
 import { FooterComponent } from "./components/shared/footer/footer.component";
@@ -7,8 +7,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import LayoutComponent from './components/shared/layout/layout.component';
-
-
+import { LandingPageService } from './components/services/landing-page.service';
 
 @Component({
     selector: 'app-root',
@@ -17,8 +16,21 @@ import LayoutComponent from './components/shared/layout/layout.component';
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, HeaderComponent,NavbarComponent,DashboardComponent, FooterComponent, LoginComponent, SidebarComponent, LayoutComponent]
 })
-export class AppComponent {
-  title = 'Proyecto-Estramipyme';
+export class AppComponent implements OnInit {
+  showLandingPage: boolean | undefined;
 
-  
+  constructor(private landingPageService: LandingPageService) {}
+
+  ngOnInit() {
+    this.showLandingPage = !this.landingPageService.hasSeenLandingPage();
+  }
+
+  onCloseLandingPage() {
+    this.landingPageService.markLandingPageAsSeen();
+    this.showLandingPage = false;
+  }
+}
+
+function page(close: () => void) {
+  throw new Error('Function not implemented.');
 }

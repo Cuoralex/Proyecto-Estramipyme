@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-landing-page',
-  standalone: true,
-  imports: [],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  template: `
+    <div class="landing-page">
+      <!-- Tu contenido de la landing page aquí -->
+      <button (click)="closeLandingPage()">Close</button>
+    </div>
+  `,
+  styles: ['./landing-page.componente.scss']
 })
 export class LandingPageComponent {
+  @Output() close = new EventEmitter<void>();
 
+  closeLandingPage() {
+    this.close.emit();
+  }
 }

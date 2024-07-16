@@ -6,224 +6,148 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="dist/styles.css" rel="stylesheet"> <!-- Asegúrate de compilar tu CSS con Tailwind -->
 </head>
-<body>
-  <app-root></app-root>
-  
-  <!--NOTAR - O SE PONE TODO EL PLURAL O SINGULAR-->
-    <!--LOS ENVOLTORIOS SON ESPECIFICOS PARA CENTRA, PARA DAR FORMA Y ETC-->
-    <!--SECCIÓN HEADER-->
-    <header class="header-landing"> <!--1. Por si se manejan varios headers, identificarlo-->
-      <div class="wrap-logo"><!--2. Con .wrap logo, por defecto se toma un div y crea la clase-->
-          <img src="/img/logo-dropcoding.svg" alt="img-logo" class="logo-header"><!--3. Agregar logo-->
+<body class="bg-gray-100">
+
+  <!-- NOTAR -O SE PONE TODO EL PLURAL O SINGULAR -->
+  <!-- LOS ENVOLTORIOS SON ESPECIFICOS PARA CENTRAR, PARA DAR FORMA Y ETC -->
+
+  <!-- SECCIÓN HEADER -->
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="/img/logo-dropcoding.svg" alt="Logo" class="h-12">
       </div>
-      <div></div>
-      </header>
-      <!--SECCIÓN HERO-->
-      <section class="hero-section"><!--Se genera .hero-section va, h1, descripción y llamado a la acción-->
-          <div class="wrap-hero-section">
-              <h1>Landing page example<!--Se genera colocando lorem3-->
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum quos itaque vero quo officia nesciunt! Expedita voluptatem quia, consequuntur quo quod fugit quisquam molestias.</p><!--Se genera colocando lorem25-->
-              <div class="wrap-cta"><!--Enlace de la llamada a la acción va dentro del texto-->
-                  <a href="/" class="cta-a">Botón llamada-acción</a><!--se genera con a.cta-a-->
-              </div>
-              </h1>
-          </div>
-      </section>
-      <!--SECCIÓN LOGOS-->
-      <section class="section logos-section">
-          <div class="wrap-logos-section"> <!--Cuando de todo horizontal, seleccionamos la apertura de a etiqueta y ctrl+D -->
-             <img src="img/logo1.jpg" alt="Logo1" class="logo-brand">
-             <img src="img/logo2.jpg" alt="Logo2" class="logo-brand">
-             <img src="img/logo3.jpg" alt="Logo3" class="logo-brand">
-             <img src="img/logo4.jpg" alt="Logo4" class="logo-brand">
-             <img src="img/logo5.jpg" alt="Logo5" class="logo-brand">
-          </div>
-      </section>
-      <!--PRODUCTOS Y SERVICIOS-->
-      <section class="section servicios-section"><!--Se genera con section.section.servicios-section-->
-          <div class="wrap-title-section"><!--Para copiar y pegar títulos es mejor dentro de un div-->>
-              <h2>Categorías de servicios</h2>
-          </div>
-          <!--Agrupar las diferentes categorías e imágenes-->
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/1.jpg" alt="img-1">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/2.jpg" alt="img-2">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/3.jpg" alt="img-3">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/4.jpg" alt="img-4">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/5.jpg" alt="img-5">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/6.jpg" alt="img-6">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/7.jpg" alt="img-7">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/8.jpg" alt="img-8">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/9.jpg" alt="img-9">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-          <div class="wrap-servicios-section">
-              <a href="" class="item-servicios-section"><!--Se genera con a.item-servicios-section>img>p{loremitemcategoria}-->
-                  <img src="img/10.jpg" alt="img-10">
-                      <p>item categoria</p>
-                  </img>
-              </a> 
-          </div>
-      </section>
-      <!--SECCIÓN DE DOS COLUMNAS - se puede repetic cuando necesitemos dos columnas-->
-      <section class="section two-columns-section"><!--se genera con section.section.two-columns-section-->
-          <div class="wrap-title-section"><!--Para copiar y pegar títulos es mejor dentro de un div-->>
-              <h2>Características de nuestros servicios</h2>
-          </div>
-          <!--Envoltorio para las dos columnas-->
-          <div class="wrap-two-column">
-              <!--Donde se va a guardar la foto-->
-              <div class="wrap-img_two-column">
-                  <div class="wrap-img_two-column"><!--Se genera con .wrap-img_two-column-->
-                  <img src="img/diseñador-trabajando.jpeg" alt="imagen diseñador trabajando 1">
-              </div>
-              <div class="wrap-text_two-column">
-                  <div class="wrap-text-column">
-                      <h3><!--jerarquicamente ya tenemos un h2-->
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestias, recusandae quaerat eveniet quos exercitationem rem eius consectetur, dignissimos ullam dicta esse, maiores vitae reiciendis accusantium aspernatur velit illum? Placeat labore accusantium laborum asperiores obcaecati.</p>
-                      </h3>
-                      <div class="wrap-cta"><!--Enlace de la llamada a la acción-->
-                          <a href="/" class="cta-a">Botón llamada-acción</a><!--se genera con a.cta-a-->
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-  
-      <!--SECCIÓN DE FORMULARIO DE CONTACTO - BASÁNDOSE EN SECCIÓN DE DOS COLUMNAS - se puede repetic cuando necesitemos dos columnas-->
-      <section class="section two-columns-section form"><!--se genera con section.section.two-columns-section-->
-          <div class="wrap-title-section"><!--Para copiar y pegar títulos es mejor dentro de un div-->>
-              <h2>Formulario de contacto</h2>
-          </div>
-          <!--Envoltorio para las dos columnas-->
-          <div class="wrap-two-column">
-              <div class="wrap-text_two-column">
-                <div class="wrap-text-column">
-                  <h3>Contacta con nosotros</h3>
-                  <form action="procesar_formulario.php" method="post" class="form">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required="">
-                    <br><br>
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" name="asunto" id="asunto" required="">
-                    <br><br>
-                    <label for="mensaje">Mensaje:</label>
-                    <br>
-                    <textarea name="mensaje" id="mensaje" rows="4" cols="40" required=""></textarea>
-                    <br><br>
-                    <input type="submit" value="Enviar" class="cta-a"><!--Tendrá todos los mismos estilos de botones cta-a-->
-                  </form>
-                </div>
-              </div>
-              <!--Donde se va a guardar la foto-->
-              <div class="wrap-img_two-column">
-                  <div class="wrap-img_two-column"><!--Se genera con .wrap-img_two-column-->
-                  <img src="img/diseñador-trabajando2.jpeg" alt="Imagen 2 aquí">
-              </div>
-          </div>
-      </section>
-      <!--SECCIÓN FINAL-->
-      <footer class="footer-section"><!--Se genera con footer.footer-section-->
-          <div class="wrap-footer-section"><!--Envolver el footer-->
-              <div class="wrap-social-logos"><!--Envolver logos-->
-                  <ul>
-                      <li>
-                          <a href="img/facebook.svg"><img src="img-facebook" alt="" class="social-logo"><!--Se genera con li>a>img.social-logo-->
-                          </a>
-                      </li>
-                  </ul>
-                  <ul>
-                      <li>
-                          <a href="img/x.svg"><img src="" alt="img-x" class="social-logo"><!--Se genera con li>a>img.social-logo-->
-                          </a>
-                      </li>
-                  </ul>
-                  <ul>
-                      <li>
-                          <a href="img/youotube.svg"><img src="" alt="img-youtube" class="social-logo"><!--Se genera con li>a>img.social-logo-->
-                          </a>
-                      </li>
-                  </ul>
-                  <ul>
-                      <li>
-                          <a href="img/instagram.svg"><img src="" alt="Img-instagram" class="social-logo"><!--Se genera con li>a>img.social-logo-->
-                          </a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <!--ENVOLTORIO MEU FOOTER SECTION-->
-          <div class="menu-footer-section">
-              <div class="wrap-menu-footer-section">
-                  <ul>
-                      <li><a href="">inicio</a></li>
-                      <li><a href=""></a>Servicios</li>
-                      <li><a href=""></a>Quienes somos</li>
-                      <li><a href=""></a>Blog</li>
-                      <li><a href=""></a>Contacto</li>
-                  </ul>
-              </div>
-          </div>
-          <!--PESTAÑAS LEGALES Y COPYRIGTH-->
-          <div class="menu-footer-section">
-              <div class="footer-creds">
-                  <p>@copyright 2023 - Grupo 5 - Musk - Frontend</br>todos los derechos reservados.</p>
-              </div>
-          </div>
-      </footer>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO -->
+  <section class="bg-white p-8">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4">Landing Page Example</h1>
+      <p class="text-lg mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus laborum quos itaque vero quo officia nesciunt! Expedita voluptatem quia, consequuntur quo quod fugit quisquam molestias.</p>
+      <a href="/" class="bg-blue-600 text-white py-2 px-4 rounded">Botón llamada-acción</a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN LOGOS -->
+  <section class="bg-gray-200 p-8">
+    <div class="container mx-auto flex flex-wrap justify-center items-center">
+      <img src="img/logo1.jpg" alt="Logo1" class="h-16 mx-4 my-2">
+      <img src="img/logo2.jpg" alt="Logo2" class="h-16 mx-4 my-2">
+      <img src="img/logo3.jpg" alt="Logo3" class="h-16 mx-4 my-2">
+      <img src="img/logo4.jpg" alt="Logo4" class="h-16 mx-4 my-2">
+      <img src="img/logo5.jpg" alt="Logo5" class="h-16 mx-4 my-2">
+    </div>
+  </section>
+
+  <!-- SECCIÓN PRODUCTOS Y SERVICIOS -->
+  <section class="bg-white p-8">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Categorías de servicios</h2>
+      <div class="flex flex-wrap justify-center">
+        <a href="" class="m-4 text-center">
+          <img src="img/1.jpg" alt="Categoría 1" class="h-32 mx-auto mb-2">
+          <p>Item categoría</p>
+        </a>
+        <a href="" class="m-4 text-center">
+          <img src="img/2.jpg" alt="Categoría 2" class="h-32 mx-auto mb-2">
+          <p>Item categoría</p>
+        </a>
+        <a href="" class="m-4 text-center">
+          <img src="img/3.jpg" alt="Categoría 3" class="h-32 mx-auto mb-2">
+          <p>Item categoría</p>
+        </a>
+        <a href="" class="m-4 text-center">
+          <img src="img/4.jpg" alt="Categoría 4" class="h-32 mx-auto mb-2">
+          <p>Item categoría</p>
+        </a>
+        <a href="" class="m-4 text-center">
+          <img src="img/5.jpg" alt="Categoría 5" class="h-32 mx-auto mb-2">
+          <p>Item categoría</p>
+        </a>
+        <!-- Repite según sea necesario -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE DOS COLUMNAS -->
+  <section class="bg-gray-200 p-8">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Características de nuestros servicios</h2>
+      <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-1/2 p-4">
+          <img src="img/diseñador-trabajando.jpeg" alt="Imagen" class="w-full rounded-lg shadow-lg">
+        </div>
+        <div class="w-full md:w-1/2 p-4 flex flex-col justify-center">
+          <h3 class="text-2xl font-bold mb-4">Título de la característica</h3>
+          <p class="text-lg mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestias, recusandae quaerat eveniet quos exercitationem rem eius consectetur, dignissimos ullam dicta esse, maiores vitae reiciendis accusantium aspernatur velit illum? Placeat labore accusantium laborum asperiores obcaecati.</p>
+          <a href="/" class="bg-blue-600 text-white py-2 px-4 rounded self-start">Botón llamada-acción</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FORMULARIO DE CONTACTO -->
+  <section class="bg-white p-8">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Formulario de contacto</h2>
+      <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-1/2 p-4">
+          <form action="procesar_formulario.php" method="post" class="bg-gray-100 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+              <label for="nombre" class="block text-gray-700">Nombre:</label>
+              <input type="text" name="nombre" id="nombre" required class="w-full p-2 border rounded-lg">
+            </div>
+            <div class="mb-4">
+              <label for="asunto" class="block text-gray-700">Asunto:</label>
+              <input type="text" name="asunto" id="asunto" required class="w-full p-2 border rounded-lg">
+            </div>
+            <div class="mb-4">
+              <label for="mensaje" class="block text-gray-700">Mensaje:</label>
+              <textarea name="mensaje" id="mensaje" rows="4" required class="w-full p-2 border rounded-lg"></textarea>
+            </div>
+            <div>
+              <input type="submit" value="Enviar" class="bg-blue-600 text-white py-2 px-4 rounded">
+            </div>
+          </form>
+        </div>
+        <div class="w-full md:w-1/2 p-4 flex flex-col justify-center">
+          <img src="img/diseñador-trabajando2.jpeg" alt="Imagen" class="w-full rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FINAL -->
+  <footer class="bg-blue-600 text-white p-4 mt-8">
+    <div class="container mx-auto text-center">
+      <div class="flex justify-center mb-4">
+        <a href="img/facebook.svg" class="mx-2">
+          <img src="img/facebook.svg" alt="Facebook" class="h-8">
+        </a>
+        <a href="img/x.svg" class="mx-2">
+          <img src="img/x.svg" alt="X" class="h-8">
+        </a>
+        <a href="img/youtube.svg" class="mx-2">
+          <img src="img/youtube.svg" alt="YouTube" class="h-8">
+        </a>
+        <a href="img/instagram.svg" class="mx-2">
+          <img src="img/instagram.svg" alt="Instagram" class="h-8">
+        </a>
+      </div>
+      <ul class="flex justify-center mb-4">
+        <li class="mx-2"><a href="#">Inicio</a></li>
+        <li class="mx-2"><a href="#">Servicios</a></li>
+        <li class="mx-2"><a href="#">Quienes somos</a></li>
+        <li class="mx-2"><a href="#">Blog</a></li>
+        <li class="mx-2"><a href="#">Contacto</a></li>
+      </ul>
+      <p>&copy; 2023 Grupo 5 - Musk - Frontend. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
