@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/models/login/login.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
+import { RegisterComponent } from './components/views/register/register.component';
 
 export const routes: Routes = [
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
     {path: 'dashboard', component:DashboardComponent},
     {path:'iniciar-sesion', component:LoginComponent},
+    {path: 'register', loadComponent: () => import('./components/views/register/register.component').then(m => m.RegisterComponent) },
     {path: 'dasboard',
         loadComponent: () => import('./components/shared/layout/layout.component'),
         children: [

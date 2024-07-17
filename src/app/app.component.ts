@@ -8,13 +8,14 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import LayoutComponent from './components/shared/layout/layout.component';
 import { LandingPageService } from './components/services/landing-page.service';
+import { RegisterComponent } from './components/views/register/register.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, HeaderComponent,NavbarComponent,DashboardComponent, FooterComponent, LoginComponent, SidebarComponent, LayoutComponent]
+    imports: [RouterOutlet, HeaderComponent,NavbarComponent,DashboardComponent, FooterComponent, LoginComponent, SidebarComponent, LayoutComponent, RegisterComponent]
 })
 export class AppComponent implements OnInit {
   showLandingPage: boolean | undefined;
