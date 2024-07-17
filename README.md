@@ -102,15 +102,15 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 
 - **Autor**: Alexandra Cuartas Orozco
 - **Email**: jacuartaso@eafit.edu.co
-- **GitHub**: [tu-usuario](https://github.com/Cuoralex)
+- **GitHub**: [Cuoralex](https://github.com/Cuoralex)
 
 - **Autor**: Angela Maria Mazo Correa
 - **Email**: ammazoc1@eafit.edu.co
-- **GitHub**: [tu-usuario](https://github.com/AngelaMazoC)
+- **GitHub**: [AngelaMazoC](https://github.com/AngelaMazoC)
 
 - **Autor**: Geny Marcela Vargas Suarez
 - **Email**: gmvargass@eafit.edu.co
-- **GitHub**: [tu-usuario](https://github.com/genyvarsua)
+- **GitHub**: [genyvarsua](https://github.com/genyvarsua)
 
 ---
 
