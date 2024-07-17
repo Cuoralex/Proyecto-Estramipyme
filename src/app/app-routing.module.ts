@@ -5,7 +5,7 @@ import { LoginComponent } from './components/models/login/login.component';
 
 const routes: Routes = [
       {path: '', redirectTo:'/inicio', pathMatch:'full'},
-      {path: '/dashboard', component:DashboardComponent},
+      {path: '/inicio', component:DashboardComponent},
       {path:'/iniciar-sesion', component:LoginComponent}
      ];
   

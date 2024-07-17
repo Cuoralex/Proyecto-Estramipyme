@@ -20,8 +20,8 @@ import { FormComponent } from './components/views/form/form.component';
     AppComponent,
     RouterModule,
     HeaderComponent,
-    SidebarComponent,
     DashboardComponent,
+    SidebarComponent,
     FormComponent,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),

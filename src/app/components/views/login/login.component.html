@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+<p *ngIf="!userLoginOn">Usuario NO autenticado</p>
+<p *ngIf="userLoginOn">Usuario Autenticado</p>
 <section class="h-screen bg-gray-100">
   <div class="h-full">
     <!-- Left column container with background-->
