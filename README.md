@@ -100,9 +100,17 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 
 ## Contacto
 
-- **Autor**: Tu Nombre
-- **Email**: tu.email@example.com
-- **GitHub**: [tu-usuario](https://github.com/tu-usuario)
+- **Autor**: Alexandra Cuartas Orozco
+- **Email**: jacuartaso@eafit.edu.co
+- **GitHub**: [tu-usuario](https://github.com/Cuoralex)
+
+- **Autor**: Angela Maria Mazo Correa
+- **Email**: ammazoc1@eafit.edu.co
+- **GitHub**: [tu-usuario](https://github.com/AngelaMazoC)
+
+- **Autor**: Geny Marcela Vargas Suarez
+- **Email**: gmvargass@eafit.edu.co
+- **GitHub**: [tu-usuario](https://github.com/genyvarsua)
 
 ---
 
