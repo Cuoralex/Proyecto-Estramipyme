@@ -1,187 +1,163 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Datos - Metodología Estratipyme</title>
+</head>
 <body>
-    <div class="container">
-        <h1>Datos y características del negocio</h1>
-        <form>
-            <!-- Datos y características del negocio -->
-            <fieldset>
-                <legend>Datos y características del negocio</legend>
-                <label for="fecha_creacion">¿Cuándo se creó el negocio?</label>
-                <input type="date" id="fecha_creacion" name="fecha_creacion" required>
+    <h1>Formulario de Datos Obligatorios</h1>
+    <form>
+        <h2>Datos Generales del Negocio</h2>
+        <label for="businessName">Nombre del Negocio:</label><br>
+        <input type="text" id="businessName" name="businessName" required><br><br>
 
-                <label for="fundadores">¿Quiénes lo fundaron?</label>
-                <input type="text" id="fundadores" name="fundadores" required>
+        <label for="sector">Sector/Industria:</label><br>
+        <select id="sector" name="sector" required>
+            <option value="Agricultura">Agricultura</option>
+            <option value="Manufactura">Manufactura</option>
+            <option value="Servicios">Servicios</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Salud">Salud</option>
+            <option value="Educación">Educación</option>
+            <option value="Otro">Otro (Especificar)</option>
+        </select><br><br>
 
-                <label for="motivo_creacion">¿Por qué crearon el negocio?</label>
-                <textarea id="motivo_creacion" name="motivo_creacion" required></textarea>
+        <label for="businessSize">Tamaño del Negocio:</label><br>
+        <select id="businessSize" name="businessSize" required>
+            <option value="Microempresa">Microempresa (1-10 empleados)</option>
+            <option value="Pequeña Empresa">Pequeña Empresa (11-50 empleados)</option>
+            <option value="Mediana Empresa">Mediana Empresa (51-250 empleados)</option>
+            <option value="Gran Empresa">Gran Empresa (Más de 250 empleados)</option>
+        </select><br><br>
 
-                <label for="objetivo_creacion">¿Para qué crearon el negocio?</label>
-                <textarea id="objetivo_creacion" name="objetivo_creacion" required></textarea>
+        <h2>Datos de Contacto del Responsable</h2>
+        <label for="contactName">Nombre del Responsable:</label><br>
+        <input type="text" id="contactName" name="contactName" required><br><br>
 
-                <label for="productos_servicios">¿Qué productos o servicios ofrece?</label>
-                <textarea id="productos_servicios" name="productos_servicios" required></textarea>
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-                <label for="sector_industria">¿En qué sector o industria compite su negocio?</label>
-                <input type="text" id="sector_industria" name="sector_industria" required>
+        <label for="phone">Teléfono:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
 
-                <label for="proporcion_ventas_costos">¿Qué proporción de sus ventas corresponde a los costos de operación del negocio?</label>
-                <input type="text" id="proporcion_ventas_costos" name="proporcion_ventas_costos" required>
+        <h2>Análisis Externo (Exploración)</h2>
+        <label for="politicalFactors">Principales Factores Políticos:</label><br>
+        <select id="politicalFactors" name="politicalFactors" multiple required>
+            <option value="Estabilidad gubernamental">Estabilidad gubernamental</option>
+            <option value="Políticas fiscales">Políticas fiscales</option>
+            <option value="Regulaciones laborales">Regulaciones laborales</option>
+            <option value="Relaciones internacionales">Relaciones internacionales</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="pagina_web">¿Tienen página web o redes sociales?</label>
-                <input type="text" id="pagina_web" name="pagina_web" required>
+        <label for="economicFactors">Factores Económicos Relevantes:</label><br>
+        <select id="economicFactors" name="economicFactors" multiple required>
+            <option value="Inflación">Inflación</option>
+            <option value="Tasas de interés">Tasas de interés</option>
+            <option value="Crecimiento económico">Crecimiento económico</option>
+            <option value="Poder adquisitivo del consumidor">Poder adquisitivo del consumidor</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="perfil_negocio">¿Cuál es el perfil del negocio?</label>
-                <textarea id="perfil_negocio" name="perfil_negocio" required></textarea>
-            </fieldset>
+        <label for="socialFactors">Factores Sociales y Culturales:</label><br>
+        <select id="socialFactors" name="socialFactors" multiple required>
+            <option value="Demografía">Demografía</option>
+            <option value="Estilos de vida">Estilos de vida</option>
+            <option value="Conciencia y tendencias de salud">Conciencia y tendencias de salud</option>
+            <option value="Educación">Educación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-            <!-- Clientes -->
-            <fieldset>
-                <legend>Clientes</legend>
-                <label for="quejas_clientes">¿Cuáles son los reclamos o quejas de los clientes más frecuentes? (Frustraciones)</label>
-                <textarea id="quejas_clientes" name="quejas_clientes" required></textarea>
+        <label for="technologicalFactors">Factores Tecnológicos:</label><br>
+        <select id="technologicalFactors" name="technologicalFactors" multiple required>
+            <option value="Innovación tecnológica">Innovación tecnológica</option>
+            <option value="Automatización">Automatización</option>
+            <option value="Internet y comunicaciones">Internet y comunicaciones</option>
+            <option value="Investigación y desarrollo">Investigación y desarrollo</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="gratitud_clientes">¿Cuáles son las razones por las que reciben más manifestaciones de gratitud y felicitación? (Alegrías)</label>
-                <textarea id="gratitud_clientes" name="gratitud_clientes" required></textarea>
+        <label for="ecologicalFactors">Factores Ecológicos y Medioambientales:</label><br>
+        <select id="ecologicalFactors" name="ecologicalFactors" multiple required>
+            <option value="Regulaciones ambientales">Regulaciones ambientales</option>
+            <option value="Sostenibilidad">Sostenibilidad</option>
+            <option value="Cambios climáticos">Cambios climáticos</option>
+            <option value="Gestión de residuos">Gestión de residuos</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="contacto_clientes">¿Con quiénes tienen mayor contacto los clientes?</label>
-                <textarea id="contacto_clientes" name="contacto_clientes" required></textarea>
+        <label for="legalFactors">Factores Legales:</label><br>
+        <select id="legalFactors" name="legalFactors" multiple required>
+            <option value="Legislación laboral">Legislación laboral</option>
+            <option value="Protección al consumidor">Protección al consumidor</option>
+            <option value="Propiedad intelectual">Propiedad intelectual</option>
+            <option value="Regulaciones de comercio">Regulaciones de comercio</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="atencion_clientes">¿Cómo atienden a sus clientes?</label>
-                <input type="text" id="atencion_clientes" name="atencion_clientes" required>
+        <h2>Análisis Interno (Conocimiento)</h2>
+        <label for="strengths">Fortalezas del Negocio:</label><br>
+        <select id="strengths" name="strengths" multiple required>
+            <option value="Calidad del producto/servicio">Calidad del producto/servicio</option>
+            <option value="Reputación de la marca">Reputación de la marca</option>
+            <option value="Recursos humanos capacitados">Recursos humanos capacitados</option>
+            <option value="Innovación">Innovación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="canales_comunicacion">¿A través de qué canales se comunica con sus clientes?</label>
-                <input type="text" id="canales_comunicacion" name="canales_comunicacion" required>
+        <label for="weaknesses">Debilidades del Negocio:</label><br>
+        <select id="weaknesses" name="weaknesses" multiple required>
+            <option value="Falta de recursos financieros">Falta de recursos financieros</option>
+            <option value="Baja visibilidad de marca">Baja visibilidad de marca</option>
+            <option value="Infraestructura inadecuada">Infraestructura inadecuada</option>
+            <option value="Falta de innovación">Falta de innovación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="clientes_frecuentes">¿Cómo describiría a los clientes más frecuentes?</label>
-                <textarea id="clientes_frecuentes" name="clientes_frecuentes" required></textarea>
+        <label for="opportunities">Oportunidades Identificadas:</label><br>
+        <select id="opportunities" name="opportunities" multiple required>
+            <option value="Expansión a nuevos mercados">Expansión a nuevos mercados</option>
+            <option value="Alianzas estratégicas">Alianzas estratégicas</option>
+            <option value="Innovación de productos/servicios">Innovación de productos/servicios</option>
+            <option value="Mejoras tecnológicas">Mejoras tecnológicas</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="tareas_clientes">¿Cuáles son los principales trabajos o tareas que tiene que hacer su cliente?</label>
-                <textarea id="tareas_clientes" name="tareas_clientes" required></textarea>
+        <label for="threats">Amenazas Percibidas:</label><br>
+        <select id="threats" name="threats" multiple required>
+            <option value="Competencia creciente">Competencia creciente</option>
+            <option value="Cambios regulatorios">Cambios regulatorios</option>
+            <option value="Condiciones económicas adversas">Condiciones económicas adversas</option>
+            <option value="Cambios en las preferencias del consumidor">Cambios en las preferencias del consumidor</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="esfuerzo_venta">¿Usted cree que al negocio le llegan los clientes a comprar, o ustedes hacen un esfuerzo por salir a vender?</label>
-                <textarea id="esfuerzo_venta" name="esfuerzo_venta" required></textarea>
+        <h2>Benchmarking y Competencia</h2>
+        <label for="competitors">Principales Competidores:</label><br>
+        <input type="text" id="competitors" name="competitors" required><br><br>
 
-                <label for="cliente_dependencia">¿Hay algún cliente del que dependan en gran medida los ingresos de la empresa?</label>
-                <textarea id="cliente_dependencia" name="cliente_dependencia" required></textarea>
-            </fieldset>
+        <label for="positioning">Posicionamiento Frente a la Competencia:</label><br>
+        <select id="positioning" name="positioning" multiple required>
+            <option value="Liderazgo en costos">Liderazgo en costos</option>
+            <option value="Diferenciación">Diferenciación</option>
+            <option value="Enfoque en nichos de mercado">Enfoque en nichos de mercado</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-            <!-- Competidores -->
-            <fieldset>
-                <legend>Competidores</legend>
-                <label for="competidores_preocupantes">¿Cuáles son sus tres competidores que más le preocupan?</label>
-                <textarea id="competidores_preocupantes" name="competidores_preocupantes" required></textarea>
+        <h2>Objetivos y Metas</h2>
+        <label for="strategicObjectives">Objetivos Estratégicos del Negocio:</label><br>
+        <select id="strategicObjectives" name="strategicObjectives" multiple required>
+            <option value="Incrementar ventas">Incrementar ventas</option>
+            <option value="Expandir mercado">Expandir mercado</option>
+            <option value="Mejorar eficiencia operativa">Mejorar eficiencia operativa</option>
+            <option value="Innovar productos/servicios">Innovar productos/servicios</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
 
-                <label for="oferta_competencia">¿Qué ofrecen ellos que puede ser atractivo para sus clientes?</label>
-                <textarea id="oferta_competencia" name="oferta_competencia" required></textarea>
-            </fieldset>
+        <label for="kpis">Indicadores Clave de Desempeño (KPIs):</label><br>
+        <input type="text" id="kpis" name="kpis" required><br><br>
 
-            <!-- Propuesta de valor -->
-            <fieldset>
-                <legend>Propuesta de valor</legend>
-                <label for="atributos_diferenciadores">¿Cuáles son los dos atributos o características de la propuesta de valor actual que los hacen diferentes de sus competidores más cercanos?</label>
-                <textarea id="atributos_diferenciadores" name="atributos_diferenciadores" required></textarea>
-
-                <label for="preferencia_clientes">¿Sus clientes lo prefieren porque tiene un precio menor al de sus competidores? ¿O cuál es la razón de su preferencia?</label>
-                <textarea id="preferencia_clientes" name="preferencia_clientes" required></textarea>
-            </fieldset>
-
-            <!-- Fuentes de ingresos -->
-            <fieldset>
-                <legend>Fuentes de ingresos</legend>
-                <label for="metodo_pago">¿Cómo le pagan sus clientes por su producto o servicio?</label>
-                <textarea id="metodo_pago" name="metodo_pago" required></textarea>
-
-                <label for="otras_fuentes_ingresos">¿Tiene otras fuentes de ingresos además de las ventas de producto?</label>
-                <textarea id="otras_fuentes_ingresos" name="otras_fuentes_ingresos" required></textarea>
-            </fieldset>
-
-            <!-- Estructura de costos -->
-            <fieldset>
-                <legend>Estructura de costos</legend>
-                <label for="costos_altos">¿Cuáles son los costos más altos de su negocio?</label>
-                <textarea id="costos_altos" name="costos_altos" required></textarea>
-
-                <label for="costos_prometidos">¿Cuáles son los costos más altos que necesita para cumplir lo que les prometió a sus clientes?</label>
-                <textarea id="costos_prometidos" name="costos_prometidos" required></textarea>
-            </fieldset>
-
-            <!-- Recursos y capacidades -->
-            <fieldset>
-                <legend>Recursos y capacidades</legend>
-                <label for="recursos_importantes">¿Cuáles son los recursos más importantes con los que cuenta su negocio?</label>
-                <textarea id="recursos_importantes" name="recursos_importantes" required></textarea>
-
-                <label for="mejores_habilidades">¿Qué es lo que ustedes saben hacer mejor que sus competidores?</label>
-                <textarea id="mejores_habilidades" name="mejores_habilidades" required></textarea>
-
-                <label for="procesos_subcontratados">¿Tiene algún proceso subcontratado?</label>
-                <textarea id="procesos_subcontratados" name="procesos_subcontratados" required></textarea>
-
-                <label for="talento_critico">¿Sabe cuál es el talento más crítico para el negocio?</label>
-                <textarea id="talento_critico" name="talento_critico" required></textarea>
-            </fieldset>
-
-            <!-- Liderazgo y cultura -->
-            <fieldset>
-                <legend>Liderazgo y cultura</legend>
-                <label for="decisiones_clave">¿Quién toma las decisiones clave del negocio?</label>
-                <textarea id="decisiones_clave" name="decisiones_clave" required></textarea>
-
-                <label for="reunion_negocio">¿Existe alguna reunión donde se hable del negocio con los empleados?</label>
-                <textarea id="reunion_negocio" name="reunion_negocio" required></textarea>
-
-                <label for="descripcion_negocio">¿Cómo describiría su negocio?, ¿qué lo hace diferente de otros negocios parecidos?</label>
-                <textarea id="descripcion_negocio" name="descripcion_negocio" required></textarea>
-
-                <label for="expectativas_empleado">¿Qué pasa cuando un empleado no está cumpliendo las expectativas de la administración del negocio?</label>
-                <textarea id="expectativas_empleado" name="expectativas_empleado" required></textarea>
-            </fieldset>
-
-            <!-- Industria o sector -->
-            <fieldset>
-                <legend>Industria o sector</legend>
-                <label for="proveedor_dependencia">¿Hay algún proveedor del que dependa en gran medida la operación de la empresa?</label>
-                <textarea id="proveedor_dependencia" name="proveedor_dependencia" required></textarea>
-
-                <label for="entrada_industria">¿Qué tan fácil o difícil es entrar en esta industria?, ¿cuáles son las razones?</label>
-                <textarea id="entrada_industria" name="entrada_industria" required></textarea>
-
-                <label for="intensidad_competencia">¿Qué tan intensa es la competencia en esta industria? (Desleal, ilegal, etc.)</label>
-                <textarea id="intensidad_competencia" name="intensidad_competencia" required></textarea>
-
-                <label for="preocupacion_administradores">¿Cuál cree usted que sea la mayor preocupación de los administradores de negocios similares al suyo?</label>
-                <textarea id="preocupacion_administradores" name="preocupacion_administradores" required></textarea>
-            </fieldset>
-
-            <!-- Salud financiera -->
-            <fieldset>
-                <legend>Salud financiera</legend>
-                <label for="incumplimiento_nomina">En los pasados doce meses, ¿ha incumplido en la fecha de pago de su nómina?</label>
-                <textarea id="incumplimiento_nomina" name="incumplimiento_nomina" required></textarea>
-
-                <label for="incumplimiento_proveedores">En los pasados doce meses, ¿ha incumplido en el pago a sus proveedores?</label>
-                <textarea id="incumplimiento_proveedores" name="incumplimiento_proveedores" required></textarea>
-
-                <label for="incumplimiento_creditos">En los pasados doce meses, ¿ha incumplido en los pagos de sus créditos?</label>
-                <textarea id="incumplimiento_creditos" name="incumplimiento_creditos" required></textarea>
-
-                <label for="mejoras_negocio">En los últimos tres años, ¿ha podido hacer mejoras en su negocio?, ¿o contratar más personal?</label>
-                <textarea id="mejoras_negocio" name="mejoras_negocio" required></textarea>
-            </fieldset>
-
-            <!-- Aspiración -->
-            <fieldset>
-                <legend>Aspiración</legend>
-                <label for="mayor_sueno">¿Cuál es su mayor sueño con el negocio?</label>
-                <textarea id="mayor_sueno" name="mayor_sueno" required></textarea>
-
-                <label for="conversacion_importante">¿Qué no hemos conversado que sea importante para el negocio?</label>
-                <textarea id="conversacion_importante" name="conversacion_importante" required></textarea>
-            </fieldset>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
-
-
+</html>

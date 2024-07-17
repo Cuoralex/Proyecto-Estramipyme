@@ -4,6 +4,7 @@
         "label": "Angular Dev Server",
         "onAutoForward": "openBrowser"
       }
-    }
+    },
+    "liveServer.settings.port": 5501
   }
   
