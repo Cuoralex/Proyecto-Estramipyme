@@ -5,8 +5,8 @@ import { LoginComponent } from './components/models/login/login.component';
 
 const routes: Routes = [
       {path: '', redirectTo:'/inicio', pathMatch:'full'},
-      {path: '/inicio', component:DashboardComponent},
-      {path:'/iniciar-sesion', component:LoginComponent}
+      {path: 'inicio', component:DashboardComponent},
+      {path:'iniciar-sesion', component:LoginComponent}
      ];
   
   @NgModule({

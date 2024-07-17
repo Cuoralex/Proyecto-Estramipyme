@@ -12,6 +12,9 @@ import { LoginService } from '../../services/inicio/login.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
     loginForm=this.formBuilder.group({
       email:['alexa@gmail.com', [Validators.email, Validators.required]],
       password:['',[Validators.required]]
