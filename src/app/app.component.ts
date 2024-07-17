@@ -15,7 +15,15 @@ import { RegisterComponent } from './components/views/register/register.componen
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, HeaderComponent,NavbarComponent,DashboardComponent, FooterComponent, LoginComponent, SidebarComponent, LayoutComponent, RegisterComponent]
+    imports: [RouterOutlet, 
+              HeaderComponent,
+              NavbarComponent,
+              DashboardComponent,
+              FooterComponent,
+              LoginComponent,
+              SidebarComponent,
+              LayoutComponent, 
+              RegisterComponent]
 })
 export class AppComponent implements OnInit {
   showLandingPage: boolean | undefined;

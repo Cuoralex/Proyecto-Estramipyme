@@ -5,16 +5,16 @@ import { RegisterComponent } from './components/views/register/register.componen
 
 export const routes: Routes = [
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
-    {path: 'dashboard', component:DashboardComponent},
+    {path: 'inicio', component:DashboardComponent},
     {path:'iniciar-sesion', component:LoginComponent},
-    {path: 'register', loadComponent: () => import('./components/views/register/register.component').then(m => m.RegisterComponent) },
-    {path: 'dasboard',
-        loadComponent: () => import('./components/shared/layout/layout.component'),
-        children: [
-            {
-                path: 'dashboard',
-                loadComponent: () => import('./components/views/dashboard/dashboard.component').then(m => m.DashboardComponent)
-            },
+    // {path: 'register', loadComponent: () => import('./components/views/register/register.component').then(m => m.RegisterComponent) },
+    // {path: 'dashboard',
+    //     loadComponent: () => import('./components/shared/layout/layout.component'),
+    //     children: [
+    //         {
+    //             path: 'dashboard',
+    //             loadComponent: () => import('./components/views/dashboard/dashboard.component').then(m => m.DashboardComponent)
+    //         },
             // {
             //     path: 'profile',
             //     loadComponent: () => import('./components/profile/profile.component').then(m => m.ProfileComponent)
@@ -29,6 +29,6 @@ export const routes: Routes = [
             //     pathMatch: 'full'
             // }
 
-        ]
-    },
-];
+//         ]
+//     },
+ ];
