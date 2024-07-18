@@ -14,8 +14,9 @@ div {
   }
   
   .pie, .line {
-    flex: 1;
-    min-width: 300px; /* Ancho mínimo para los gráficos */
+    flex: auto;
+    min-height: 33.3vh;
+    min-width: 33.3vh; /* Ancho mínimo para los gráficos */
     background-color: #ffffff; /* Fondo blanco */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra a la izquierda */
     padding: 20px; /* Espaciado interno */
@@ -23,8 +24,11 @@ div {
   }
   
   .echart {
-    width: 100vh;
-   height: 400px;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  gap: 20px;
    background-color: #ffffff;
+   
   }
   
