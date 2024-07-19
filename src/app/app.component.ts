@@ -4,10 +4,11 @@ import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
 import LayoutComponent from './shared/layout/layout.component';
 import { LandingPageService } from './services/landing-page.service';
 import { RegisterComponent } from './components/register/register.component';
+import { DBclientComponent } from './views/DB-client/DB-client.component';
+import { DbadministratorComponent } from './views/DB-administrator/DB-administrator.component';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
     imports: [RouterOutlet, 
               HeaderComponent,
               NavbarComponent,
-              DashboardComponent,
+              DBclientComponent,
+              DbadministratorComponent,
               FooterComponent,
               SidebarComponent,
               LayoutComponent, 
