@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Datos - Metodología Estratipyme</title>
+</head>
+<body>
+    <h1>Formulario de Datos Obligatorios</h1>
+    <form>
+        <h2>Datos Generales del Negocio</h2>
+        <label for="businessName">Nombre del Negocio:</label><br>
+        <input type="text" id="businessName" name="businessName" required><br><br>
+
+        <label for="sector">Sector/Industria:</label><br>
+        <select id="sector" name="sector" required>
+            <option value="Agricultura">Agricultura</option>
+            <option value="Manufactura">Manufactura</option>
+            <option value="Servicios">Servicios</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Salud">Salud</option>
+            <option value="Educación">Educación</option>
+            <option value="Otro">Otro (Especificar)</option>
+        </select><br><br>
+
+        <label for="businessSize">Tamaño del Negocio:</label><br>
+        <select id="businessSize" name="businessSize" required>
+            <option value="Microempresa">Microempresa (1-10 empleados)</option>
+            <option value="Pequeña Empresa">Pequeña Empresa (11-50 empleados)</option>
+            <option value="Mediana Empresa">Mediana Empresa (51-250 empleados)</option>
+            <option value="Gran Empresa">Gran Empresa (Más de 250 empleados)</option>
+        </select><br><br>
+
+        <h2>Datos de Contacto del Responsable</h2>
+        <label for="contactName">Nombre del Responsable:</label><br>
+        <input type="text" id="contactName" name="contactName" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Teléfono:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <h2>Análisis Externo (Exploración)</h2>
+        <label for="politicalFactors">Principales Factores Políticos:</label><br>
+        <select id="politicalFactors" name="politicalFactors" multiple required>
+            <option value="Estabilidad gubernamental">Estabilidad gubernamental</option>
+            <option value="Políticas fiscales">Políticas fiscales</option>
+            <option value="Regulaciones laborales">Regulaciones laborales</option>
+            <option value="Relaciones internacionales">Relaciones internacionales</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="economicFactors">Factores Económicos Relevantes:</label><br>
+        <select id="economicFactors" name="economicFactors" multiple required>
+            <option value="Inflación">Inflación</option>
+            <option value="Tasas de interés">Tasas de interés</option>
+            <option value="Crecimiento económico">Crecimiento económico</option>
+            <option value="Poder adquisitivo del consumidor">Poder adquisitivo del consumidor</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="socialFactors">Factores Sociales y Culturales:</label><br>
+        <select id="socialFactors" name="socialFactors" multiple required>
+            <option value="Demografía">Demografía</option>
+            <option value="Estilos de vida">Estilos de vida</option>
+            <option value="Conciencia y tendencias de salud">Conciencia y tendencias de salud</option>
+            <option value="Educación">Educación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="technologicalFactors">Factores Tecnológicos:</label><br>
+        <select id="technologicalFactors" name="technologicalFactors" multiple required>
+            <option value="Innovación tecnológica">Innovación tecnológica</option>
+            <option value="Automatización">Automatización</option>
+            <option value="Internet y comunicaciones">Internet y comunicaciones</option>
+            <option value="Investigación y desarrollo">Investigación y desarrollo</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="ecologicalFactors">Factores Ecológicos y Medioambientales:</label><br>
+        <select id="ecologicalFactors" name="ecologicalFactors" multiple required>
+            <option value="Regulaciones ambientales">Regulaciones ambientales</option>
+            <option value="Sostenibilidad">Sostenibilidad</option>
+            <option value="Cambios climáticos">Cambios climáticos</option>
+            <option value="Gestión de residuos">Gestión de residuos</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="legalFactors">Factores Legales:</label><br>
+        <select id="legalFactors" name="legalFactors" multiple required>
+            <option value="Legislación laboral">Legislación laboral</option>
+            <option value="Protección al consumidor">Protección al consumidor</option>
+            <option value="Propiedad intelectual">Propiedad intelectual</option>
+            <option value="Regulaciones de comercio">Regulaciones de comercio</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <h2>Análisis Interno (Conocimiento)</h2>
+        <label for="strengths">Fortalezas del Negocio:</label><br>
+        <select id="strengths" name="strengths" multiple required>
+            <option value="Calidad del producto/servicio">Calidad del producto/servicio</option>
+            <option value="Reputación de la marca">Reputación de la marca</option>
+            <option value="Recursos humanos capacitados">Recursos humanos capacitados</option>
+            <option value="Innovación">Innovación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="weaknesses">Debilidades del Negocio:</label><br>
+        <select id="weaknesses" name="weaknesses" multiple required>
+            <option value="Falta de recursos financieros">Falta de recursos financieros</option>
+            <option value="Baja visibilidad de marca">Baja visibilidad de marca</option>
+            <option value="Infraestructura inadecuada">Infraestructura inadecuada</option>
+            <option value="Falta de innovación">Falta de innovación</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="opportunities">Oportunidades Identificadas:</label><br>
+        <select id="opportunities" name="opportunities" multiple required>
+            <option value="Expansión a nuevos mercados">Expansión a nuevos mercados</option>
+            <option value="Alianzas estratégicas">Alianzas estratégicas</option>
+            <option value="Innovación de productos/servicios">Innovación de productos/servicios</option>
+            <option value="Mejoras tecnológicas">Mejoras tecnológicas</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="threats">Amenazas Percibidas:</label><br>
+        <select id="threats" name="threats" multiple required>
+            <option value="Competencia creciente">Competencia creciente</option>
+            <option value="Cambios regulatorios">Cambios regulatorios</option>
+            <option value="Condiciones económicas adversas">Condiciones económicas adversas</option>
+            <option value="Cambios en las preferencias del consumidor">Cambios en las preferencias del consumidor</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <h2>Benchmarking y Competencia</h2>
+        <label for="competitors">Principales Competidores:</label><br>
+        <input type="text" id="competitors" name="competitors" required><br><br>
+
+        <label for="positioning">Posicionamiento Frente a la Competencia:</label><br>
+        <select id="positioning" name="positioning" multiple required>
+            <option value="Liderazgo en costos">Liderazgo en costos</option>
+            <option value="Diferenciación">Diferenciación</option>
+            <option value="Enfoque en nichos de mercado">Enfoque en nichos de mercado</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <h2>Objetivos y Metas</h2>
+        <label for="strategicObjectives">Objetivos Estratégicos del Negocio:</label><br>
+        <select id="strategicObjectives" name="strategicObjectives" multiple required>
+            <option value="Incrementar ventas">Incrementar ventas</option>
+            <option value="Expandir mercado">Expandir mercado</option>
+            <option value="Mejorar eficiencia operativa">Mejorar eficiencia operativa</option>
+            <option value="Innovar productos/servicios">Innovar productos/servicios</option>
+            <option value="Otros">Otros (Especificar)</option>
+        </select><br><br>
+
+        <label for="kpis">Indicadores Clave de Desempeño (KPIs):</label><br>
+        <input type="text" id="kpis" name="kpis" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

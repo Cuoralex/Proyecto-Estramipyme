@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
-import { FormComponent } from './components/views/form/form.component';
+import { FormComponent } from './components/models/form/form.component';
 
 @NgModule({
   declarations: [],
@@ -20,15 +20,14 @@ import { FormComponent } from './components/views/form/form.component';
     AppComponent,
     RouterModule,
     HeaderComponent,
-    SidebarComponent,
     DashboardComponent,
+    SidebarComponent,
     FormComponent,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
     FooterComponent,
     NavbarComponent,
-    LoginComponent,
     ReactiveFormsModule,
     HttpClientModule,
   ],
