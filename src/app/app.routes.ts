@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DbadministratorComponent } from './views/DB-administrator/DB-administrator.component';
+import { EvaluationFormComponent } from './components/evaluation-form/evaluation-form.component';
 
 export const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch:'full'},
@@ -10,6 +11,7 @@ export const routes: Routes = [
   {path: 'dashboardAdmin', component:DbadministratorComponent},
   {path:'iniciar-sesion', component:LoginComponent},
   {path:'registro', component:RegisterComponent},
+  {path: 'evaluacion', component:EvaluationFormComponent},
     // {path: 'register', loadComponent: () => import('./components/views/register/register.component').then(m => m.RegisterComponent) },
     // {path: 'dashboard',
     //     loadComponent: () => import('./components/shared/layout/layout.component'),

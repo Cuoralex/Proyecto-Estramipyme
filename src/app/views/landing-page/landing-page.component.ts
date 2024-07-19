@@ -3,6 +3,7 @@ import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { AppComponent } from "../../app.component";
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
@@ -13,5 +14,8 @@ import { NavbarComponent } from "../../shared/navbar/navbar.component";
   providers:[],
 })
 export class LandingPageComponent {
-
+  constructor (private router:Router){}
+  test() {
+    this.router.navigateByUrl("evaluacion");
+  }
 }
