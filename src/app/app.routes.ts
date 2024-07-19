@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/models/login/login.component';
-import { DashboardComponent } from './components/views/dashboard/dashboard.component';
-import { LandingPageComponent } from './components/views/landing-page/landing-page.component';
-import { RegisterComponent } from './components/models/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { LandingPageComponent } from './views/landing-page/landing-page.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo:'/landingpage', pathMatch:'full'},
+  {path: '', redirectTo:'/inicio', pathMatch:'full'},
   {path: 'inicio', component:LandingPageComponent},
   {path: 'dashboard', component:DashboardComponent},
   {path:'iniciar-sesion', component:LoginComponent},

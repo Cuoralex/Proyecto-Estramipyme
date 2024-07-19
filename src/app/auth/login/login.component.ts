@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../components/services/inicio/login.service';
-import { NavbarComponent } from '../../components/shared/navbar/navbar.component';
-
+import { LoginService } from '../../services/login.service';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
 
 
 @Component({

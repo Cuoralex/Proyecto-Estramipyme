@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./components/shared/header/header.component";
-import { FooterComponent } from "./components/shared/footer/footer.component";
-import { LoginComponent } from './components/models/login/login.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
-import { DashboardComponent } from './components/views/dashboard/dashboard.component';
-import LayoutComponent from './components/shared/layout/layout.component';
-import { LandingPageService } from './components/services/landing-page.service';
-import { RegisterComponent } from './components/views/register/register.component';
+import { HeaderComponent } from "./shared/header/header.component";
+import { FooterComponent } from "./shared/footer/footer.component";
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import LayoutComponent from './shared/layout/layout.component';
+import { LandingPageService } from './services/landing-page.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @Component({
     selector: 'app-root',
@@ -20,7 +19,6 @@ import { RegisterComponent } from './components/views/register/register.componen
               NavbarComponent,
               DashboardComponent,
               FooterComponent,
-              LoginComponent,
               SidebarComponent,
               LayoutComponent, 
               RegisterComponent]

@@ -6,15 +6,16 @@ import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
 import LayoutComponent from '../../shared/layout/layout.component';
 
 
+
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-DB-client',
   standalone: true,
   imports: [NavbarComponent, CommonModule, NgxEchartsDirective, SidebarComponent, LayoutComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  templateUrl: './DB-client.component.html',
+  styleUrls: ['./DB-client.component.scss'],
   providers:[provideEcharts()],
 })
-export class DashboardComponent implements OnInit {
+export class DBclientComponent implements OnInit {
   userLoginOn: boolean = false;
   pieChartOptions: any = {};
   lineChartOptions: any = {};
