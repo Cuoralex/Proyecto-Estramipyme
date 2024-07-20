@@ -1,0 +1,21 @@
+
+<!-- <app-global></app-global>, -->
+<app-headerdashboard></app-headerdashboard>
+    <div>
+        <p *ngIf="!userLoginOn">Usuario NO autenticado</p>
+        <p *ngIf="userLoginOn">Usuario Autenticado</p>
+    </div>
+    <main class="flex flex-row mt-0 bg-white-600 text-black dark:bg-slate-900 dark:text-white">
+        <app-menu></app-menu>
+        <!--Información-->
+        <section class="mx-3 sm:mx-10 flex flex-col w-full h-[cal(100vh-50px)] bg-white bg-opacity-10 p-5 rounded-3xl">
+            <div class="flex flex-col flex-auto p-1">
+                <router-outlet/>
+            </div>
+        </section>
+    </main>
+
+
+
+
+

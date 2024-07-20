@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import LayoutComponent from './shared/layout/layout.component';
-import { LandingPageService } from './services/landing-page.service';
+
 import { RegisterComponent } from './components/register/register.component';
-import { DBclientComponent } from './views/DB-client/DB-client.component';
-import { DbadministratorComponent } from './views/DB-administrator/DB-administrator.component';
+import { DashboardClientComponent } from './views/dashboard/layout/dashboardclient/dashboardclient.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboardadministrator/dashboardadministrator.component';
+import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 
 @Component({
     selector: 'app-root',
@@ -18,28 +17,38 @@ import { DbadministratorComponent } from './views/DB-administrator/DB-administra
     imports: [RouterOutlet, 
               HeaderComponent,
               NavbarComponent,
-              DBclientComponent,
-              DbadministratorComponent,
+              DashboardClientComponent,
+              DashboardAdministratorComponent,
               FooterComponent,
-              SidebarComponent,
-              LayoutComponent, 
+              SidebarComponent, 
               RegisterComponent]
 })
-export class AppComponent implements OnInit {
-  showLandingPage: boolean | undefined;
-
-  constructor(private landingPageService: LandingPageService) {}
-
-  ngOnInit() {
-    this.showLandingPage = !this.landingPageService.hasSeenLandingPage();
-  }
-
-  onCloseLandingPage() {
-    this.landingPageService.markLandingPageAsSeen();
-    this.showLandingPage = false;
-  }
+export class AppComponent {
+  routes = [
+    {
+      path: '/graphics',
+      data: {
+        description: 'Home',
+        icon: 'home',
+        title: 'Home'
+      }
+    },
+    {
+      path: '/users',
+        data: {
+          description: 'About Us',
+          icon: 'info',
+          title: 'About'
+        }
+      }
+    ];
+  title: any;
+      trackByPath(index: number, route: any): string {
+        return route.path;
+      }
+    
+      optionClick(description: string) {
+        console.log(`Option clicked: ${description}`);
+      }
 }
 
-function page(close: () => void) {
-  throw new Error('Function not implemented.');
-}

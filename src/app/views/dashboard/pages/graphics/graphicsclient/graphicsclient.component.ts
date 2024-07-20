@@ -1,26 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
-import { NavbarComponent } from '../../shared/navbar/navbar.component';
-import { SidebarComponent } from '../../shared/sidebar/sidebar.component';
-import LayoutComponent from '../../shared/layout/layout.component';
 
 @Component({
-  selector: 'app-DB-administrator',
+  selector: 'app-graphicsclient',
   standalone: true,
-  imports: [NavbarComponent, CommonModule, NgxEchartsDirective, SidebarComponent, LayoutComponent],
-  templateUrl: './DB-administrator.component.html',
-  styleUrls: ['./DB-administrator.component.scss'],
+  imports: [
+    NgxEchartsDirective
+  ],
+  templateUrl: './graphicsclient.component.html',
+  styleUrl: './graphicsclient.component.scss',
   providers:[provideEcharts()],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DbadministratorComponent implements OnInit {
-  userLoginOn: boolean = false;
+export class GraphicsClientComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};
-
+  
   constructor() {}
-
+  
   ngOnInit(): void {
     this.initializeCharts();
   }
@@ -114,6 +112,3 @@ export class DbadministratorComponent implements OnInit {
     };
   }
 }
-
-
-

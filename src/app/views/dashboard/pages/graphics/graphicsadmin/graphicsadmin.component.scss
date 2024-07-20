@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.charts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh; // Ajusta la altura para ocupar toda la ventana
+}
+
+.chart-container {
+  width: 100%;
+  height: 33.33%; // Ajusta cada contenedor para ocupar 1/3 de la altura
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+  .pie, .line {
+    flex: auto;
+    min-height: 33.3vh;
+    min-width: 33.3vh; /* Ancho mínimo para los gráficos */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra a la izquierda */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  .echart {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #ffffff;
+    width: 90%; // Ajusta según tus necesidades
+    height: 90%; // Ajusta según tus necesidades
+  }

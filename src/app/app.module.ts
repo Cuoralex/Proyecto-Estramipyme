@@ -1,17 +1,20 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/shared/header/header.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
-import { LoginComponent } from './components/models/login/login.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
-import { DashboardComponent } from './components/views/dashboard/dashboard.component';
-import { FormComponent } from './components/models/form/form.component';
+import { FormComponent } from './views/form/form.component';
+import { GraphicsAdminComponent } from './views/dashboard/pages/graphics/graphicsadmin/graphicsadmin.component';
+import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphicsclient/graphicsclient.component';
+import { UsersAdminComponent } from './views/dashboard/pages/users/users-admin/users-admin.component';
+import { UsersManagerComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
+import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboardadministrator/dashboardadministrator.component';
 
 @NgModule({
   declarations: [],
@@ -20,8 +23,12 @@ import { FormComponent } from './components/models/form/form.component';
     AppComponent,
     RouterModule,
     HeaderComponent,
-    DashboardComponent,
+    DashboardAdministratorComponent,
     SidebarComponent,
+    GraphicsAdminComponent,
+    GraphicsClientComponent,
+    UsersAdminComponent,
+    UsersManagerComponent,
     FormComponent,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
