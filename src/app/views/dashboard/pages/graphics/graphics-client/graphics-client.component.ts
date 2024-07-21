@@ -1,21 +1,18 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 
 @Component({
-  selector: 'app-graphicsadmin',
+  selector: 'app-graphics-client',
   standalone: true,
   imports: [
-    CommonModule,
     NgxEchartsDirective
   ],
-  templateUrl: './graphicsadmin.component.html',
-  styleUrl: './graphicsadmin.component.scss',
+  templateUrl: './graphics-client.component.html',
+  styleUrl: './graphics-client.component.scss',
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GraphicsAdminComponent implements OnInit {
-  
+export class GraphicsClientComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};

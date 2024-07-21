@@ -3,10 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from './shared/navbar/navbar.component';
-
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardClientComponent } from './views/dashboard/layout/dashboardclient/dashboardclient.component';
-import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboardadministrator/dashboardadministrator.component';
+import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 
 @Component({
@@ -26,19 +25,19 @@ import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.co
 export class AppComponent {
   routes = [
     {
-      path: '/graphics',
+      path: '/graphics-administrator',
       data: {
-        description: 'Home',
-        icon: 'home',
-        title: 'Home'
+        description: 'Pagina de graficos administrador',
+        icon: 'graphics',
+        title: 'graphics-administrator'
       }
     },
     {
-      path: '/users',
+      path: '/users-administrator',
         data: {
-          description: 'About Us',
-          icon: 'info',
-          title: 'About'
+          description: 'Pagina usuarios administrador',
+          icon: 'users-administrator',
+          title: 'users-administrator'
         }
       }
     ];

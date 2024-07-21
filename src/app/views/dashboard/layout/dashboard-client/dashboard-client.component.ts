@@ -5,11 +5,11 @@ import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-dashboardclient',
+  selector: 'app-dashboard-client',
   standalone: true,
   imports: [NavbarComponent, CommonModule, NgxEchartsDirective, SidebarComponent],
-  templateUrl: './dashboardclient.component.html',
-  styleUrls: ['./dashboardclient.component.scss'],
+  templateUrl: './dashboard-client.component.html',
+  styleUrls: ['./dashboard-client.component.scss'],
   providers:[provideEcharts()],
 })
 export class DashboardClientComponent implements OnInit {

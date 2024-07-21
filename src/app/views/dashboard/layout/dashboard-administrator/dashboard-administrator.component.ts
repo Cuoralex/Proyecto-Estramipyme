@@ -7,9 +7,8 @@ import { HeaderDashboardComponent } from "../headerdashboard/headerdashboard.com
 import { MenuComponent } from "../menu/menu.component";
 import { RouterOutlet } from '@angular/router';
 
-
 @Component({
-  selector: 'app-dashboardadministrator',
+  selector: 'app-dashboard-administrator',
   standalone: true,
   imports: [
     RouterOutlet,
@@ -20,8 +19,8 @@ import { RouterOutlet } from '@angular/router';
     NavbarComponent,
     MenuComponent
 ],
-  templateUrl: './dashboardadministrator.component.html',
-  styleUrls: ['./dashboardadministrator.component.scss'],
+  templateUrl: './dashboard-administrator.component.html',
+  styleUrls: ['./dashboard-administrator.component.scss'],
   providers:[provideEcharts()],
   changeDetection: ChangeDetectionStrategy.Default,
 })

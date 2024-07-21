@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboardadministrator/dashboardadministrator.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 
 const routes: Routes =[
   {path: '', redirectTo:'/inicio', pathMatch:'full'},
@@ -13,22 +13,22 @@ const routes: Routes =[
     component: DashboardAdministratorComponent,
     children: [
         {
-            path:'graphicsadmin',
+            path:'graphics-administrator',
             loadComponent: () =>
-                import('./views/dashboard/pages/graphics/graphicsadmin/graphicsadmin.component').then(m => m.GraphicsAdminComponent),
+                import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component').then(m => m.GraphicsAdministratorComponent),
             data: {
                 icon:'graphics',
-                title: 'graphicsadmin',
+                title: 'graphics-administrator',
                 description: 'Pagina de graficos administrador',
             },
         },
         {
-            path:'users-admin',
+            path:'users-administrator',
             loadComponent: () =>
-                import('./views/dashboard/pages/users/users-admin/users-admin.component').then(m => m.UsersAdminComponent),
+                import('./views/dashboard/pages/users/users-administrator/users-administrator.component').then(m => m.UsersAdministratorComponent),
             data: {
-                icon:'users-admin',
-                title: 'users-admin',
+                icon:'users-administrator',
+                title: 'users-administrator',
                 description: 'Pagina usuarios administrador',
             },
         },

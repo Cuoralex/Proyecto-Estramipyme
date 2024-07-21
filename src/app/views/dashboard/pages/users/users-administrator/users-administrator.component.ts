@@ -2,15 +2,15 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-users',
+  selector: 'app-users-administrator',
   standalone: true,
   imports: [
     CommonModule
   ],
-  templateUrl: './users-admin.component.html',
-  styleUrl: './users-admin.component.scss',
+  templateUrl: './users-administrator.component.html',
+  styleUrl: './users-administrator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersAdminComponent {
+export class UsersAdministratorComponent {
 
 }

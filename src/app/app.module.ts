@@ -9,12 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormComponent } from './views/form/form.component';
-import { GraphicsAdminComponent } from './views/dashboard/pages/graphics/graphicsadmin/graphicsadmin.component';
-import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphicsclient/graphicsclient.component';
-import { UsersAdminComponent } from './views/dashboard/pages/users/users-admin/users-admin.component';
+import { GraphicsAdministratorComponent } from './views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component';
+import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
+import { UsersAdministratorComponent } from './views/dashboard/pages/users/users-administrator/users-administrator.component';
 import { UsersManagerComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
-import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboardadministrator/dashboardadministrator.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 
 @NgModule({
   declarations: [],
@@ -25,9 +25,9 @@ import { DashboardAdministratorComponent } from './views/dashboard/layout/dashbo
     HeaderComponent,
     DashboardAdministratorComponent,
     SidebarComponent,
-    GraphicsAdminComponent,
+    GraphicsAdministratorComponent,
     GraphicsClientComponent,
-    UsersAdminComponent,
+    UsersAdministratorComponent,
     UsersManagerComponent,
     FormComponent,
     NgxEchartsModule.forRoot({
