@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
+import { NgxEchartsDirective } from 'ngx-echarts';
 
 @Component({
     selector: 'app-root',
@@ -18,6 +19,7 @@ import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.co
               NavbarComponent,
               DashboardClientComponent,
               DashboardAdministratorComponent,
+              NgxEchartsDirective,
               FooterComponent,
               SidebarComponent, 
               RegisterComponent]

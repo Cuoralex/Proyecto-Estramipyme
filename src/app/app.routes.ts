@@ -14,7 +14,7 @@ export const routes: Routes =[
           {
               path:'graphics-',
               loadComponent: () =>
-                  import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component'),
+                  import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component').then(m => m.GraphicsAdministratorComponent),
               data: {
                   icon:'graphics',
                   title: 'Graficas',
@@ -24,7 +24,7 @@ export const routes: Routes =[
           {
               path:'users-admin',
               loadComponent: () =>
-                  import('./views/dashboard/pages/users/users-administrator/users-administrator.component'),
+                  import('./views/dashboard/pages/users/users-administrator/users-administrator.component').then(m => m.UsersAdministratorComponent),
               data: {
                   icon:'users-admin',
                   title: 'users-admin',
