@@ -15,21 +15,21 @@ const routes: Routes =[
         {
             path:'graphics-administrator',
             loadComponent: () =>
-                import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component').then(m => m.GraphicsAdministratorComponent),
+                import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component'),
             data: {
                 icon:'graphics',
                 title: 'graphics-administrator',
-                description: 'Pagina de graficos administrador',
+                description: 'graphics-administrador',
             },
         },
         {
             path:'users-administrator',
             loadComponent: () =>
-                import('./views/dashboard/pages/users/users-administrator/users-administrator.component').then(m => m.UsersAdministratorComponent),
+                import('./views/dashboard/pages/users/users-administrator/users-administrator.component'),
             data: {
                 icon:'users-administrator',
                 title: 'users-administrator',
-                description: 'Pagina usuarios administrador',
+                description: 'users-administrador',
             },
         },
    ]

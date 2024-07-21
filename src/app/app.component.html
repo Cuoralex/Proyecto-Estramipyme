@@ -1,10 +1,10 @@
 <div class="flex flex-col min-h-screen">
-  <app-header></app-header>
+  <app-header-landingpage *ngIf="isLandingPage()"></app-header-landingpage>
+  <app-headerdashboard *ngIf="!isLandingPage()"></app-headerdashboard>
   <router-outlet></router-outlet>
   <footer class="mt-auto">
     <app-footer></app-footer>
   </footer>
 </div>
-
 
 

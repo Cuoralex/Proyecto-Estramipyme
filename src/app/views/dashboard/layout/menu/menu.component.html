@@ -1,21 +1,18 @@
-<div>
-    <nav class="flex-col ml-5 w-[370px] min-h-[calc(98vh-3.0rem)] bg-tel-600 bg-opacity-10 p-5 rounded-3xl">
-        <section>
-            <h1 class="font-bold text-lg lg:text-3xl text-indigo-500">AngularBase</h1>
-            <span class="text-xl">Bienvenido</span>
-            <div class="border-gray-700 border my-3"></div>
-            <!--Nav link-->
-            <ng-container *ngFor="let route of routes; trackBy: trackByPath">
-                <app-sidebar>
-                    [description]="route.data?.description"
-                    [icon]="route.data?.icon"
-                    [title]="route.data?.title"
-                    [path]="route.path"
-                    (clic)="optionClick(route.data?.title)"
-                </app-sidebar>
-            </ng-container>
-            <!--End nav links!-->
-        </section>
-    </nav>
-</div>
+<nav class="flex-col ml-5 w-[370px] min-h-[calc(98vh-3.0rem)] bg-tel-600 bg-opacity-10 p-5 rounded-3xl">
+        <span class="text-xl">Bienvenido</span>
+        <div class="border-black-700 border my-3"></div>
+        <!--Nav link-->
+        @for (route of routes; track route.path){
+            <app-sidebar
+                [description]="route.data!['description']"
+                [icon]="route.data!['icon']"
+                [title]="route.data!['title']"
+                [path]="route.path!"
+                (clic)="optionClick(route.data!['title'])"
+                />
+        }
+        <!--End nav links-->
+        <!--[path]="route.path!"Bucle que con path que pasa por todas las rutas-->
+</nav>
+
 

@@ -12,23 +12,23 @@ export const routes: Routes =[
       component: DashboardAdministratorComponent,
       children: [
           {
-              path:'graphics-',
+              path:'graphics-administrator',
               loadComponent: () =>
-                  import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component').then(m => m.GraphicsAdministratorComponent),
+                  import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component'),
               data: {
                   icon:'graphics',
-                  title: 'Graficas',
-                  description: 'Pagina de graficos',
+                  title: 'graphics-administrator',
+                  description: 'graphics-administrator',
               },
           },
           {
-              path:'users-admin',
+              path:'users-administrator',
               loadComponent: () =>
-                  import('./views/dashboard/pages/users/users-administrator/users-administrator.component').then(m => m.UsersAdministratorComponent),
+                  import('./views/dashboard/pages/users/users-administrator/users-administrator.component'),
               data: {
-                  icon:'users-admin',
-                  title: 'users-admin',
-                  description: 'Pagina usuarios administrador',
+                  icon:'users-administrator',
+                  title: 'users-administrator',
+                  description: 'users-administrador',
               },
           },
      ]
@@ -36,4 +36,5 @@ export const routes: Routes =[
     {path:'iniciar-sesion', component:LoginComponent},
     {path:'registro', component:RegisterComponent},
       
+    
 ];

@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './shared/header/header.component';
+import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormComponent } from './views/form/form.component';
-import { GraphicsAdministratorComponent } from './views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component';
+
 import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
-import { UsersAdministratorComponent } from './views/dashboard/pages/users/users-administrator/users-administrator.component';
+
 import { UsersManagerComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
+import GraphicsAdministratorComponent from './views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component';
+import UsersAdministratorComponent from './views/dashboard/pages/users/users-administrator/users-administrator.component';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,7 @@ import { DashboardAdministratorComponent } from './views/dashboard/layout/dashbo
     CommonModule,
     AppComponent,
     RouterModule,
-    HeaderComponent,
+    HeaderLandingpageComponent,
     DashboardAdministratorComponent,
     SidebarComponent,
     GraphicsAdministratorComponent,

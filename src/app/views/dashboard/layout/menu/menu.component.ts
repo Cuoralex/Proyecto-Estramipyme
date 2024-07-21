@@ -1,7 +1,7 @@
 /*Angular*/
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 /*App*/
 import { routes } from '../../../../app.routes';
 import { SidebarComponent } from '../../component/sidebar/sidebar.component';
@@ -25,11 +25,8 @@ export class MenuComponent {
 
 //rutas
   public routes = routes[0].children?.filter( (route)=> route.data);
-  trackByPath(index: number, route: any): string {
-    return route.path;
-  }
-
-  optionClick(title: string) {
-    console.log('Clicked option: ', title);
+  
+  optionClick(Option: string){
+    this.optionClicked.emit(Option);
   }
 }

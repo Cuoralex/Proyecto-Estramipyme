@@ -12,10 +12,10 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   templateUrl: './graphics-administrator.component.html',
   styleUrl: './graphics-administrator.component.scss',
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GraphicsAdministratorComponent implements OnInit {
-  
+export default class GraphicsAdministratorComponent implements OnInit {
+ 
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};
