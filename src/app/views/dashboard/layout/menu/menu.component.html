@@ -1,6 +1,6 @@
 <nav class="flex-col ml-5 w-[370px] min-h-[calc(98vh-3.0rem)] bg-tel-600 bg-opacity-10 p-5 rounded-3xl">
         <span class="text-xl">Bienvenido</span>
-        <div class="border-black-700 border my-3"></div>
+        <div class="border-white-700 border my-3"></div>
         <!--Nav link-->
         @for (route of routes; track route.path){
             <app-sidebar
@@ -12,7 +12,11 @@
                 />
         }
         <!--End nav links-->
-        <!--[path]="route.path!"Bucle que con path que pasa por todas las rutas-->
+        <!--[path]="route.path!"Bucle que con path que pasa por todas las rutas->-->
+        <div>
+                <p *ngIf="!userLoginOn">Usuario NO autenticado</p>
+                <p *ngIf="userLoginOn">Usuario Autenticado</p>
+        </div>
 </nav>
 
 

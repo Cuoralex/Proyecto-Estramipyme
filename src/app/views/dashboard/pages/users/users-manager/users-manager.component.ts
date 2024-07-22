@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-manager-users',
+  selector: 'app-users-manager',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './users-manager.component.html',
-  styleUrl: './users-manager.component.scss'
+  styleUrl: './users-manager.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersManagerComponent {
 

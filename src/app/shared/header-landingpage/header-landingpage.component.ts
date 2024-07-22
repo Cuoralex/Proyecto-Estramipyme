@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavbarComponent } from "../navbar/navbar.component";
+import { NavbarLandingpageComponent } from "../navbar-landingpage/navbar-landingpage.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     CommonModule,
-    NavbarComponent
+    NavbarLandingpageComponent
   ],
   templateUrl: './header-landingpage.component.html',
   styleUrl: './header-landingpage.component.scss',

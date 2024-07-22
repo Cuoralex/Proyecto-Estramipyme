@@ -2,23 +2,32 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
-import { RouterOutlet } from '@angular/router';
 //Proyecto
 import { GlobalComponent } from "../global/global.component";
-import { MenuComponent } from "../menu/menu.component";
-import { HeaderLandingpageComponent } from "../../../../shared/header-landingpage/header-landingpage.component";
+
+import { HeaderDashboardComponent } from '../header-dashboard/header-dashboard.component';
+import { RouterModule } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
+import GraphicsAdministratorComponent from "../../pages/graphics/graphics-administrator/graphics-administrator.component";
+import UsersAdministratorComponent from "../../pages/users/users-administrator/users-administrator.component";
+import { SidebarComponent } from "../../component/sidebar/sidebar.component";
+import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
 
 
 @Component({
   selector: 'app-dashboard-administrator',
   standalone: true,
   imports: [
-    RouterOutlet,
+    RouterModule,
     CommonModule,
     NgxEchartsDirective,
     GlobalComponent,
     MenuComponent,
-    HeaderLandingpageComponent
+    HeaderDashboardComponent,
+    GraphicsAdministratorComponent,
+    UsersAdministratorComponent,
+    SidebarComponent,
+    FooterdashboardComponent
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],
@@ -26,7 +35,7 @@ import { HeaderLandingpageComponent } from "../../../../shared/header-landingpag
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class DashboardAdministratorComponent implements OnInit {
-  userLoginOn: boolean = false;
+  
 
   constructor() {}
 

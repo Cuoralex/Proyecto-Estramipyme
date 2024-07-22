@@ -5,7 +5,7 @@ import { routes } from '../../app.routes';
 import { SidebarComponent } from '../../views/dashboard/component/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar-landingpage',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
@@ -13,11 +13,11 @@ import { SidebarComponent } from '../../views/dashboard/component/sidebar/sideba
     RouterModule,
     SidebarComponent
     ],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss',
+  templateUrl: './navbar-landingpage.component.html',
+  styleUrl: './navbar-landingpage.component.scss',
   
 })
-export class NavbarComponent implements OnInit {
+export class NavbarLandingpageComponent implements OnInit {
       userLoginOn:boolean=false;
      @Output() optionClicked = new EventEmitter<string>();
 

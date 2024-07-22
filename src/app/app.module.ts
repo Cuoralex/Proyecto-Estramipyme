@@ -1,22 +1,22 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FormComponent } from './views/form/form.component';
-
 import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
-
 import { UsersManagerComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import GraphicsAdministratorComponent from './views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component';
 import UsersAdministratorComponent from './views/dashboard/pages/users/users-administrator/users-administrator.component';
+import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashboard/header-dashboard.component';
+import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 
 @NgModule({
   declarations: [],
@@ -25,6 +25,7 @@ import UsersAdministratorComponent from './views/dashboard/pages/users/users-adm
     AppComponent,
     RouterModule,
     HeaderLandingpageComponent,
+    HeaderDashboardComponent,
     DashboardAdministratorComponent,
     SidebarComponent,
     GraphicsAdministratorComponent,
@@ -35,8 +36,9 @@ import UsersAdministratorComponent from './views/dashboard/pages/users/users-adm
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
-    FooterComponent,
-    NavbarComponent,
+    FooterLandingpageComponent,
+    FooterdashboardComponent,
+    NavbarLandingpageComponent,
     ReactiveFormsModule,
     HttpClientModule,
   ],

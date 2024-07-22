@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderLandingpageComponent } from "./shared/header-landingpage/header-landingpage.component";
-import { FooterComponent } from "./shared/footer/footer.component";
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterLandingpageComponent } from "./shared/footer-landingpage/footer-landingpage.component";
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 import { NgxEchartsDirective } from 'ngx-echarts';
-import { HeaderDashboardComponent } from "./views/dashboard/layout/headerdashboard/headerdashboard.component";
-import { FoooterdashboardComponent } from "./views/dashboard/layout/foooterdashboard/foooterdashboard.component";
+import { HeaderDashboardComponent } from "./views/dashboard/layout/header-dashboard/header-dashboard.component";
 import { CommonModule } from '@angular/common';
+import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
+import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
+import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
+import { DashboarManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 
 @Component({
     selector: 'app-root',
@@ -21,15 +22,18 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     RouterOutlet,
     HeaderLandingpageComponent,
-    NavbarComponent,
+    NavbarLandingpageComponent,
     DashboardClientComponent,
+    DashboarManagerComponent,
     DashboardAdministratorComponent,
     NgxEchartsDirective,
-    FooterComponent,
+    FooterLandingpageComponent,
     SidebarComponent,
-    RegisterComponent, 
-    HeaderDashboardComponent, 
-    FoooterdashboardComponent]
+    RegisterComponent,
+    HeaderDashboardComponent,
+    FooterdashboardComponent,
+    FooterLandingpageComponent
+]
 })
 export class AppComponent {
   constructor(private router:Router){}
@@ -47,7 +51,7 @@ export class AppComponent {
       path: '/users-administrator',
         data: {
           description: 'users-administrador',
-          icon: 'users-administrator',
+          icon: 'users',
           title: 'users-administrator'
         }
       }
