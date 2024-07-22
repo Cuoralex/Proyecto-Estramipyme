@@ -7,6 +7,10 @@ body{
   padding: 0;
 }
 
+html{
+scroll-behavior: smooth;
+}
+
 .ng-valid:not(form).ng-touched   {
     border-left: 5px solid #42A948; /* green */
   }

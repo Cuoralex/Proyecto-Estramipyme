@@ -1,3 +1,4 @@
+ 
  <body class="flex flex-col min-h-screen">
 
     <!-- Sección Hero -->
@@ -157,8 +158,8 @@
   
 
   <!-- Sección de Testimonios -->
-  <section id="testimonials" class="p-8">
-    <h2 class="text-3xl font-bold text-center">Testimonios</h2>
+  <section id="events" class="p-8">
+    <h2 class="text-3xl font-bold text-center">Eventos</h2>
     <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="flex flex-col items-center">
         <p class="italic">"La herramienta ha mejorado significativamente nuestra estrategia empresarial." - Usuario 1</p>
@@ -167,17 +168,24 @@
         <p class="italic">"El diagnóstico fue preciso y nos ayudó a identificar nuestras debilidades." - Usuario 2</p>
       </div>
     </div>
-  </section>
+ </section>
 
   <!-- Sección de Contacto -->
   <section id="contact" class="p-8 bg-gray-100">
     <h2 class="text-3xl font-bold text-center">Contáctanos</h2>
     <form class="mt-4 mx-auto max-w-xl">
-      <label class="block mb-2">Correo Electrónico:</label>
-      <input type="email" class="w-full p-2 border rounded mb-4" />
-      <label class="block mb-2">Mensaje:</label>
-      <textarea class="w-full p-2 border rounded mb-4"></textarea>
-      <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Envíanos un mensaje</button>
+      <label for="block mb-2">Nombre completo:</label>
+      <input type="text" class="w-full p-2 border rounded mb-4" id="name"/>
+
+      <label for="block mb-2">Correo Electrónico:</label>
+      <input type="email" class="w-full p-2 border rounded mb-4" id="email"/>
+
+      <label for="block mb-2">Asunto:</label>
+      <input type="text" class="w-full p-2 border rounded mb-4" id="subject"/>
+
+      <label for="block mb-2">Mensaje:</label>
+      <textarea class="w-full p-2 border rounded mb-4" id="coments"></textarea>
+      <button type="coments" class="bg-blue-600 text-white py-2 px-4 rounded" >Envíanos un mensaje</button>
     </form>
   </section>
 </body>

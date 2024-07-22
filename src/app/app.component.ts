@@ -9,9 +9,9 @@ import { NgxEchartsDirective } from 'ngx-echarts';
 import { HeaderDashboardComponent } from "./views/dashboard/layout/header-dashboard/header-dashboard.component";
 import { CommonModule } from '@angular/common';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
-import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { DashboarManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
+import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
 
 @Component({
     selector: 'app-root',

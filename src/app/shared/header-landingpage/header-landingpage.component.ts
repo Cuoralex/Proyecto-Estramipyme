@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { NavbarLandingpageComponent } from "../navbar-landingpage/navbar-landingpage.component";
 import { CommonModule } from '@angular/common';
+import { NavbarLandingpageComponent } from "../navbar-landingpage/navbar-landingpage.component";
 
 @Component({
   selector: 'app-header-landingpage',
