@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { RegisterService } from '../../services/register/register.service';
-import { RegisterData } from '../../models/register/register.model';
+import { RegisterService } from '../../services/register-users/register.service';
+import { RegisterData } from '../../models/register-users/register.model';
 
 
 const PERSON_TYPE_NATURAL = 'natural';
@@ -26,14 +26,14 @@ export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): 
   selector: 'app-register',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  templateUrl: './register-users.component.html',
+  styleUrls: ['./register-users.component.scss']
 })
 
 export class RegisterComponent {
   isOtherCompanyType: boolean = false;
 
-  registerForm: FormGroup;
+  registerForm: FormGroup; 
   TypeOfPerson: FormControl;
   TypeCompany: FormControl;
   TypeCompanyAnother: FormControl;
@@ -256,7 +256,7 @@ export class RegisterComponent {
         };
       }
   
-      this.registerService.saveData(dataToSend);
+      this.registerService.saveData(dataToSend); 
       console.log('Datos guardados en localStorage', dataToSend);
     } else {
       console.log('Formulario no válido');

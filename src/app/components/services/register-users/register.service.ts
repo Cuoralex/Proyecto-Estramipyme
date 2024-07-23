@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { RegisterData } from '../../models/register/register.model';
+import { RegisterData } from '../../models/register-users/register.model';
 
 @Injectable({
   providedIn: 'root'

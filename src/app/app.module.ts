@@ -12,6 +12,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import { FormComponent } from './components/views/form/form.component';
+import { LoginUsersComponent } from '../app/components/views/login-users/login-users.component';
+
 
 @NgModule({
   declarations: [],
@@ -19,6 +21,7 @@ import { FormComponent } from './components/views/form/form.component';
     CommonModule,
     AppComponent,
     RouterModule,
+    LoginUsersComponent,
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
