@@ -13,6 +13,7 @@ import { DashboardClientComponent } from './views/dashboard/layout/dashboard-cli
 import { DashboarManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
 
+
 @Component({
     selector: 'app-root',
     standalone: true,

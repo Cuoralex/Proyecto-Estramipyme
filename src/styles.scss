@@ -1,11 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import 'src/styles.scss';
+
 
 body{
-  margin: 0;
-  padding: 0;
+  margin: -1;
+  padding: -1;
 }
 
 html{
@@ -13,11 +13,11 @@ scroll-behavior: smooth;
 }
 
 .ng-valid:not(form).ng-touched   {
-    border-left: 5px solid #42A948; /* green */
+    border-left: 4px solid #42A948; /* green */
   }
  
 .ng-invalid:not(form).ng-touched  {
-    border-left: 5px solid #a94442; /* red */
+    border-left: 4px solid #a94442; /* red */
   }
 
   

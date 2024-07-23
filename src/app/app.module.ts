@@ -18,6 +18,7 @@ import UsersAdministratorComponent from './views/dashboard/pages/users/users-adm
 import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashboard/header-dashboard.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 
+
 @NgModule({
   declarations: [],
   imports: [

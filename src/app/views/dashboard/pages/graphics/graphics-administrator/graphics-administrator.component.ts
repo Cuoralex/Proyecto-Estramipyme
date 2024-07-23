@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+import { ExcelReaderComponent } from "../../../../../services/excel-reader/excel-reader.component";
 
 @Component({
   selector: 'app-graphics-administrator',
   standalone: true,
   imports: [
     CommonModule,
-    NgxEchartsDirective
-  ],
+    NgxEchartsDirective,
+    ExcelReaderComponent
+],
   templateUrl: './graphics-administrator.component.html',
   styleUrl: './graphics-administrator.component.scss',
   providers:[provideEcharts()],
