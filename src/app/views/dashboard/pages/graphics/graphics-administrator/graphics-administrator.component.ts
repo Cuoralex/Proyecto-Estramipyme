@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
-import { ExcelReaderComponent } from "../../../../../services/excel-reader/excel-reader.component";
+
 
 @Component({
   selector: 'app-graphics-administrator',
@@ -9,7 +9,6 @@ import { ExcelReaderComponent } from "../../../../../services/excel-reader/excel
   imports: [
     CommonModule,
     NgxEchartsDirective,
-    ExcelReaderComponent
 ],
   templateUrl: './graphics-administrator.component.html',
   styleUrl: './graphics-administrator.component.scss',

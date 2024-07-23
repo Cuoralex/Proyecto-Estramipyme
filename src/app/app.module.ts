@@ -17,10 +17,11 @@ import GraphicsAdministratorComponent from './views/dashboard/pages/graphics/gra
 import UsersAdministratorComponent from './views/dashboard/pages/users/users-administrator/users-administrator.component';
 import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashboard/header-dashboard.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
+import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ExcelReaderComponent,],
   imports: [
     CommonModule,
     AppComponent,
@@ -31,6 +32,7 @@ import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashbo
     SidebarComponent,
     GraphicsAdministratorComponent,
     GraphicsClientComponent,
+    
     UsersAdministratorComponent,
     UsersManagerComponent,
     FormComponent,

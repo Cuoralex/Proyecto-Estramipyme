@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 //Proyecto
 import { GlobalComponent } from "../global/global.component";
-
 import { HeaderDashboardComponent } from '../header-dashboard/header-dashboard.component';
 import { RouterModule } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
