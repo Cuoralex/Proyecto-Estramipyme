@@ -20,6 +20,7 @@ export default class GraphicsAdministratorComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};
+onChangeInput: any;
   
   constructor() {}
   

@@ -7,7 +7,10 @@ import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -35,7 +38,7 @@ throw new Error('Method not implemented.');
     login(){
       if(this.loginForm.valid){
         this.loginService.login(this.loginForm.value)
-        this.router.navigateByUrl("/inicio");
+        this.router.navigateByUrl("/dashboard-administrator");
         this.loginForm.reset();
       }else{
          this.loginForm.markAllAsTouched();

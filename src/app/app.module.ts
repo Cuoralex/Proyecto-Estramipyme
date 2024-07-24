@@ -19,9 +19,8 @@ import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashbo
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
 
-
 @NgModule({
-  declarations: [ExcelReaderComponent,],
+  declarations: [],
   imports: [
     CommonModule,
     AppComponent,
@@ -29,10 +28,10 @@ import { ExcelReaderComponent } from './services/excel-reader/excel-reader.compo
     HeaderLandingpageComponent,
     HeaderDashboardComponent,
     DashboardAdministratorComponent,
+    ExcelReaderComponent,
     SidebarComponent,
     GraphicsAdministratorComponent,
     GraphicsClientComponent,
-    
     UsersAdministratorComponent,
     UsersManagerComponent,
     FormComponent,
