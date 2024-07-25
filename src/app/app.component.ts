@@ -11,9 +11,6 @@ import { DashboarManagerComponent } from './views/dashboard/layout/dashboard-man
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { FooterLandingpageComponent } from "./shared/footer-landingpage/footer-landingpage.component";
 
-
-
-
 @Component({
     selector: 'app-root',
     standalone: true,
