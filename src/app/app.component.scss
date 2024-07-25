@@ -1,3 +1,5 @@
+@import '../styles.scss';
+
 /** Estilos Generales **/
   
 html *{
@@ -50,12 +52,13 @@ html *{
      padding: 0.25rem;
    }
    
-   .logo-header{
+   .logo-header-landingpage{
      max-width: 35px;
      height: 100%;
      width: 100%;
    }
    
+
    /** Hero Section **/
    
    .hero-section{
@@ -74,7 +77,7 @@ html *{
      max-width: 600px;
      color: #fff;
      padding: 15%;
-   }
+ }
   
    /** Logo Brand Section **/
    .section{
