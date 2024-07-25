@@ -1,12 +1,28 @@
+<!-- <app-header></app-header>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<div class="container">
+  <div>
+    <button (click)="showContent('register')" class="btn">Registro</button>
+    <button (click)="showContent('login')" class="btn">Iniciar sesión</button>
+  </div>
+  <div class="content">
+    <app-register *ngIf="activeContent === 'register'" class="content-register"></app-register>
+    <app-login-users *ngIf="activeContent === 'login'" class="content-login"></app-login-users>
+  </div>
+</div>
+<div class="fixed-bottom">
+  <app-footer></app-footer>
+</div> -->
+
 <app-header></app-header>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
-<div>
-  <app-register></app-register>
-  <app-login-users></app-login-users>
-</div>
+<app-register></app-register>
+<app-login-users></app-login-users>
+
 <div class="fixed-bottom">
   <app-footer></app-footer>
 </div>
-

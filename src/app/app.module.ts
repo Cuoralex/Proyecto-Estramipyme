@@ -13,14 +13,19 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import { FormComponent } from './components/views/form/form.component';
 import { LoginUsersComponent } from '../app/components/views/login-users/login-users.component';
+import { RegisterComponent } from './components/views/register-users/register-users.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+],
   imports: [
     CommonModule,
     AppComponent,
     RouterModule,
+    BrowserModule,
+    RegisterComponent,
     LoginUsersComponent,
     HeaderComponent,
     SidebarComponent,
@@ -41,3 +46,7 @@ import { LoginUsersComponent } from '../app/components/views/login-users/login-u
 export class AppModule {
   
 }
+
+
+
+

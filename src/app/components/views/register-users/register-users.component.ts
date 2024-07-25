@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register-users/register.model';
@@ -33,7 +33,7 @@ export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): 
 export class RegisterComponent {
   isOtherCompanyType: boolean = false;
 
-  registerForm: FormGroup; 
+  registerForm: FormGroup;
   TypeOfPerson: FormControl;
   TypeCompany: FormControl;
   TypeCompanyAnother: FormControl;
@@ -51,7 +51,7 @@ export class RegisterComponent {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(private registerService: RegisterService) {
+  constructor(private registerService: RegisterService, fb: FormBuilder) {
     this.TypeOfPerson = new FormControl('', Validators.required);
 
     // Persona Jurídica
@@ -88,7 +88,7 @@ export class RegisterComponent {
       NaturalPersonPassword: this.NaturalPersonPassword,
       NaturalPersonConfirmPassword: this.NaturalPersonConfirmPassword,
       TypeOfAdvice: this.TypeOfAdvice
-    }, { validators: [naturalPasswordsValidator, LegalPasswordsValidator]});
+    }, { validators: [naturalPasswordsValidator, LegalPasswordsValidator] });
 
   }
 
@@ -131,7 +131,7 @@ export class RegisterComponent {
     return this.registerForm.get('NaturalPersonEmail');
   }
 
-  get NaturalPassword (){
+  get NaturalPassword() {
     return this.registerForm.get('NaturalPersonPassword');
   }
 
@@ -144,23 +144,23 @@ export class RegisterComponent {
     return this.registerForm.get('TypeCompanyAnother');
   }
 
-  get LegalName (){
+  get LegalName() {
     return this.registerForm.get('LegalPersonName');
   }
 
-  get LegalCompanyName (){
+  get LegalCompanyName() {
     return this.registerForm.get('LegalPersonCompanyName');
   }
 
-  get OptSector(){
+  get OptSector() {
     return this.registerForm.get('Sector');
   }
 
-  get LegalEmail (){
+  get LegalEmail() {
     return this.registerForm.get('LegalPersonEmail');
   }
 
-  get LegalPassword (){
+  get LegalPassword() {
     return this.registerForm.get('LegalPersonPassword');
   }
 
@@ -207,12 +207,10 @@ export class RegisterComponent {
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe()); 
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
   register() {
-    
-
     if (this.registerForm.valid) {
       const formValue = this.registerForm.value;
       let dataToSend: RegisterData = {
@@ -231,7 +229,7 @@ export class RegisterComponent {
         legalPersonPassword: '',
         legalPersonConfirmPassword: '',
       };
-  
+
       if (formValue.TypeOfPerson === PERSON_TYPE_NATURAL) {
         dataToSend = {
           typeOfPerson: formValue.TypeOfPerson,
@@ -255,12 +253,20 @@ export class RegisterComponent {
           typeOfAdvice: formValue.TypeOfAdvice || '',
         };
       }
-  
-      this.registerService.saveData(dataToSend); 
+
+      // Guarda los datos en localStorage
+      const users = JSON.parse(localStorage.getItem('formValue') || '[]');
+      users.push(dataToSend);
+      localStorage.setItem('formValue', JSON.stringify(users));
+
+      // Resetea el formulario para limpiar los campos
+      this.registerForm.reset();
+      this.registerForm.markAsPristine();
+      this.registerForm.markAsUntouched();
+
       console.log('Datos guardados en localStorage', dataToSend);
     } else {
       console.log('Formulario no válido');
     }
-
   }
 }
