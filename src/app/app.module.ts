@@ -22,17 +22,20 @@ import { GraphicsClientComponent } from './views/dashboard/pages/graphics/graphi
 import { UsersManagerComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
-import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register-users/register-users.component';
+import { LoginUsersComponent } from './components/login-users/login-users.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+],
   imports: [
     CommonModule,
     AppComponent,
     RouterModule,
     HeaderLandingpageComponent,
     HeaderDashboardComponent,
-    LoginComponent,
+    LoginUsersComponent,
+    RegisterComponent,
     DashboardAdministratorComponent,
     DashboarManagerComponent,
     DashboardClientComponent,
@@ -58,3 +61,7 @@ import { LoginComponent } from './components/login/login.component';
 export class AppModule {
   
 }
+
+
+
+

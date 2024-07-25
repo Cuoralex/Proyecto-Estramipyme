@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
-import { RegisterComponent } from '../../components/register/register.component';
+// import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
+import { LoginUsersComponent } from '../../components/login-users/login-users.component';
+import { RegisterComponent } from "../../components/register-users/register-users.component";
 
 @Component({
   selector: 'app-landingpage',
@@ -10,7 +12,8 @@ import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navb
     LoginComponent,
     RegisterComponent,
     NavbarLandingpageComponent,
-  ],
+    LoginUsersComponent,
+],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })

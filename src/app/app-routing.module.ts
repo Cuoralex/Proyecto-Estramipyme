@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/register-users/register-users.component';
 import { FormComponent } from './views/form/form.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
+import { LoginUsersComponent } from './components/login-users/login-users.component';
 
 
 const routes: Routes =[
   {path: '', redirectTo:'/inicio', pathMatch:'full'},
   {path: 'inicio', component:LandingPageComponent},
-  {path: 'iniciar-sesion', component:LoginComponent},
+  {path: 'iniciar-sesion', component:LoginUsersComponent},
   {path:'registro', component:RegisterComponent},
   {path: 'form', component:FormComponent},
   {
