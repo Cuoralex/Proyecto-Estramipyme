@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
   standalone: true,
   imports: [
     LoginComponent,
+    RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
   ],

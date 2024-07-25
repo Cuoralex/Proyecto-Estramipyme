@@ -1,7 +1,7 @@
 //Angular
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
@@ -53,7 +53,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers:[],
+    providers:[],
 })
 export class AppModule {
   
