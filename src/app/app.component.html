@@ -1,9 +1,9 @@
 <div class="flex flex-col min-h-screen">
-  <app-header></app-header>
+  <app-header-landingpage *ngIf="isLandingPage()"></app-header-landingpage>
+  <app-header-dashboard *ngIf="!isLandingPage()"></app-header-dashboard>
   <router-outlet></router-outlet>
   <footer class="mt-auto">
-    <app-footer></app-footer>
+    <app-footer-landingpage *ngIf="isLandingPage()"></app-footer-landingpage>
+    <app-footer-dashboard *ngIf="!isLandingPage()"></app-footer-dashboard>
   </footer>
 </div>
-
-

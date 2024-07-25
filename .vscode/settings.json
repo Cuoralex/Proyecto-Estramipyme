@@ -5,6 +5,11 @@
         "onAutoForward": "openBrowser"
       }
     },
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "angular-schematics.schematicsDefaultOptions": {
+      "angular-*": {
+        "externalTemplate": true
+      }
+    }
   }
   

@@ -3,14 +3,40 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DbadministratorComponent } from './views/DB-administrator/DB-administrator.component';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 
 const routes: Routes =[
   {path: '', redirectTo:'/inicio', pathMatch:'full'},
   {path: 'inicio', component:LandingPageComponent},
-  {path: 'dashboarAdmin', component:DbadministratorComponent},
+  { 
+    path:'dashboard-administrador',
+    component: DashboardAdministratorComponent,
+    children: [
+        {
+            path:'graphics-administrator',
+            loadComponent: () =>
+                import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component'),
+            data: {
+                icon:'graphics',
+                title: 'graphics-administrator',
+                description: 'graphics-administrador',
+            },
+        },
+        {
+            path:'users-administrator',
+            loadComponent: () =>
+                import('./views/dashboard/pages/users/users-administrator/users-administrator.component'),
+            data: {
+                icon:'users-administrator',
+                title: 'users-administrator',
+                description: 'users-administrador',
+            },
+        },
+   ]
+},
   {path:'iniciar-sesion', component:LoginComponent},
   {path:'registro', component:RegisterComponent},
+    
      ];
   
   @NgModule({
