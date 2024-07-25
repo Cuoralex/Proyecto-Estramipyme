@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
@@ -19,8 +19,23 @@ import { RouterModule } from '@angular/router';
 export class LandingPageComponent implements OnInit {
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
+  @ViewChild('about') about!: ElementRef;
+  @ViewChild('services') services!: ElementRef;
+  @ViewChild('plans') plans!: ElementRef;
+  @ViewChild('events') events!: ElementRef;
+  @ViewChild('contacts') contacts!: ElementRef;
+  @ViewChild('register') register!: ElementRef;
+  
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        this.scrollToSection(fragment);
+      }
+    });
+
     const bannerContainer = document.getElementById('bannerContainer');
     if (bannerContainer) {
       this.bannerItems = bannerContainer.querySelectorAll('.banner-item') as NodeListOf<HTMLElement>;
@@ -35,6 +50,22 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
+  private scrollToSection(fragment: string): void {
+
+    const section = {
+      'about': this.about,
+      'services': this.services,
+      'plans': this.plans,
+      'events': this.events,
+      'contacts': this.contacts,
+      'register': this.register
+    }[fragment];
+    if (section) {
+      section.nativeElement.scrollIntoView({ behavior: 'smooth'});
+    }
+
+  }
+
   private showNextBannerItem(): void {
     if (this.bannerItems.length > 0) {
       this.bannerItems[this.currentIndex].style.opacity = '0';
@@ -43,3 +74,4 @@ export class LandingPageComponent implements OnInit {
     }
   }
 }
+

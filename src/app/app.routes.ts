@@ -9,7 +9,7 @@ export const routes: Routes =[
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
     {path: 'inicio', component:LandingPageComponent},
     {path: 'iniciar-sesion', component:LoginComponent},
-    {path:'registro', component:RegisterComponent},
+    {path:'register', component:RegisterComponent},
     {path: 'form', component:FormComponent},
     { 
       path:'dashboard-administrador',
