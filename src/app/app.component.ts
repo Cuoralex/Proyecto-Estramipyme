@@ -8,8 +8,8 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import LayoutComponent from './components/shared/layout/layout.component';
 import { LandingPageService } from './components/services/landing-page.service';
-import { RegisterComponent } from './components/views/register-users/register-users.component';
-import { LoginUsersComponent } from './components/views/login-users/login-users.component';
+import { RegisterComponent } from './components/register-users/register-users.component';
+import { LoginUsersComponent } from './components/login-users/login-users.component';
 
 @Component({
     selector: 'app-root',

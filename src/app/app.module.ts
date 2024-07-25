@@ -12,8 +12,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import { FormComponent } from './components/views/form/form.component';
-import { LoginUsersComponent } from '../app/components/views/login-users/login-users.component';
-import { RegisterComponent } from './components/views/register-users/register-users.component';
+import { LoginUsersComponent } from './components/login-users/login-users.component';
+import { RegisterComponent } from './components/register-users/register-users.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 

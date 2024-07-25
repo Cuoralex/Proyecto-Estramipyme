@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { RegisterService } from '../../services/register-users/register.service';
-import { RegisterData } from '../../models/register-users/register.model';
+import { RegisterService } from '../services/register-users/register.service';
+import { RegisterData } from '../models/register-users/register.model';
 
 
 const PERSON_TYPE_NATURAL = 'natural';
