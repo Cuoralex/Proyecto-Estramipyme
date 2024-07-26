@@ -43,7 +43,7 @@
       <!-- Icono de Libro Flotante para el boton emergente-->
     <div class="fixed bottom-4 right-4">
       <button id="Libro">
-        <a href="#register">
+        <a href=#register>
           <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
         </a>
       </button>
@@ -159,18 +159,35 @@
       </section>
       
 
-      <!-- Sección de Testimonios -->
+      <!-- Sección de eventos -->
       <section id="events" class="p-8">
-        <h2 class="text-3xl font-bold text-center">Eventos</h2>
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex flex-col items-center">
-            <p class="italic">"La herramienta ha mejorado significativamente nuestra estrategia empresarial." - Usuario 1</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <p class="italic">"El diagnóstico fue preciso y nos ayudó a identificar nuestras debilidades." - Usuario 2</p>
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5 cursor-pointer" onclick="toggleCard(this)">
+              <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url('https://www.si.com/.image/t_share/MTY4MTkyMjczODM4OTc0ODQ5/cfp-trophy-deitschjpg.jpg')"></div>
+              <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                  <div class="md:text-3xl">Jan</div>
+                  <div class="md:text-6xl">13</div>
+                  <div class="md:text-xl">7 pm</div>
+                </div>
+                <div class="hidden md:block p-4 font-normal text-gray-800 md:w-3/4">
+                  <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">2020 National Championship</h1>
+                  <p class="leading-normal">The College Football Playoff (CFP) determines the national champion of the top division of college football. The format fits within the academic calendar and preserves the sport’s unique and compelling regular season.</p>
+                  <div class="flex flex-row items-center mt-4 text-gray-700">
+                    <div class="w-1/2">
+                      Mercedes-Benz Superdome
+                    </div>
+                    <div class="w-1/2 flex justify-end">
+                      <img src="https://collegefootballplayoff.com/images/section_logo.png" alt="" class="w-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-    </section>
+      </section>
 
       <!-- Sección de Contacto -->
       <section id="contact" class="p-8 bg-gray-100">

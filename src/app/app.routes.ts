@@ -8,7 +8,7 @@ import { FormComponent } from './views/form/form.component';
 export const routes: Routes =[
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
     {path: 'inicio', component:LandingPageComponent},
-    {path: 'iniciar-sesion', component: LoginUsersComponent},
+    {path: 'iniciar-sesion', component:LoginComponent},
     {path:'registro', component:RegisterComponent},
     {path: 'form', component:FormComponent},
     { 

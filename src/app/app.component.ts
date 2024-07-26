@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderLandingpageComponent } from "./shared/header-landingpage/header-landingpage.component";
@@ -33,6 +33,16 @@ import { LoginUsersComponent } from './components/login-users/login-users.compon
 ]
 })
 export class AppComponent {
+  allowedRoutes = [
+    '/inicio',
+    '/inicio#about',
+    '/inicio#services',
+    '/inicio#plans',
+    '/inicio#events',
+    '/inicio#contacts',
+    '/inicio#register'
+  ];
+//    ^ - Pertenece a fragments
   constructor(private router:Router){}
   
   routes = [
@@ -54,9 +64,9 @@ export class AppComponent {
       }
     ];
 
-      isLandingPage(): boolean{
-        return this.router.url==='/inicio'
-      }
+      isLandingPage(): boolean {
+    return this.allowedRoutes.some(route => this.router.url === route);
+  }
 
     
       trackByPath(index: number, route: any): string {
