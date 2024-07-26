@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
@@ -16,9 +16,12 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
+
 export class LandingPageComponent implements OnInit {
+  activeRoute: ActivatedRoute = inject(ActivatedRoute);
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
+  
   @ViewChild('about') about!: ElementRef;
   @ViewChild('services') services!: ElementRef;
   @ViewChild('plans') plans!: ElementRef;
@@ -26,13 +29,12 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('contacts') contacts!: ElementRef;
   @ViewChild('register') register!: ElementRef;
   
-
-  constructor(private route: ActivatedRoute) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
+    this.activeRoute.fragment.subscribe((fragment) => {
       if (fragment) {
-        this.scrollToSection(fragment);
+        this.jumpToSection(fragment);
       }
     });
 
@@ -50,20 +52,11 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
-  private scrollToSection(fragment: string): void {
-
-    const section = {
-      'about': this.about,
-      'services': this.services,
-      'plans': this.plans,
-      'events': this.events,
-      'contacts': this.contacts,
-      'register': this.register
-    }[fragment];
-    if (section) {
-      section.nativeElement.scrollIntoView({ behavior: 'smooth'});
+  jumpToSection(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-
   }
 
   private showNextBannerItem(): void {
@@ -74,4 +67,3 @@ export class LandingPageComponent implements OnInit {
     }
   }
 }
-
