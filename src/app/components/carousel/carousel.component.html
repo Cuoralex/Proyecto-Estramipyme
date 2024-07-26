@@ -40,19 +40,14 @@
       <div class="carousel-slide">
         <div class="banner-item w-full h-full flex flex-col justify-center items-center">
           <img src="../../../../2024-Estramipyme.jpg" alt="Estramipyme 2024">
-          <span>Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento empresarial!</span>
+          <span>Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento
+            empresarial!</span>
         </div>
       </div>
     </div>
     <div class="carousel-pagination">
-      <span class="pagination-dot" id="dot-0" (click)="goToSlide(0)"></span>
-      <span class="pagination-dot" id="dot-1" (click)="goToSlide(1)"></span>
-      <span class="pagination-dot" id="dot-2" (click)="goToSlide(2)"></span>
-      <span class="pagination-dot" id="dot-3" (click)="goToSlide(3)"></span>
-      <span class="pagination-dot" id="dot-4" (click)="goToSlide(4)"></span>
-      <span class="pagination-dot" id="dot-5" (click)="goToSlide(5)"></span>
-      <span class="pagination-dot" id="dot-6" (click)="goToSlide(6)"></span>
+      <span class="pagination-dot" *ngFor="let dot of paginationDots; let i = index" [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"></span>
     </div>
   </div>
-</section> 
-
+</section>
