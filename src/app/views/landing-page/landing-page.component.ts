@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { LoginComponent } from '../../components/login/login.component';
 // import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
+=======
+import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { LoginComponent } from '../../components/login/login.component';
+// import { RegisterComponent } from '../../components/register/register.component';
+import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
+import { LoginUsersComponent } from '../../components/login-users/login-users.component';
+import { RegisterComponent } from "../../components/register-users/register-users.component";
+import { CarouselComponent } from "../../components/carousel/carousel.component";
+>>>>>>> Dev-Angela
 
 @Component({
   selector: 'app-landingpage',
@@ -12,6 +23,7 @@ import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navb
     RegisterComponent,
     NavbarLandingpageComponent,
     LoginUsersComponent,
+    CarouselComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

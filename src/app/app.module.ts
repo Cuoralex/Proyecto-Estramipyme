@@ -24,6 +24,9 @@ import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-l
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { RegisterComponent } from './components/register-users/register-users.component';
 import { LoginUsersComponent } from './components/login-users/login-users.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { LoginUsersComponent } from './components/login-users/login-users.compon
     HeaderDashboardComponent,
     LoginUsersComponent,
     RegisterComponent,
+    CarouselComponent,
     DashboardAdministratorComponent,
     DashboarManagerComponent,
     DashboardClientComponent,
