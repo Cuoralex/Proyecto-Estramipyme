@@ -1,0 +1,27 @@
+<section id="events" class="p-8">
+    <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+        <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5 cursor-pointer" (click)="toggleCard(card)" *ngFor="let card of cards">
+          <div class="w-full h-64 bg-top bg-cover rounded-t" [ngStyle]="{'background-image': 'url(' + card.image + ')'}"></div>
+          <div class="flex flex-col w-full md:flex-row">
+            <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+              <div class="md:text-3xl">{{ card.month }}</div>
+              <div class="md:text-6xl">{{ card.day }}</div>
+              <div class="md:text-xl">{{ card.time }}</div>
+            </div>
+            <div class="p-4 font-normal text-gray-800 md:w-3/4" *ngIf="card.showDetails">
+              <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">{{ card.title }}</h1>
+              <p class="leading-normal">{{ card.description }}</p>
+              <div class="flex flex-row items-center mt-4 text-gray-700">
+                <div class="w-1/2">{{ card.location }}</div>
+                <div class="w-1/2 flex justify-end">
+                  <img [src]="card.logo" alt="" class="w-8">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
