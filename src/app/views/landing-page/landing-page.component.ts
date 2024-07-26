@@ -18,26 +18,28 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 })
 
 export class LandingPageComponent implements OnInit {
-  activeRoute: ActivatedRoute = inject(ActivatedRoute);
+  activeRoute: ActivatedRoute = inject(ActivatedRoute); // <----Pertenece a fragments
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
-  
+
+//    v  Pertenece a fragments  
   @ViewChild('about') about!: ElementRef;
   @ViewChild('services') services!: ElementRef;
   @ViewChild('plans') plans!: ElementRef;
   @ViewChild('events') events!: ElementRef;
   @ViewChild('contacts') contacts!: ElementRef;
   @ViewChild('register') register!: ElementRef;
-  
-  constructor() {}
 
+//     ^ Pertenece a fragments
+  constructor() {}
+//   v Pertenece a fragments
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((fragment) => {
       if (fragment) {
         this.jumpToSection(fragment);
       }
     });
-
+//    ^ Pertenece a fragments
     const bannerContainer = document.getElementById('bannerContainer');
     if (bannerContainer) {
       this.bannerItems = bannerContainer.querySelectorAll('.banner-item') as NodeListOf<HTMLElement>;
@@ -51,13 +53,15 @@ export class LandingPageComponent implements OnInit {
       setInterval(() => this.showNextBannerItem(), 3000); // Change every 3 seconds
     }
   }
-
+//  v --- pertenece a fragments
   jumpToSection(fragment: string): void {
     const element = document.getElementById(fragment);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  //   ^ --- pertenece a fragments
 
   private showNextBannerItem(): void {
     if (this.bannerItems.length > 0) {

@@ -40,7 +40,7 @@ export class AppComponent {
     '/inicio#contacts',
     '/inicio#register'
   ];
-
+//    ^ - Pertenece a fragments
   constructor(private router:Router){}
   
   routes = [
