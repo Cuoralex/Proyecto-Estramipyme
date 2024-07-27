@@ -191,22 +191,25 @@
  
   /*REGISTRO Y LOGIN*/
 
-  .flex-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
+  // .flex-container {
+  //   display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    // gap: 20px;
   
-    // Aplica estilos a los hijos (componentes) para que tengan la misma dimensión
-    & > * {
-      flex: 1;
-      max-width: 300px; // Ajusta el ancho máximo según sea necesario
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-  }
+  
+  //   // Aplica estilos a los hijos (componentes) para que tengan la misma dimensión
+  //   & > * {
+  //     flex: 1;
+  //     max-width: 300px; // Ajusta el ancho máximo según sea necesario
+  //     background-color: #fff;
+  //     padding: 20px;
+  //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  //     border-radius: 8px;
+  //   }
+  // }
+
+  
   
   
   /** Form Section **/
