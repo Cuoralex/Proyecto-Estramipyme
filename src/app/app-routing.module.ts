@@ -4,7 +4,7 @@ import { LandingPageComponent } from './views/landing-page/landing-page.componen
 import { RegisterComponent } from './components/register-users/register-users.component';
 import { FormComponent } from './views/form/form.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
-import { LoginUsersComponent } from './components/login-users/login-users.component';
+import { LoginUsersComponent } from './components/login/login.component';
 
 
 const routes: Routes =[

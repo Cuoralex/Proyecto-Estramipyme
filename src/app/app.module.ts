@@ -23,7 +23,7 @@ import { UsersManagerComponent } from './views/dashboard/pages/users/users-manag
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { RegisterComponent } from './components/register-users/register-users.component';
-import { LoginUsersComponent } from './components/login-users/login-users.component';
+import { LoginComponent } from './components/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 
@@ -37,7 +37,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     RouterModule,
     HeaderLandingpageComponent,
     HeaderDashboardComponent,
-    LoginUsersComponent,
+    LoginComponent,
     RegisterComponent,
     CarouselComponent,
     DashboardAdministratorComponent,

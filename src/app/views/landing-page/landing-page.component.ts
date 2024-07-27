@@ -10,7 +10,7 @@ import { RegisterComponent } from '../../components/register-users/register-user
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 
 
-import { LoginComponent } from '../../components/login/login.component';
+import { LoginComponent } from '../../components/login-M/login.component';
 // import { RegisterComponent } from '../../components/register/register.component';
 
 

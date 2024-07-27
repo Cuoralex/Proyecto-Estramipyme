@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
@@ -8,8 +8,8 @@ import { LoginService } from '../../services/login.service';
   selector: 'app-login',
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
+    CommonModule
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
@@ -17,10 +17,10 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginService:LoginService) {
-    this.loginForm = this.formBuilder.group({
-      email: ['alexa@gmail.com', [Validators.email, Validators.required]],
-      password: ['', [Validators.required]]
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
     });
   }
 
@@ -28,16 +28,29 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value)
-      this.router.navigateByUrl("inicio");
-      this.loginForm.reset(); 
-    } else {
-      this.loginForm.markAllAsTouched();
-      alert("Error al ingresar los datos");
+      const { email, password } = this.loginForm.value;
+      const storedData = JSON.parse(localStorage.getItem('formValue') || '[]');
+
+      console.log('Stored Data:', storedData);
+
+      // Buscar el usuario en los datos almacenados
+      const user = storedData.find((user: any) =>
+        (user.naturalPersonEmail && user.naturalPersonEmail === email && user.naturalPersonPassword === password) ||
+        (user.legalPersonEmail && user.legalPersonEmail === email && user.legalPersonPassword === password)
+      );
+
+      if (user) {
+        this.loginService.login(this.loginForm.value);
+        this.router.navigate(['/inicio']); // Redirigir a la página principal
+        this.loginForm.reset(); 
+      } else {
+        this.loginForm.markAllAsTouched();
+        alert("Error al ingresar los datos");
+      }
     }
   }
 
-  get email(){
+  get email() {
     return this.loginForm.get('email');
   }
 
