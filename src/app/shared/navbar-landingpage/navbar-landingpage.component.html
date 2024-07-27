@@ -41,8 +41,10 @@
             <li><a class="text-sm text-gray-400 hover:text-blue-500" [routerLink]="[]" fragment="events">Eventos</a></li>
 			<li><a class="text-sm text-gray-400 hover:text-blue-500" [routerLink]="[]" fragment="contact">Contáctanos</a></li>
 		</ul>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-50 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" [routerLink]="[]" fragment="register">Registro</a>
-		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-50 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" [routerLink]="[]" fragment="register">Login</a>
+		<div class="mt-auto flex items-center space-x-4">
+			<a class="inline-block py-2 px-6 bg-blue-600 hover:bg-blue-700 text-sm text-white font-bold rounded-xl transition duration-200" [routerLink]="[]" fragment="register">Registro</a>
+			<a class="inline-block py-2 px-6 bg-blue-600 hover:bg-blue-700 text-sm text-white font-bold rounded-xl transition duration-200" [routerLink]="[]" fragment="register">Login</a>
+		</div>  
 	</nav>
 	<div class="navbar-menu relative z-50 hidden">
 		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -80,7 +82,7 @@
 			</div>
 			<div class="mt-auto">
 				<div class="pt-6">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded-xl" [routerLink]="[]" fragment="register">Registro</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700 rounded-xl" [routerLink]="[]" fragment="register">Registro</a>
 					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center text-white font-semibold leading-none bg-blue-600 hover:bg-blue-700  rounded-xl" [routerLink]="[]" fragment="register">Login</a>
 				</div>
 				<p class="my-4 text-xs text-center text-gray-400">
