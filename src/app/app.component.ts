@@ -10,7 +10,7 @@ import { DashboardClientComponent } from './views/dashboard/layout/dashboard-cli
 import { DashboarManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { FooterLandingpageComponent } from "./shared/footer-landingpage/footer-landingpage.component";
-import { LoginComponent } from './components/login-M/login.component';
+import { LoginComponent } from './components/login/login.component';
 
 @Component({
     selector: 'app-root',
