@@ -1,7 +1,7 @@
 //Angular
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
@@ -23,7 +23,7 @@ import { UsersManagerComponent } from './views/dashboard/pages/users/users-manag
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashboard/footer-dashboard.component';
 import { RegisterComponent } from './components/register-users/register-users.component';
-import { LoginUsersComponent } from './components/login-users/login-users.component';
+import { LoginComponent } from './components/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 
@@ -37,7 +37,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     RouterModule,
     HeaderLandingpageComponent,
     HeaderDashboardComponent,
-    LoginUsersComponent,
+    LoginComponent,
     RegisterComponent,
     CarouselComponent,
     DashboardAdministratorComponent,
@@ -60,7 +60,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     HttpClientModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers:[],
+    providers:[],
 })
 export class AppModule {
   

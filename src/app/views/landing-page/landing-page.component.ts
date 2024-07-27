@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { LoginComponent } from '../../components/login/login.component';
+
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+
 // import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
-import { LoginUsersComponent } from '../../components/login-users/login-users.component';
-import { RegisterComponent } from "../../components/register-users/register-users.component";
+
+import { RouterModule, ActivatedRoute } from '@angular/router';
+import { EventsComponent } from "../dashboard/pages/events/events.component";
+import { RegisterComponent } from '../../components/register-users/register-users.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 
@@ -13,6 +15,7 @@ import { SwitcherComponent } from '../../components/switcher/app-switcher.compon
   standalone: true,
   imports: [
     LoginComponent,
+    RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
     LoginUsersComponent,
@@ -22,12 +25,20 @@ import { SwitcherComponent } from '../../components/switcher/app-switcher.compon
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
+
 export class LandingPageComponent implements OnInit {
+  activeRoute: ActivatedRoute = inject(ActivatedRoute); // <----Pertenece a fragments
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
   showLogin = true;
 
   ngOnInit(): void {
+    this.activeRoute.fragment.subscribe((fragment) => {
+      if (fragment) {
+        this.jumpToSection(fragment);
+      }
+    });
+//    ^ Pertenece a fragments
     const bannerContainer = document.getElementById('bannerContainer');
     if (bannerContainer) {
       this.bannerItems = bannerContainer.querySelectorAll('.banner-item') as NodeListOf<HTMLElement>;
@@ -41,6 +52,15 @@ export class LandingPageComponent implements OnInit {
       setInterval(() => this.showNextBannerItem(), 3000); // Change every 3 seconds
     }
   }
+//  v --- pertenece a fragments
+  jumpToSection(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  //   ^ --- pertenece a fragments
 
   private showNextBannerItem(): void {
     if (this.bannerItems.length > 0) {
