@@ -64,9 +64,9 @@ export class AppComponent {
       }
     ];
 
-      isLandingPage(): boolean {
-    return this.allowedRoutes.some(route => this.router.url === route);
-  }
+    isLandingPage(): boolean {
+      return this.allowedRoutes.some(route => this.router.url.includes(route));
+    }
 
     
       trackByPath(index: number, route: any): string {

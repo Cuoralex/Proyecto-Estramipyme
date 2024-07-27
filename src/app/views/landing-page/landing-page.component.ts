@@ -1,23 +1,22 @@
-<<<<<<< HEAD
+
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
-import { LoginComponent } from '../../components/login/login.component';
+
 // import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
-<<<<<<< HEAD
+
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { EventsComponent } from "../dashboard/pages/events/events.component";
-=======
-=======
-import { Component, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { RegisterComponent } from '../../components/register-users/register-users.component';
+import { CarouselComponent } from "../../components/carousel/carousel.component";
+
+
 import { LoginComponent } from '../../components/login/login.component';
 // import { RegisterComponent } from '../../components/register/register.component';
-import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
-import { LoginUsersComponent } from '../../components/login-users/login-users.component';
-import { RegisterComponent } from "../../components/register-users/register-users.component";
-import { CarouselComponent } from "../../components/carousel/carousel.component";
->>>>>>> Dev-Angela
->>>>>>> e1c681ead82eef1f1c74197bf3b679bb48625522
+
+
+
+
+
 
 @Component({
   selector: 'app-landingpage',
@@ -27,12 +26,8 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
     RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
-<<<<<<< HEAD
-    EventsComponent
-=======
-    LoginUsersComponent,
+    EventsComponent,
     CarouselComponent
->>>>>>> e1c681ead82eef1f1c74197bf3b679bb48625522
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

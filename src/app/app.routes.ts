@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { LoginUsersComponent } from './components/login-users/login-users.component';
+
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register-users/register-users.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { FormComponent } from './views/form/form.component';
+import { LoginComponent } from './components/login/login.component';
 // import { AuthGuard } from './guards/auth.guard';
 // import { RoleGuard } from './guards/role.guard';
 // import { Role } from './role.enum';
