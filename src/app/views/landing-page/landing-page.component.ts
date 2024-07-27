@@ -6,6 +6,7 @@ import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navb
 import { LoginUsersComponent } from '../../components/login-users/login-users.component';
 import { RegisterComponent } from "../../components/register-users/register-users.component";
 import { CarouselComponent } from "../../components/carousel/carousel.component";
+import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 
 @Component({
   selector: 'app-landingpage',
@@ -15,20 +16,22 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
     RegisterComponent,
     NavbarLandingpageComponent,
     LoginUsersComponent,
-    CarouselComponent
-],
+    CarouselComponent,
+    SwitcherComponent
+  ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
+  showLogin = true;
 
   ngOnInit(): void {
     const bannerContainer = document.getElementById('bannerContainer');
     if (bannerContainer) {
       this.bannerItems = bannerContainer.querySelectorAll('.banner-item') as NodeListOf<HTMLElement>;
-      
+
       // Initialize: Hide all items except the first one
       for (let i = 1; i < this.bannerItems.length; i++) {
         this.bannerItems[i].style.opacity = '0';
@@ -45,5 +48,9 @@ export class LandingPageComponent implements OnInit {
       this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length;
       this.bannerItems[this.currentIndex].style.opacity = '1';
     }
+  }
+
+  toggleView() {
+    this.showLogin = !this.showLogin;
   }
 }
