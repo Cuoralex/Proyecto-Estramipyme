@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
+import { LoginUsersComponent } from './components/login-users/login-users.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/register-users/register-users.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { FormComponent } from './views/form/form.component';
 // import { AuthGuard } from './guards/auth.guard';
@@ -12,7 +12,7 @@ export const routes: Routes =[
     {path: '', redirectTo:'/inicio', pathMatch:'full'},
     {path: 'inicio', component:LandingPageComponent},
     {path: 'iniciar-sesion', component:LoginComponent},
-    {path:'register', component:RegisterComponent},
+    {path:'registro', component:RegisterComponent},
     {path: 'form', component:FormComponent},
     { 
       path:'dashboard-administrador',
