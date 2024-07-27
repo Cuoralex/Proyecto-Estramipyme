@@ -4,6 +4,9 @@ import { LandingPageComponent } from './views/landing-page/landing-page.componen
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { FormComponent } from './views/form/form.component';
+// import { AuthGuard } from './guards/auth.guard';
+// import { RoleGuard } from './guards/role.guard';
+// import { Role } from './role.enum';
 
 export const routes: Routes =[
     {path: '', redirectTo:'/inicio', pathMatch:'full'},

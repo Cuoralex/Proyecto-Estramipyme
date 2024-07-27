@@ -3,6 +3,7 @@ import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
+import { EventsComponent } from "../dashboard/pages/events/events.component";
 
 @Component({
   selector: 'app-landingpage',
@@ -12,7 +13,8 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
     RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
-  ],
+    EventsComponent
+],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
