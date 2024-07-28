@@ -23,7 +23,7 @@ interface Card {
   styleUrls: ['./events.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EventsComponent {
+export default class EventsComponent {
   cards: Card[] = [
     {
       image: 'https://www.si.com/.image/t_share/MTY4MTkyMjczODM4OTc0ODQ5/cfp-trophy-deitschjpg.jpg',

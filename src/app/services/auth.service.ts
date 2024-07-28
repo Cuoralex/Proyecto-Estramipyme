@@ -1,37 +1,71 @@
-// import { Injectable } from '@angular/core';
-// import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-//   private currentUserRole: Role = Role.Client; // Simulación de rol actual del usuario
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  private userRole: string;
 
-//   constructor(private router: Router) {}
+  constructor() {
+    // Simular un rol de usuario
+    this.userRole = 'admin'; // cambiar según sea necesario para pruebas
+  }
 
-//   // Método para obtener el rol del usuario actual
-//   getCurrentUserRole(): Role {
-//     return this.currentUserRole;
-//   }
+  isAdmin(): boolean {
+    return this.userRole === 'admin';
+  }
 
-//   // Método para verificar si el usuario tiene un rol específico
-//   hasRole(role: Role): boolean {
-//     return this.currentUserRole === role;
-//   }
+  isManager(): boolean {
+    return this.userRole === 'manager';
+  }
 
-//   // Método para verificar si el usuario tiene acceso a una lista de roles
-//   hasAccess(roles: Role[]): boolean {
-//     return roles.includes(this.currentUserRole);
-//   }
+  isClient(): boolean {
+    return this.userRole === 'client';
+  }
 
-//   // Método de inicio de sesión simulado
-//   login(role: Role) {
-//     this.currentUserRole = role;
-//   }
+  getUserRole(): string {
+    return this.userRole;
+  }
+}
 
-//   // Método de cierre de sesión
-//   logout() {
-//     this.currentUserRole = Role.Client;
-//     this.router.navigate(['/login']);
-//   }
-// }
+@Injectable({ providedIn: 'root' })
+export class AdminGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    if (this.authService.isAdmin()) {
+      return true;
+    } else {
+      this.router.navigate(['/client-dashboard']);
+      return false;
+    }
+  }
+}
+
+@Injectable({ providedIn: 'root' })
+export class ManagerGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    if (this.authService.isManager()) {
+      return true;
+    } else {
+      this.router.navigate(['/client-dashboard']);
+      return false;
+    }
+  }
+}
+
+@Injectable({ providedIn: 'root' })
+export class ClientGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(): boolean {
+    if (this.authService.isClient()) {
+      return true;
+    } else {
+      this.router.navigate(['/client-dashboard']);
+      return false;
+    }
+  }
+}
+

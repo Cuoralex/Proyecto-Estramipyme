@@ -5,12 +5,13 @@ import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core'
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { EventsComponent } from "../dashboard/pages/events/events.component";
-import { RegisterComponent } from '../../components/register-users/register-users.component';
+
+import { RegisterComponent } from '../../components/register/register.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 
 
 import { LoginComponent } from '../../components/login/login.component';
+import EventsComponent from '../dashboard/pages/events/events.component';
 // import { RegisterComponent } from '../../components/register/register.component';
 
 
