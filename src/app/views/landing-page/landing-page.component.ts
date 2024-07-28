@@ -11,13 +11,9 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
 
 
 import { LoginComponent } from '../../components/login/login.component';
-import EventsComponent from '../dashboard/pages/events/events.component';
+import EventsComponent from '../../components/events/events.component';
+
 // import { RegisterComponent } from '../../components/register/register.component';
-
-
-
-
-
 
 @Component({
   selector: 'app-landingpage',
