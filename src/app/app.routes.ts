@@ -60,6 +60,16 @@ export const routes: Routes =[
                     description: 'event',
                 },
             },
+            {
+                path:'metrics',
+                loadComponent: () =>
+                    import('./views/dashboard/pages/metrics/metrics.component'),
+                data: {
+                    icon:'metrics',
+                    title: 'metrics',
+                    description: 'metrics',
+                },
+            },
      ]
   },  
   { 

@@ -11,6 +11,7 @@ import GraphicsAdministratorComponent from "../../pages/graphics/graphics-admini
 import UsersAdministratorComponent from "../../pages/users/users-administrator/users-administrator.component";
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
+import MetricsComponent from '../../pages/metrics/metrics.component';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.c
     GraphicsAdministratorComponent,
     UsersAdministratorComponent,
     SidebarComponent,
-    FooterdashboardComponent
+    FooterdashboardComponent,
+    MetricsComponent,
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],

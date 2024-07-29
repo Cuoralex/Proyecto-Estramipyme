@@ -1,0 +1,15 @@
+{
+    "metrics": [
+      { "name": "Usuarios Activos", "value": 120 },
+      { "name": "Tiempo en la Web", "value": "3m 45s" },
+      { "name": "Tasa de Rebote", "value": "50%" },
+      { "name": "Conversiones", "value": 35 },
+      { "name": "Impresiones Landing Page", "value": 300 },
+      { "name": "Clics", "value": 180 },
+      { "name": "Registros", "value": 75 },
+      { "name": "Descargas", "value": 50 },
+      { "name": "Formulario Completado", "value": 45 },
+      { "name": "Consultas de Contacto", "value": 20 }
+    ]
+  }
+  
