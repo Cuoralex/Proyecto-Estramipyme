@@ -53,7 +53,7 @@ export const routes: Routes =[
             {
                 path:'event',
                 loadComponent: () =>
-                    import('./components/events/events.component'),
+                    import('./views/dashboard/pages/events-administrator/events-administrator.component'),
                 data: {
                     icon:'event',
                     title: 'event',

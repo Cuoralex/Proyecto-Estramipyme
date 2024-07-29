@@ -18,3 +18,16 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 }
 
+// import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+// export class InMemoryDataService implements InMemoryDbService {
+//   createDb() {
+//     const users = [
+//       { id: 1, typeOfPerson: 'natural', name: 'John Doe', email: 'john.doe@example.com' },
+//       // ... otros usuarios
+//     ];
+//     return { users };
+//   }
+// }
+
+

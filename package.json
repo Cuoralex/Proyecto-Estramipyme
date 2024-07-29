@@ -20,7 +20,6 @@
     "@angular/router": "^18.0.0",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.1",
-    "angular-highcharts": "^17.0.1",
     "angular-in-memory-web-api": "^0.18.0",
     "echarts": "^5.5.1",
     "exceljs": "^4.4.0",

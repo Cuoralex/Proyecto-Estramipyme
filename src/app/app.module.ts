@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
 import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashboard/header-dashboard.component';
 import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
@@ -26,9 +26,11 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import FormComponent from './views/form/form.component';
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
-import { UsersManagementComponent } from './views/dashboard/pages/users/users-manager/users-manager.component';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
+import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { InMemoryDataService } from './services/inmemorydata.service';
     GraphicsAdministratorComponent,
     GraphicsClientComponent,
     UsersAdministratorComponent,
-    UsersManagementComponent,
+    UsersManagerComponent,
     FormComponent,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),

@@ -4,6 +4,7 @@ import { CanActivate, Router } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private userRole: string;
+  hasAccess: any;
 
   constructor() {
     // Simular un rol de usuario

@@ -19,7 +19,7 @@ interface User {
   styleUrls: ['./users-manager.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class UsersManagementComponent implements OnInit {
+export default class UsersManagerComponent implements OnInit {
   users$: Observable<User[]> = new BehaviorSubject<User[]>([]).asObservable();
 
   constructor(private userService: UserService) {}
