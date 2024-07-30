@@ -1,15 +1,58 @@
 <div class="metrics-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-  <div *ngFor="let metric of metrics" class="metric-card bg-white text-black border border-gray-300 rounded-lg shadow-md p-4">
+  <!-- <div *ngFor="let metric of metrics" class="metric-card bg-white text-black border border-gray-300 rounded-lg shadow-md p-4">
     <p>Mostrar</p>
     <div class="metric-card-title font-semibold text-lg mb-2">{{ metric.name }}</div>
     <div class="metric-card-content">
       <h2 class="text-2xl">{{ metric.value }}</h2>
     </div>
   </div>
-</div>
-<div *ngFor="let metric of metrics">
-  <p>Mostrar</p>
-  <p>{{ metric.name }}: {{ metric.value }}</p>
-</div>
+</div> -->
 
-<!--Correr json-server --watch db.json -->
+<!-- <ul>
+  @for(metric of metrics; track metric.name){
+  <li>{{metric.name}}</li>
+  } @empty {
+  <li>There are no item.</li>
+  }
+</ul>-->
+
+<ul>
+  @for(metric of metrics; track metric.name){
+  <li>{{metric.name}}</li>
+  } @empty {
+  <li>There are no name.</li>
+  }
+</ul>
+
+<ul>
+  @for(metric of metrics; track metric.value){
+  <li>{{metric.value}}</li>
+  } @empty {
+  <li>There are no value.</li>
+  }
+</ul>
+
+<div class="metrics-container">
+  <h2>Lista de Métricas</h2>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar métrica..." [(ngModel)]="searchTerm" (input)="filterMetrics()">
+  </div>
+
+  <div class="metrics-list">
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortMetrics('name')">Nombre</th>
+          <th (click)="sortMetrics('value')">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let metric of filteredMetrics || metrics; trackBy: trackByName">
+          <td>{{ metric.name }}</td>
+          <td>{{ metric.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

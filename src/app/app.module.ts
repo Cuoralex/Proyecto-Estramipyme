@@ -60,7 +60,6 @@ import MetricsComponent from './views/dashboard/pages/metrics/metrics.component'
     NavbarLandingpageComponent,
     ReactiveFormsModule,
     MetricsComponent,
-    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

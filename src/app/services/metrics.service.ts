@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MetricsService {
-  private apiUrl = 'http://localhost:3000/metrics'; // URL de la API
+  public apiUrl = 'http://localhost:3000/metrics'; // Asegúrate de que esta URL es correcta
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  getMetrics(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
-    
+  getMetrics(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
+
 }
