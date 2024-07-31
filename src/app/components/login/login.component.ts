@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
       if (user) {
         this.loginService.login(this.loginForm.value);
-        this.router.navigate(['/inicio']); // Redirigir a la página principal
+        this.router.navigate(['formulario']); // Redirigir al formulario
         this.loginForm.reset(); 
       } else {
         this.loginForm.markAllAsTouched();

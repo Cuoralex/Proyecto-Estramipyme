@@ -5,7 +5,9 @@ import { DashboardAdministratorComponent } from './views/dashboard/layout/dashbo
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { LoginComponent } from './components/login/login.component';
-import FormComponent from './views/form/form.component';
+import { FormComponent } from './views/form/form.component';
+
+
 // import { AuthGuard } from './guards/auth.guard';
 // import { RoleGuard } from './guards/role.guard';
 // import { Role } from './role.enum';
@@ -15,41 +17,31 @@ export const routes: Routes =[
     {path: 'inicio', component:LandingPageComponent},
     {path: 'iniciar-sesion', component:LoginComponent},
     {path:'registro', component:RegisterComponent},
-    {path: 'form', component:FormComponent},
+    {path: 'formulario', component:FormComponent},
     { 
       path:'dashboard-administrador',
       component: DashboardAdministratorComponent,
       children: [
           {
-              path:'graphics-administrator',
+              path:'graphics-administrador',
               loadComponent: () =>
                   import('./views/dashboard/pages/graphics/graphics-administrator/graphics-administrator.component'),
               data: {
                   icon:'graphics',
-                  title: 'graphics-administrator',
-                  description: 'graphics-administrator',
+                  title: 'graphics-administrador',
+                  description: 'graphics-administrador',
               },
           },
           {
-              path:'users-administrator',
+              path:'users-administrador',
               loadComponent: () =>
                   import('./views/dashboard/pages/users/users-administrator/users-administrator.component'),
               data: {
-                  icon:'users-administrator',
-                  title: 'users-administrator',
+                  icon:'users-administrador',
+                  title: 'users-administrador',
                   description: 'users-administrador',
               },
           },
-          {
-            path:'form',
-            loadComponent: () =>
-                import('./views/form/form.component'),
-            data: {
-                icon:'users-administrator',
-                title: 'users-administrator',
-                description: 'users-administrador',
-            },
-            },
             {
                 path:'event',
                 loadComponent: () =>

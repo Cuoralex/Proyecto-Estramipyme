@@ -12,6 +12,8 @@ import UsersAdministratorComponent from "../../pages/users/users-administrator/u
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
 import MetricsComponent from '../../pages/metrics/metrics.component';
+import { MainComponent } from "../main/main.component";
+import EventsComponent from "../../../../components/events/events.component";
 
 
 @Component({
@@ -29,6 +31,8 @@ import MetricsComponent from '../../pages/metrics/metrics.component';
     SidebarComponent,
     FooterdashboardComponent,
     MetricsComponent,
+    MainComponent,
+    EventsComponent
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],

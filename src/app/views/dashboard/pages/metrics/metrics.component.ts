@@ -47,11 +47,11 @@ export default class MetricsComponent implements OnInit {
     });
   }
 
-  filterMetrics(): void {
-    this.filteredMetrics = this.metrics.filter(metric =>
-      metric.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
-  }
+  // filterMetrics(): void {
+  //   this.filteredMetrics = this.metrics.filter(metric =>
+  //     metric.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+  //   );
+  // }
 
   sortMetrics(by: string): void {
     this.filteredMetrics = [...this.filteredMetrics].sort((a, b) => {
@@ -60,4 +60,5 @@ export default class MetricsComponent implements OnInit {
       return 0;
     });
   }
-}
+  }
+

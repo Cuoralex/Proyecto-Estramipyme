@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export default class FormComponent {
+export class FormComponent {
 
 }
 

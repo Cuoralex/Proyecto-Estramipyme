@@ -1,50 +1,24 @@
 /* src/app/graphics-administrator/graphics-administrator.component.scss */
-:host {
-  display: block; /* Asegura que el host sea un contenedor bloque */
+:host{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* styles.css o styles.scss */
+body {
+  background: url('D:/Documents/Nodo EAFIT/Frontend/Reto frontend/Proyecto-Estramipyme/public/Dashboard3.jpg') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
-  padding: 1rem; /* Agrega espacio alrededor del contenido */
-  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
-  box-sizing: border-box; /* Incluye el padding en el cálculo de la altura total */
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-
-div {
-    margin: 15px;
-    background-color: rgb(200, 204, 212);
-    width: 100%;
-    height: 7vh;
-}
-
-/* src/app/dashboard/dashboard.component.css */
-.container {
-  margin: 20px;
-  height: max-content;
-  background-color: blueviolet;
-}
-
-
-.charts {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px; /* Espacio entre los gráficos */
-  padding: 20px;
-}
-
-.pie, .line {
-  flex: auto;
-  min-height: 33.3vh;
-  min-width: 33.3vh; /* Ancho mínimo para los gráficos */
-  background-color: #ffffff; /* Fondo blanco */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra a la izquierda */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-}
-
-.echart {
-  display:flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-gap: 20px;
- background-color: #ffffff;
-}
+// .main-container {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   width: 100vw;
+//   height: 100vh;
+// }
