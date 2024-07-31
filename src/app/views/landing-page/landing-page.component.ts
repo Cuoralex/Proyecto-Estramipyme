@@ -9,12 +9,13 @@ import { EventsComponent } from "../dashboard/pages/events/events.component";
 import { RegisterComponent } from '../../components/register-users/register-users.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
+import { LoginUsersComponent } from '../../components/login-users/login-users.component';
+
 
 @Component({
   selector: 'app-landingpage',
   standalone: true,
   imports: [
-    LoginComponent,
     RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
