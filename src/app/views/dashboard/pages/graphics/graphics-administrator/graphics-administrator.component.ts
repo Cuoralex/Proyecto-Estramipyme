@@ -20,7 +20,11 @@ export default class GraphicsAdministratorComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};
-onChangeInput: any;
+  onChangeInput: any = {};
+  chartOptions1: any = {};
+  chartOptions2: any = {};
+  chartOptions3: any = {};
+  chartOptions4: any = {};
   
   constructor() {}
   
@@ -114,6 +118,114 @@ onChangeInput: any;
           }
         ]
       }]
+    };
+    this.chartOptions1 = {
+      title: {
+        text: 'Tráfico Web'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'Visitas',
+          type: 'line',
+          data: [120, 200, 150, 80, 70, 110, 130]
+        },
+        {
+          name: 'Visitantes Únicos',
+          type: 'line',
+          data: [100, 180, 130, 60, 50, 90, 110]
+        }
+      ]
+    };
+    this.chartOptions2 = {
+      title: {
+        text: 'Comportamiento del Usuario'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'Duración Media de la Sesión',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20, 30]
+        },
+        {
+          name: 'Tasa de Rebote',
+          type: 'bar',
+          data: [15, 25, 16, 20, 18, 30, 25]
+        }
+      ]
+    };
+    this.chartOptions3 = {
+      title: {
+        text: 'Conversiones'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'Tasa de Conversión',
+          type: 'line',
+          data: [5, 10, 15, 20, 25, 30, 35]
+        },
+        {
+          name: 'Número de Conversiones',
+          type: 'line',
+          data: [50, 100, 150, 200, 250, 300, 350]
+        }
+      ]
+    };
+    this.chartOptions4 = {
+      title: {
+        text: 'Rendimiento del Contenido'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Página 1', 'Página 2', 'Página 3', 'Página 4', 'Página 5']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'Páginas Vistas',
+          type: 'bar',
+          data: [100, 200, 150, 300, 250]
+        },
+        {
+          name: 'Tasa de Salida',
+          type: 'bar',
+          data: [20, 15, 25, 10, 5]
+        }
+      ]
     };
   }
 }

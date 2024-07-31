@@ -12,7 +12,7 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   providers:[provideEcharts()],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GraphicsClientComponent implements OnInit {
+export default class GraphicsClientComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};

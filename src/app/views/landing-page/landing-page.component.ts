@@ -5,11 +5,11 @@ import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core'
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { EventsComponent } from "../dashboard/pages/events/events.component";
-import { RegisterComponent } from '../../components/register-users/register-users.component';
+
+import { RegisterComponent } from '../../components/register/register.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
-import { LoginUsersComponent } from '../../components/login-users/login-users.component';
+import { LoginComponent } from '../../components/login/login.component';
 
 
 @Component({
@@ -19,7 +19,7 @@ import { LoginUsersComponent } from '../../components/login-users/login-users.co
     RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
-    LoginUsersComponent,
+    LoginComponent,
     CarouselComponent,
     SwitcherComponent
   ],

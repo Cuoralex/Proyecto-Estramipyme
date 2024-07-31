@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginUsersComponent } from '../../components/login-users/login-users.component';
-import { RegisterComponent } from "../../components/register-users/register-users.component";
+import { LoginComponent } from '../../components/login/login.component';
+import { RegisterComponent } from "../../components/register/register.component";
 
 @Component({
   selector: 'app-switcher',
@@ -9,7 +9,7 @@ import { RegisterComponent } from "../../components/register-users/register-user
   imports: [
     CommonModule,
     RegisterComponent,
-    LoginUsersComponent,
+    LoginComponent,
   ],
   templateUrl: './app-switcher.component.html',
   styleUrls: ['./app-switcher.component.scss']
