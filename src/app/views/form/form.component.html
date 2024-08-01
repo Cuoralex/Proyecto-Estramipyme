@@ -33,7 +33,107 @@
   
       <label for="phone">Teléfono:</label><br>
       <input type="tel" id="phone" name="phone" required><br><br>
+
+      <label for="phone">Dirección:</label><br>
+      <input type="tel" id="phone" name="phone" required><br><br>
   
+      <!--Macroentorno-->
+  
+        <h2>Análisis macroentorno</h2>
+
+          <!-- Sección de Riesgos y Oportunidades -->
+
+            <div class="form-container">
+            <div class="two-columns">
+                <div class="column">
+                <h2>Riesgos</h2>
+                <div class="risk-container">
+                    <div *ngFor="let risk of risks" class="risk-item">
+                    <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
+                    <button type="button" (click)="removeRisk(risk.id)">-</button>
+                    </div>
+                </div>
+                <button type="button" class="add-button" (click)="addRisk()">+</button>
+                </div>
+                <div class="column">
+                <h2>Oportunidades</h2>
+                <div class="opportunity-container">
+                    <div *ngFor="let opportunity of opportunities" class="opportunity-item">
+                    <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
+                    <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
+                    </div>
+                </div>
+                <button type="button" class="add-button" (click)="addOpportunity()">+</button>
+                </div>
+            </div>
+            </div>
+
+          
+            <br><br><h2>Análisis industria o sector</h2>
+
+          <!-- Sección de Riesgos y Oportunidades -->
+          <div class="form-container">
+            <div class="two-columns">
+              <div class="column">
+                <h2>Riesgos</h2>
+                <div class="risk-container">
+                  <div *ngFor="let risk of risks" class="risk-item">
+                    <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
+                    <button type="button" (click)="removeRisk(risk.id)">-</button>
+                  </div>
+                </div>
+                <button type="button" class="add-button" (click)="addRisk()">+</button>
+              </div>
+              <div class="column">
+                <h2>Oportunidades</h2>
+                <div class="opportunity-container">
+                  <div *ngFor="let opportunity of opportunities" class="opportunity-item">
+                    <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
+                    <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
+                  </div>
+                </div>
+                <button type="button" class="add-button" (click)="addOpportunity()">+</button>
+              </div>
+            </div>
+          </div>
+
+    <!--Circulo Dorado-->
+    <div class="container">
+        <div class="form-column">
+            <div class="Circulo dorado">
+                <label for="porque">¿Por qué y/o para qué?:(propósito del negocio)</label><br>
+                <input type="text" id="porque" name="proposito del negocio" required><br><br>
+
+                <label for="como">¿Cómo?:(propuesta de valor)</label><br>
+                <input type="text" id="como" name="propuesta de valor" required><br><br>
+
+                <label for="que">¿Qué?:(productos y servicios)</label><br>
+                <input type="text" id="que" name="productos y servicios" required><br><br>
+            </div>
+        </div>
+        <div class="circle-column">
+            <div class="circle-container">
+                <div class="circle circle-inner">
+                    <div>¿Por qué y/o para qué?</div>
+                    <div class="arrow porque"></div>
+                </div>
+                <div class="circle circle-middle">
+                    <div>¿Cómo?</div>
+                    <div class="arrow como"></div>
+                </div>
+                <div class="circle circle-outer">
+                    <div>¿Qué?</div>
+                    <div class="arrow que"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+ 
+  
+
       <h2>Análisis Externo (Exploración)</h2>
       <label>Principales Factores Políticos:</label><br>
       <div class="checkbox-group">

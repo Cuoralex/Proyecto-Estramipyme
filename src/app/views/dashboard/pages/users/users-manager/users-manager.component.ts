@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../../services/user.service'; // Ajustar la ruta según sea necesario
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -17,8 +17,8 @@ interface User {
   ],
   templateUrl: './users-manager.component.html',
   styleUrls: ['./users-manager.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export default class UsersManagerComponent implements OnInit {
   users$: Observable<User[]> = new BehaviorSubject<User[]>([]).asObservable();
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MetricsService } from '../../../../services/metrics.service';
 import { FormsModule } from '@angular/forms';
 
@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
   ],
   templateUrl: './metrics.component.html',
   styleUrls: ['./metrics.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export default class MetricsComponent implements OnInit {
   metrics: any[] = [];
   filteredMetrics: any[] = [];

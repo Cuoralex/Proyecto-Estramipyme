@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MenuComponent } from "../../layout/menu/menu.component";
 
@@ -11,7 +11,6 @@ import { MenuComponent } from "../../layout/menu/menu.component";
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class SidebarComponent {

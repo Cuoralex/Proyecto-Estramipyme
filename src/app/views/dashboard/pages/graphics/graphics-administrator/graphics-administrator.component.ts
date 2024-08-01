@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 
 
@@ -13,7 +13,6 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   templateUrl: './graphics-administrator.component.html',
   styleUrl: './graphics-administrator.component.scss',
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class GraphicsAdministratorComponent implements OnInit {
  

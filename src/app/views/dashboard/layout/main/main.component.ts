@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import MetricsComponent from "../../pages/metrics/metrics.component";
 import GraphicsAdministratorComponent from "../../pages/graphics/graphics-administrator/graphics-administrator.component";
 import UsersAdministratorComponent from '../../pages/users/users-administrator/users-administrator.component';
@@ -15,6 +15,5 @@ import UsersAdministratorComponent from '../../pages/users/users-administrator/u
 ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainComponent { }

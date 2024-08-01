@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header-dashboard',
@@ -9,7 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   ],
   templateUrl: './header-dashboard.component.html',
   styleUrl: './header-dashboard.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderDashboardComponent {
 

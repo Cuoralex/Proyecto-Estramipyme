@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './footer-landingpage.component.html',
   styleUrl: './footer-landingpage.component.scss'
 })
+
 export class FooterLandingpageComponent {
 
 }

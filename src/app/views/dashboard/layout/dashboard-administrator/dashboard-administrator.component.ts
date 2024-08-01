@@ -1,5 +1,5 @@
 //Angular
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 //Proyecto
@@ -37,8 +37,8 @@ import EventsComponent from "../../../../components/events/events.component";
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.Default,
 })
+
 export class DashboardAdministratorComponent implements OnInit {
   
 
