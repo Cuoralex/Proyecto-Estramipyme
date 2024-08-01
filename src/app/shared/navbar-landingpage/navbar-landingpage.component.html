@@ -15,21 +15,30 @@
 		  </button>
 		</div>
 		<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-		  <div class="flex flex-shrink-0 items-center">
-			<a class="text-3xl font-bold leading-none" href="#">
-			  <img class="h-10" src="/logo_sintitulo.png" alt="logo">
-			</a>
-		  </div>
-		  <div class="hidden sm:ml-6 sm:block">
-			<div class="flex space-x-4">
-			  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-			  <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-bold text-white " aria-current="page">SOBRE NOSOTROS</a>
-			  <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">NUESTROS SERVICIOS</a>
-			  <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">RECURSOS</a>
-			  <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">PLANES</a>
+			<div class="flex flex-shrink-0 items-center">
+			  <a class="text-3xl font-bold leading-none" href="#">
+				<img class="h-10" src="/logo_sintitulo.png" alt="logo">
+			  </a>
+			</div>
+			<div class="hidden sm:ml-6 sm:block relative">
+			  <div class="flex space-x-4">
+				<!-- Menú desplegable -->
+				<div class="relative">
+				  <button (click)="toggleMenuSobrenosotros()" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-bold text-white focus:outline-none">
+					SOBRE NOSOTROS
+				  </button>
+				  <div *ngIf="menuOpenSobrenostros" class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¿Quienes somos?</a>
+					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenú 2</a>
+					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenú 3</a>
+				  </div>
+				</div>
+				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">NUESTROS SERVICIOS</a>
+				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">RECURSOS</a>
+				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">PLANES</a>
+			  </div>
 			</div>
 		  </div>
-		</div>
 		<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 			<a href="https://api.whatsapp.com/send?phone=573108992908" target="_blank" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
 				<span class="sr-only">Whatsapp</span>

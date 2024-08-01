@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 
 @Component({
@@ -10,9 +10,9 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   templateUrl: './graphics-client.component.html',
   styleUrl: './graphics-client.component.scss',
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GraphicsClientComponent implements OnInit {
+
+export default class GraphicsClientComponent implements OnInit {
   pieChartOptions: any = {};
   lineChartOptions: any = {};
   relojChartOptions: any = {};

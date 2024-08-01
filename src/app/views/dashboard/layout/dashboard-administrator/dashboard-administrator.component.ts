@@ -1,5 +1,5 @@
 //Angular
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
 //Proyecto
@@ -11,6 +11,9 @@ import GraphicsAdministratorComponent from "../../pages/graphics/graphics-admini
 import UsersAdministratorComponent from "../../pages/users/users-administrator/users-administrator.component";
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
+import MetricsComponent from '../../pages/metrics/metrics.component';
+import { MainComponent } from "../main/main.component";
+import EventsComponent from "../../../../components/events/events.component";
 
 
 @Component({
@@ -26,13 +29,16 @@ import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.c
     GraphicsAdministratorComponent,
     UsersAdministratorComponent,
     SidebarComponent,
-    FooterdashboardComponent
+    FooterdashboardComponent,
+    MetricsComponent,
+    MainComponent,
+    EventsComponent
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],
   providers:[provideEcharts()],
-  changeDetection: ChangeDetectionStrategy.Default,
 })
+
 export class DashboardAdministratorComponent implements OnInit {
   
 

@@ -1,8 +1,7 @@
-<main class="flex flex-row mt-16 mb-16">
-    <app-sidebar></app-sidebar>
-    <section class="ml-64 flex-grow p-8">
-        <app-graphics-administrator></app-graphics-administrator>
-        <app-users-administrator></app-users-administrator> 
-    </section>
-  </main>
-
+<app-header-dashboard></app-header-dashboard>
+<main class="h-[calc(100vh-120px)] w-full absolute top-14">
+  <!-- left sidebar -->
+   <app-sidebar></app-sidebar>
+  <!--Right main-->
+   <app-main></app-main>
+<app-footer-dashboard></app-footer-dashboard>

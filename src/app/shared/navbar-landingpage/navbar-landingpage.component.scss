@@ -6,3 +6,9 @@ nav a {
     font-family: 'Montserrat', sans-serif !important;
 }
 
+#menu {
+    display: none;
+  }
+#menu.show {
+    display: block;
+  }

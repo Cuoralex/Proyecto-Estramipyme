@@ -6,48 +6,13 @@
         <!-- Sección Hero -->
         <section class="bg-blue-600 text-white text-center py-20">
           
-      <!-- Banner -->
-      <section class="relative overflow-hidden w-full h-screen">
-        <div class="banner-container flex" id="bannerContainer">
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../intro.jpg" alt="intro" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">Impulsando el éxito desde 2020 hasta la revolución de Estratipyme en 2024</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2020-Capital_Semilla.jpg" alt="Concurso Capital Semilla" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2020, ¡destacamos en Concurso Capital Semilla! </p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../2020-Inmotion_group.jpg" alt="Premio Inmotion Group" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2020, ¡Reconocimiento internacional para egresados y sus ideas innovadoras!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2021-Noche_mejores.jpg" alt="Reconocimiento La Noche de los Mejores" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2021, ¡Comprometidos con la educación digital en Colombia!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2022-ongoing.jpg" alt="Lanzamiento On.going" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2022, ¡Comprometidos con impulsar el emprendimiento de impacto!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2023-100_startups.jpg" alt="Start-ups destacadas" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2023, ¡Posicionandonos entre las mejores start-ups de Colombia!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2024-Estramipyme.jpg" alt="Estramipyme 2024" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento empresarial!</p>
-          </div>
-        </div>
-    </section>
-    <h1 class="text-4xl font-bold">Evaluación y Mejora de Estrategias Empresariales</h1>
-      <p class="text-xl mt-4">Herramientas efectivas para todos.</p>
-      <button (click)="test()" class="mt-6 bg-white text-blue-600 py-2 px-4 rounded">Comienza tu evaluación gratuita hoy</button>
-  </section>
+      <!--Banner-->
+      <app-carousel></app-carousel>
 
-      <!-- Icono de Libro Flotante -->
+      <!-- Icono de Libro Flotante para el boton emergente-->
     <div class="fixed bottom-4 right-4">
       <button id="Libro">
-        <a href=#register>
+        <a [routerLink]="[]" fragment="register">
           <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
         </a>
       </button>
@@ -162,18 +127,10 @@
       </section>
       
 
-      <!-- Sección de Testimonios -->
+      <!-- Sección de eventos -->
       <section id="events" class="p-8">
-        <h2 class="text-3xl font-bold text-center">Eventos</h2>
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="flex flex-col items-center">
-            <p class="italic">"La herramienta ha mejorado significativamente nuestra estrategia empresarial." - Usuario 1</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <p class="italic">"El diagnóstico fue preciso y nos ayudó a identificar nuestras debilidades." - Usuario 2</p>
-          </div>
-        </div>
-    </section>
+        <app-events></app-events>
+      </section>
 
       <!-- Sección de Contacto -->
       <section id="contact" class="p-8 bg-gray-100">

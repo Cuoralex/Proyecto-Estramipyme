@@ -10,7 +10,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^18.0.0",
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
@@ -20,16 +19,17 @@
     "@angular/router": "^18.0.0",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.1",
-    "angular-highcharts": "^17.0.1",
+    "angular-in-memory-web-api": "^0.18.0",
     "echarts": "^5.5.1",
+    "exceljs": "^4.4.0",
     "highcharts": "^11.4.6",
     "highcharts-angular": "^4.0.0",
-    "js-xlsx": "^0.8.22",
     "ngx-echarts": "^18.0.0",
+    "pagedone": "^1.1.2",
     "rxjs": "~7.8.0",
     "sheetjs": "^2.0.0",
+    "swiper": "^11.1.7",
     "tslib": "^2.3.0",
-    "xlsx": "^0.18.5",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

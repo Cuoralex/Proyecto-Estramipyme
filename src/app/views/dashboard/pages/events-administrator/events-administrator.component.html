@@ -1,0 +1,13 @@
+<div>
+    <h2>Event Management</h2>
+    <button (click)="addEvent()">Add Event</button>
+    <ul>
+      <li *ngFor="let event of (events$ | async)">
+        <img [src]="event.photo" alt="Event Photo" width="50">
+        {{ event.date }} - {{ event.time }} - {{ event.description }}
+        <button (click)="editEvent(event)">Edit</button>
+        <button (click)="deleteEvent(event.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

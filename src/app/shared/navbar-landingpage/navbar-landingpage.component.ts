@@ -1,7 +1,7 @@
 
 
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
 import { SidebarComponent } from '../../views/dashboard/component/sidebar/sidebar.component';
@@ -9,7 +9,6 @@ import { SidebarComponent } from '../../views/dashboard/component/sidebar/sideba
 @Component({
   selector: 'app-navbar-landingpage',
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     RouterModule,
@@ -19,11 +18,19 @@ import { SidebarComponent } from '../../views/dashboard/component/sidebar/sideba
   styleUrls: ['./navbar-landingpage.component.scss']
 })
 export class NavbarLandingpageComponent {
+  menuOpen = false;
   isMenuOpen = false;
+  menuOpenSobrenostros = false;
 
   constructor() { }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  toggleMenuSobrenosotros() {
+    this.menuOpenSobrenostros = !this.menuOpenSobrenostros;
+  }
+
+  
 }
