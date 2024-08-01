@@ -4,12 +4,11 @@
       { "id":2, "name": "Tiempo en la Web", "value": "3m 45s" },
       { "id":3, "name": "Tasa de Rebote", "value": "50%" },
       { "id":4, "name": "Conversiones", "value": 35 },
-      { "id":5, "name": "Impresiones Landing Page", "value": 300 },
-      { "id":6, "name": "Clics", "value": 180 },
-      { "id":7, "name": "Registros", "value": 75 },
-      { "id":8, "name": "Descargas", "value": 50 },
-      { "id":9, "name": "Formulario Completado", "value": 45 },
-      { "id":10, "name": "Consultas de Contacto", "value": 20 }
+      { "id":5, "name": "Clics", "value": 180 },
+      { "id":6, "name": "Registros", "value": 75 },
+      { "id":7, "name": "Descargas", "value": 50 },
+      { "id":8, "name": "Formulario Completado", "value": 45 },
+      { "id":9, "name": "Consultas de Contacto", "value": 20 }
     ]
   }
   

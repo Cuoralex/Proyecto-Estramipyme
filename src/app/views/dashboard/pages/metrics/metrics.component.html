@@ -1,56 +1,9 @@
 <!--json-server --watch db.json --port 3000 -->       
 
-
-<!-- <div class="metrics-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-
-<div class="metrics-container">
-  <h2>Lista de Métricas</h2>
-
-  <div class="search-bar">
-    <input type="text" placeholder="Buscar métrica..." [(ngModel)]="searchTerm" (input)="filterMetrics()">
-  </div>-->
-
-  <div class="metrics-list">
-    <table>
-      <thead>
-        <tr>
-          <th (click)="sortMetrics('name')">Nombre</th>
-          <th (click)="sortMetrics('value')">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let metric of metrics">
-          <td>{{ metric.name }}</td>
-          <td>{{ metric.value }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  
-  
-  
-
-
-<!--<div class="metrics-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-  <div class="metric-card" *ngFor="let metric of metrics">
-    <h3>{{ metric.name[0] }}</h3>
-    <p>{{ metric.value[0] }}</p>
-  </div>
-</div>
-
 <div class="metrics-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
   <div class="metric-card" *ngFor="let metric of metrics">
-    <h3 class="font-bold">{{ metric.name[1] }}</h3>
-    <p class="text-gray-500">{{ metric.value[1] }}</p>
+    <h3>{{ metric.name }}</h3>
+    <p>{{ metric.value }}</p>
   </div>
-  <i class="fa-solid fa-users p-4 bg-gray-200 rounded-md"></i>
 </div>
 
-<div class="bg-slate-50 p-5 m-2 rounded-md flex justify-between items-center shadow">
-  <div>
-      <h3 class="font-bold">Total Users</h3>
-      <p class="text-gray-500">100</p>
-  </div>
-  <i class="fa-solid fa-users p-4 bg-gray-200 rounded-md"></i>
-</div> -->
