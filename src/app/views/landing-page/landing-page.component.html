@@ -4,7 +4,7 @@
   <app-navbar-landingpage></app-navbar-landingpage>
 
   <!-- Sección Hero -->
-  <section class="bg-blue-600 text-white text-center py-20">
+  <section class="Hero text-center py-20">
 
     <!-- Banner / Carousel -->
     <app-carousel></app-carousel>
@@ -20,8 +20,8 @@
 
     <!-- Sección Sobre Nosotros -->
     <section id="about" class="p-8">
-      <h2 class="text-3xl font-bold text-center">Sobre Nosotros</h2>
-      <p class="mt-4 text-center">Información sobre el área de estrategia de EAFIT y el equipo.</p>
+      <h2 class="text-3xl text-firstColor font-bold text-center">Sobre Nosotros</h2>
+      <p class="mt-4 text-paragraphColor font-semibold text-center">Información sobre el área de estrategia de EAFIT y el equipo.</p>
       <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
 
         <!-- Fotos del equipo, infografías sobre el proceso -->
@@ -38,22 +38,12 @@
     </section>
 
     <!-- Sección de Servicios -->
-    <section id="services" class="p-8 bg-gray-100">
-      <h2 class="text-3xl font-bold text-center">Nuestros Servicios</h2>
-      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="flex flex-col items-center">
-          <h3 class="text-2xl">Test Diagnóstico</h3>
-          <p class="mt-2">Descripción del test diagnóstico y sus beneficios.</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h3 class="text-2xl">Proceso Estratégico</h3>
-          <p class="mt-2">Explicación del proceso estratégico en pasos fáciles y ágiles.</p>
-        </div>
-      </div>
+    <section id="services" class="p-8 bg-firstColor flex-container">
+      <app-ourServices></app-ourServices>
     </section>
 
     <!-- Sección de Planes -->
-    <section id="plans" class="bg-gray-100 py-12">
+    <section id="plans" class="bg-thirdColor py-12">
       <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-extrabold text-center text-gray-800">Planes</h2>
         <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -130,7 +120,7 @@
 
 
     <!-- Sección de Registro -->
-    <section id="register" class="p-8 bg-gray-100 flex-container">
+    <section id="register" class="p-8 bg-thirdColor flex-container">
       <app-switcher></app-switcher>
     </section>
 

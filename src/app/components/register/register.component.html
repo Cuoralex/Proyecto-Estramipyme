@@ -1,5 +1,5 @@
 <section class="relative flex flex-col justify-center items-center">
-  <div class="p-6 w-96">
+  <div class="py-0 w-96">
     
     <form class="space-y-5 mt-5" [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="space-y-12">
@@ -7,7 +7,7 @@
   
           <div class="grid grid-cols-1 mt-2 gap-x-6 sm:grid-cols-2">
             <div class="sm:col-span-1">
-              <label for="TypeOfPerson" class="flex items-start text-sm font-medium leading-6 text-gray-900">Tipo de persona</label>
+              <label for="TypeOfPerson" class="flex items-start text-sm font-medium leading-6 text-thirdColor">Tipo de persona</label>
               <div class="mt-2">
                 <select id="TypeOfPerson" name="TypeOfPerson" formControlName="TypeOfPerson" autocomplete=""
                   class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600">
@@ -134,6 +134,34 @@
                 </div>
               </div>
             </div>
+
+            <!-- Dirección -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonAddress" formControlName="LegalPersonAddress"
+                id="LegalPersonAddress" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600">
+              <label for="LegalPersonAddress"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-600">Dirección</label>
+              <div *ngIf="LegalAddress?.invalid && (LegalAddress?.dirty || LegalAddress?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalAddress?.hasError('required')">La dirección es requerida.</div>
+              </div>
+            </div>
+
+            <!-- Telefono -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonPhone" formControlName="LegalPersonPhone"
+                id="LegalPersonPhone" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600">
+              <label for="LegalPersonPhone"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-600">Telefono</label>
+              <div *ngIf="LegalPhone?.invalid && (LegalPhone?.dirty || LegalPhone?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalPhone?.hasError('required')">El teléfono es requerido.</div>
+              </div>
+            </div>
   
             <!-- Correo Electrónico -->
             <div class="relative sm:col-span-1">
@@ -186,13 +214,13 @@
               <div class="grid grid-cols-1 gap-y-2">
                 <div class="flex items-center">
                   <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-3">
-                  <label for="freeAdvisory" class="text-xs font-medium leading-6 text-gray-900">
+                  <label for="freeAdvisory" class="asesoria text-xs font-medium leading-6 text-thirdColor">
                     ¿Quieres asesoría gratuita con estudiantes de pregrado?
                   </label>
                 </div>
                 <div class="flex items-center">
                   <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-3">
-                  <label for="paidAdvisory" class="text-xs font-medium leading-6 text-gray-900">
+                  <label for="paidAdvisory" class="asesoria text-xs font-medium leading-6 text-thirdColor">
                     ¿Prefieres asesoría con un profesor (con costo)?
                   </label>
                 </div>
@@ -219,6 +247,34 @@
                   <div *ngIf="NaturalPersonNames?.hasError('required')">El nombre es requerido.</div>
                 </div>
               </div>
+
+              <!-- Dirección -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="NaturalPersonAddress" formControlName="NaturalPersonAddress"
+                id="NaturalPersonAddress" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600">
+              <label for="NaturalPersonAddress"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-600">Dirección</label>
+              <div *ngIf="NaturalAddress?.invalid && (NaturalAddress?.dirty || NaturalAddress?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="NaturalAddress?.hasError('required')">La dirección es requerida.</div>
+              </div>
+            </div>
+
+            <!-- Telefono -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="NaturalPersonPhone" formControlName="NaturalPersonPhone"
+                id="NaturalPersonPhone" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600">
+              <label for="NaturalPersonPhone"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-600">Telefono</label>
+              <div *ngIf="NaturalPhone?.invalid && (NaturalPhone?.dirty || NaturalPhone?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="NaturalPhone?.hasError('required')">El teléfono es requerido.</div>
+              </div>
+            </div>
   
               <!-- Correo Electrónico -->
               <div class="relative sm:col-span-1">
@@ -271,13 +327,13 @@
             <div class="grid grid-cols-1 gap-y-2">
               <div class="flex items-center">
                 <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-2">
-                <label for="freeAdvisory" class="text-xs font-medium leading-6 text-gray-900">
+                <label for="freeAdvisory" class="asesoria text-xs font-medium leading-6 text-thirdColor">
                   ¿Quieres asesoría gratuita con estudiantes de pregrado?
                 </label>
               </div>
               <div class="flex items-center">
                 <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-2">
-                <label for="paidAdvisory" class="text-xs font-medium leading-6 text-gray-900">
+                <label for="paidAdvisory" class="asesoria text-xs font-medium leading-6 text-thirdColor">
                   ¿Prefieres asesoría con un profesor (con costo)?
                 </label>
               </div>

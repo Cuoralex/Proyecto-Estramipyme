@@ -3,12 +3,13 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+
 }
 
 .carousel-slide-wrapper {
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
   width: 100%;
   height: 100%;
 }
@@ -32,11 +33,29 @@
   width: 100%;
   height: 100%;
 
-  img {
+  .image-container {
+    position: relative;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    object-position: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .border-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 30px); // Ajusta el ancho para que sea más pequeño que la imagen
+      height: calc(100% - 30px); // Ajusta la altura para que sea más pequeña que la imagen
+      border: 3px solid #F25E3D; // Borde azul
+      box-sizing: content-box; // Asegura que el borde esté dentro del tamaño del contenedor
+      pointer-events: none; // Permite que las imágenes debajo sean interactivas
+    }
   }
 
   span {
@@ -74,7 +93,7 @@
   transition: background-color 0.3s ease;
 
   &.active {
-    background-color: #717171;
+    background-color: #F25E3D;
   }
 }
 
@@ -83,7 +102,7 @@
   .banner-item span {
     font-size: 1.1rem;
     padding: 8px 14px;
-    bottom: 20%; 
+    bottom: 20%;
     max-width: 85%;
   }
 
@@ -106,7 +125,7 @@
     .banner-item span {
       font-size: 0.9rem;
       padding: 4px;
-      bottom: 20%; 
+      bottom: 20%;
     }
 
     .pagination-dot {
@@ -125,7 +144,7 @@
       font-size: 0.7rem;
       padding: 4px;
       width: 80%;
-      bottom: 20%; 
+      bottom: 20%;
     }
 
     .pagination-dot {
@@ -134,4 +153,3 @@
     }
   }
 }
-

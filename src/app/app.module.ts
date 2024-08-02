@@ -27,7 +27,6 @@ import FormComponent from './views/form/form.component';
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
 import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -62,7 +61,6 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarLandingpageComponent,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers:[],

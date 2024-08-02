@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{html,ts}", // Agrega tus archivos de Angular
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        firstColor: '#020659', //Azul oscuro
+        secondColor: '#010001', //Negro
+        thirdColor: '#FEFFFE', //Blanco
+        fourthColor: '#CCAF01', //Amarillo
+        fifthColor: '#F25E3D', //Salmon
+        paragraphColor: '#2c3e50' //Gris Oscuro
+      },
+    },
   },
   plugins: [],
 }

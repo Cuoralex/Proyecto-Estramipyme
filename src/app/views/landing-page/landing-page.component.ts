@@ -10,6 +10,7 @@ import { RegisterComponent } from '../../components/register/register.component'
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { LoginComponent } from '../../components/login/login.component';
+import { ourServicesComponent } from "../../components/ourServices/ourServices.component";
 
 
 @Component({
@@ -21,8 +22,9 @@ import { LoginComponent } from '../../components/login/login.component';
     NavbarLandingpageComponent,
     LoginComponent,
     CarouselComponent,
-    SwitcherComponent
-  ],
+    SwitcherComponent,
+    ourServicesComponent
+],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })

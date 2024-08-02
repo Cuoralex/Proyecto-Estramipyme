@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule], // Asegúrate de importar CommonModule
+  imports: [CommonModule], 
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
