@@ -1,27 +1,118 @@
-# ProyectoEstramipyme
+# Proyecto Estramipyme
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+![Angular](https://img.shields.io/badge/Angular-18-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-4-blue)
+![SCSS](https://img.shields.io/badge/SCSS-3-pink)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Proyecto Estramipyme** es una aplicación web desarrollada en Angular 18 diseñada para gestionar las operaciones de una empresa, incluyendo dos tableros (dashboard) distintos para administradores y clientes, manejo de usuarios por parte de managers y administradores, y visualización de métricas de formularios llenados por los clientes.
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Dashboard del Administrador**: Visualización de métricas, gestión de usuarios y panel de control.
+- **Dashboard del Cliente**: Visualización de métricas personales y panel de control.
+- **Manejo de Usuarios**: Administradores y managers pueden gestionar usuarios.
+- **Métricas de Formularios**: Formularios llenados por clientes cuyas métricas son visibles para todos los roles.
+- **Registro de Usuarios**: Funcionalidad de registro de nuevos usuarios.
 
-## Build
+## Estructura del Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```plaintext
+ProyectoEstramipyme/
+├── e2e/                       
+├── node_modules/              
+├── src/                       
+│   ├── app/                   
+│   │   ├── core/              
+│   │   │   ├── auth/          
+│   │   │   ├── services/      
+│   │   │   └── guards/        
+│   │   ├── shared/            
+│   │   ├── features/          
+│   │   │   ├── admin-dashboard/
+│   │   │   ├── client-dashboard/
+│   │   │   ├── user-management/
+│   │   │   └── form-metrics/
+│   │   ├── layouts/            
+│   │   ├── models/             
+│   │   ├── app-routing.module.ts 
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   └── app.module.ts
+│   ├── assets/                 
+│   ├── environments/           
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss             
+│   └── test.ts
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
+└── tslint.json
+```
 
-## Running unit tests
+## Instalación
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/ProyectoEstramipyme.git
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd ProyectoEstramipyme
+    ```
+3. Instala las dependencias:
+    ```bash
+    npm install
+    ```
+4. Ejecuta la aplicación:
+    ```bash
+    ng serve
+    ```
 
-## Running end-to-end tests
+## Uso
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Accede a `http://localhost:4200` en tu navegador para ver la aplicación en funcionamiento.
+- Usa las credenciales proporcionadas para acceder a los diferentes tableros según tu rol.
 
-## Further help
+## Contribuir
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+¡Contribuciones son bienvenidas! Por favor sigue los pasos a continuación para contribuir:
+
+1. Haz un fork del proyecto.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza los cambios necesarios y haz commit (`git commit -m 'Agrega nueva característica'`).
+4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Contacto
+
+- **Autor**: Alexandra Cuartas Orozco
+- **Email**: jacuartaso@eafit.edu.co
+- **GitHub**: [Cuoralex](https://github.com/Cuoralex)
+
+- **Autor**: Angela Maria Mazo Correa
+- **Email**: ammazoc1@eafit.edu.co
+- **GitHub**: [AngelaMazoC](https://github.com/AngelaMazoC)
+
+- **Autor**: Geny Marcela Vargas Suarez
+- **Email**: gmvargass@eafit.edu.co
+- **GitHub**: [genyvarsua](https://github.com/genyvarsua)
+
+---
+
+¡Gracias por usar **Proyecto Estramipyme**! 💼✨
+```
