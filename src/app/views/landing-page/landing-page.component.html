@@ -1,191 +1,180 @@
- <body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
 
-      <!--Barra de navegación-->
-        <app-navbar-landingpage></app-navbar-landingpage>
+  <!--Barra de navegación-->
+  <app-navbar-landingpage></app-navbar-landingpage>
 
-        <!-- Sección Hero -->
-        <section class="bg-blue-600 text-white text-center py-20">
-          
-      <!-- Banner -->
-      <!-- <section class="relative overflow-hidden w-full h-screen">
-        <div class="banner-container flex" id="bannerContainer">
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../intro.jpg" alt="intro" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">Impulsando el éxito desde 2020 hasta la revolución de Estratipyme en 2024</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2020-Capital_Semilla.jpg" alt="Concurso Capital Semilla" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2020, ¡destacamos en Concurso Capital Semilla! </p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../2020-Inmotion_group.jpg" alt="Premio Inmotion Group" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2020, ¡Reconocimiento internacional para egresados y sus ideas innovadoras!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2021-Noche_mejores.jpg" alt="Reconocimiento La Noche de los Mejores" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2021, ¡Comprometidos con la educación digital en Colombia!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2022-ongoing.jpg" alt="Lanzamiento On.going" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2022, ¡Comprometidos con impulsar el emprendimiento de impacto!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2023-100_startups.jpg" alt="Start-ups destacadas" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">En 2023, ¡Posicionandonos entre las mejores start-ups de Colombia!</p>
-          </div>
-          <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-            <img src="../../../../2024-Estramipyme.jpg" alt="Estramipyme 2024" class="w-full h-full object-cover">
-            <p class="absolute bottom-10 text-white text-2xl">Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento empresarial!</p>
-          </div>
-        </div>
-      </section> -->
+  <!-- Sección Hero -->
+  <section class="Hero text-center py-20">
 
-      <app-carousel></app-carousel>
+    <!-- Banner / Carousel -->
+    <app-carousel></app-carousel>
 
-      <!-- Icono de Libro Flotante para el boton emergente-->
+    <!-- Icono de Libro Flotante para el boton emergente-->
     <div class="fixed bottom-4 right-4">
       <button id="Libro">
         <a [routerLink]="[]" fragment="register">
           <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
         </a>
       </button>
-    </div>
+    </div>  
 
-      <!-- Sección Sobre Nosotros -->
-      <section id="about" class="p-8">
-        <h2 class="text-3xl font-bold text-center">Sobre Nosotros</h2>
-        <p class="mt-4 text-center">Información sobre el área de estrategia de EAFIT y el equipo.</p>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="p-8">
+      <h2 class="text-3xl text-firstColor font-bold text-center">Sobre Nosotros</h2>
+      <p class="mt-4 text-paragraphColor font-semibold text-center">Información sobre el área de estrategia de EAFIT y el equipo.</p>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          <!-- Fotos del equipo, infografías sobre el proceso -->
-          <div class="flex justify-center">
-            <img src="equipo1.jpg" alt="Equipo 1" class="rounded-lg shadow-lg">
-          </div>
-          <div class="flex justify-center">
-            <img src="equipo2.jpg" alt="Equipo 2" class="rounded-lg shadow-lg">
-          </div>
-          <div class="flex justify-center">
-            <img src="equipo3.jpg" alt="Equipo 3" class="rounded-lg shadow-lg">
-          </div>
+        <!-- Fotos del equipo, infografías sobre el proceso -->
+        <div class="flex justify-center">
+          <img src="equipo1.jpg" alt="Equipo 1" class="rounded-lg shadow-lg">
         </div>
-      </section>
-
-      <!-- Sección de Servicios -->
-      <section id="services" class="p-8 bg-gray-100">
-        <h2 class="text-3xl font-bold text-center">Nuestros Servicios</h2>
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="flex flex-col items-center">
-            <h3 class="text-2xl">Test Diagnóstico</h3>
-            <p class="mt-2">Descripción del test diagnóstico y sus beneficios.</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <h3 class="text-2xl">Proceso Estratégico</h3>
-            <p class="mt-2">Explicación del proceso estratégico en pasos fáciles y ágiles.</p>
-          </div>
+        <div class="flex justify-center">
+          <img src="equipo2.jpg" alt="Equipo 2" class="rounded-lg shadow-lg">
         </div>
-      </section>
+        <div class="flex justify-center">
+          <img src="equipo3.jpg" alt="Equipo 3" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </section>
 
-      <!-- Sección de Planes -->
-      <section id="plans" class="bg-gray-100 py-12">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-4xl font-extrabold text-center text-gray-800">Planes</h2>
-          <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Plan Gratuito -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan Gratuito</h3>
-              <div class="mt-4">
-                <span class="text-5xl font-bold text-gray-900">Gratis</span>
-              </div>
-              <ul class="mt-6 space-y-2">
-                <li class="flex items-center justify-center">
-                  <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Acceso inmediato al cuestionario diagnóstico
-                </li>
-              </ul>
-              <div class="mt-8">
-                <a href="#" class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get Started</a>
-              </div>
+    <!-- Sección de Servicios -->
+    <section id="services" class="p-8 bg-firstColor flex-container">
+      <app-ourServices></app-ourServices>
+    </section>
+
+    <!-- Sección de Planes -->
+    <section id="plans" class="bg-thirdColor py-12">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center text-gray-800">Planes</h2>
+        <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Plan Gratuito -->
+          <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan Gratuito</h3>
+            <div class="mt-4">
+              <span class="text-5xl font-bold text-gray-900">Gratis</span>
             </div>
-      
-            <!-- Plan de Costo Moderado -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan de Costo Moderado</h3>
-              <div class="mt-4">
-                <span class="text-5xl font-bold text-gray-900">$39</span>
-                <span class="text-gray-600">/mes</span>
-              </div>
-              <ul class="mt-6 space-y-2">
-                <li class="flex items-center justify-center">
-                  <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Asistencia de un estudiante de pregrado y un profesor
-                </li>
-              </ul>
-              <div class="mt-8">
-                <a href="#" class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get Started</a>
-              </div>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center justify-center">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Acceso inmediato al cuestionario diagnóstico
+              </li>
+            </ul>
+            <div class="mt-8">
+              <a href="#"
+                class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get
+                Started</a>
             </div>
-      
-            <!-- Plan de Costo Alto -->
-            <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan de Costo Alto</h3>
-              <div class="mt-4">
-                <span class="text-5xl font-bold text-gray-900">$79</span>
-                <span class="text-gray-600">/mes</span>
-              </div>
-              <ul class="mt-6 space-y-2">
-                <li class="flex items-center justify-center">
-                  <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Asistencia directa de un profesor
-                </li>
-              </ul>
-              <div class="mt-8">
-                <a href="#" class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get Started</a>
-              </div>
+          </div>
+
+          <!-- Plan de Costo Moderado -->
+          <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan de Costo Moderado</h3>
+            <div class="mt-4">
+              <span class="text-5xl font-bold text-gray-900">$39</span>
+              <span class="text-gray-600">/mes</span>
+            </div>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center justify-center">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Asistencia de un estudiante de pregrado y un profesor
+              </li>
+            </ul>
+            <div class="mt-8">
+              <a href="#"
+                class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get
+                Started</a>
+            </div>
+          </div>
+
+          <!-- Plan de Costo Alto -->
+          <div class="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-2">Plan de Costo Alto</h3>
+            <div class="mt-4">
+              <span class="text-5xl font-bold text-gray-900">$79</span>
+              <span class="text-gray-600">/mes</span>
+            </div>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center justify-center">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                Asistencia directa de un profesor
+              </li>
+            </ul>
+            <div class="mt-8">
+              <a href="#"
+                class="block w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Get
+                Started</a>
             </div>
           </div>
         </div>
-      </section>
-      
-      
-      <!-- Sección de Registro -->
-      <section id="register" class="p-8 bg-gray-100 flex-container">
-        <app-register></app-register>
-        <app-login></app-login>
-      </section>
-      
-
-      <!-- Sección de eventos -->
-      <section id="events" class="p-8">
-        <app-events></app-events>
-      </section>
-
-      <!-- Sección de Contacto -->
-      <section id="contact" class="p-8 bg-gray-100">
-        <h2 class="text-3xl font-bold text-black text-center">Contáctanos</h2>
-        <form class="mt-4 mx-auto max-w-xl text-black " action="https://formsubmit.co/alexacuartas@gmail.com" method="POST">
-          <label for="block mb-2 ">Nombre completo:</label>
-          <input type="text" class="w-full p-2 text-black border rounded mb-4" nale="name"/>
-
-          <label for="block mb-2">Correo Electrónico:</label>
-          <input type="email" class="w-full p-2 text-black border rounded mb-4" name="email"/>
-
-          <label for="block mb-2">Asunto:</label>
-          <input type="text" class="w-full p-2 text-black border rounded mb-4" name="subject"/>
-
-          <label for="block mb-2">Mensaje:</label>
-          <textarea class="w-full p-2 text-black border rounded mb-4" id="coments"></textarea>
-          <button type="coments" class="bg-blue-600 text-black py-2 px-4 rounded" name="coments" >Envíanos un mensaje</button>
-          
-          <input type="hidden" name="_next" value="http://127.0.0.1:5501/src/app/views/form/form.component.html">
-          <input type="hidden" name="_captcha" value="false">
-        </form>
-      </section>
+      </div>
+    </section>
 
 
+    <!-- Sección de Registro -->
+    <section id="register" class="p-8 bg-thirdColor flex-container">
+      <app-switcher></app-switcher>
+    </section>
 
+
+    <!-- Sección de eventos -->
+    <!-- <section id="events" class="p-8">
+        <div class="mx-auto bg-gray-700 h-screen flex items-center justify-center px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <div class="flex flex-col w-full bg-white rounded shadow-lg sm:w-3/4 md:w-1/2 lg:w-3/5 cursor-pointer" onclick="toggleCard(this)">
+              <div class="w-full h-64 bg-top bg-cover rounded-t" style="background-image: url('https://www.si.com/.image/t_share/MTY4MTkyMjczODM4OTc0ODQ5/cfp-trophy-deitschjpg.jpg')"></div>
+              <div class="flex flex-col w-full md:flex-row">
+                <div class="flex flex-row justify-around p-4 font-bold leading-none text-gray-800 uppercase bg-gray-400 rounded md:flex-col md:items-center md:justify-center md:w-1/4">
+                  <div class="md:text-3xl">Jan</div>
+                  <div class="md:text-6xl">13</div>
+                  <div class="md:text-xl">7 pm</div>
+                </div>
+                <div class="hidden md:block p-4 font-normal text-gray-800 md:w-3/4">
+                  <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800">2020 National Championship</h1>
+                  <p class="leading-normal">The College Football Playoff (CFP) determines the national champion of the top division of college football. The format fits within the academic calendar and preserves the sport’s unique and compelling regular season.</p>
+                  <div class="flex flex-row items-center mt-4 text-gray-700">
+                    <div class="w-1/2">
+                      Mercedes-Benz Superdome
+                    </div>
+                    <div class="w-1/2 flex justify-end">
+                      <img src="https://collegefootballplayoff.com/images/section_logo.png" alt="" class="w-8">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="p-8 bg-gray-100">
+      <h2 class="text-3xl font-bold text-black text-center">Contáctanos</h2>
+      <form class="mt-4 mx-auto max-w-xl text-black " action="https://formsubmit.co/alexacuartas@gmail.com"
+        method="POST">
+        <label for="block mb-2 ">Nombre completo:</label>
+        <input type="text" class="w-full p-2 text-black border rounded mb-4" nale="name" />
+
+        <label for="block mb-2">Correo Electrónico:</label>
+        <input type="email" class="w-full p-2 text-black border rounded mb-4" name="email" />
+
+        <label for="block mb-2">Asunto:</label>
+        <input type="text" class="w-full p-2 text-black border rounded mb-4" name="subject" />
+
+        <label for="block mb-2">Mensaje:</label>
+        <textarea class="w-full p-2 text-black border rounded mb-4" id="coments"></textarea>
+        <button type="coments" class="bg-blue-600 text-black py-2 px-4 rounded" name="coments">Envíanos un
+          mensaje</button>
+
+        <input type="hidden" name="_next" value="http://127.0.0.1:5501/src/app/views/form/form.component.html">
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </section>

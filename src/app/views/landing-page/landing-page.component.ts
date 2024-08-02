@@ -8,23 +8,22 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 
 import { RegisterComponent } from '../../components/register/register.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
-
-
+import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { LoginComponent } from '../../components/login/login.component';
-import EventsComponent from '../../components/events/events.component';
+import { ourServicesComponent } from "../../components/ourServices/ourServices.component";
 
-// import { RegisterComponent } from '../../components/register/register.component';
 
 @Component({
   selector: 'app-landingpage',
   standalone: true,
   imports: [
-    LoginComponent,
     RouterModule,
     RegisterComponent,
     NavbarLandingpageComponent,
-    EventsComponent,
-    CarouselComponent
+    LoginComponent,
+    CarouselComponent,
+    SwitcherComponent,
+    ourServicesComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
@@ -34,18 +33,8 @@ export class LandingPageComponent implements OnInit {
   activeRoute: ActivatedRoute = inject(ActivatedRoute); // <----Pertenece a fragments
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
+  showLogin = true;
 
-//    v  Pertenece a fragments  
-  @ViewChild('about') about!: ElementRef;
-  @ViewChild('services') services!: ElementRef;
-  @ViewChild('plans') plans!: ElementRef;
-  @ViewChild('events') events!: ElementRef;
-  @ViewChild('contacts') contacts!: ElementRef;
-  @ViewChild('register') register!: ElementRef;
-
-//     ^ Pertenece a fragments
-  constructor() {}
-//   v Pertenece a fragments
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((fragment) => {
       if (fragment) {
@@ -56,7 +45,7 @@ export class LandingPageComponent implements OnInit {
     const bannerContainer = document.getElementById('bannerContainer');
     if (bannerContainer) {
       this.bannerItems = bannerContainer.querySelectorAll('.banner-item') as NodeListOf<HTMLElement>;
-      
+
       // Initialize: Hide all items except the first one
       for (let i = 1; i < this.bannerItems.length; i++) {
         this.bannerItems[i].style.opacity = '0';
@@ -82,5 +71,9 @@ export class LandingPageComponent implements OnInit {
       this.currentIndex = (this.currentIndex + 1) % this.bannerItems.length;
       this.bannerItems[this.currentIndex].style.opacity = '1';
     }
+  }
+
+  toggleView() {
+    this.showLogin = !this.showLogin;
   }
 }

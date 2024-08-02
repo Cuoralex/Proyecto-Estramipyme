@@ -9,8 +9,11 @@ import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashbo
 import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
 
 
+
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
+
 
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
@@ -27,7 +30,7 @@ import FormComponent from './views/form/form.component';
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
 import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselComponent,
     DashboardAdministratorComponent,
     DashboardManagerComponent,
+    DashboardManagerComponent,
     DashboardClientComponent,
     ExcelReaderComponent,
     SidebarComponent,
@@ -62,7 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarLandingpageComponent,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers:[],
@@ -70,7 +74,3 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppModule {
   
 }
-
-
-
-

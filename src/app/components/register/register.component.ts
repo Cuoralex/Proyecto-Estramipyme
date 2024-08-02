@@ -40,10 +40,14 @@ export class RegisterComponent {
   LegalPersonName: FormControl;
   LegalPersonCompanyName: FormControl;
   Sector: FormControl;
+  LegalPersonAddress: FormControl;
+  LegalPersonPhone: FormControl;
   LegalPersonEmail: FormControl;
   LegalPersonPassword: FormControl;
   LegalPersonConfirmPassword: FormControl;
   NaturalPersonName: FormControl;
+  NaturalPersonAddress: FormControl;
+  NaturalPersonPhone: FormControl;
   NaturalPersonEmail: FormControl;
   NaturalPersonPassword: FormControl;
   NaturalPersonConfirmPassword: FormControl;
@@ -60,12 +64,16 @@ export class RegisterComponent {
     this.LegalPersonName = new FormControl('');
     this.LegalPersonCompanyName = new FormControl('');
     this.Sector = new FormControl('');
+    this.LegalPersonAddress = new FormControl('');
+    this.LegalPersonPhone = new FormControl('');
     this.LegalPersonEmail = new FormControl('');
     this.LegalPersonPassword = new FormControl('');
     this.LegalPersonConfirmPassword = new FormControl('');
 
     // Persona Natural
     this.NaturalPersonName = new FormControl('');
+    this.NaturalPersonAddress = new FormControl('');
+    this.NaturalPersonPhone = new FormControl('');
     this.NaturalPersonEmail = new FormControl('');
     this.NaturalPersonPassword = new FormControl('');
     this.NaturalPersonConfirmPassword = new FormControl('');
@@ -80,10 +88,14 @@ export class RegisterComponent {
       LegalPersonName: this.LegalPersonName,
       LegalPersonCompanyName: this.LegalPersonCompanyName,
       Sector: this.Sector,
+      LegalPersonAddress: this.LegalPersonAddress,
+      LegalPersonPhone: this.LegalPersonPhone,
       LegalPersonEmail: this.LegalPersonEmail,
       LegalPersonPassword: this.LegalPersonPassword,
       LegalPersonConfirmPassword: this.LegalPersonConfirmPassword,
       NaturalPersonName: this.NaturalPersonName,
+      NaturalPersonAddress: this.NaturalPersonAddress,
+      NaturalPersonPhone: this.NaturalPersonPhone,
       NaturalPersonEmail: this.NaturalPersonEmail,
       NaturalPersonPassword: this.NaturalPersonPassword,
       NaturalPersonConfirmPassword: this.NaturalPersonConfirmPassword,
@@ -127,6 +139,14 @@ export class RegisterComponent {
     return this.registerForm.get('NaturalPersonName');
   }
 
+  get NaturalAddress(){
+    return this.registerForm.get('NaturalPersonAddress');
+  }
+
+  get NaturalPhone(){
+    return this.registerForm.get('NaturalPersonPhone');
+  }
+
   get NaturalEmail() {
     return this.registerForm.get('NaturalPersonEmail');
   }
@@ -160,6 +180,14 @@ export class RegisterComponent {
     return this.registerForm.get('LegalPersonEmail');
   }
 
+  get LegalAddress(){
+    return this.registerForm.get('LegalPersonAddress');
+  }
+
+  get LegalPhone(){
+    return this.registerForm.get('LegalPersonPhone');
+  }
+
   get LegalPassword() {
     return this.registerForm.get('LegalPersonPassword');
   }
@@ -170,16 +198,22 @@ export class RegisterComponent {
       this.registerForm.get('LegalPersonName')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonCompanyName')?.setValidators(Validators.required);
       this.registerForm.get('Sector')?.setValidators(Validators.required);
+      this.registerForm.get('LegalPersonAddress')?.setValidators(Validators.required);
+      this.registerForm.get('LegalPersonPhone')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonEmail')?.setValidators([Validators.required, Validators.email]);
       this.registerForm.get('LegalPersonPassword')?.setValidators([Validators.required]);
 
       this.registerForm.get('NaturalPersonName')?.clearValidators();
+      this.registerForm.get('NaturalPersonAddress')?.clearValidators();
+      this.registerForm.get('NaturalPersonPhone')?.clearValidators();
       this.registerForm.get('NaturalPersonEmail')?.clearValidators();
       this.registerForm.get('NaturalPersonPassword')?.clearValidators();
       this.registerForm.get('NaturalPersonConfirmPassword')?.clearValidators();
 
     } else if (value === PERSON_TYPE_NATURAL) {
       this.registerForm.get('NaturalPersonName')?.setValidators(Validators.required);
+      this.registerForm.get('NaturalPersonAddress')?.setValidators(Validators.required);
+      this.registerForm.get('NaturalPersonPhone')?.setValidators(Validators.required);
       this.registerForm.get('NaturalPersonEmail')?.setValidators([Validators.required, Validators.email]);
       this.registerForm.get('NaturalPersonPassword')?.setValidators([Validators.required]);
 
@@ -187,6 +221,8 @@ export class RegisterComponent {
       this.registerForm.get('LegalPersonName')?.clearValidators();
       this.registerForm.get('LegalPersonCompanyName')?.clearValidators();
       this.registerForm.get('Sector')?.clearValidators();
+      this.registerForm.get('LegalPersonAddress')?.clearValidators();
+      this.registerForm.get('LegalPersonPhone')?.clearValidators();
       this.registerForm.get('LegalPersonEmail')?.clearValidators();
       this.registerForm.get('LegalPersonPassword')?.clearValidators();
       this.registerForm.get('LegalPersonConfirmPassword')?.clearValidators();
@@ -196,11 +232,15 @@ export class RegisterComponent {
     this.registerForm.get('LegalPersonName')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonCompanyName')?.updateValueAndValidity();
     this.registerForm.get('Sector')?.updateValueAndValidity();
+    this.registerForm.get('LegalPersonAddress')?.updateValueAndValidity();
+    this.registerForm.get('LegalPersonPhone')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonEmail')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonPassword')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonConfirmPassword')?.updateValueAndValidity();
 
     this.registerForm.get('NaturalPersonName')?.updateValueAndValidity();
+    this.registerForm.get('NaturalPersonAddress')?.updateValueAndValidity();
+    this.registerForm.get('NaturalPersonPhone')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonEmail')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonPassword')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonConfirmPassword')?.updateValueAndValidity();
@@ -216,6 +256,8 @@ export class RegisterComponent {
       let dataToSend: RegisterData = {
         typeOfPerson: '',
         naturalPersonName: '',
+        NaturalPersonAddress: '',
+        NaturalPersonPhone: '',
         naturalPersonEmail: '',
         naturalPersonPassword: '',
         naturalPersonConfirmPassword: '',
@@ -225,6 +267,8 @@ export class RegisterComponent {
         legalPersonName: '',
         legalPersonCompanyName: '',
         sector: '',
+        LegalPersonAddress: '',
+        LegalPersonPhone: '',
         legalPersonEmail: '',
         legalPersonPassword: '',
         legalPersonConfirmPassword: '',
@@ -234,6 +278,8 @@ export class RegisterComponent {
         dataToSend = {
           typeOfPerson: formValue.TypeOfPerson,
           naturalPersonName: formValue.NaturalPersonName,
+          NaturalPersonAddress: formValue.NaturalPersonAddress,
+          NaturalPersonPhone: formValue.NaturalPersonPhone,
           naturalPersonEmail: formValue.NaturalPersonEmail,
           naturalPersonPassword: formValue.NaturalPersonPassword,
           naturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword,
@@ -247,6 +293,8 @@ export class RegisterComponent {
           legalPersonName: formValue.LegalPersonName,
           legalPersonCompanyName: formValue.LegalPersonCompanyName,
           sector: formValue.Sector,
+          LegalPersonAddress: formValue.LegalPersonAddress,
+          LegalPersonPhone: formValue.LegalPersonPhone,
           legalPersonEmail: formValue.LegalPersonEmail,
           legalPersonPassword: formValue.LegalPersonPassword,
           legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword,
