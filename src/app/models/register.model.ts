@@ -10,6 +10,10 @@ export interface RegisterData {
   legalPersonPassword?: string;
   legalPersonConfirmPassword?: string;
   naturalPersonName?: string;
+  NaturalPersonAddress?: string;
+  NaturalPersonPhone?: string;
+  LegalPersonAddress?: string;
+  LegalPersonPhone?: string;
   naturalPersonEmail?: string;
   naturalPersonPassword?: string;
   naturalPersonConfirmPassword?: string;

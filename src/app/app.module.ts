@@ -23,7 +23,7 @@ import { FormComponent } from './views/form/form.component';
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
 import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
 import { provideHttpClient } from '@angular/common/http';
@@ -43,6 +43,7 @@ import MetricsComponent from './views/dashboard/pages/metrics/metrics.component'
     RegisterComponent,
     CarouselComponent,
     DashboardAdministratorComponent,
+    DashboardManagerComponent,
     DashboardManagerComponent,
     DashboardClientComponent,
     ExcelReaderComponent,
@@ -68,7 +69,3 @@ import MetricsComponent from './views/dashboard/pages/metrics/metrics.component'
 export class AppModule {
   
 }
-
-
-
-
