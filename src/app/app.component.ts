@@ -21,14 +21,10 @@ import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-ma
     CommonModule,
     RouterOutlet,
     HeaderLandingpageComponent,
-    HeaderDashboardComponent,
     NavbarLandingpageComponent,
-    DashboardClientComponent,
-    DashboardManagerComponent,
     DashboardAdministratorComponent,
     RegisterComponent,
     LoginComponent,
-    FooterdashboardComponent,
     FooterLandingpageComponent
 ]
 })
@@ -45,37 +41,18 @@ export class AppComponent {
 //    ^ - Pertenece a fragments
   constructor(private router:Router){}
   
-  routes = [
-    {
-      path: '/graphics-administrator',
-      data: {
-        description: 'graphics-administrador',
-        icon: 'graphics',
-        title: 'graphics-administrator'
-      }
-    },
-    {
-      path: '/users-administrator',
-        data: {
-          description: 'users-administrador',
-          icon: 'users',
-          title: 'users-administrator'
-        }
-      }
-    ];
-
-    isLandingPage(): boolean {
-      return this.allowedRoutes.some(route => this.router.url.includes(route));
-    }
+    //   isLandingPage(): boolean {
+    //   return this.allowedRoutes.some(route => this.router.url.includes(route));
+    // }
 
     
-      trackByPath(index: number, route: any): string {
-        return route.path;
-      }
+    //   trackByPath(index: number, route: any): string {
+    //     return route.path;
+    //   }
     
-      optionClick(description: string) {
-        console.log(`Option clicked: ${description}`);
-      }
+    //   optionClick(description: string) {
+    //     console.log(`Option clicked: ${description}`);
+    //   }
 
 }
 

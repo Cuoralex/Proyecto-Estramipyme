@@ -1,17 +1,11 @@
 
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
-
-// import { RegisterComponent } from '../../components/register/register.component';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
-
 import { RouterModule, ActivatedRoute } from '@angular/router';
-
 import { RegisterComponent } from '../../components/register/register.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
-import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { LoginComponent } from '../../components/login/login.component';
-import { ourServicesComponent } from "../../components/ourServices/ourServices.component";
-
+import EventsComponent from '../../components/events/events.component';
 
 @Component({
   selector: 'app-landingpage',

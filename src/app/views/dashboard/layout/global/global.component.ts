@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './global.component.html',
   styleUrl: './global.component.scss'
 })
+
 export class GlobalComponent {
 userLoginOn: any;
 

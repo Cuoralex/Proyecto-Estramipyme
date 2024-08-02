@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-users-administrator',
@@ -10,7 +9,7 @@ import { NgxEchartsDirective, provideEcharts } from 'ngx-echarts';
   ],
   templateUrl: './users-administrator.component.html',
   styleUrl: './users-administrator.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export default class UsersAdministratorComponent {
 }  

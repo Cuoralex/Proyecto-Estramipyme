@@ -36,8 +36,9 @@ export class LoginComponent {
       );
 
       if (user) {
-        console.log('Login successful');
-        this.router.navigate(['/inicio']); // Redirigir a la página principal
+        this.loginService.login(this.loginForm.value);
+        this.router.navigate(['formulario']); // Redirigir al formulario
+        this.loginForm.reset(); 
       } else {
         console.log('Invalid credentials');
       }

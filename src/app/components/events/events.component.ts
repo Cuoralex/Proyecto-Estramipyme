@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Card {
   image: string;
@@ -21,8 +21,8 @@ interface Card {
   ],
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export default class EventsComponent {
   cards: Card[] = [
     {

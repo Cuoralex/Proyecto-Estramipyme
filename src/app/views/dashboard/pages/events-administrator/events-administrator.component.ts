@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EventService } from '../../../../services/event.service'; // Corrige la ruta si es necesario
 import { Event } from '../../../../models/event.model'; // Asegúrate de que la ruta sea correcta
@@ -12,7 +12,6 @@ import { Event } from '../../../../models/event.model'; // Asegúrate de que la 
   ],
   templateUrl: './events-administrator.component.html',
   styleUrls: ['./events-administrator.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class EventManagementComponent implements OnInit {
   events$!: Observable<Event[]>;

@@ -6,15 +6,8 @@ import { AppComponent } from './app.component';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
 import { HeaderDashboardComponent } from './views/dashboard/layout/header-dashboard/header-dashboard.component';
-import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
-
-
-
-
-import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
-
-
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { SidebarComponent } from './views/dashboard/component/sidebar/sidebar.component';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -33,7 +26,9 @@ import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-c
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
 import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import MetricsComponent from './views/dashboard/pages/metrics/metrics.component';
+
 
 @NgModule({
   declarations: [
@@ -65,11 +60,11 @@ import { HttpClientModule } from '@angular/common/http';
     FooterdashboardComponent,
     NavbarLandingpageComponent,
     ReactiveFormsModule,
-    HttpClientModule,
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
+    MetricsComponent,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers:[],
+    providers:[provideHttpClient()],
 })
 export class AppModule {
   
