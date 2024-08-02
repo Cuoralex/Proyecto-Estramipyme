@@ -2,10 +2,13 @@ import { Routes } from '@angular/router';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
-import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
+
 import { DashboardClientComponent } from './views/dashboard/layout/dashboard-client/dashboard-client.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormComponent } from './views/form/form.component';
+import { HomeComponent } from './views/dashboard/pages/users/users-administrator/home/home.component';
+import { CreateComponent } from './views/dashboard/pages/users/users-administrator/create/create.component';
+import { EditComponent } from './views/dashboard/pages/users/users-administrator/edit/edit.component';
 
 
 // import { AuthGuard } from './guards/auth.guard';
@@ -18,6 +21,11 @@ export const routes: Routes =[
     {path: 'iniciar-sesion', component:LoginComponent},
     {path:'registro', component:RegisterComponent},
     {path: 'formulario', component:FormComponent},
+    { path: 'users-dashboard/home', component: HomeComponent},
+    { path: 'user', redirectTo: 'users-dashboard/home', pathMatch: 'full'},
+    { path: '', redirectTo: 'users-dashboard/home', pathMatch: 'full'},
+    { path: 'users-dashboard/create', component: CreateComponent},
+    { path: 'users-dashboard/edit/:id', component: EditComponent },
     { 
       path:'dashboard-administrador',
       component: DashboardAdministratorComponent,
@@ -64,22 +72,22 @@ export const routes: Routes =[
             },
      ]
   },  
-  { 
-    path:'dashboard-manager',
-    component: DashboardManagerComponent,
-    children: [
-        {
-            path:'users-manager',
-            loadComponent: () =>
-                import('./views/dashboard/pages/users/users-manager/users-manager.component'),
-            data: {
-                icon:'users-administrator',
-                title: 'users-administrator',
-                description: 'users-administrador',
-            },
-        },
-   ]
-},  
+//   { 
+//     path:'dashboard-manager',
+//     component: DashboardManagerComponent,
+//     children: [
+//         {
+//             path:'users-manager',
+//             loadComponent: () =>
+//                 import('./views/dashboard/pages/users/users-manager/users-manager.component'),
+//             data: {
+//                 icon:'users-administrator',
+//                 title: 'users-administrator',
+//                 description: 'users-administrador',
+//             },
+//         },
+//    ]
+// },  
 { 
     path:'dashboard-client',
     component: DashboardClientComponent,

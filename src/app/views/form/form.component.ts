@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,15 +7,23 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     RouterModule,
-    CommonModule],
+    CommonModule
+  ],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
+  user: any = {};
+
   riskCount: number = 0;
   opportunityCount: number = 0;
   risks: Array<{ id: number, text: string }> = [];
   opportunities: Array<{ id: number, text: string }> = [];
+
+  ngOnInit(): void {
+    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    this.user = user;
+  }
 
   addRisk(): void {
     this.riskCount++;

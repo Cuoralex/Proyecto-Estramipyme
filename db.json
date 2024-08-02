@@ -1,3 +1,4 @@
+
 {
     "metrics": [
       { "id":1, "name": "Usuarios Activos", "value": 120 },
@@ -9,6 +10,34 @@
       { "id":7, "name": "Descargas", "value": 50 },
       { "id":8, "name": "Formulario Completado", "value": 45 },
       { "id":9, "name": "Consultas de Contacto", "value": 20 }
-    ]
+    ],
+    
+    "Persona": [
+    {"type": "Natural"},
+    {"name": "Juan Pérez"},
+    {"email": "juan.perez@example.com"},
+    {"address": "Calle Falsa 123"},
+    {"phone": "+1 234 567 890"},
+    {"cellphone": "+1 987 654 321"},
+    {"companyType": "Pequeña Empresa"},
+    {"sector": "Tecnología"}
+    ],
+
+    "users": [
+    {
+      "id": "1",
+      "name": "Banano",
+      "quantity": "100",
+      "price": "20"
+    },
+    {
+      "id": "2",
+      "name": "Aguacate",
+      "quantity": "30",
+      "price": "10"
+    }
+  ]
   }
+
+
   

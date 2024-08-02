@@ -19,14 +19,14 @@ import { FooterdashboardComponent } from './views/dashboard/layout/footer-dashbo
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import FormComponent from './views/form/form.component';
+import { FormComponent } from './views/form/form.component';
 import { DashboardManagerComponent } from './views/dashboard/layout/dashboard-manager/dashboard-manager.component';
 import GraphicsClientComponent from './views/dashboard/pages/graphics/graphics-client/graphics-client.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/inmemorydata.service';
 import UsersManagerComponent from './views/dashboard/pages/users/users-manager/users-manager.component';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import MetricsComponent from './views/dashboard/pages/metrics/metrics.component';
 
 
