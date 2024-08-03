@@ -36,7 +36,7 @@ export class LoginComponent {
       );
 
       if (user) {
-        this.loginService.login(this.loginForm.value);
+        // this.loginService.login(this.loginForm.value);
         this.router.navigate(['formulario']); // Redirigir al formulario
         this.loginForm.reset(); 
       } else {

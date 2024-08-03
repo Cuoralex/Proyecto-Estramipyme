@@ -14,6 +14,16 @@ export class CarouselComponent implements OnInit, OnDestroy {
   slideInterval: any;
   paginationDots = Array(this.totalSlides).fill(0);
 
+  slides = [
+    { imgSrc: '../../../../intro-estramipyme.jpg', altText: 'intro', caption: 'Impulsando el éxito desde 2020 hasta la revolución de Estratipyme en 2024' },
+    { imgSrc: '../../../../2020-Capital_Semilla.jpg', altText: 'Concurso Capital Semilla', caption: 'En 2020, ¡destacamos en Concurso Capital Semilla!' },
+    { imgSrc: '../2020-Inmotion_group.jpg', altText: 'Premio Inmotion Group', caption: 'En 2020, ¡Reconocimiento internacional para egresados y sus ideas innovadoras!' },
+    { imgSrc: '../../../../2021-Noche_mejores.jpg', altText: 'Reconocimiento La Noche de los Mejores', caption: 'En 2021, ¡Comprometidos con la educación digital en Colombia!' },
+    { imgSrc: '../../../../2022-ongoing.jpg', altText: 'Lanzamiento On.going', caption: 'En 2022, ¡Comprometidos con impulsar el emprendimiento de impacto!' },
+    { imgSrc: '../../../../2023-100_startups.jpg', altText: 'Start-ups destacadas', caption: 'En 2023, ¡Posicionandonos entre las mejores start-ups de Colombia!' },
+    { imgSrc: '../../../../2024-Estramipyme.jpg', altText: 'Estramipyme 2024', caption: 'Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento empresarial!' },
+  ];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -30,7 +40,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   startAutoSlide(): void {
     this.slideInterval = setInterval(() => {
       this.nextSlide();
-    }, 3000); // Cambia de slide cada 3 segundos
+    }, 4000); 
   }
 
   nextSlide(): void {

@@ -1,14 +1,3 @@
-$primary-color: #0409fb;
-$secondary-color: #046eff;
-$background-color: #ffffff;
-$input-background: #e0dede;
-$main-background: #dfdddd;
-$label-color: $primary-color;
-$label-font-size: 2.3rem;
-$border-radius: 10px;
-$box-shadow: 5px 20px 50px #000;
-$margin-auto: 20px auto;
-
 .container {
   display: flex;
   justify-content: center;
@@ -23,11 +12,10 @@ $margin-auto: 20px auto;
   max-width: 500px;
   height: 100%;
   max-height: 630px;
-  background-color: $main-background;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  background-color: #010001;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
   overflow: hidden;
-  position: relative;
 }
 
 #chk {
@@ -42,29 +30,31 @@ $margin-auto: 20px auto;
 
 .labelLogin,
 .labelRegistro {
-  color: $primary-color;
+  color: #049DBF;
   font-size: medium;
   font-weight: bold;
   margin-left: 5px;
   cursor: pointer;
 
   &:hover {
-    color: $secondary-color;
+    color: #F25E3D;
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 0 2px #020659;
   }
 }
 
-.containerText{
-  padding-top: 10px;
+.containerText {
+  padding-bottom: 60px;
+  width: 52%;
+  margin: 2px auto;
 }
 
 .labelTitle {
-  color: $primary-color;
-  font-size: $label-font-size;
+  color: #049DBF;
+  font-size: 2.3rem;
   justify-content: center;
   display: flex;
   font-weight: bold;
@@ -74,27 +64,46 @@ $margin-auto: 20px auto;
 
 .login {
   height: 680px;
-  background: $background-color;
+  background: #ffffff;
   border-radius: 40% / 10%;
   transform: translateY(-60px);
   transition: 0.8s ease-in-out;
+  overflow-y: auto;
 }
 
 .login label {
-  color: $primary-color;
+  color: #049DBF;
   transform: scale(0.6);
 }
 
-#chk:checked~.login {
-  transform: translateY(-550px);
+#chk:checked ~ .login {
+  transform: translateY(-585px);
 }
 
-#chk:checked~.login label {
+#chk:checked ~ .login label {
   transform: scale(1);
 }
 
-#chk:checked~.singup label {
+#chk:checked ~ .singup label {
   transform: scale(0.3);
+}
+
+// Scrollbar personalizado para pantallas mayores a 768px
+@media (min-width: 768px) {
+  .singup, .login {
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #191919;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: lighten(#191919, 20%);
+      border-radius: 10px;
+    }
+  }
 }
 
 // Estilos responsivos
@@ -103,40 +112,24 @@ $margin-auto: 20px auto;
     max-width: 100%;
   }
 
-  label {
-    font-size: 2rem;
-  }
-
-  .login {
-    transform: translateY(-55px);
-  }
-
-  #chk:checked~.login {
-    transform: translateY(-555px);
-  }
-}
-
-@media (max-width: 768px) {
-  .main {
-    max-width: 90%;
+  .labelLogin,
+  .labelRegistro {
+    font-size: 1rem;
   }
 
   label {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
-  .login {
-    transform: translateY(-46px);
+  p {
+    width: 80%;
+    margin: 2px auto;
+    font-size: 0.9rem;
   }
 
-  #chk:checked~.login {
-    transform: translateY(-555px);
-  }
-}
-
-@media (max-width: 480px) {
-  label {
-    font-size: 1.5rem;
+  span {
+    width: 80%;
+    font-size: 1rem;
   }
 
   .login {
@@ -148,11 +141,99 @@ $margin-auto: 20px auto;
     width: 100%;
   }
 
-  .containerText{
+  .containerText {
     padding-bottom: 60px;
+    width: 52%;
+    margin: 2px auto;
   }
 
-  #chk:checked~.login {
-    transform: translateY(-555px);
+  #chk:checked ~ .login {
+    transform: translateY(-595px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    max-width: 90%;
+  }
+
+  .labelLogin,
+  .labelRegistro {
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 1.3rem;
+  }
+
+  p {
+    width: 80%;
+    margin: 2px auto;
+    font-size: 0.9rem;
+  }
+
+  span {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .login {
+    transform: translateY(-50px);
+  }
+
+  .singup,
+  .login {
+    width: 100%;
+  }
+
+  .containerText {
+    padding-bottom: 60px;
+    width: 46%;
+    margin: 2px auto;
+  }
+
+  #chk:checked ~ .login {
+    transform: translateY(-575px);
+  }
+}
+
+@media (max-width: 480px) {
+  .labelLogin,
+  .labelRegistro {
+    font-size: 0.8rem;
+  }
+
+  label {
+    font-size: 1.3rem;
+  }
+
+  p {
+    width: 80%;
+    margin: 2px auto;
+    font-size: 0.8rem;
+  }
+
+  span {
+    width: 80%;
+    font-size: 0.8rem;
+  }
+
+  .login {
+    transform: translateY(-50px);
+  }
+
+  .singup,
+  .login {
+    width: 100%;
+  }
+
+  .containerText {
+    padding-bottom: 60px;
+    width: 52%;
+    margin: 2px auto;
+  }
+
+  #chk:checked ~ .login {
+    transform: translateY(-590px);
   }
 }
