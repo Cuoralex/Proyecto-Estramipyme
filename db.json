@@ -1,43 +1,195 @@
-
 {
-    "metrics": [
-      { "id":1, "name": "Usuarios Activos", "value": 120 },
-      { "id":2, "name": "Tiempo en la Web", "value": "3m 45s" },
-      { "id":3, "name": "Tasa de Rebote", "value": "50%" },
-      { "id":4, "name": "Conversiones", "value": 35 },
-      { "id":5, "name": "Clics", "value": 180 },
-      { "id":6, "name": "Registros", "value": 75 },
-      { "id":7, "name": "Descargas", "value": 50 },
-      { "id":8, "name": "Formulario Completado", "value": 45 },
-      { "id":9, "name": "Consultas de Contacto", "value": 20 }
-    ],
-    
-    "Persona": [
-    {"type": "Natural"},
-    {"name": "Juan Pérez"},
-    {"email": "juan.perez@example.com"},
-    {"address": "Calle Falsa 123"},
-    {"phone": "+1 234 567 890"},
-    {"cellphone": "+1 987 654 321"},
-    {"companyType": "Pequeña Empresa"},
-    {"sector": "Tecnología"}
-    ],
-
-    "users": [
+  "metrics": [
     {
       "id": "1",
+      "name": "Usuarios Activos",
+      "value": 120
+    },
+    {
+      "id": "2",
+      "name": "Tiempo en la Web",
+      "value": "3m 45s"
+    },
+    {
+      "id": "3",
+      "name": "Tasa de Rebote",
+      "value": "50%"
+    },
+    {
+      "id": "4",
+      "name": "Conversiones",
+      "value": 35
+    },
+    {
+      "id": "5",
+      "name": "Clics",
+      "value": 180
+    },
+    {
+      "id": "6",
+      "name": "Registros",
+      "value": 75
+    },
+    {
+      "id": "7",
+      "name": "Descargas",
+      "value": 50
+    },
+    {
+      "id": "8",
+      "name": "Formulario Completado",
+      "value": 45
+    },
+    {
+      "id": "9",
+      "name": "Consultas de Contacto",
+      "value": 20
+    }
+  ],
+  "Persona": [
+    {
+      "type": "Natural",
+      "id": "b5bf"
+    },
+    {
+      "name": "Juan Pérez",
+      "id": "64f1"
+    },
+    {
+      "email": "juan.perez@example.com",
+      "id": "55a7"
+    },
+    {
+      "address": "Calle Falsa 123",
+      "id": "e0fc"
+    },
+    {
+      "phone": "+1 234 567 890",
+      "id": "db4e"
+    },
+    {
+      "cellphone": "+1 987 654 321",
+      "id": "6c14"
+    },
+    {
+      "companyType": "Pequeña Empresa",
+      "id": "4b6d"
+    },
+    {
+      "sector": "Tecnología",
+      "id": "f1df"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "entrerpriseType": "Murrapo",
+      "enterpriseName": "100",
+      "businessName": "20",
+      "fullName": "",
+      "sector": "Tecnología",
+      "adress": "Calle 27 No 70 - 80",
+      "phone": "3232300428",
+      "email": "alexa@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "rol": "Administrador"
+    },
+    {
+      "id": "2",
+      "entrerpriseType": "Banano",
+      "enterpriseName": "100",
+      "businessName": "20",
+      "fullName": "",
+      "sector": "Tecnología",
+      "adress": "Calle 27 No 70 - 80",
+      "phone": "3232300428",
+      "email": "alex@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "rol": "Profesor"
+    },
+    {
+      "id": "3",
+      "entrerpriseType": "Congolla",
+      "enterpriseName": "100",
+      "businessName": "20",
+      "fullName": "",
+      "sector": "Tecnología",
+      "adress": "Calle 27 No 70 - 80",
+      "phone": "3232300428",
+      "email": "alexa@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "rol": "Estudiante"
+    },
+    {
+      "id": "3",
+      "entrerpriseType": "Congolla",
+      "enterpriseName": "100",
+      "businessName": "20",
+      "fullName": "",
+      "sector": "Tecnología",
+      "adress": "Calle 27 No 70 - 80",
+      "phone": "3232300428",
+      "email": "alexa@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "rol": "Cliente"
+    },
+    {
+      "id": 0,
+      "enterpriseType": "",
+      "enterpriseName": "",
+      "businessName": "",
+      "fullName": "",
+      "sector": "",
+      "adress": "",
+      "phone": 0,
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "rol": ""
+    },
+    {
+      "id": 0,
+      "enterpriseType": "",
+      "enterpriseName": "",
+      "businessName": "",
+      "fullName": "",
+      "sector": "",
+      "adress": "",
+      "phone": 0,
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "rol": ""
+    }
+  ],
+  "datos": [
+    {
+      "id": "1",
+      "nombre": "Dato 1",
+      "descripcion": "Descripción del dato 1"
+    },
+    {
+      "id": "2",
+      "nombre": "Dato 2",
+      "descripcion": "Descripción del dato 2"
+    }
+  ],
+  "fruits": [
+    {
+      "id": "0",
       "name": "Banano",
       "quantity": "100",
       "price": "20"
     },
     {
-      "id": "2",
+      "id": "0",
       "name": "Aguacate",
       "quantity": "30",
       "price": "10"
     }
   ]
-  }
-
-
-  
+}

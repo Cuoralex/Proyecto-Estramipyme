@@ -1,22 +1,16 @@
-/* src/app/graphics-administrator/graphics-administrator.component.scss */
-:host{
-  display: block;
-  height: 100%;
-  width: 100%;
+main {
+  display: flex;
+  margin: 20px;
 }
 
-/* styles.css o styles.scss */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+aside {
+  width: 25%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-right: 1px solid #ddd;
 }
 
-// .main-container {
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   width: 100vw;
-//   height: 100vh;
-// }
+section {
+  width: 75%;
+  padding: 20px;
+}

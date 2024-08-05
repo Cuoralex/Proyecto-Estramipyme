@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div style="border: 3px solid #6724a5">
+        <h1>Creación funciona</h1>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tipo de empresa</th>
+                <th scope="col">Nombre empresa</th>
+                <th scope="col">Razón social</th>
+                <th scope="col">Sector</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Confirmación contraseña</th>
+                <th scope="col">Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of allusers">
+                <th scope="row">{{ user.id }}</th>
+                <td>{{user.enterpriseType}}</td>
+                <td>{{user.enterpriseName}}</td>
+                <td>{{user.businessName}}</td>
+                <td>{{user.fullName}}</td>
+                <td>{{user.sector}}</td>
+                <td>{{user.adress}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.confirmPassword}}</td>
+                <td>{{user.rol}}</td>
+                <td><a href="" class="btn btn-primary" routerLink="['/users-administrador/edit', item.id]">Edit</a>
+                |
+                <button type="button" (click)="deleteItem(user.id)" class="btn btn-danger">delete</button></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
