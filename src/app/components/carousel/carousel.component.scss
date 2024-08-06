@@ -57,7 +57,7 @@
   right: 20px;
   bottom: 20px;
   left: 20px;
-  border: 3px solid rgb(241, 93, 59);
+  border: 3px solid #049DBF;
   box-sizing: border-box;
   pointer-events: none;
   border-radius: 15px;
@@ -67,7 +67,7 @@
   position: absolute;
   bottom: 1%;
   right: 3%;
-  background-color: rgba(241, 93, 59);
+  background-color: #049DBF;
   color: #010001;
   font-weight: bold;
   padding: 10px 15px;
@@ -98,7 +98,7 @@
 }
 
 .pagination-dot.active {
-  background-color: #F25E3D;
+  background-color: #049DBF;
 }
 
 /* Tablets (pantallas medianas) */
