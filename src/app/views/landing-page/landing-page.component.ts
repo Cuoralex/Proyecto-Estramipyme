@@ -25,6 +25,7 @@ import { plansComponent } from '../../components/plans/plans.component';
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
+  providers:[],
 })
 
 export class LandingPageComponent implements OnInit {
