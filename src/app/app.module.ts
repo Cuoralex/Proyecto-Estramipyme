@@ -7,7 +7,8 @@ import { FormComponent } from './views/form/form.component';
 import { provideHttpClient } from '@angular/common/http';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
-import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,8 +16,15 @@ import { LoginComponent } from './components/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 
-const routes: Routes = [];
+
+const routes: Routes= [
+  {
+    path: '',
+    component: DashboardAdministratorComponent,
+}
+]
 
 @NgModule({
   declarations: [
@@ -29,6 +37,7 @@ const routes: Routes = [];
     ReactiveFormsModule,
     HeaderLandingpageComponent,
     NavbarLandingpageComponent,
+    DashboardAdministratorComponent,
     LoginComponent,
     RegisterComponent,
     CarouselComponent,

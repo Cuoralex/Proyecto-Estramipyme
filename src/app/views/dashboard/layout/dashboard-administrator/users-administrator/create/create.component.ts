@@ -20,8 +20,18 @@ import { UserService } from 'app/services/user-administrator.service';
 
 export class CreateComponent implements OnInit {
   constructor(private userService: UserService, private router: Router){}
+  
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
+this.userService.getAll().subscribe((ovalues) =>{
+  ovalues.forEach((oItem)=>{
+    if(oItem.id>this.formdata.id){
+      this.formdata.id=oItem.id
+    }
+  })
+  this.formdata.id++;
+})
+
   }
   formdata: User ={
     id: 0,
@@ -41,7 +51,7 @@ export class CreateComponent implements OnInit {
   create(){
     this.userService.creat(this.formdata).subscribe({
       next: (data)=>{
-        this.router.navigate(['/dashboard-administrator/user-administrator/home']);
+        this.router.navigate(['/admin/dashboard/users-administrator/home']);
       },
       error: (err) => {
         console.log(err)
