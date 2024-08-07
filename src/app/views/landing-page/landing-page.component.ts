@@ -7,6 +7,7 @@ import { LoginComponent } from '../../components/login/login.component';
 import EventsComponent from '../../components/events/events.component';
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
+import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
 
 
@@ -20,6 +21,8 @@ import { plansComponent } from '../../components/plans/plans.component';
     LoginComponent,
     CarouselComponent,
     SwitcherComponent,
+    ourServicesComponent,
+    FooterLandingpageComponent,
     ourServicesComponent,
     plansComponent
 ],

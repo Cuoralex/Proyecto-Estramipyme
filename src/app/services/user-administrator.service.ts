@@ -18,6 +18,7 @@ export class UserService {
   }
 
   creat(data: User){
+    
     return this.httpClient.post('http://localhost:3000/users', data);
   }
 

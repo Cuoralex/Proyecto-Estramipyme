@@ -33,9 +33,9 @@
                 <td>{{user.password}}</td>
                 <td>{{user.confirmPassword}}</td>
                 <td>{{user.rol}}</td>
-                <td><a href="" class="btn btn-primary" routerLink="['/users-administrador/edit', item.id]">Edit</a>
+                <td><a href="" class="btn btn-primary" [routerLink]="['/admin/dashboard/users-administrator/edit', user.id]">Edit</a>
                 |
-                <button type="button" (click)="deleteItem(user.id)" class="btn btn-danger">delete</button></td> -->
+                <button type="button" (click)="deleteItem(user.id)" class="btn btn-danger">delete</button></td>
             </tr>
         </tbody>
     </table>

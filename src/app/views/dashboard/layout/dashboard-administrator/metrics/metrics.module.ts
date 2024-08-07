@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import MetricsAdministratorComponent from './metrics-administrator.component';
+import MetricsComponent from './metrics.component';
+
+
 
 const routes: Routes = [
   {
     path: '',
-    component: MetricsAdministratorComponent,
+    component: MetricsComponent,
   }
 ];
 
@@ -14,8 +16,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MetricsComponent
   ],
   exports: [RouterModule]
 })
-export class MetricsAdministratorModule { }
+export class MetricsModule { }

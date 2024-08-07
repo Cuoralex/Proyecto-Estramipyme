@@ -3,7 +3,7 @@ import { LandingPageComponent } from './views/landing-page/landing-page.componen
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormComponent } from './views/form/form.component';
-import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
+
 
 
 export const routes: Routes = [
@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'formulario', component: FormComponent },
  
   {
-    path: 'dashboard-administrator',
+    path: 'admin',
     loadChildren:() => import('./views/dashboard/layout/dashboard-administrator/dashboard-administrator.module').then(m=>m.DashboardAdministratorModule)
   }
 ];

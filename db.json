@@ -82,20 +82,6 @@
   ],
   "users": [
     {
-      "id": "1",
-      "entrerpriseType": "Murrapo",
-      "enterpriseName": "100",
-      "businessName": "20",
-      "fullName": "",
-      "sector": "Tecnología",
-      "adress": "Calle 27 No 70 - 80",
-      "phone": "3232300428",
-      "email": "alexa@gmail.com",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "rol": "Administrador"
-    },
-    {
       "id": "2",
       "entrerpriseType": "Banano",
       "enterpriseName": "100",
@@ -121,75 +107,7 @@
       "email": "alexa@gmail.com",
       "password": "123456",
       "confirmPassword": "123456",
-      "rol": "Estudiante"
-    },
-    {
-      "id": "3",
-      "entrerpriseType": "Congolla",
-      "enterpriseName": "100",
-      "businessName": "20",
-      "fullName": "",
-      "sector": "Tecnología",
-      "adress": "Calle 27 No 70 - 80",
-      "phone": "3232300428",
-      "email": "alexa@gmail.com",
-      "password": "123456",
-      "confirmPassword": "123456",
       "rol": "Cliente"
-    },
-    {
-      "id": 0,
-      "enterpriseType": "",
-      "enterpriseName": "",
-      "businessName": "",
-      "fullName": "",
-      "sector": "",
-      "adress": "",
-      "phone": 0,
-      "email": "",
-      "password": "",
-      "confirmPassword": "",
-      "rol": ""
-    },
-    {
-      "id": 0,
-      "enterpriseType": "",
-      "enterpriseName": "",
-      "businessName": "",
-      "fullName": "",
-      "sector": "",
-      "adress": "",
-      "phone": 0,
-      "email": "",
-      "password": "",
-      "confirmPassword": "",
-      "rol": ""
-    }
-  ],
-  "datos": [
-    {
-      "id": "1",
-      "nombre": "Dato 1",
-      "descripcion": "Descripción del dato 1"
-    },
-    {
-      "id": "2",
-      "nombre": "Dato 2",
-      "descripcion": "Descripción del dato 2"
-    }
-  ],
-  "fruits": [
-    {
-      "id": "0",
-      "name": "Banano",
-      "quantity": "100",
-      "price": "20"
-    },
-    {
-      "id": "0",
-      "name": "Aguacate",
-      "quantity": "30",
-      "price": "10"
     }
   ]
 }

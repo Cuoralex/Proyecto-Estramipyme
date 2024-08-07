@@ -1,13 +1,15 @@
 //Angular
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 //Proyecto
 import { HeaderDashboardComponent } from '../header-dashboard/header-dashboard.component';
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
 import { UsersAdministratorComponent } from './users-administrator/users-administrator.component';
+import MetricsComponent from './metrics/metrics.component';
+
 
 @Component({
   selector: 'app-dashboard-administrator',
@@ -18,10 +20,21 @@ import { UsersAdministratorComponent } from './users-administrator/users-adminis
     HeaderDashboardComponent,
     SidebarComponent,
     FooterdashboardComponent,
-    UsersAdministratorComponent    
+    UsersAdministratorComponent,
+    MetricsComponent
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],
 })
 
-export class DashboardAdministratorComponent {}
+export class DashboardAdministratorComponent {
+  constructor(private router: Router){}
+
+  ngOnInit(): void {
+      console.log('Oninit ejecutado');
+  }
+  
+  navigateToCreate() {
+    this.router.navigate(['admin/dashboard/users-administrator/create']);
+  }
+}
