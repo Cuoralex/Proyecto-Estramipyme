@@ -4,7 +4,7 @@ import { User } from '../../../../../../models/user-administrator.model';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from '../edit/edit.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,10 +18,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   allusers: User[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.getAll().subscribe({
@@ -32,6 +32,7 @@ export class HomeComponent {
         console.error('Error fetching users:', err);
       }
     });
+    console.log('OnInit ejecutado');
   }
 
   deleteItem(id: number): void {
@@ -39,9 +40,13 @@ export class HomeComponent {
       next: () => {
         this.allusers = this.allusers.filter(user => user.id !== id);
       },
-      error: (err: any) => {
+      error: (err) => {
         console.error('Error deleting user:', err);
       }
     });
+  }
+
+  navigateToCreate(): void {
+    this.router.navigate(['dashboard/users/create']);
   }
 }

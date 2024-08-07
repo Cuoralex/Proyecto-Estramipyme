@@ -1,42 +1,54 @@
-<div class="container">
+<div class="container mx-auto p-4">
+    <nav class="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
+        <a class="text-lg font-semibold" href="#">Usuarios</a>
 
-    <div style="border: 3px solid #6724a5">
-        <h1>Creación funciona</h1>
+        <section class="flex items-center space-x-4">
+            <button (click)="navigateToCreate()"
+                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+                Add+
+            </button>
+        </section>
+    </nav>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white text-sm">
+            <thead>
+                <tr class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+                    <th class="py-2 px-3 text-left">Id</th>
+                    <th class="py-2 px-3 text-left">Tipo de empresa</th>
+                    <th class="py-2 px-3 text-left">Nombre empresa</th>
+                    <th class="py-2 px-3 text-left">Razón social</th>
+                    <th class="py-2 px-3 text-left">Sector</th>
+                    <th class="py-2 px-3 text-left">Dirección</th>
+                    <th class="py-2 px-3 text-left">Teléfono</th>
+                    <th class="py-2 px-3 text-left">Correo electrónico</th>
+                    <th class="py-2 px-3 text-left">Contraseña</th>
+                    <th class="py-2 px-3 text-left">Confirmación contraseña</th>
+                    <th class="py-2 px-3 text-left">Rol</th>
+                    <th class="py-2 px-3 text-left">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allusers" class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-2 px-3">{{ user.id }}</td>
+                    <td class="py-2 px-3">{{user.enterpriseType}}</td>
+                    <td class="py-2 px-3">{{user.enterpriseName}}</td>
+                    <td class="py-2 px-3">{{user.businessName}}</td>
+                    <td class="py-2 px-3">{{user.fullName}}</td>
+                    <td class="py-2 px-3">{{user.sector}}</td>
+                    <td class="py-2 px-3">{{user.adress}}</td>
+                    <td class="py-2 px-3">{{user.phone}}</td>
+                    <td class="py-2 px-3">{{user.email}}</td>
+                    <td class="py-2 px-3">{{user.password}}</td>
+                    <td class="py-2 px-3">{{user.confirmPassword}}</td>
+                    <td class="py-2 px-3">{{user.rol}}</td>
+                    <td class="py-2 px-3">
+                        <a href="" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" [routerLink]="['/dashboard/users/edit', user.id]">Edit</a>
+                        |
+                        <button type="button" (click)="deleteItem(user.id)" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Tipo de empresa</th>
-                <th scope="col">Nombre empresa</th>
-                <th scope="col">Razón social</th>
-                <th scope="col">Sector</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Contraseña</th>
-                <th scope="col">Confirmación contraseña</th>
-                <th scope="col">Rol</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of allusers">
-                <th scope="row">{{ user.id }}</th>
-                <td>{{user.enterpriseType}}</td>
-                <td>{{user.enterpriseName}}</td>
-                <td>{{user.businessName}}</td>
-                <td>{{user.fullName}}</td>
-                <td>{{user.sector}}</td>
-                <td>{{user.adress}}</td>
-                <td>{{user.phone}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.confirmPassword}}</td>
-                <td>{{user.rol}}</td>
-                <td><a href="" class="btn btn-primary" [routerLink]="['/admin/dashboard/users-administrator/edit', user.id]">Edit</a>
-                |
-                <button type="button" (click)="deleteItem(user.id)" class="btn btn-danger">delete</button></td>
-            </tr>
-        </tbody>
-    </table>
 </div>

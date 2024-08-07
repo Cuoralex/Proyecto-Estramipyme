@@ -9,7 +9,7 @@ import MetricsComponent from './metrics/metrics.component';
 const routes: Routes = [
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardAdministratorComponent,
     children: [
       // { path: '', redirectTo: 'users', pathMatch: 'full' },

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: '', redirectTo:'home', pathMatch:'full'},
+  // { path: '', redirectTo:'home', pathMatch:'full'},
   {
     title: 'Creación de usuario',
     path: 'create',

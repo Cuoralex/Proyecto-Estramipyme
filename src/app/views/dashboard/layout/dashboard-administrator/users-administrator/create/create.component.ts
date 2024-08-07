@@ -51,7 +51,7 @@ this.userService.getAll().subscribe((ovalues) =>{
   create(){
     this.userService.creat(this.formdata).subscribe({
       next: (data)=>{
-        this.router.navigate(['/admin/dashboard/users-administrator/home']);
+        this.router.navigate(['/admin/dashboard/users/home']);
       },
       error: (err) => {
         console.log(err)

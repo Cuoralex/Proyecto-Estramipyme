@@ -28,13 +28,21 @@ import MetricsComponent from './metrics/metrics.component';
 })
 
 export class DashboardAdministratorComponent {
+  isDashboard!: boolean;
+
   constructor(private router: Router){}
 
   ngOnInit(): void {
-      console.log('Oninit ejecutado');
+    this.checkRoute();
+  }
+
+  checkRoute(): void {
+    const currentUrl = this.router.url;
+    this.isDashboard = currentUrl === '/dashboard';
   }
   
   navigateToCreate() {
-    this.router.navigate(['admin/dashboard/users-administrator/create']);
+    this.router.navigate(['dashboard/users/create']);
   }
 }
+

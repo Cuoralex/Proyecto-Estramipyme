@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'formulario', component: FormComponent },
  
   {
-    path: 'admin',
+    path: 'dashboard',
     loadChildren:() => import('./views/dashboard/layout/dashboard-administrator/dashboard-administrator.module').then(m=>m.DashboardAdministratorModule)
   }
 ];

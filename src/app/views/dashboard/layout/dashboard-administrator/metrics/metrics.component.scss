@@ -1,35 +1,36 @@
 .charts {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh; // Ajusta la altura para ocupar toda la ventana
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .chart-container {
-  width: 100%;
-  height: 33.33%; // Ajusta cada contenedor para ocupar 1/3 de la altura
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-  
-  .pie, .line {
-    flex: auto;
-    min-height: 33.3vh;
-    min-width: 33.3vh; /* Ancho mínimo para los gráficos */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra a la izquierda */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-  }
-  
-  .echart {
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: #ffffff;
-    width: 90%; // Ajusta según tus necesidades
-    height: 90%; // Ajusta según tus necesidades
-  }
+
+.chart-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.echart {
+  width: 100%;
+  height: 300px; // Adjust this height as needed
+}

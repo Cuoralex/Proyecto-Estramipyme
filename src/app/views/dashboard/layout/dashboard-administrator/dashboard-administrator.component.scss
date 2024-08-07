@@ -1,16 +1,29 @@
-main {
+:host {
   display: flex;
-  margin: 20px;
+  flex-direction: column;
+  height: 100vh;
 }
 
-aside {
-  width: 25%;
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-right: 1px solid #ddd;
+app-header-dashboard {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-section {
-  width: 75%;
-  padding: 20px;
+.flex {
+  margin-top: 64px; // Ajustar según la altura del header
+}
+
+app-footer-dashboard {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-top: auto;
+}
+
+.flex-1 {
+  overflow-y: auto;
+  padding-bottom: 64px; // Ajustar según la altura del footer
 }

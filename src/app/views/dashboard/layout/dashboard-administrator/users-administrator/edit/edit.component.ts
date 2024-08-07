@@ -56,7 +56,7 @@ export class EditComponent {
     update(){
       this.userService.update(this.formdata).subscribe({
         next:(data)=>{
-          this.router.navigate(["/dashboard-administrator/users-administrador/home"])
+          this.router.navigate(["/dashboard/users/home"])
         },
         error: (er) =>{
           console.log(er)

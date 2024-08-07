@@ -1,20 +1,28 @@
-<!-- <app-header-dashboard></app-header-dashboard> -->
-<div class="container">
-    <!-- <app-sidebar></app-sidebar> -->
-</div>
-<div class="container" style="border: 3px solid rgb(0, 255, 55)">
-    <div class="container>" style="border: 3px solid rgb(255, 0, 140)">
-        <nav class="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
-            <a class="text-lg font-semibold" href="#">Usuarios</a>
+<app-header-dashboard></app-header-dashboard>
 
-            <section class="flex items-center space-x-4">
-                <button (click)="navigateToCreate()"
-                    class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
-                    Add+
-                </button>
-            </section>
-        </nav>
-    </div>
-    <router-outlet></router-outlet>
-    <app-footer-dashboard></app-footer-dashboard>
+<div class="flex flex-col md:flex-row h-screen">
+  <!-- Sidebar -->
+  <div class="w-full md:w-1/4 bg-gray-200">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 p-4 overflow-auto" style="border: 3px solid rgb(0, 255, 55)">
+    <ng-container *ngIf="isDashboard; else defaultTemplate">
+      <!-- Template específico para /dashboard -->
+
+      <body class="bg-blue-500 flex items-center justify-center min-h-screen">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4">ESTRAMIPYME</h1>
+          <p class="text-2xl md:text-3xl lg:text-4xl font-light text-white">¡Una transformación estratégica!</p>
+        </div>
+      </body>
+    </ng-container>
+    <ng-template #defaultTemplate>
+      <!-- Template por defecto -->
+      <router-outlet></router-outlet>
+    </ng-template>
+  </div>
 </div>
+
+<app-footer-dashboard></app-footer-dashboard>
