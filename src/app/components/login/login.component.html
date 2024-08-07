@@ -1,11 +1,11 @@
 <section>
   <div class="relative flex flex-col justify-center items-center">
     <div class="">
-      <form class="space-y-5 mt-5" [formGroup]="loginForm" (ngSubmit)="login()">
+      <form class="space-y-3 mt-5" [formGroup]="loginForm" (ngSubmit)="login()">
 
         <div class="relative">
           <input id="email" type="email" formControlName="email" autocomplete="email"
-            class="peer w-full border text-stone-950 border-gray-300 rounded px-3 pt-5 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600"/>
+            class="peer w-full border text-stone-950 border-gray-300 rounded px-3 pt-5 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno" />
           <label for="email"
             class="absolute left-3 transform translate-y-1 transition-all text-gray-500 cursor-text
           peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-500">Correo
@@ -21,7 +21,7 @@
 
         <div class="relative">
           <input id="password" type="password" formControlName="password" autocomplete="current-password"
-            class="peer w-full border text-stone-950 border-gray-300 rounded px-3 pt-5 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:border-indigo-600" />
+            class="peer w-full border text-stone-950 border-gray-300 rounded px-3 pt-5 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno" />
           <label for="password"
             class="absolute left-3 transform translate-y-1 transition-all text-gray-500 cursor-text
           peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-indigo-600">Contraseña</label>
@@ -34,14 +34,17 @@
         </div>
 
         <div class="">
-          <p class="text-base"><a class="flex justify-end text-blue-700 font-bold hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-full p-1"
-            href="#">¿Ha olvidado la contraseña?</a></p>
+          <p class="text-base"><a
+              class="flex justify-end text-firstColor hover:text-fifthColor text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-full p-1"
+              href="#">¿Ha olvidado la contraseña?</a></p>
         </div>
+
         <div class="flex items-center justify-center">
           <a routerLink="['/formulario']" routerLinkActive="router-link-active" target="_blank" class="block w-full bg-blue-700 hover:bg-blue-500 text-white font-semibold text-center py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
             Iniciar sesión
           </a>
         </div>
+        
         
       </form>
     </div>

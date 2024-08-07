@@ -11,7 +11,8 @@ module.exports = {
         thirdColor: '#FEFFFE', //Blanco
         fourthColor: '#CCAF01', //Amarillo
         fifthColor: '#F25E3D', //Salmon
-        paragraphColor: '#2c3e50' //Gris Oscuro
+        paragraphColor: '#2c3e50', //Gris Oscuro
+        azulAlterno: '#049DBF', //Azul claro
       },
     },
   },

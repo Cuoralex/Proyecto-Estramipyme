@@ -1,68 +1,13 @@
-<section class="relative overflow-hidden w-full h-screen">
-  <div class="carousel-wrapper ">
-    <div class="carousel-slide-wrapper ">
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
+<section class="carousel">
+  <div class="carousel-wrapper">
+    <div class="carousel-slide-wrapper">
+      <div class="carousel-slide" *ngFor="let slide of slides">
+        <div class="banner-item">
           <div class="image-container">
-            <img src="../../../../intro.png" alt="intro">
+            <img [src]="slide.imgSrc" [alt]="slide.altText">
             <div class="border-overlay"></div>
+            <span>{{ slide.caption }}</span>
           </div>
-          <span>Impulsando el éxito desde 2020 hasta la revolución de Estratipyme en 2024</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../../../../2020-Capital_Semilla.jpg" alt="Concurso Capital Semilla">
-            <div class="border-overlay"></div>
-          </div>
-          <span>En 2020, ¡destacamos en Concurso Capital Semilla!</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../2020-Inmotion_group.jpg" alt="Premio Inmotion Group">
-            <div class="border-overlay"></div>
-          </div>
-          <span>En 2020, ¡Reconocimiento internacional para egresados y sus ideas innovadoras!</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../../../../2021-Noche_mejores.jpg" alt="Reconocimiento La Noche de los Mejores">
-            <div class="border-overlay"></div>
-          </div>
-          <span>En 2021, ¡Comprometidos con la educación digital en Colombia!</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../../../../2022-ongoing.jpg" alt="Lanzamiento On.going">
-            <div class="border-overlay"></div>
-          </div>
-          <span>En 2022, ¡Comprometidos con impulsar el emprendimiento de impacto!</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../../../../2023-100_startups.jpg" alt="Start-ups destacadas">
-            <div class="border-overlay"></div>
-          </div>
-          <span>En 2023, ¡Posicionandonos entre las mejores start-ups de Colombia!</span>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="banner-item w-full h-full flex flex-col justify-center items-center">
-          <div class="image-container">
-            <img src="../../../../2024-Estramipyme.jpg" alt="Estramipyme 2024">
-            <div class="border-overlay"></div>
-          </div>
-          <span>Ahora 2024, Lanzamos Estratipyme, ¡una metodología revolucionaria para el crecimiento
-            empresarial!</span>
         </div>
       </div>
     </div>
@@ -72,3 +17,4 @@
     </div>
   </div>
 </section>
+

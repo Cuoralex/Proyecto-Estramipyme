@@ -1,0 +1,44 @@
+.btnLogin {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #049DBF;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btnLogin:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #F25E3D;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.btnLogin:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.btnLogin span {
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  padding: 0.5rem;
+  color: #FEFFFE;
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnLogin:hover span {
+  color: #010001;
+  animation: scaleUp 0.3s ease-in-out;
+}
