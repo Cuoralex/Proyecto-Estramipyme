@@ -1,36 +1,40 @@
 .charts {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(1, 1fr); // Una columna en pantallas pequeñas
+  gap: 20px; // Espacio entre los contenedores de las gráficas
+  padding: 20px; // Espaciado interno del contenedor principal
+  background-color: #f4f4f4; // Fondo gris claro para el contenedor principal
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 640px) { // Pantallas pequeñas y medianas
+    grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas medianas
   }
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 1024px) { // Pantallas grandes
+    grid-template-columns: repeat(3, 1fr); // Tres columnas en pantallas grandes
   }
 }
 
 .chart-container {
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0.5rem;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background-color: #ffffff; // Fondo blanco para los contenedores de las gráficas
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); // Sombra sutil
+  border-radius: 10px; // Bordes redondeados
+  padding: 20px; // Espaciado interno
+  height: 100%; // Ocupa toda la altura disponible
+  box-sizing: border-box; // Incluye el padding en el cálculo del tamaño
 }
 
 .chart-title {
+  font-size: 1.25rem; // Tamaño de fuente para el título
+  margin-bottom: 10px; // Espaciado debajo del título
   text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: #333; // Color del texto del título
 }
 
 .echart {
-  width: 100%;
-  height: 300px; // Adjust this height as needed
+  width: 100%; // Ocupa todo el ancho del contenedor
+  height: 300px; // Altura fija para los gráficos
 }
