@@ -17,74 +17,20 @@ import { SidebarComponent } from '../../views/dashboard/component/sidebar/sideba
   templateUrl: './navbar-landingpage.component.html',
   styleUrls: ['./navbar-landingpage.component.scss']
 })
+export class NavbarLandingpageComponent {
+  menuOpen = false;
+  isMenuOpen = false;
+  menuOpenSobrenostros = false;
 
-export class NavbarLandingpageComponent implements OnInit {
-  isMobileMenuOpen: boolean = false;
+  constructor() { }
 
-  @Output() optionClicked = new EventEmitter<string>();
-
-  public routes = routes[0].children?.filter((route) => route.data);
-
-  constructor(private renderer: Renderer2) {}
-
-  ngOnInit(): void {
-    this.initBurgerMenu();
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  toggleMenuSobrenosotros() {
+    this.menuOpenSobrenostros = !this.menuOpenSobrenostros;
   }
 
-  optionClick(option: string) {
-    this.optionClicked.emit(option);
-  }
-
-  initBurgerMenu() {
-    const burgers = document.querySelectorAll('.navbar-burger');
-    const menus = document.querySelectorAll('.navbar-menu');
-    const closes = document.querySelectorAll('.navbar-close');
-    const backdrops = document.querySelectorAll('.navbar-backdrop');
-
-    if (burgers.length && menus.length) {
-      burgers.forEach(burger => {
-        this.renderer.listen(burger, 'click', () => {
-          menus.forEach(menu => {
-            if (menu.classList.contains('hidden')) {
-              this.renderer.removeClass(menu, 'hidden');
-            } else {
-              this.renderer.addClass(menu, 'hidden');
-            }
-          });
-        });
-      });
-    }
-
-    if (closes.length) {
-      closes.forEach(close => {
-        this.renderer.listen(close, 'click', () => {
-          menus.forEach(menu => {
-            if (menu.classList.contains('hidden')) {
-              this.renderer.removeClass(menu, 'hidden');
-            } else {
-              this.renderer.addClass(menu, 'hidden');
-            }
-          });
-        });
-      });
-    }
-
-    if (backdrops.length) {
-      backdrops.forEach(backdrop => {
-        this.renderer.listen(backdrop, 'click', () => {
-          menus.forEach(menu => {
-            if (menu.classList.contains('hidden')) {
-              this.renderer.removeClass(menu, 'hidden');
-            } else {
-              this.renderer.addClass(menu, 'hidden');
-            }
-          });
-        });
-      });
-    }
-  }
+  
 }

@@ -1,12 +1,14 @@
-
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { RegisterComponent } from '../../components/register/register.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
+import EventsComponent from '../../components/events/events.component';
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
+import { plansComponent } from '../../components/plans/plans.component';
+
 
 @Component({
   selector: 'app-landingpage',
@@ -18,10 +20,12 @@ import { ourServicesComponent } from '../../components/ourServices/ourServices.c
     LoginComponent,
     CarouselComponent,
     SwitcherComponent,
-    ourServicesComponent
+    ourServicesComponent,
+    plansComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
+  providers:[],
 })
 
 export class LandingPageComponent implements OnInit {
