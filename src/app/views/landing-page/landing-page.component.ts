@@ -7,6 +7,7 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
 import { LoginComponent } from '../../components/login/login.component';
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
+import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 
 @Component({
   selector: 'app-landingpage',
@@ -18,7 +19,8 @@ import { ourServicesComponent } from '../../components/ourServices/ourServices.c
     LoginComponent,
     CarouselComponent,
     SwitcherComponent,
-    ourServicesComponent
+    ourServicesComponent,
+    FooterLandingpageComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

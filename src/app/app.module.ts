@@ -37,7 +37,6 @@ const routes: Routes= [
     ReactiveFormsModule,
     HeaderLandingpageComponent,
     NavbarLandingpageComponent,
-    DashboardAdministratorComponent,
     LoginComponent,
     RegisterComponent,
     CarouselComponent,

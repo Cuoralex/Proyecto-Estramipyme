@@ -109,31 +109,5 @@
       "confirmPassword": "123456",
       "rol": "Cliente"
     }
-  ],
-  "datos": [
-    {
-      "id": "1",
-      "nombre": "Dato 1",
-      "descripcion": "Descripción del dato 1"
-    },
-    {
-      "id": "2",
-      "nombre": "Dato 2",
-      "descripcion": "Descripción del dato 2"
-    }
-  ],
-  "fruits": [
-    {
-      "id": "0",
-      "name": "Banano",
-      "quantity": "100",
-      "price": "20"
-    },
-    {
-      "id": "0",
-      "name": "Aguacate",
-      "quantity": "30",
-      "price": "10"
-    }
   ]
 }

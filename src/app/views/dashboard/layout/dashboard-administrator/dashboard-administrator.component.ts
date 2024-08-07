@@ -8,6 +8,8 @@ import { HeaderDashboardComponent } from '../header-dashboard/header-dashboard.c
 import { SidebarComponent } from "../../component/sidebar/sidebar.component";
 import { FooterdashboardComponent } from "../footer-dashboard/footer-dashboard.component";
 import { UsersAdministratorComponent } from './users-administrator/users-administrator.component';
+import MetricsComponent from './metrics/metrics.component';
+
 
 @Component({
   selector: 'app-dashboard-administrator',
@@ -18,7 +20,8 @@ import { UsersAdministratorComponent } from './users-administrator/users-adminis
     HeaderDashboardComponent,
     SidebarComponent,
     FooterdashboardComponent,
-    UsersAdministratorComponent    
+    UsersAdministratorComponent,
+    MetricsComponent
 ],
   templateUrl: './dashboard-administrator.component.html',
   styleUrls: ['./dashboard-administrator.component.scss'],
