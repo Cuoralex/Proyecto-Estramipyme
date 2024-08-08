@@ -87,27 +87,28 @@
   }
 
   &.card[for="c1"] {
-    background: #f46161;
+    // background: #f46161;
+    background: #CCAF01;
   }
 
   &.card[for="c2"] {
-    background: #E76F51;
+    background: #F25E3D;
   }
 
   &.card[for="c3"] {
-    background: #F4A261;
+    background: #049DBF;
   }
 
   &.card[for="c4"] {
-    background: #E9C46A;
+    background: #2c3e50;
   }
 
   &.card[for="c5"] {
-    background: #2A9D8F;
+    background: #020659;
   }
 
   &.card[for="c6"] {
-    background: #264653;
+    background: #010001;
   }
 }
 
@@ -148,6 +149,7 @@ input {
       h4 {
         font-size: 1rem;
       }
+      
     }
   }
 }

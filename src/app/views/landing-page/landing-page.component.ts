@@ -9,6 +9,7 @@ import { SwitcherComponent } from '../../components/switcher/app-switcher.compon
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
+import { contactUsComponent } from '../../components/contact-us/contact-us.component';
 
 
 @Component({
@@ -22,9 +23,9 @@ import { plansComponent } from '../../components/plans/plans.component';
     CarouselComponent,
     SwitcherComponent,
     ourServicesComponent,
-    FooterLandingpageComponent,
-    ourServicesComponent,
-    plansComponent
+    plansComponent,
+    contactUsComponent,
+    FooterLandingpageComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
