@@ -38,7 +38,7 @@
     </section>
 
     <!-- Sección de Servicios -->
-    <section id="services" class="p-8 bg-firstColor flex-container">
+    <section id="services" class="p-8 bg-fondoAlterno flex-container">
       <app-ourServices></app-ourServices>
     </section>
 
@@ -85,25 +85,6 @@
       </section> -->
 
     <!-- Sección de Contacto -->
-    <section id="contact" class="p-8 bg-gray-100">
-      <h2 class="text-3xl font-bold text-black text-center">Contáctanos</h2>
-      <form class="mt-4 mx-auto max-w-xl text-black " action="https://formsubmit.co/alexacuartas@gmail.com"
-        method="POST">
-        <label for="block mb-2 ">Nombre completo:</label>
-        <input type="text" class="w-full p-2 text-black border rounded mb-4" nale="name" />
-
-        <label for="block mb-2">Correo Electrónico:</label>
-        <input type="email" class="w-full p-2 text-black border rounded mb-4" name="email" />
-
-        <label for="block mb-2">Asunto:</label>
-        <input type="text" class="w-full p-2 text-black border rounded mb-4" name="subject" />
-
-        <label for="block mb-2">Mensaje:</label>
-        <textarea class="w-full p-2 text-black border rounded mb-4" id="coments"></textarea>
-        <button type="coments" class="bg-blue-600 text-black py-2 px-4 rounded" name="coments">Envíanos un
-          mensaje</button>
-
-        <input type="hidden" name="_next" value="http://127.0.0.1:5501/src/app/views/form/form.component.html">
-        <input type="hidden" name="_captcha" value="false">
-      </form>
+    <section id="contact" class="p-4 px-4 bg-fondoAlterno flex-container">
+      <app-contact-us></app-contact-us>
     </section>

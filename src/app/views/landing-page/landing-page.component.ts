@@ -8,6 +8,7 @@ import EventsComponent from '../../components/events/events.component';
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
 import { plansComponent } from '../../components/plans/plans.component';
+import { contactUsComponent } from '../../components/contact-us/contact-us.component';
 
 
 @Component({
@@ -21,7 +22,8 @@ import { plansComponent } from '../../components/plans/plans.component';
     CarouselComponent,
     SwitcherComponent,
     ourServicesComponent,
-    plansComponent
+    plansComponent,
+    contactUsComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

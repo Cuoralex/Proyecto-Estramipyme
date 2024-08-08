@@ -13,6 +13,7 @@ module.exports = {
         fifthColor: '#F25E3D', //Salmon
         paragraphColor: '#2c3e50', //Gris Oscuro
         azulAlterno: '#049DBF', //Azul claro
+        fondoAlterno: '#DFE3E4'
       },
     },
   },
