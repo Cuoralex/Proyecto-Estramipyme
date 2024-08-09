@@ -129,6 +129,26 @@
       "legalPersonEmail": "",
       "legalPersonPassword": "",
       "legalPersonConfirmPassword": ""
+    },
+    {
+      "id": "3218",
+      "TypeOfPerson": "natural",
+      "TypeCompany": null,
+      "LegalPersonName": null,
+      "LegalPersonCompanyName": null,
+      "Sector": null,
+      "LegalPersonAddress": null,
+      "LegalPersonPhone": null,
+      "LegalPersonEmail": null,
+      "LegalPersonPassword": null,
+      "LegalPersonConfirmPassword": null,
+      "NaturalPersonName": "a",
+      "NaturalPersonAddress": "a",
+      "NaturalPersonPhone": "11111111",
+      "NaturalPersonEmail": "a@g.com",
+      "NaturalPersonPassword": "123456",
+      "NaturalPersonConfirmPassword": "123456",
+      "TypeOfAdvice": "free"
     }
   ]
 }

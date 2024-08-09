@@ -1,19 +1,23 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register.model';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registern',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   templateUrl: './registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
 export class RegisternComponent implements OnInit, OnDestroy {
+register() {
+throw new Error('Method not implemented.');
+}
   isOtherCompanyType: boolean = false;
   registerForm: FormGroup;
   subscriptions: Subscription[] = [];
@@ -31,8 +35,13 @@ NaturalPhone: any;
 NaturalEmail: any;
 NaturalPassword: any;
 
-  constructor(private registerService: RegisterService, fb: FormBuilder) {
-    this.registerForm = fb.group({
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private registerService: RegisterService
+  ) {
+    this.registerForm = this.fb.group({
       TypeOfPerson: ['', Validators.required],
       TypeCompany: [''],
       TypeCompanyAnother: [''],
@@ -55,7 +64,18 @@ NaturalPassword: any;
   }
 
   ngOnInit() {
-    this.registerForm.get('TypeCompany')?.valueChanges.subscribe(value => {
+    // Handle TypeOfPerson value changes
+    const typeOfPersonSubscription = this.registerForm.get('TypeOfPerson')?.valueChanges.subscribe(value => {
+      this.registerForm.reset({ TypeOfPerson: value }, { emitEvent: false });
+      this.setupValidators(value);
+    });
+
+    if (typeOfPersonSubscription) {
+      this.subscriptions.push(typeOfPersonSubscription);
+    }
+
+    // Handle TypeCompany value changes
+    const typeCompanySubscription = this.registerForm.get('TypeCompany')?.valueChanges.subscribe(value => {
       this.isOtherCompanyType = (value === 'otro');
       if (this.isOtherCompanyType) {
         this.registerForm.get('TypeCompanyAnother')?.enable();
@@ -65,15 +85,8 @@ NaturalPassword: any;
       }
     });
 
-    this.registerForm.get('TypeCompanyAnother')?.disable();
-
-    const typeOfPersonSubscription = this.registerForm.get('TypeOfPerson')?.valueChanges.subscribe(value => {
-      this.registerForm.reset({ TypeOfPerson: value }, { emitEvent: false });
-      this.setupValidators(value);
-    });
-
-    if (typeOfPersonSubscription) {
-      this.subscriptions.push(typeOfPersonSubscription);
+    if (typeCompanySubscription) {
+      this.subscriptions.push(typeCompanySubscription);
     }
   }
 
@@ -81,43 +94,19 @@ NaturalPassword: any;
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  register() {
+  onRegister() {
     if (this.registerForm.valid) {
-      const formValue = this.registerForm.value;
-      let dataToSend: RegisterData = {
-        typeOfPerson: formValue.TypeOfPerson,
-        naturalPersonName: formValue.NaturalPersonName || '',
-        NaturalPersonAddress: formValue.NaturalPersonAddress || '',
-        NaturalPersonPhone: formValue.NaturalPersonPhone || '',
-        naturalPersonEmail: formValue.NaturalPersonEmail || '',
-        naturalPersonPassword: formValue.NaturalPersonPassword || '',
-        naturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword || '',
-        typeOfAdvice: formValue.TypeOfAdvice || '',
-        typeCompany: formValue.TypeCompany || '',
-        typeCompanyAnother: formValue.TypeCompanyAnother || '',
-        legalPersonName: formValue.LegalPersonName || '',
-        legalPersonCompanyName: formValue.LegalPersonCompanyName || '',
-        sector: formValue.Sector || '',
-        LegalPersonAddress: formValue.LegalPersonAddress || '',
-        LegalPersonPhone: formValue.LegalPersonPhone || '',
-        legalPersonEmail: formValue.LegalPersonEmail || '',
-        legalPersonPassword: formValue.LegalPersonPassword || '',
-        legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword || '',
-      };
-
-      this.registerService.register(dataToSend).subscribe(
-        (response: RegisterData) => {
-          console.log('Datos guardados en json-server', response);
-          this.registerForm.reset();
-          this.registerForm.markAsPristine();
-          this.registerForm.markAsUntouched();
-        },
-        (error: any) => {
-          console.error('Error al guardar los datos', error);
-        }
-      );
-    } else {
-      console.log('Formulario no válido');
+      const formData = this.registerForm.value;
+      
+      this.http.post('http://localhost:3000/users', formData)
+        .subscribe({
+          next: () => {
+            this.router.navigate(['/formulario']);
+          },
+          error: (err) => {
+            console.error('Error al guardar los datos', err);
+          }
+        });
     }
   }
 

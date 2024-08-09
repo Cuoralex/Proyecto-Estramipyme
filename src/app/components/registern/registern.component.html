@@ -342,12 +342,16 @@
         </div>
       </div>
   
-      <<div class="mt-6 flex items-center justify-center gap-x-6">
-        <button type="button" class="btnSingUp" [routerLink]="['formulario']" 
+      <div class="mt-6 flex items-center justify-center gap-x-6">
+        <button
+          type="button"
+          class="btnSingUp"
+          (click)="onRegister()"
           [disabled]="!registerForm.valid || registerForm.get('TypeOfPerson')?.value === ''">
           <span class="spanSingUp">Regístrate</span>
         </button>
       </div>
+      
       
     </form>
   </div>
