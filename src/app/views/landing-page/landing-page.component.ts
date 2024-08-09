@@ -1,7 +1,7 @@
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { RegisterComponent } from '../../components/registern/registern.component';
+import { RegisternComponent } from '../../components/registern/registern.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
 import EventsComponent from '../../components/events/events.component';
@@ -17,7 +17,7 @@ import { contactUsComponent } from '../../components/contact-us/contact-us.compo
   standalone: true,
   imports: [
     RouterModule,
-    RegisterComponent,
+    RegisternComponent,
     NavbarLandingpageComponent,
     LoginComponent,
     CarouselComponent,

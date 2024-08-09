@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../../components/login/login.component';
-import { RegisterComponent } from "../registern/registern.component";
+import { RegisternComponent } from "../registern/registern.component";
 
 @Component({
   selector: 'app-switcher',
   standalone: true,
   imports: [
     CommonModule,
-    RegisterComponent,
+    RegisternComponent,
     LoginComponent,
   ],
   templateUrl: './app-switcher.component.html',
