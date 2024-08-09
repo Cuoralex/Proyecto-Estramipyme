@@ -8,11 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-registern',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule
-  ],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
@@ -109,13 +105,13 @@ NaturalPassword: any;
       };
 
       this.registerService.registerUser(dataToSend).subscribe(
-        (        response: any) => {
+        (response: RegisterData) => {
           console.log('Datos guardados en json-server', response);
           this.registerForm.reset();
           this.registerForm.markAsPristine();
           this.registerForm.markAsUntouched();
         },
-        (        error: any) => {
+        (error: any) => {
           console.error('Error al guardar los datos', error);
         }
       );
