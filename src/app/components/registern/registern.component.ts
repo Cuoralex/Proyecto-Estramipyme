@@ -1,108 +1,60 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register.service';
 import { RegisterData } from '../../models/register.model';
-
-
-const PERSON_TYPE_NATURAL = 'natural';
-const PERSON_TYPE_JURIDICA = 'juridica';
-
-// Función de validación para contraseñas de persona natural
-export const naturalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-  const naturalPassword = control.get('NaturalPersonPassword');
-  const naturalPasswordConfirm = control.get('NaturalPersonConfirmPassword');
-  return naturalPassword && naturalPasswordConfirm && naturalPassword.value !== naturalPasswordConfirm.value ? { naturalPasswords: true } : null;
-};
-
-export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-  const LegalPassword = control.get('LegalPersonPassword');
-  const LegalPasswordConfirm = control.get('LegalPersonConfirmPassword');
-  return LegalPassword && LegalPasswordConfirm && LegalPassword.value !== LegalPasswordConfirm.value ? { LegalPasswords: true } : null;
-};
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registern',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule
+  ],
   templateUrl: './registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
-
-export class RegisternComponent {
+export class RegisternComponent implements OnInit, OnDestroy {
   isOtherCompanyType: boolean = false;
-
   registerForm: FormGroup;
-  TypeOfPerson: FormControl;
-  TypeCompany: FormControl;
-  TypeCompanyAnother: FormControl;
-  LegalPersonName: FormControl;
-  LegalPersonCompanyName: FormControl;
-  Sector: FormControl;
-  LegalPersonAddress: FormControl;
-  LegalPersonPhone: FormControl;
-  LegalPersonEmail: FormControl;
-  LegalPersonPassword: FormControl;
-  LegalPersonConfirmPassword: FormControl;
-  NaturalPersonName: FormControl;
-  NaturalPersonAddress: FormControl;
-  NaturalPersonPhone: FormControl;
-  NaturalPersonEmail: FormControl;
-  NaturalPersonPassword: FormControl;
-  NaturalPersonConfirmPassword: FormControl;
-  TypeOfAdvice: FormControl;
-
-  private subscriptions: Subscription[] = [];
-navigateToCreate: any;
+  subscriptions: Subscription[] = [];
+OptionTypeCompany: any;
+LegalName: any;
+LegalCompanyName: any;
+OptSector: any;
+LegalAddress: any;
+LegalPhone: any;
+LegalEmail: any;
+LegalPassword: any;
+NaturalPersonNames: any;
+NaturalAddress: any;
+NaturalPhone: any;
+NaturalEmail: any;
+NaturalPassword: any;
 
   constructor(private registerService: RegisterService, fb: FormBuilder) {
-    this.TypeOfPerson = new FormControl('', Validators.required);
-
-    // Persona Jurídica
-    this.TypeCompany = new FormControl('');
-    this.TypeCompanyAnother = new FormControl('');
-    this.LegalPersonName = new FormControl('');
-    this.LegalPersonCompanyName = new FormControl('');
-    this.Sector = new FormControl('');
-    this.LegalPersonAddress = new FormControl('');
-    this.LegalPersonPhone = new FormControl('');
-    this.LegalPersonEmail = new FormControl('');
-    this.LegalPersonPassword = new FormControl('');
-    this.LegalPersonConfirmPassword = new FormControl('');
-
-    // Persona Natural
-    this.NaturalPersonName = new FormControl('');
-    this.NaturalPersonAddress = new FormControl('');
-    this.NaturalPersonPhone = new FormControl('');
-    this.NaturalPersonEmail = new FormControl('');
-    this.NaturalPersonPassword = new FormControl('');
-    this.NaturalPersonConfirmPassword = new FormControl('');
-
-    //Tipo de asesoria
-    this.TypeOfAdvice = new FormControl('');
-
-    this.registerForm = new FormGroup({
-      TypeOfPerson: this.TypeOfPerson,
-      TypeCompany: this.TypeCompany,
-      TypeCompanyAnother: this.TypeCompanyAnother,
-      LegalPersonName: this.LegalPersonName,
-      LegalPersonCompanyName: this.LegalPersonCompanyName,
-      Sector: this.Sector,
-      LegalPersonAddress: this.LegalPersonAddress,
-      LegalPersonPhone: this.LegalPersonPhone,
-      LegalPersonEmail: this.LegalPersonEmail,
-      LegalPersonPassword: this.LegalPersonPassword,
-      LegalPersonConfirmPassword: this.LegalPersonConfirmPassword,
-      NaturalPersonName: this.NaturalPersonName,
-      NaturalPersonAddress: this.NaturalPersonAddress,
-      NaturalPersonPhone: this.NaturalPersonPhone,
-      NaturalPersonEmail: this.NaturalPersonEmail,
-      NaturalPersonPassword: this.NaturalPersonPassword,
-      NaturalPersonConfirmPassword: this.NaturalPersonConfirmPassword,
-      TypeOfAdvice: this.TypeOfAdvice
-    }, { validators: [naturalPasswordsValidator, LegalPasswordsValidator] });
-
+    this.registerForm = fb.group({
+      TypeOfPerson: ['', Validators.required],
+      TypeCompany: [''],
+      TypeCompanyAnother: [''],
+      LegalPersonName: [''],
+      LegalPersonCompanyName: [''],
+      Sector: [''],
+      LegalPersonAddress: [''],
+      LegalPersonPhone: [''],
+      LegalPersonEmail: ['', Validators.email],
+      LegalPersonPassword: [''],
+      LegalPersonConfirmPassword: [''],
+      NaturalPersonName: [''],
+      NaturalPersonAddress: [''],
+      NaturalPersonPhone: [''],
+      NaturalPersonEmail: ['', Validators.email],
+      NaturalPersonPassword: [''],
+      NaturalPersonConfirmPassword: [''],
+      TypeOfAdvice: ['']
+    });
   }
 
   ngOnInit() {
@@ -118,83 +70,62 @@ navigateToCreate: any;
 
     this.registerForm.get('TypeCompanyAnother')?.disable();
 
-    // Suscribirse a cambios en el control 'typeOfPerson'
     const typeOfPersonSubscription = this.registerForm.get('TypeOfPerson')?.valueChanges.subscribe(value => {
-      // Limpiar el formulario pero mantener el valor de 'typeOfPerson'
-      this.registerForm.reset({
-        TypeOfPerson: value
-      }, { emitEvent: false }); // Evita que se dispare nuevamente el valueChanges
-
-      // Configurar validadores según el tipo de persona
+      this.registerForm.reset({ TypeOfPerson: value }, { emitEvent: false });
       this.setupValidators(value);
     });
 
-    // Guardar la suscripción para desuscribirse más tarde
     if (typeOfPersonSubscription) {
       this.subscriptions.push(typeOfPersonSubscription);
     }
   }
 
-  //funciones de validación persona natural
-  get NaturalPersonNames() {
-    return this.registerForm.get('NaturalPersonName');
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  get NaturalAddress(){
-    return this.registerForm.get('NaturalPersonAddress');
-  }
+  register() {
+    if (this.registerForm.valid) {
+      const formValue = this.registerForm.value;
+      let dataToSend: RegisterData = {
+        typeOfPerson: formValue.TypeOfPerson,
+        naturalPersonName: formValue.NaturalPersonName || '',
+        NaturalPersonAddress: formValue.NaturalPersonAddress || '',
+        NaturalPersonPhone: formValue.NaturalPersonPhone || '',
+        naturalPersonEmail: formValue.NaturalPersonEmail || '',
+        naturalPersonPassword: formValue.NaturalPersonPassword || '',
+        naturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword || '',
+        typeOfAdvice: formValue.TypeOfAdvice || '',
+        typeCompany: formValue.TypeCompany || '',
+        typeCompanyAnother: formValue.TypeCompanyAnother || '',
+        legalPersonName: formValue.LegalPersonName || '',
+        legalPersonCompanyName: formValue.LegalPersonCompanyName || '',
+        sector: formValue.Sector || '',
+        LegalPersonAddress: formValue.LegalPersonAddress || '',
+        LegalPersonPhone: formValue.LegalPersonPhone || '',
+        legalPersonEmail: formValue.LegalPersonEmail || '',
+        legalPersonPassword: formValue.LegalPersonPassword || '',
+        legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword || '',
+      };
 
-  get NaturalPhone(){
-    return this.registerForm.get('NaturalPersonPhone');
-  }
-
-  get NaturalEmail() {
-    return this.registerForm.get('NaturalPersonEmail');
-  }
-
-  get NaturalPassword() {
-    return this.registerForm.get('NaturalPersonPassword');
-  }
-
-  //funciones de validación persona jurídica
-  get OptionTypeCompany() {
-    return this.registerForm.get('TypeCompany');
-  }
-
-  get OptTypeCompanyAnother() {
-    return this.registerForm.get('TypeCompanyAnother');
-  }
-
-  get LegalName() {
-    return this.registerForm.get('LegalPersonName');
-  }
-
-  get LegalCompanyName() {
-    return this.registerForm.get('LegalPersonCompanyName');
-  }
-
-  get OptSector() {
-    return this.registerForm.get('Sector');
-  }
-
-  get LegalEmail() {
-    return this.registerForm.get('LegalPersonEmail');
-  }
-
-  get LegalAddress(){
-    return this.registerForm.get('LegalPersonAddress');
-  }
-
-  get LegalPhone(){
-    return this.registerForm.get('LegalPersonPhone');
-  }
-
-  get LegalPassword() {
-    return this.registerForm.get('LegalPersonPassword');
+      this.registerService.registerUser(dataToSend).subscribe(
+        (        response: any) => {
+          console.log('Datos guardados en json-server', response);
+          this.registerForm.reset();
+          this.registerForm.markAsPristine();
+          this.registerForm.markAsUntouched();
+        },
+        (        error: any) => {
+          console.error('Error al guardar los datos', error);
+        }
+      );
+    } else {
+      console.log('Formulario no válido');
+    }
   }
 
   setupValidators(value: string) {
-    if (value === PERSON_TYPE_JURIDICA) {
+    if (value === 'juridica') {
       this.registerForm.get('TypeCompany')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonName')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonCompanyName')?.setValidators(Validators.required);
@@ -210,8 +141,7 @@ navigateToCreate: any;
       this.registerForm.get('NaturalPersonEmail')?.clearValidators();
       this.registerForm.get('NaturalPersonPassword')?.clearValidators();
       this.registerForm.get('NaturalPersonConfirmPassword')?.clearValidators();
-
-    } else if (value === PERSON_TYPE_NATURAL) {
+    } else if (value === 'natural') {
       this.registerForm.get('NaturalPersonName')?.setValidators(Validators.required);
       this.registerForm.get('NaturalPersonAddress')?.setValidators(Validators.required);
       this.registerForm.get('NaturalPersonPhone')?.setValidators(Validators.required);
@@ -227,8 +157,8 @@ navigateToCreate: any;
       this.registerForm.get('LegalPersonEmail')?.clearValidators();
       this.registerForm.get('LegalPersonPassword')?.clearValidators();
       this.registerForm.get('LegalPersonConfirmPassword')?.clearValidators();
-
     }
+
     this.registerForm.get('TypeCompany')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonName')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonCompanyName')?.updateValueAndValidity();
@@ -238,84 +168,11 @@ navigateToCreate: any;
     this.registerForm.get('LegalPersonEmail')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonPassword')?.updateValueAndValidity();
     this.registerForm.get('LegalPersonConfirmPassword')?.updateValueAndValidity();
-
     this.registerForm.get('NaturalPersonName')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonAddress')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonPhone')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonEmail')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonPassword')?.updateValueAndValidity();
     this.registerForm.get('NaturalPersonConfirmPassword')?.updateValueAndValidity();
-  }
-
-  ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-  }
-
-  register() {
-    if (this.registerForm.valid) {
-      const formValue = this.registerForm.value;
-      let dataToSend: RegisterData = {
-        typeOfPerson: '',
-        naturalPersonName: '',
-        NaturalPersonAddress: '',
-        NaturalPersonPhone: '',
-        naturalPersonEmail: '',
-        naturalPersonPassword: '',
-        naturalPersonConfirmPassword: '',
-        typeOfAdvice: '',
-        typeCompany: '',
-        typeCompanyAnother: '',
-        legalPersonName: '',
-        legalPersonCompanyName: '',
-        sector: '',
-        LegalPersonAddress: '',
-        LegalPersonPhone: '',
-        legalPersonEmail: '',
-        legalPersonPassword: '',
-        legalPersonConfirmPassword: '',
-      };
-
-      if (formValue.TypeOfPerson === PERSON_TYPE_NATURAL) {
-        dataToSend = {
-          typeOfPerson: formValue.TypeOfPerson,
-          naturalPersonName: formValue.NaturalPersonName,
-          NaturalPersonAddress: formValue.NaturalPersonAddress,
-          NaturalPersonPhone: formValue.NaturalPersonPhone,
-          naturalPersonEmail: formValue.NaturalPersonEmail,
-          naturalPersonPassword: formValue.NaturalPersonPassword,
-          naturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword,
-          typeOfAdvice: formValue.TypeOfAdvice || '',
-        };
-      } else if (formValue.TypeOfPerson === PERSON_TYPE_JURIDICA) {
-        dataToSend = {
-          typeOfPerson: formValue.TypeOfPerson,
-          typeCompany: formValue.TypeCompany,
-          typeCompanyAnother: formValue.TypeCompanyAnother || '',
-          legalPersonName: formValue.LegalPersonName,
-          legalPersonCompanyName: formValue.LegalPersonCompanyName,
-          sector: formValue.Sector,
-          LegalPersonAddress: formValue.LegalPersonAddress,
-          LegalPersonPhone: formValue.LegalPersonPhone,
-          legalPersonEmail: formValue.LegalPersonEmail,
-          legalPersonPassword: formValue.LegalPersonPassword,
-          legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword,
-          typeOfAdvice: formValue.TypeOfAdvice || '',
-        };
-      }
-
-      // Guarda los datos en localStorage
-      const users = JSON.parse(localStorage.getItem('formValue') || '[]');
-      users.push(dataToSend);
-      localStorage.setItem('formValue', JSON.stringify(users));
-
-      // Resetea el formulario para limpiar los campos
-      this.registerForm.reset();
-      this.registerForm.markAsPristine();
-      this.registerForm.markAsUntouched();
-
-      console.log('Datos guardados en localStorage', dataToSend);
-    } else {
-      console.log('Formulario no válido');
-    }
   }
 }

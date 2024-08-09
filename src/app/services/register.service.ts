@@ -8,6 +8,7 @@ import { RegisterData } from '../models/register.model';
 export class RegisterService {
 
   private readonly storageKey = 'formValue';
+  registerUser: any;
 
   saveData(data: RegisterData): void {
     localStorage.setItem(this.storageKey, JSON.stringify(data));
