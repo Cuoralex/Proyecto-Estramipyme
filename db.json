@@ -108,6 +108,27 @@
       "password": "123456",
       "confirmPassword": "123456",
       "rol": "Cliente"
+    },
+    {
+      "id": "0ded",
+      "typeOfPerson": "natural",
+      "naturalPersonName": "a",
+      "NaturalPersonAddress": "a",
+      "NaturalPersonPhone": "2",
+      "naturalPersonEmail": "a@u.com",
+      "naturalPersonPassword": "123456",
+      "naturalPersonConfirmPassword": "123456",
+      "typeOfAdvice": "free",
+      "typeCompany": "",
+      "typeCompanyAnother": "",
+      "legalPersonName": "",
+      "legalPersonCompanyName": "",
+      "sector": "",
+      "LegalPersonAddress": "",
+      "LegalPersonPhone": "",
+      "legalPersonEmail": "",
+      "legalPersonPassword": "",
+      "legalPersonConfirmPassword": ""
     }
   ]
 }

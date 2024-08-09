@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { RegisterService } from '../../services/register.service';
+import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register.model';
 import { CommonModule } from '@angular/common';
 
@@ -104,7 +104,7 @@ NaturalPassword: any;
         legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword || '',
       };
 
-      this.registerService.registerUser(dataToSend).subscribe(
+      this.registerService.register(dataToSend).subscribe(
         (response: RegisterData) => {
           console.log('Datos guardados en json-server', response);
           this.registerForm.reset();
