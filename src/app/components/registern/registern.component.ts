@@ -4,11 +4,12 @@ import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register.model';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-registern',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
