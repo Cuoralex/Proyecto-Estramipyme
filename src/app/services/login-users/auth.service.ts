@@ -1,32 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class LoginService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:3000/users';  // Cambia esta URL según tu configuración
 
-  login(email: string, password: string): boolean {
-    const storedEmail = localStorage.getItem('email');
-    const storedPassword = localStorage.getItem('password');
+  constructor(private http: HttpClient) { }
 
-    if (email === storedEmail && password === storedPassword) {
-      localStorage.setItem('isLoggedIn', 'true');
-      return true;
-    }
-
-    return false;
-  }
-
-  isLoggedIn(): boolean {
-    return localStorage.getItem('isLoggedIn') === 'true';
-  }
-
-  logout(): void {
-    localStorage.removeItem('isLoggedIn');
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }
-
-
-
