@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/registern/registern.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormComponent } from './views/form/form.component';
 

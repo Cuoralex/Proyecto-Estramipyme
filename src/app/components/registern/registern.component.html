@@ -1,0 +1,353 @@
+<section class="relative flex flex-col justify-center items-center">
+  <div class="py-0 w-96">
+    
+    <form class="space-y-5 mt-5" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="space-y-12">
+        <div>
+  
+          <div class=" flex justify-center">
+            <div class="w-52">
+              <label for="TypeOfPerson" class="flex items-start text-sm font-medium leading-6 text-thirdColor">Tipo de persona</label>
+              <div class="mt-2">
+                <select id="TypeOfPerson" name="TypeOfPerson" formControlName="TypeOfPerson" autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                  <option value="" disabled selected>Selecciona...</option>
+                  <option value="juridica">Persona Jurídica</option>
+                  <option value="natural">Persona Natural</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Persona Jurídica -->
+          <div id="LegalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'juridica'"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2">
+  
+            <!-- Tipo de empresa -->
+            <div class="relative sm:col-span-1">
+              <select id="TypeCompany" name="TypeCompany" formControlName="TypeCompany" autocomplete=""
+              class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <option value="microempresa">Microempresa</option>
+                <option value="pequeña">Pequeña</option>
+                <option value="mediana">Mediana</option>
+                <option value="grande">Grande</option>
+                <option value="otro">Otro</option>
+              </select>
+              <label for="TypeCompanyAnother"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Tipo
+                de empresa</label>
+  
+              <div *ngIf="OptionTypeCompany?.invalid && (OptionTypeCompany?.dirty || OptionTypeCompany?.touched)">
+                <div *ngIf="OptionTypeCompany?.hasError('required')" class="text-red-500 text-xs">
+                  El tipo de empresa es requerido.
+                </div>
+              </div>
+            </div>
+  
+  
+            <!-- Otro tipo de empresa -->
+            <div *ngIf="isOtherCompanyType" class="relative sm:col-span-1">
+              <input type="text" name="TypeCompanyAnother" formControlName="TypeCompanyAnother" id="TypeCompanyAnother"
+                autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="TypeCompanyAnother"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Otro</label>
+              <div
+                *ngIf="registerForm.get('TypeCompanyAnother')?.invalid && (registerForm.get('TypeCompanyAnother')?.dirty || registerForm.get('TypeCompanyAnother')?.touched)">
+                <div *ngIf="registerForm.get('TypeCompanyAnother')?.hasError('required')" class="text-red-500 text-xs">
+                  El campo es requerido cuando se selecciona "Otro".
+                </div>
+              </div>
+            </div>
+  
+            <!-- Nombre Comercial -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonName" formControlName="LegalPersonName" id="LegalPersonName"
+                autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonName"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Nombre
+                Comercial</label>
+              <div *ngIf="LegalName?.invalid && (LegalName?.dirty || LegalName?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalName?.hasError('required')">El nombre es requerido.</div>
+              </div>
+            </div>
+  
+            <!-- Razón Social -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonCompanyName" formControlName="LegalPersonCompanyName"
+                id="LegalPersonCompanyName" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonCompanyName"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Razón
+                Social</label>
+              <div *ngIf="LegalCompanyName?.invalid && (LegalCompanyName?.dirty || LegalCompanyName?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalCompanyName?.hasError('required')">La razón social es requerida.</div>
+              </div>
+            </div>
+  
+            <!-- Sector -->
+            <div class="relative sm:col-span-1">
+              <select id="Sector" name="Sector" formControlName="Sector" autocomplete=""
+              class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <option>Alimentos y Nutrición</option>
+                <option>Automóviles</option>
+                <option>Bebidas</option>
+                <option>Belleza y Salud</option>
+                <option>Bienes de Consumo</option>
+                <option>Electrónica y Electrodomésticos</option>
+                <option>Energía</option>
+                <option>Finanzas y Seguros</option>
+                <option>Higiene y Cuidado Personal</option>
+                <option>Industria del Hogar</option>
+                <option>Industria de Lujo y Moda</option>
+                <option>Inmobiliaria</option>
+                <option>Logística y Transporte</option>
+                <option>Materiales de Construcción</option>
+                <option>Medios de Comunicación y Tecnología</option>
+                <option>Metales y Minería</option>
+                <option>Muebles y Decoración del Hogar</option>
+                <option>Productos de Consumo Duraderos</option>
+                <option>Productos Químicos y Farmacéuticos</option>
+                <option>Publicidad y Marketing</option>
+                <option>Recursos Naturales</option>
+                <option>Retail y Comercio Electrónico</option>
+                <option>Servicios Empresariales</option>
+                <option>Servicios Públicos y Medio Ambiente</option>
+                <option>Tabaco y Cannabis</option>
+                <option>Telecomunicaciones</option>
+                <option>Turismo y Ocio</option>
+              </select>
+              <label for="TypeCompanyAnother"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Sector</label>
+  
+              <div *ngIf="OptSector?.invalid && (OptSector?.dirty || OptSector?.touched)">
+                <div *ngIf="OptSector?.hasError('required')" class="text-red-500 text-xs">
+                  El sector es requerido.
+                </div>
+              </div>
+            </div>
+
+            <!-- Dirección -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonAddress" formControlName="LegalPersonAddress"
+                id="LegalPersonAddress" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonAddress"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Dirección</label>
+              <div *ngIf="LegalAddress?.invalid && (LegalAddress?.dirty || LegalAddress?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalAddress?.hasError('required')">La dirección es requerida.</div>
+              </div>
+            </div>
+
+            <!-- Telefono -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="LegalPersonPhone" formControlName="LegalPersonPhone"
+                id="LegalPersonPhone" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonPhone"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Telefono</label>
+              <div *ngIf="LegalPhone?.invalid && (LegalPhone?.dirty || LegalPhone?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalPhone?.hasError('required')">El teléfono es requerido.</div>
+              </div>
+            </div>
+  
+            <!-- Correo Electrónico -->
+            <div class="relative sm:col-span-1">
+              <input id="LegalPersonEmail" name="LegalPersonEmail" formControlName="LegalPersonEmail" type="email"
+                autocomplete="email"
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonEmail"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Correo
+                Electrónico</label>
+              <div *ngIf="LegalEmail?.invalid && (LegalEmail?.dirty || LegalEmail?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalEmail?.hasError('required')">El correo es requerido.</div>
+                <div *ngIf="LegalEmail?.hasError('email')">Introduzca una dirección de correo electrónico válida.
+                </div>
+              </div>
+            </div>
+  
+            <!-- Contraseña -->
+            <div class="relative sm:col-span-1">
+              <input type="password" name="LegalPersonPassword" formControlName="LegalPersonPassword"
+                id="LegalPersonPassword" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonPassword"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Contraseña</label>
+              <div *ngIf="LegalPassword?.invalid && (LegalPassword?.dirty || LegalPassword?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="LegalPassword?.hasError('required')">La contraseña es requerida.</div>
+              </div>
+            </div>
+  
+            <!-- Confirmar Contraseña -->
+            <div class=" mb-4 relative sm:col-span-1">
+              <input type="password" name="LegalPersonConfirmPassword" formControlName="LegalPersonConfirmPassword"
+                id="LegalPersonConfirmPassword" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="LegalPersonConfirmPassword"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Confirmar
+                Contraseña</label>
+                <div *ngIf="registerForm.hasError('LegalPasswords') && (registerForm.touched || registerForm.dirty)"
+                class="text-red-500 text-xs">
+                Las contraseñas no coinciden.
+              </div>
+            </div>
+  
+            <!-- Asesoría -->
+            <div class="sm:col-span-2">
+              <div class="grid grid-cols-1 gap-y-2">
+                <div class="asesoriaContainer flex items-center">
+                  <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-3">
+                  <label for="freeAdvisory" class="asesoria text-xs font-medium  text-thirdColor">
+                    ¿Quieres asesoría gratuita con estudiantes de pregrado?
+                  </label>
+                </div>
+                <div class="asesoriaContainer flex items-center">
+                  <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-3">
+                  <label for="paidAdvisory" class="asesoria text-xs font-medium text-thirdColor">
+                    ¿Prefieres asesoría con un profesor (con costo)?
+                  </label>
+                </div>
+              </div>
+            </div>            
+          </div>
+  
+  
+          <!-- Persona Natural -->
+          <div id="NaturalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'natural'" class="mt-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+  
+              <!-- Nombre Completo -->
+              <div class="relative sm:col-span-1">
+                <input type="text" name="NaturalPersonName" formControlName="NaturalPersonName" id="NaturalPersonName"
+                  autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonName"
+                class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Nombre
+                  Completo</label>
+                <div *ngIf="NaturalPersonNames?.invalid && (NaturalPersonNames?.dirty || NaturalPersonNames?.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="NaturalPersonNames?.hasError('required')">El nombre es requerido.</div>
+                </div>
+              </div>
+
+              <!-- Dirección -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="NaturalPersonAddress" formControlName="NaturalPersonAddress"
+                id="NaturalPersonAddress" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="NaturalPersonAddress"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Dirección</label>
+              <div *ngIf="NaturalAddress?.invalid && (NaturalAddress?.dirty || NaturalAddress?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="NaturalAddress?.hasError('required')">La dirección es requerida.</div>
+              </div>
+            </div>
+
+            <!-- Telefono -->
+            <div class="relative sm:col-span-1">
+              <input type="text" name="NaturalPersonPhone" formControlName="NaturalPersonPhone"
+                id="NaturalPersonPhone" autocomplete=""
+                class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+              <label for="NaturalPersonPhone"
+              class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Telefono</label>
+              <div *ngIf="NaturalPhone?.invalid && (NaturalPhone?.dirty || NaturalPhone?.touched)"
+                class="text-red-500 text-xs mt-1">
+                <div *ngIf="NaturalPhone?.hasError('required')">El teléfono es requerido.</div>
+              </div>
+            </div>
+  
+              <!-- Correo Electrónico -->
+              <div class="relative sm:col-span-1">
+                <input id="NaturalPersonEmail" name="NaturalPersonEmail" formControlName="NaturalPersonEmail" type="email"
+                  autocomplete="email"
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonEmail"
+                class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Correo
+                  Electrónico</label>
+                <div *ngIf="NaturalEmail?.invalid && (NaturalEmail?.dirty || NaturalEmail?.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="NaturalEmail?.hasError('required')">El correo es requerido.</div>
+                  <div *ngIf="NaturalEmail?.hasError('email')">Introduzca una dirección de correo electrónico válida.
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Contraseña -->
+              <div class="relative sm:col-span-1">
+                <input type="password" name="NaturalPersonPassword" formControlName="NaturalPersonPassword"
+                  id="NaturalPersonPassword" autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonPassword"
+                class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Contraseña</label>
+                <div *ngIf="NaturalPassword?.invalid && (NaturalPassword?.dirty || NaturalPassword?.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="NaturalPassword?.hasError('required')">La contraseña es requerida.</div>
+                </div>
+              </div>
+  
+              <!-- Confirmar Contraseña -->
+              <div class=" mb-4 relative sm:col-span-1">
+                <input type="password" name="NaturalPersonConfirmPassword" formControlName="NaturalPersonConfirmPassword"
+                  id="NaturalPersonConfirmPassword" autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonConfirmPassword"
+                class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+                peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Confirmar
+                  Contraseña</label>
+                <div *ngIf="registerForm.hasError('naturalPasswords') && (registerForm.touched || registerForm.dirty)"
+                  class="text-red-500 text-xs">
+                  Las contraseñas no coinciden.
+                </div>
+              </div>
+            </div>
+  
+            <!-- Asesoría -->
+            <div class="grid grid-cols-1 gap-y-2">
+              <div class="asesoriaContainer flex items-center">
+                <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-2">
+                <label for="freeAdvisory" class="asesoria text-xs font-medium text-thirdColor">
+                  ¿Quieres asesoría gratuita con estudiantes de pregrado?
+                </label>
+              </div>
+              <div class="asesoriaContainer flex items-center">
+                <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-2">
+                <label for="paidAdvisory" class="asesoria text-xs font-medium text-thirdColor">
+                  ¿Prefieres asesoría con un profesor (con costo)?
+                </label>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+  
+      <div class="mt-6 flex items-center justify-center gap-x-6">
+        <button type="submit" class="btnSingUp"
+          [disabled]="!registerForm.valid || registerForm.get('TypeOfPerson')?.value === ''">
+          <span class="spanSingUp">Registrate</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

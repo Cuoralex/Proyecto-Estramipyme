@@ -11,7 +11,7 @@ import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-l
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/registern/registern.component';
 import { LoginComponent } from './components/login/login.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';

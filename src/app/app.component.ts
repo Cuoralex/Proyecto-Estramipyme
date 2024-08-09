@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/registern/registern.component';
 import { DashboardAdministratorComponent } from './views/dashboard/layout/dashboard-administrator/dashboard-administrator.component';
 import { FooterLandingpageComponent } from './shared/footer-landingpage/footer-landingpage.component';
 import { LoginComponent } from './components/login/login.component';

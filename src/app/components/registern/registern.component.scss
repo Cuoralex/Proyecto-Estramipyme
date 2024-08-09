@@ -1,0 +1,117 @@
+.btnSingUp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #049DBF;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btnSingUp:after {
+  content: "Registrate";
+  color: #010001;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 0%;
+  height: 100%;
+  background: #F25E3D;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: -40px;
+}
+
+.btnSingUp:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.btnSingUp span {
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  padding: 0.5rem;
+  color: #FEFFFE;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnSingUp:hover span {
+  color: #010001;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .w-96 {
+    width: 90%;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .asesoria {
+    font-size: 0.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  .btnSingUp span {
+    width: 100px;
+    padding: 0.5rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  .w-96 {
+    width: 90%;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .sm\:col-span-2 {
+    grid-column: span 1 / span 1;
+  }
+
+  .asesoria {
+    font-size: 0.7rem;
+    grid-template-columns: 1fr;
+  }
+
+  .btnSingUp span {
+    width: 90px;
+    padding: 0.5rem;
+  }
+}
