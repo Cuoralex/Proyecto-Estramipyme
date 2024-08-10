@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { User } from "../models/user-administrator.model";
+import { Users } from "../models/user-administrator.model";
 
 
 @Injectable({ 
@@ -14,20 +14,20 @@ export class UserService {
   constructor(private httpClient: HttpClient) {}
 
   getAll(){
-    return this.httpClient.get<User[]>('http://localhost:3000/users')
+    return this.httpClient.get<Users[]>('http://localhost:3000/users')
   }
 
-  creat(data: User){
+  creat(data: Users){
     
     return this.httpClient.post('http://localhost:3000/users', data);
   }
 
-  edit(id: number): Observable<User> {
-    return this.httpClient.get<User>(`${this.baseUrl}/${id}`);
+  edit(id: number): Observable<Users> {
+    return this.httpClient.get<Users>(`${this.baseUrl}/${id}`);
   }
 
-  update(data: User): Observable<User> {
-    return this.httpClient.put<User>(`${this.baseUrl}/${data.id}`, data);
+  update(data: Users): Observable<Users> {
+    return this.httpClient.put<Users>(`${this.baseUrl}/${data.id}`, data);
   }
 
   delete(id: number): Observable<void> {

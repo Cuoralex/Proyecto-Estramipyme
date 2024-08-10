@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { User } from 'app/models/user-administrator.model';
+import { Users } from 'app/models/user-administrator.model';
 import { UserService } from 'app/services/user-administrator.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class EditComponent {
       private route: ActivatedRoute
     ) {}
   
-    formdata: User = {
+    formdata: Users = {
       id: 0,
       enterpriseType: '',
       enterpriseName: '',

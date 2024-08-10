@@ -32,7 +32,6 @@ export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): 
 
 export class RegisterComponent {
   isOtherCompanyType: boolean = false;
-
   registerForm: FormGroup;
   TypeOfPerson: FormControl;
   TypeCompany: FormControl;

@@ -11,17 +11,13 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-registern',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
-  templateUrl: './registern.component.html',
+  templateUrl:'./registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
 export class RegisternComponent implements OnInit, OnDestroy {
-register() {
-throw new Error('Method not implemented.');
-}
-  isOtherCompanyType: boolean = false;
-  registerForm: FormGroup;
-  subscriptions: Subscription[] = [];
+registerForm: FormGroup<any>;
 OptionTypeCompany: any;
+isOtherCompanyType: any;
 LegalName: any;
 LegalCompanyName: any;
 OptSector: any;
@@ -34,9 +30,31 @@ NaturalAddress: any;
 NaturalPhone: any;
 NaturalEmail: any;
 NaturalPassword: any;
+subscriptions: Subscription[] = [];
+register() {
+throw new Error('Method not implemented.');
+}
+  typeOfPerson: string | undefined;
+  legalPersonName?: string;
+  sector?: string;
+  LegalPersonAdress?: string;
+  LegalPersonPhone?: string;
+  legalPersonEmail?: string;
+  legalPersonPassword?: string;
+  legalPersonConfirmPassword?: string;
+  naturalPersonName?: string;
+  NaturalPersonAddress?: string;
+  NaturalPersonPhone?: string;
+  naturalPersonEmail?: string;
+  naturalPersonPassword?: string;
+  naturalPersonConfirmPassword?: string;
+  typeOfAdvice?: string;
+  typeOfCompany?: string;
+  typeOfCompanyAnother?: string;
 
   constructor(
     private fb: FormBuilder,
+    
     private http: HttpClient,
     private router: Router,
     private registerService: RegisterService
@@ -91,7 +109,7 @@ NaturalPassword: any;
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscriptions.forEach((subscription: { unsubscribe: () => any; }) => subscription.unsubscribe());
   }
 
   onRegister() {
@@ -101,7 +119,7 @@ NaturalPassword: any;
       this.http.post('http://localhost:3000/users', formData)
         .subscribe({
           next: () => {
-            this.router.navigate(['/formulario']);
+            this.router.navigate(['formulario']);
           },
           error: (err) => {
             console.error('Error al guardar los datos', err);
