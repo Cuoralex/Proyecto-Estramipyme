@@ -16,11 +16,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisternComponent implements OnInit, OnDestroy {
   myForm!: FormGroup;
-  isOtherCompanyType: boolean=false;
   registerForm: FormGroup;
   TypeOfPerson!: FormControl;
   TypeCompany!: FormControl;
-  TypeCompanyAnother!: FormControl;
+  TypeCompanyAnother: boolean=false;
   LegalPersonName!: FormControl;
   LegalPersonCompanyName!: FormControl;
   Sector!: FormControl;
@@ -36,9 +35,7 @@ export class RegisternComponent implements OnInit, OnDestroy {
   NaturalPersonPassword!: FormControl;
   NaturalPersonConfirmPassword!: FormControl;
   TypeOfAdvice!: FormControl;
-  Subscriptions: Subscription[] = [];
-OptionTypeCompany: any;
-
+  Subscriptions: Subscription[] = []
 
 register() {
 throw new Error('Method not implemented.');
@@ -86,9 +83,9 @@ throw new Error('Method not implemented.');
 
     // Handle TypeCompany value changes
     const typeCompanySubscription = this.registerForm.get('TypeCompany')?.valueChanges.subscribe(value => {
-      this.isOtherCompanyType = (value === 'otro');  // Asigna true si el valor es "otro", de lo contrario, false
+      this.TypeCompanyAnother = (value === 'otro');  // Asigna true si el valor es "otro", de lo contrario, false
     
-      if (this.isOtherCompanyType) {
+      if (this.TypeCompanyAnother) {
         this.registerForm.get('TypeCompanyAnother')?.enable();
         this.registerForm.get('TypeCompanyAnother')?.setValidators(Validators.required);
       } else {
