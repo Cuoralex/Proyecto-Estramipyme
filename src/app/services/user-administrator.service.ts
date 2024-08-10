@@ -1,8 +1,8 @@
+// user-administrator.service.ts
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Users } from "../models/user-administrator.model";
-
 
 @Injectable({ 
   providedIn: 'root' 
@@ -13,13 +13,16 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAll(){
-    return this.httpClient.get<Users[]>('http://localhost:3000/users')
+  getAll(): Observable<Users[]> {
+    return this.httpClient.get<Users[]>(this.baseUrl);
   }
 
-  creat(data: Users){
-    
-    return this.httpClient.post('http://localhost:3000/users', data);
+  create(data: Users): Observable<Users> {
+    // Asigna el rol 'Cliente' por defecto si no está presente en los datos
+    if (!data.Rol) {
+      data.Rol = 'Cliente';
+    }
+    return this.httpClient.post<Users>(this.baseUrl, data);
   }
 
   edit(id: number): Observable<Users> {
@@ -34,18 +37,3 @@ export class UserService {
     return this.httpClient.delete<void>(`${this.baseUrl}/${id}`);
   }
 }
-//   // Añadir un nuevo usuario
-//   addUser(user: User): Observable<User> {
-//     return this.httpClient.post<User>(this.apiUrl, user);
-//   }
-
-//   // Actualizar un usuario existente
-//   updateUser(user: User): Observable<User> {
-//     return this.httpClient.put<User>(`${this.apiUrl}/${user.id}`, user);
-//   }
-
-//   // Eliminar un usuario por ID
-//   deleteUser(id: number): Observable<void> {
-//     return this.httpClient.delete<void>(`${this.apiUrl}/${id}`);
-//   }
-// }

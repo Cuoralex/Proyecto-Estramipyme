@@ -1,72 +1,88 @@
 <!-- home.component.html -->
 <div class="container mx-auto p-4">
     <nav class="bg-gray-800 text-white py-4 px-6 flex justify-between items-center">
-        <a class="text-lg font-semibold" href="#">Usuarios</a>
-
-        <section class="flex items-center space-x-4">
-            <button (click)="navigateToCreate()"
-                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
-                Add+
-            </button>
-        </section>
+      <a class="text-lg font-semibold" href="#">Usuarios</a>
+  
+      <section class="flex items-center space-x-4">
+        <button (click)="navigateToCreate()"
+          class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400">
+          Add+
+        </button>
+      </section>
     </nav>
-
+  
     <div class="overflow-x-auto">
-        <table class="min-w-full bg-white text-sm">
-            <thead>
-                <tr class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
-                    <th class="py-2 px-3 text-left">Id</th>
-                    <th class="py-2 px-3 text-left">Tipo de persona</th>
-                    <th class="py-2 px-3 text-left">Nombre persona natural</th>
-                    <th class="py-2 px-3 text-left">Dirección persona natural</th>
-                    <th class="py-2 px-3 text-left">Teléfono persona natural</th>
-                    <th class="py-2 px-3 text-left">Correo electrónico persona natural</th>
-                    <th class="py-2 px-3 text-left">Contraseña persona natural</th>
-                    <th class="py-2 px-3 text-left">Confirmar contraseña persona natural</th>
-                    <th class="py-2 px-3 text-left">Tipo de asesoría</th>
-                    <th class="py-2 px-3 text-left">Tipo de empresa</th>
-                    <th class="py-2 px-3 text-left">Otro tipo de empresa</th>
-                    <th class="py-2 px-3 text-left">Nombre persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Nombre empresa jurídica</th>
-                    <th class="py-2 px-3 text-left">Sector</th>
-                    <th class="py-2 px-3 text-left">Dirección persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Teléfono persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Correo electrónico persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Contraseña persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Confirmación contraseña persona jurídica</th>
-                    <th class="py-2 px-3 text-left">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of allusers" class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-2 px-3">{{ user.id }}</td>
-                    <td class="py-2 px-3">{{ user.typeOfPerson || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.naturalPersonName || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.NaturalPersonAddress || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.NaturalPersonPhone || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.naturalPersonEmail || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.naturalPersonPassword || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.naturalPersonConfirmPassword || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.typeOfAdvice || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.typeCompany || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.typeCompanyAnother || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.legalPersonName || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.legalPersonCompanyName || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.sector || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.LegalPersonAddress || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.LegalPersonPhone || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.legalPersonEmail || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.legalPersonPassword || 'N/A' }}</td>
-                    <td class="py-2 px-3">{{ user.legalPersonConfirmPassword || 'N/A' }}</td>
-                    <td class="py-2 px-3">
-                        <a href="" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            [routerLink]="['/dashboard/users/edit', user.id]">Edit</a>
-                        |
-                        <button type="button" (click)="deleteItem(user.id)"
-                            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <table class="min-w-full bg-white text-sm">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+            <th class="py-2 px-3 text-left">Id</th>
+            <th class="py-2 px-3 text-left">Tipo de persona</th>
+  
+            <!-- Encabezados siempre visibles -->
+
+            <th class="py-2 px-3 text-left">Tipo de empresa</th>
+            <th class="py-2 px-3 text-left">Otro tipo de empresa</th>
+            <th class="py-2 px-3 text-left">Sector</th>
+            <th class="py-2 px-3 text-left">Nombre persona/empresa</th>
+            <th class="py-2 px-3 text-left">Razón social</th>
+            <th class="py-2 px-3 text-left">Dirección</th>
+            <th class="py-2 px-3 text-left">Teléfono</th>
+            <th class="py-2 px-3 text-left">Correo electrónico/th>
+            <th class="py-2 px-3 text-left">Contraseña</th>
+            <th class="py-2 px-3 text-left">Confirmar contraseña</th>
+            <th class="py-2 px-3 text-left">Tipo de asesoría</th>
+            <th class="py-2 px-3 text-left">Rol</th>
+            <th class="py-2 px-3 text-left">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let user of allusers" class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="py-2 px-3">{{ user.id }}</td>
+            <td class="py-2 px-3">{{ user.TypeOfPerson || 'N/A' }}</td>
+  
+            <!-- Datos persona natural -->
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.TypeCompany || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.TypeCompanyAnother || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.Sector || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonName || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.LegalPersonCompanyName || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonAddress || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonPhone || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonEmail || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonPassword || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.NaturalPersonConfirmPassword || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.TypeOfAdvice || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Natural'" class="py-2 px-3">{{ user.Rol || 'N/A' }}</td>
+  
+            <!-- Datos persona jurídica -->
+            <td *ngIf="user.TypeOfPerson === 'Juridica'" class="py-2 px-3">{{ user.TypeCompany || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Juridica'" class="py-2 px-3">{{ user.TypeCompanyAnother || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Juridica'" class="py-2 px-3">{{ user.Sector || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonName || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonCompanyName || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.Sector || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonAddress || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonPhone || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonEmail || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonPassword || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.LegalPersonConfirmPassword || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.TypeOfAdvice || 'N/A' }}</td>
+            <td *ngIf="user.TypeOfPerson === 'Jurídica'" class="py-2 px-3">{{ user.Rol || 'N/A' }}</td>
+
+  
+            <td class="py-2 px-3">
+              <a href="" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                [routerLink]="['/dashboard/users', user.id]">Diagnóstico</a>
+              <a href="" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                [routerLink]="['/dashboard/users/edit', user.id]">Edit</a>
+              |
+              <button type="button" (click)="deleteItem(user.id)"
+                class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+  

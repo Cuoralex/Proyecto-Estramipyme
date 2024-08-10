@@ -1,34 +1,37 @@
 // user.model.ts
 
 export interface Users {
+Diagnosis: any;
     id: number;
-    enterpriseType: string,
-    enterpriseName: string,
-    businessName: string,
-    fullName: string,
-    adress: string;
-    phone: number;
-    email: string,
-    password: string,
-    rol: string,
-    confirmPassword: string,
-    typeOfPerson?: string; // opcional porque en algunos casos puede ser nulo
-    naturalPersonName?: string;
+    EnterpriseType?: string,
+    EnterpriseName?: string,
+    BusinessName?: string,
+    FullName?: string,
+    Adress: string;
+    Phone: number;
+    Email: string,
+    Password: string,
+    Rol: string,
+    ConfirmPassword: string,
+    TypeOfPerson?: string;
+    NaturalPersonName?: string;
+    NaturalPersonCompanyName?: string;
     NaturalPersonAddress?: string;
-    NaturalPersonPhone?: string;
-    naturalPersonEmail?: string;
-    naturalPersonPassword?: string;
-    naturalPersonConfirmPassword?: string;
-    typeOfAdvice?: string;
-    typeCompany?: string;
-    typeCompanyAnother?: string;
-    legalPersonName?: string;
-    legalPersonCompanyName?: string;
-    sector?: string;
+    NaturalPersonPhone?: number;
+    NaturalPersonEmail?: string;
+    NaturalPersonPassword?: string;
+    NaturalPersonConfirmPassword?: string;
+    TypeOfAdvice?: string;
+    TypeCompany?: string;
+    TypeCompanyAnother?: string;
+    LegalPersonName?: string;
+    LegalPersonCompanyName?: string;
+    LegalPersonBusinessName?: string;
+    Sector?: string;
     LegalPersonAddress?: string;
-    LegalPersonPhone?: string;
-    legalPersonEmail?: string;
-    legalPersonPassword?: string;
-    legalPersonConfirmPassword?: string;
+    LegalPersonPhone?: number;
+    LegalPersonEmail?: string;
+    LegalPersonPassword?: string;
+    LegalPersonConfirmPassword?: string;
   }
   

@@ -33,23 +33,37 @@ this.userService.getAll().subscribe((ovalues) =>{
 })
 
   }
-  formdata: Users ={
+  formdata: Users = {
     id: 0,
-    enterpriseType: '',
-    enterpriseName: '',
-    businessName: '',
-    fullName:'',
-    sector: '',
-    adress: '',
-    phone: 0,
-    email: '',
-    password: '',
-    confirmPassword: '',
-    rol: ''
-  }
+    TypeOfPerson: '',
+    NaturalPersonName: '',
+    NaturalPersonAddress: '',
+    NaturalPersonPhone: 0,
+    NaturalPersonEmail: '',
+    NaturalPersonPassword: '',
+    NaturalPersonConfirmPassword: '',
+    TypeOfAdvice: '',
+    TypeCompany: '',
+    TypeCompanyAnother: '',
+    LegalPersonName: '',
+    LegalPersonCompanyName: '',
+    Sector: '',
+    LegalPersonAddress: '',
+    LegalPersonPhone: 0,
+    LegalPersonEmail: '',
+    LegalPersonPassword: '',
+    LegalPersonConfirmPassword: '',
+    Rol: '',
+    Diagnosis: undefined,
+    Adress: '',
+    Phone: 0,
+    Email: '',
+    Password: '',
+    ConfirmPassword: ''
+  };
 
   create(){
-    this.userService.creat(this.formdata).subscribe({
+    this.userService.create(this.formdata).subscribe({
       next: (data)=>{
         this.router.navigate(['/admin/dashboard/users/home']);
       },

@@ -8,7 +8,7 @@ import { provideHttpClient } from '@angular/common/http';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
 import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
 import { RegisternComponent } from './components/registern/registern.component';

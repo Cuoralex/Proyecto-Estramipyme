@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register.model';
@@ -15,42 +15,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./registern.component.scss']
 })
 export class RegisternComponent implements OnInit, OnDestroy {
-registerForm: FormGroup<any>;
+  myForm!: FormGroup;
+  isOtherCompanyType: boolean=false;
+  registerForm: FormGroup;
+  TypeOfPerson!: FormControl;
+  TypeCompany!: FormControl;
+  TypeCompanyAnother!: FormControl;
+  LegalPersonName!: FormControl;
+  LegalPersonCompanyName!: FormControl;
+  Sector!: FormControl;
+  LegalPersonAddress!: FormControl;
+  LegalPersonPhone!: FormControl;
+  LegalPersonEmail!: FormControl;
+  LegalPersonPassword!: FormControl;
+  LegalPersonConfirmPassword!: FormControl;
+  NaturalPersonName!: FormControl;
+  NaturalPersonAddress!: FormControl;
+  NaturalPersonPhone!: FormControl;
+  NaturalPersonEmail!: FormControl;
+  NaturalPersonPassword!: FormControl;
+  NaturalPersonConfirmPassword!: FormControl;
+  TypeOfAdvice!: FormControl;
+  Subscriptions: Subscription[] = [];
 OptionTypeCompany: any;
-isOtherCompanyType: any;
-LegalName: any;
-LegalCompanyName: any;
-OptSector: any;
-LegalAddress: any;
-LegalPhone: any;
-LegalEmail: any;
-LegalPassword: any;
-NaturalPersonNames: any;
-NaturalAddress: any;
-NaturalPhone: any;
-NaturalEmail: any;
-NaturalPassword: any;
-subscriptions: Subscription[] = [];
+
+
 register() {
 throw new Error('Method not implemented.');
 }
-  typeOfPerson: string | undefined;
-  legalPersonName?: string;
-  sector?: string;
-  LegalPersonAdress?: string;
-  LegalPersonPhone?: string;
-  legalPersonEmail?: string;
-  legalPersonPassword?: string;
-  legalPersonConfirmPassword?: string;
-  naturalPersonName?: string;
-  NaturalPersonAddress?: string;
-  NaturalPersonPhone?: string;
-  naturalPersonEmail?: string;
-  naturalPersonPassword?: string;
-  naturalPersonConfirmPassword?: string;
-  typeOfAdvice?: string;
-  typeOfCompany?: string;
-  typeOfCompanyAnother?: string;
 
   constructor(
     private fb: FormBuilder,
@@ -89,27 +81,32 @@ throw new Error('Method not implemented.');
     });
 
     if (typeOfPersonSubscription) {
-      this.subscriptions.push(typeOfPersonSubscription);
+      this.Subscriptions.push(typeOfPersonSubscription);
     }
 
     // Handle TypeCompany value changes
     const typeCompanySubscription = this.registerForm.get('TypeCompany')?.valueChanges.subscribe(value => {
-      this.isOtherCompanyType = (value === 'otro');
+      this.isOtherCompanyType = (value === 'otro');  // Asigna true si el valor es "otro", de lo contrario, false
+    
       if (this.isOtherCompanyType) {
         this.registerForm.get('TypeCompanyAnother')?.enable();
         this.registerForm.get('TypeCompanyAnother')?.setValidators(Validators.required);
       } else {
         this.registerForm.get('TypeCompanyAnother')?.disable();
+        this.registerForm.get('TypeCompanyAnother')?.clearValidators();
       }
+    
+      // Actualiza los validadores del formulario
+      this.registerForm.get('TypeCompanyAnother')?.updateValueAndValidity();
     });
-
+    
     if (typeCompanySubscription) {
-      this.subscriptions.push(typeCompanySubscription);
+      this.Subscriptions.push(typeCompanySubscription);
     }
-  }
+  }    
 
   ngOnDestroy() {
-    this.subscriptions.forEach((subscription: { unsubscribe: () => any; }) => subscription.unsubscribe());
+    this.Subscriptions.forEach((subscription: { unsubscribe: () => any; }) => subscription.unsubscribe());
   }
 
   onRegister() {
@@ -129,7 +126,7 @@ throw new Error('Method not implemented.');
   }
 
   setupValidators(value: string) {
-    if (value === 'juridica') {
+    if (value === 'Jurídica') {
       this.registerForm.get('TypeCompany')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonName')?.setValidators(Validators.required);
       this.registerForm.get('LegalPersonCompanyName')?.setValidators(Validators.required);
@@ -139,13 +136,16 @@ throw new Error('Method not implemented.');
       this.registerForm.get('LegalPersonEmail')?.setValidators([Validators.required, Validators.email]);
       this.registerForm.get('LegalPersonPassword')?.setValidators([Validators.required]);
 
+      this.registerForm.get('TypeCompany')?.clearValidators();
       this.registerForm.get('NaturalPersonName')?.clearValidators();
       this.registerForm.get('NaturalPersonAddress')?.clearValidators();
       this.registerForm.get('NaturalPersonPhone')?.clearValidators();
       this.registerForm.get('NaturalPersonEmail')?.clearValidators();
       this.registerForm.get('NaturalPersonPassword')?.clearValidators();
       this.registerForm.get('NaturalPersonConfirmPassword')?.clearValidators();
-    } else if (value === 'natural') {
+    } else if (value === 'Natural') {
+      
+      this.registerForm.get('TypeCompany')?.clearValidators();
       this.registerForm.get('NaturalPersonName')?.setValidators(Validators.required);
       this.registerForm.get('NaturalPersonAddress')?.setValidators(Validators.required);
       this.registerForm.get('NaturalPersonPhone')?.setValidators(Validators.required);

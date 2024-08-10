@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Users } from 'app/models/user-administrator.model';
 import { UserService } from 'app/services/user-administrator.service';
+import { number } from 'echarts';
 
 @Component({
   selector: 'app-edit',
@@ -24,20 +25,34 @@ export class EditComponent {
       private router: Router,
       private route: ActivatedRoute
     ) {}
-  
+
     formdata: Users = {
       id: 0,
-      enterpriseType: '',
-      enterpriseName: '',
-      businessName: '',
-      fullName:'',
-      sector: '',
-      adress: '',
-      phone: 0,
-      email: '',
-      password: '',
-      confirmPassword: '',
-      rol: ''
+      TypeOfPerson: '',
+      NaturalPersonName: '',
+      NaturalPersonAddress: '',
+      NaturalPersonPhone: 0,
+      NaturalPersonEmail: '',
+      NaturalPersonPassword: '',
+      NaturalPersonConfirmPassword: '',
+      TypeOfAdvice: '',
+      TypeCompany: '',
+      TypeCompanyAnother: '',
+      LegalPersonName: '',
+      LegalPersonCompanyName: '',
+      Sector: '',
+      LegalPersonAddress: '',
+      LegalPersonPhone: 0,
+      LegalPersonEmail: '',
+      LegalPersonPassword: '',
+      LegalPersonConfirmPassword: '',
+      Rol: '',
+      Diagnosis: undefined,
+      Adress: '',
+      Phone: 0,
+      Email: '',
+      Password: '',
+      ConfirmPassword: ''
     };
   
     ngOnInit(): void {

@@ -20,7 +20,7 @@
           </div>
   
           <!-- Persona Jurídica -->
-          <div id="LegalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'juridica'"
+          <div id="legalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'juridica'"
             class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2">
   
             <!-- Tipo de empresa -->
@@ -64,14 +64,14 @@
   
             <!-- Nombre Comercial -->
             <div class="relative sm:col-span-1">
-              <input type="text" name="LegalPersonName" formControlName="LegalPersonName" id="LegalPersonName"
+              <input type="text" name="legalPersonName" formControlName="legalPersonName" id="LegalPersonName"
                 autocomplete=""
                 class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
               <label for="LegalPersonName"
               class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
               peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Nombre
                 Comercial</label>
-              <div *ngIf="LegalName?.invalid && (LegalName?.dirty || LegalName?.touched)"
+              <div *ngIf="LegalPersonName?.invalid && (LegalPersonName?.dirty || LegalPersonName?.touched)"
                 class="text-red-500 text-xs mt-1">
                 <div *ngIf="LegalName?.hasError('required')">El nombre es requerido.</div>
               </div>

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
       this.loginService.getUsers().subscribe((users: any[]) => {
         const user = users.find((user: any) =>
-          (user.naturalPersonEmail && user.naturalPersonEmail === email && user.naturalPersonPassword === password) ||
+          (user.naturalPersonEmail && user.naturalPersonEmail === email && user.NaturalPersonPassword === password) ||
           (user.legalPersonEmail && user.legalPersonEmail === email && user.legalPersonPassword === password)
         );
 

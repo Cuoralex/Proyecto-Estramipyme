@@ -20,7 +20,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   allusers: Users[] = [];
-
+  
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
