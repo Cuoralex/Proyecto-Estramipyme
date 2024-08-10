@@ -1,113 +1,115 @@
 <section class="form-container">
-    <h1>Formulario de Datos Obligatorios</h1>
-    <form>
-      <h2>Datos Generales del Negocio</h2>
-      <div class="user-details">
-        <h2>Detalles del Usuario</h2>
-        <p><strong>Tipo:</strong> {{ user.type }}</p>
-        <p><strong>Nombre:</strong> {{ user.name }}</p>
-        <p><strong>Correo:</strong> {{ user.email }}</p>
-        <p><strong>Dirección:</strong> {{ user.address }}</p>
-        <p><strong>Teléfono:</strong> {{ user.phone }}</p>
-        <p><strong>Celular:</strong> {{ user.cellphone }}</p>
-        <p><strong>Tipo de Empresa:</strong> {{ user.companyType }}</p>
-        <p><strong>Sector:</strong> {{ user.sector }}</p>
-      </div>
-  
-      <!--Macroentorno-->
-  
-        <h2>Análisis macroentorno</h2>
+  <h1>Formulario de Datos Obligatorios</h1>
+  <form>
+    <h2>Datos Generales del Negocio</h2>
+    <div class="user-details">
+      <h2>Detalles del Usuario</h2>
+      <p><strong>Tipo:</strong> {{ user.type }}</p>
+      <p><strong>Nombre:</strong> {{ user.name }}</p>
+      <p><strong>Correo:</strong> {{ user.email }}</p>
+      <p><strong>Dirección:</strong> {{ user.address }}</p>
+      <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+      <p><strong>Celular:</strong> {{ user.cellphone }}</p>
+      <p><strong>Tipo de Empresa:</strong> {{ user.companyType }}</p>
+      <p><strong>Sector:</strong> {{ user.sector }}</p>
+    </div>
 
-          <!-- Sección de Riesgos y Oportunidades -->
+    <!--Macroentorno-->
 
-            <div class="form-container">
-            <div class="two-columns">
-                <div class="column">
-                <h2>Riesgos</h2>
-                <div class="risk-container">
-                    <div *ngFor="let risk of risks" class="risk-item">
-                    <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
-                    <button type="button" (click)="removeRisk(risk.id)">-</button>
-                    </div>
-                </div>
-                <button type="button" class="add-button" (click)="addRisk()">+</button>
-                </div>
-                <div class="column">
-                <h2>Oportunidades</h2>
-                <div class="opportunity-container">
-                    <div *ngFor="let opportunity of opportunities" class="opportunity-item">
-                    <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
-                    <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
-                    </div>
-                </div>
-                <button type="button" class="add-button" (click)="addOpportunity()">+</button>
-                </div>
-            </div>
-            </div>
+    <h2>Análisis macroentorno</h2>
 
-          
-            <br><br><h2>Análisis industria o sector</h2>
+    <!-- Sección de Riesgos y Oportunidades -->
 
-          <!-- Sección de Riesgos y Oportunidades -->
-          <div class="form-container">
-            <div class="two-columns">
-              <div class="column">
-                <h2>Riesgos</h2>
-                <div class="risk-container">
-                  <div *ngFor="let risk of risks" class="risk-item">
-                    <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
-                    <button type="button" (click)="removeRisk(risk.id)">-</button>
-                  </div>
-                </div>
-                <button type="button" class="add-button" (click)="addRisk()">+</button>
-              </div>
-              <div class="column">
-                <h2>Oportunidades</h2>
-                <div class="opportunity-container">
-                  <div *ngFor="let opportunity of opportunities" class="opportunity-item">
-                    <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
-                    <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
-                  </div>
-                </div>
-                <button type="button" class="add-button" (click)="addOpportunity()">+</button>
-              </div>
+    <div class="form-container">
+      <div class="two-columns">
+        <div class="column">
+          <h2>Riesgos</h2>
+          <div class="risk-container">
+            <div *ngFor="let risk of risks" class="risk-item">
+              <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
+              <button type="button" (click)="removeRisk(risk.id)">-</button>
             </div>
           </div>
-
-    <!--Circulo Dorado-->
-    <div class="container">
-        <div class="form-column">
-            <div class="Circulo dorado">
-                <label for="porque">¿Por qué y/o para qué?:(propósito del negocio)</label><br>
-                <input type="text" id="porque" name="proposito del negocio" required><br><br>
-
-                <label for="como">¿Cómo?:(propuesta de valor)</label><br>
-                <input type="text" id="como" name="propuesta de valor" required><br><br>
-
-                <label for="que">¿Qué?:(productos y servicios)</label><br>
-                <input type="text" id="que" name="productos y servicios" required><br><br>
-            </div>
+          <button type="button" class="add-button" (click)="addRisk()">+</button>
         </div>
-        <div class="circle-column">
-            <div class="circle-container">
-                <div class="circle circle-inner">
-                    <div>¿Por qué y/o para qué?</div>
-                    <div class="arrow porque"></div>
-                </div>
-                <div class="circle circle-middle">
-                    <div>¿Cómo?</div>
-                    <div class="arrow como"></div>
-                </div>
-                <div class="circle circle-outer">
-                    <div>¿Qué?</div>
-                    <div class="arrow que"></div>
-                </div>
+        <div class="column">
+          <h2>Oportunidades</h2>
+          <div class="opportunity-container">
+            <div *ngFor="let opportunity of opportunities" class="opportunity-item">
+              <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
+              <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
             </div>
+          </div>
+          <button type="button" class="add-button" (click)="addOpportunity()">+</button>
         </div>
+      </div>
     </div>
 
 
-    <br><br><h2>Análisis drink up</h2>
+    <br><br>
+    <h2>Análisis industria o sector</h2>
+
+    <!-- Sección de Riesgos y Oportunidades -->
+    <div class="form-container">
+      <div class="two-columns">
+        <div class="column">
+          <h2>Riesgos</h2>
+          <div class="risk-container">
+            <div *ngFor="let risk of risks" class="risk-item">
+              <input type="text" [name]="'risk' + risk.id" [placeholder]="risk.text" required>
+              <button type="button" (click)="removeRisk(risk.id)">-</button>
+            </div>
+          </div>
+          <button type="button" class="add-button" (click)="addRisk()">+</button>
+        </div>
+        <div class="column">
+          <h2>Oportunidades</h2>
+          <div class="opportunity-container">
+            <div *ngFor="let opportunity of opportunities" class="opportunity-item">
+              <input type="text" [name]="'opportunity' + opportunity.id" [placeholder]="opportunity.text" required>
+              <button type="button" (click)="removeOpportunity(opportunity.id)">-</button>
+            </div>
+          </div>
+          <button type="button" class="add-button" (click)="addOpportunity()">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!--Circulo Dorado-->
+    <div class="container">
+      <div class="form-column">
+        <div class="Circulo dorado">
+          <label for="porque">¿Por qué y/o para qué?:(propósito del negocio)</label><br>
+          <input type="text" id="porque" name="proposito del negocio" required><br><br>
+
+          <label for="como">¿Cómo?:(propuesta de valor)</label><br>
+          <input type="text" id="como" name="propuesta de valor" required><br><br>
+
+          <label for="que">¿Qué?:(productos y servicios)</label><br>
+          <input type="text" id="que" name="productos y servicios" required><br><br>
+        </div>
+      </div>
+      <div class="circle-column">
+        <div class="circle-container">
+          <div class="circle circle-inner">
+            <div>¿Por qué y/o para qué?</div>
+            <div class="arrow porque"></div>
+          </div>
+          <div class="circle circle-middle">
+            <div>¿Cómo?</div>
+            <div class="arrow como"></div>
+          </div>
+          <div class="circle circle-outer">
+            <div>¿Qué?</div>
+            <div class="arrow que"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <br><br>
+    <h2>Análisis drink up</h2>
 
     <!-- Sección de Riesgos y Oportunidades -->
     <div class="form-container">
@@ -134,47 +136,137 @@
         </div>
       </div>
     </div><br><br>
- 
-  
 
-      <h2>Análisis Externo (Exploración)</h2>
-      <label>Principales Factores Políticos:</label><br>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="politicalFactors" value="Estabilidad gubernamental"> Estabilidad gubernamental</label><br>
-        <label><input type="checkbox" name="politicalFactors" value="Políticas fiscales"> Políticas fiscales</label><br>
-        <label><input type="checkbox" name="politicalFactors" value="Regulaciones laborales"> Regulaciones laborales</label><br>
-        <label><input type="checkbox" name="politicalFactors" value="Relaciones internacionales"> Relaciones internacionales</label><br>
-        <label><input type="checkbox" name="politicalFactors" value="Otros"> Otros (Especificar)</label><br>
-      </div><br>
-  
-      <h2>Benchmarking y Competencia</h2>
-      <label for="competitors">Principales Competidores:</label><br>
-      <input type="text" id="competitors" name="competitors" required><br><br>
-  
-      <label>Posicionamiento Frente a la Competencia:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="Posición frente a la competencia">Liderazgo en costos</label><br>
-        <label><input type="checkbox" name="Posición frente a la competencia">Diferenciación</label><br>
-        <label><input type="checkbox" name="Posición frente a la competencia">Enfoque en nichos de mercado</label><br>
-        <label><input type="checkbox" name="Posición frente a la competencia">Otros (Especificar)</label><br>
-        <input type="text" id="otros" name="kpis" required><br><br>
-      </div><br>
-  
-      <h2>Objetivos y Metas</h2>
-      <label>Objetivos Estratégicos del Negocio:</label><br>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="Objetivos estratégicos">Incrementar ventas</label><br>
-        <label><input type="checkbox" name="Objetivos estratégicos">Expandir mercado</label><br>
-        <label><input type="checkbox" name="Objetivos estratégicos">Mejorar eficiencia operativa</label><br>
-        <label><input type="checkbox" name="Objetivos estratégicos">Innovar productos/servicios</label><br>
-        <label><input type="checkbox" name="Objetivos estratégicos">Otros (Especificar)</label><br>
-        <input type="text" id="otros" name="kpis" required><br><br>
-      </div><br>
-  
-      <label for="kpis">Indicadores Clave de Desempeño (KPIs):</label><br>
-      <input type="text" id="kpis" name="kpis" required><br><br>
-  
-      <button type="submit" class="submit-button">Enviar</button>
-    </form>
-  </section>
-  
+    <!--Radar estratégico-->
+    <h2>Radar estratégico</h2>
+
+    <fieldset>
+      <legend>Conocimiento del Cliente</legend>
+      <label>¿Cómo describirías tu conocimiento del cliente?</label><br>
+      <input type="radio" id="cc1" name="conocimiento_cliente" value="1">
+      <label for="cc1">Se le dificulta describir quién es su cliente.</label><br>
+      <input type="radio" id="cc2" name="conocimiento_cliente" value="2">
+      <label for="cc2">Solo describe al cliente desde una segmentación tradicional de mercado (estrato, edad,
+        etc.).</label><br>
+      <input type="radio" id="cc3" name="conocimiento_cliente" value="3">
+      <label for="cc3">Conoce su cliente, lo describe desde su estilo de vida, hábitos de consumo, comportamientos,
+        tareas por hacer, dolores, alegrías.</label><br>
+      <input type="radio" id="cc4" name="conocimiento_cliente" value="4">
+      <label for="cc4">Identifica, además, si su negocio atiende solo uno o varios tipos de clientes. Diferencia en su
+        negocio al consumidor, el comprador y/o el cliente.</label>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Conocimiento del Negocio</legend>
+      <label>¿Cómo definirías tu conocimiento del negocio?</label><br>
+      <input type="radio" id="cn1" name="conocimiento_negocio" value="1">
+      <label for="cn1">Se le dificulta definir el negocio en el que está (quién es el cliente, qué tarea resuelve y
+        cuáles son los productos o servicios que ofrece).</label><br>
+      <input type="radio" id="cn2" name="conocimiento_negocio" value="2">
+      <label for="cn2">Identifica en qué negocio está pero no cómo se diferencia de sus competidores.</label><br>
+      <input type="radio" id="cn3" name="conocimiento_negocio" value="3">
+      <label for="cn3">Identifica los recursos, actividades y aliados claves de su negocio.</label><br>
+      <input type="radio" id="cn4" name="conocimiento_negocio" value="4">
+      <label for="cn4">Identifica el negocio en el que está y lo que sabe hacer mejor que sus competidores (capacidades
+        distintivas). Además mantiene relaciones sanas con sus aliados claves.</label>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Coherencia del modelo de negocio</legend>
+      <label>¿Cómo evaluarías la coherencia de tu modelo de negocio?</label><br>
+      <input type="radio" id="cmn1" name="coherencia_modelo" value="1">
+      <label for="cmn1">La propuesta de valor no es clara y se limita a la descripción del producto.</label><br>
+      <input type="radio" id="cmn2" name="coherencia_modelo" value="2">
+      <label for="cmn2">Existe una propuesta de valor definida y clara, pero ésta no es plenamente coherente con el
+        perfil del cliente.</label><br>
+      <input type="radio" id="cmn3" name="coherencia_modelo" value="3">
+      <label for="cmn3">Existe coherencia entre la propuesta de valor y el perfil del cliente, pero no con los demás
+        elementos del modelo de negocio.</label><br>
+      <input type="radio" id="cmn4" name="coherencia_modelo" value="4">
+      <label for="cmn4">Existe coherencia entre la definición del cliente, la propuesta de valor y los demás elementos
+        del modelo de negocio.</label>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Alineación en la comunicación interna</legend>
+      <label>¿Cómo describirías la alineación en la comunicación interna de tu organización?</label><br>
+      <input type="radio" id="aci1" name="comunicacion_interna" value="1">
+      <label for="aci1">Lo que comunica la administración es diferente a lo que comunica el nivel operativo.</label><br>
+      <input type="radio" id="aci2" name="comunicacion_interna" value="2">
+      <label for="aci2">Solo la administración conoce el propósito común.</label><br>
+      <input type="radio" id="aci3" name="comunicacion_interna" value="3">
+      <label for="aci3">Las personas entrevistadas están alineadas en los objetivos de su área funcional, pero no con el
+        propósito común.</label><br>
+      <input type="radio" id="aci4" name="comunicacion_interna" value="4">
+      <label for="aci4">El área administrativa y operativa le apuntan a un propósito común.</label>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Salud Financiera</legend>
+      <label>¿Cómo describirías la salud financiera de tu empresa?</label><br>
+      <input type="radio" id="sf1" name="salud_financiera" value="1">
+      <label for="sf1">No se lleva información financiera de manera sistemática.</label><br>
+      <input type="radio" id="sf2" name="salud_financiera" value="2">
+      <label for="sf2">Los resultados financieros no son positivos; la empresa presenta dificultades, principalmente de
+        liquidez.</label><br>
+      <input type="radio" id="sf3" name="salud_financiera" value="3">
+      <label for="sf3">Si bien los resultados financieros no son positivos, se llevan a cabo acciones deliberadas para
+        mitigar los impactos y se tiene claridad de la ruta financiera por seguir.</label><br>
+      <input type="radio" id="sf4" name="salud_financiera" value="4">
+      <label for="sf4">Los ingresos de operación son muy superiores a los costos de operación, quedando un margen
+        operacional que permitirá crecer en el futuro.</label>
+    </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Análisis Externo (Exploración)</h2>
+    <label>Principales Factores Políticos:</label><br>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="politicalFactors" value="Estabilidad gubernamental"> Estabilidad
+        gubernamental</label><br>
+      <label><input type="checkbox" name="politicalFactors" value="Políticas fiscales"> Políticas fiscales</label><br>
+      <label><input type="checkbox" name="politicalFactors" value="Regulaciones laborales"> Regulaciones
+        laborales</label><br>
+      <label><input type="checkbox" name="politicalFactors" value="Relaciones internacionales"> Relaciones
+        internacionales</label><br>
+      <label><input type="checkbox" name="politicalFactors" value="Otros"> Otros (Especificar)</label><br>
+    </div><br>
+
+    <h2>Benchmarking y Competencia</h2>
+    <label for="competitors">Principales Competidores:</label><br>
+    <input type="text" id="competitors" name="competitors" required><br><br>
+
+    <label>Posicionamiento Frente a la Competencia:</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Posición frente a la competencia">Liderazgo en costos</label><br>
+      <label><input type="checkbox" name="Posición frente a la competencia">Diferenciación</label><br>
+      <label><input type="checkbox" name="Posición frente a la competencia">Enfoque en nichos de mercado</label><br>
+      <label><input type="checkbox" name="Posición frente a la competencia">Otros (Especificar)</label><br>
+      <input type="text" id="otros" name="kpis" required><br><br>
+    </div><br>
+
+    <h2>Objetivos y Metas</h2>
+    <label>Objetivos Estratégicos del Negocio:</label><br>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Objetivos estratégicos">Incrementar ventas</label><br>
+      <label><input type="checkbox" name="Objetivos estratégicos">Expandir mercado</label><br>
+      <label><input type="checkbox" name="Objetivos estratégicos">Mejorar eficiencia operativa</label><br>
+      <label><input type="checkbox" name="Objetivos estratégicos">Innovar productos/servicios</label><br>
+      <label><input type="checkbox" name="Objetivos estratégicos">Otros (Especificar)</label><br>
+      <input type="text" id="otros" name="kpis" required><br><br>
+    </div><br>
+
+    <label for="kpis">Indicadores Clave de Desempeño (KPIs):</label><br>
+    <input type="text" id="kpis" name="kpis" required><br><br>
+
+    <button type="submit" class="submit-button">Enviar</button>
+  </form>
+</section>

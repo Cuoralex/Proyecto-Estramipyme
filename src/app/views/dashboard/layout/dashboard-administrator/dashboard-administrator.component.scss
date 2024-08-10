@@ -1,22 +1,29 @@
-/* src/app/graphics-administrator/graphics-administrator.component.scss */
-:host{
-  display: block;
-  height: 100%;
-  width: 100%;
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-/* styles.css o styles.scss */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+app-header-dashboard {
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
-// .main-container {
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center center;
-//   width: 100vw;
-//   height: 100vh;
-// }
+.flex {
+  margin-top: 64px; // Ajustar según la altura del header
+}
+
+app-footer-dashboard {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-top: auto;
+}
+
+.flex-1 {
+  overflow-y: auto;
+  padding-bottom: 64px; // Ajustar según la altura del footer
+}

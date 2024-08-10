@@ -54,6 +54,7 @@ export class RegisterComponent {
   TypeOfAdvice: FormControl;
 
   private subscriptions: Subscription[] = [];
+navigateToCreate: any;
 
   constructor(private registerService: RegisterService, fb: FormBuilder) {
     this.TypeOfPerson = new FormControl('', Validators.required);

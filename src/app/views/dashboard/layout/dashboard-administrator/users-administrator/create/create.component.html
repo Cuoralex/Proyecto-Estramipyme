@@ -1,0 +1,42 @@
+<div class="container">
+    <legend>Create item</legend>
+    <form>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Tipo de empresa</label>
+            <input type="text" name="name" [(ngModel)]="formdata.enterpriseName" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Nombre de la empresa</label>
+            <input type="text" name="price" [(ngModel)]="formdata.enterpriseName" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Razón social</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.businessName" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Sector</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.sector" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Dirección</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.adress" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Teléfono</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.phone" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Correo electrónico</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.email" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Contraseña</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.password" class="form-control" id="txtName"/>
+        </div>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Confirmación ontraseña</label>
+            <input type="text" name="quantity" [(ngModel)]="formdata.confirmPassword" class="form-control" id="txtName"/>
+        </div>
+        <button type="button" (click)="create()" class="btn btn-primary">Crear usuario</button>
+    </form>
+</div>

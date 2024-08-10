@@ -1,8 +1,9 @@
 // role.model.ts
 export enum Role {
-    Admin = 'Admin',
-    User = 'User',
-    Manager = 'Manager',
+    Admin = 'Administrador',
+    User = 'Cliente',
+    Manager = 'Profesor',
+    Student = 'Estudiante'
     // Otros roles según sea necesario
   }
   
