@@ -6,6 +6,8 @@
   padding: 10px;
 }
 
+
+
 .main {
   width: 100%;
   max-width: 500px;
@@ -15,7 +17,9 @@
   border-radius: 10px;
   box-shadow: 5px 20px 50px #000;
   overflow: hidden;
+  position: relative;
 }
+
 
 #chk {
   display: none;
@@ -57,7 +61,7 @@
 }
 
 .login {
-  height: 680px;
+  height: 100%;
   background: #FEFFFE;
   border-radius: 40% / 10%;
   transform: translateY(-60px);
@@ -70,33 +74,31 @@
   transform: scale(0.6);
 }
 
-#chk:checked ~ .login {
-  transform: translateY(-585px);
+#chk:checked~.login {
+  transform: translateY(-92%);
 }
 
-#chk:checked ~ .login label {
+#chk:checked~.login label {
   transform: scale(1);
 }
 
-#chk:checked ~ .singup label {
+#chk:checked~.singup label {
   transform: scale(0.3);
 }
 
-// Scrollbar personalizado para pantallas mayores a 768px
-@media (min-width: 768px) {
-  .singup, .login {
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
+.singup,
+.login {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
 
-    &::-webkit-scrollbar-track {
-      background: #191919;
-    }
+  &::-webkit-scrollbar-track {
+    background: #191919;
+  }
 
-    &::-webkit-scrollbar-thumb {
-      background: lighten(#191919, 20%);
-      border-radius: 10px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background: lighten(#191919, 20%);
+    border-radius: 10px;
   }
 }
 
@@ -127,22 +129,15 @@
   }
 
   .login {
-    transform: translateY(-50px);
-  }
-
-  .singup,
-  .login {
+    position: absolute;
     width: 100%;
+    z-index: 3;
   }
 
   .containerText {
     padding-bottom: 60px;
     width: 52%;
     margin: 2px auto;
-  }
-
-  #chk:checked ~ .login {
-    transform: translateY(-595px);
   }
 }
 
@@ -171,27 +166,15 @@
     font-size: 0.9rem;
   }
 
-  .login {
-    transform: translateY(-50px);
-  }
-
-  .singup,
-  .login {
-    width: 100%;
-  }
-
   .containerText {
     padding-bottom: 60px;
     width: 46%;
     margin: 2px auto;
   }
-
-  #chk:checked ~ .login {
-    transform: translateY(-575px);
-  }
 }
 
 @media (max-width: 480px) {
+
   .labelLogin,
   .labelRegistro {
     font-size: 0.8rem;
@@ -212,22 +195,9 @@
     font-size: 0.8rem;
   }
 
-  .login {
-    transform: translateY(-50px);
-  }
-
-  .singup,
-  .login {
-    width: 100%;
-  }
-
   .containerText {
     padding-bottom: 60px;
     width: 52%;
     margin: 2px auto;
-  }
-
-  #chk:checked ~ .login {
-    transform: translateY(-590px);
   }
 }
