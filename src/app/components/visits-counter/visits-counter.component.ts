@@ -14,6 +14,7 @@ import { VisitsCounterService } from 'app/services/visits-counter.service';
 export class VisitsCounterComponent { 
 
 visitCount: number = 0;
+  saveVisitCount: any;
 
   constructor(private visitsCounterService: VisitsCounterService) { }
 
@@ -21,4 +22,11 @@ visitCount: number = 0;
     this.visitsCounterService.incrementVisitCount();
     this.visitCount = this.visitsCounterService.getVisitCount();
   }
+
+  resetCounter(): void {
+    this.visitsCounterService.resetVisitCount();
+    this.visitCount = this.visitsCounterService.getVisitCount();
+  }
+  
+  
 }

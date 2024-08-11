@@ -19,6 +19,11 @@ export class VisitsCounterService {
     return this.visitCount;
   }
 
+  resetVisitCount(): void {
+    this.visitCount = 0;
+    this.saveVisitCount();
+  }
+
   private loadVisitCount(): void {
     const storedCount = localStorage.getItem('visitCount');
     this.visitCount = storedCount ? parseInt(storedCount, 10) : 0;
