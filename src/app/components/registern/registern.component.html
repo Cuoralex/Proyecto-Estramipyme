@@ -22,7 +22,7 @@
           <div id="LegalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'Jurídica'"
             class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2">
 
-            <!-- Tipo de empresa -->
+            <!--Tipo de empresa-->
             <div class="relative sm:col-span-1">
               <select id="TypeCompany" name="TypeCompany" formControlName="TypeCompany" autocomplete=""
                 class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
@@ -32,23 +32,24 @@
                 <option value="grande">Grande</option>
                 <option value="otro">Otro</option>
               </select>
-              <label for="TypeCompanyAnother"
+              <label for="TypeCompany"
                 class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
-              peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Tipo
+                  peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Tipo
                 de empresa</label>
             </div>
 
             <!-- Otro tipo de empresa -->
             <div *ngIf="TypeCompanyAnother" class="relative sm:col-span-1">
-              <input type="text" name="TypeCompanyAnother" formControlName="TypeCompanyAnother" id="TypeCompanyAnother"
-                autocomplete=""
+              <input type="text" name="TypeCompanyAnother" formControlName="TypeCompanyAnother"
+                id="TypeCompanyAnother" autocomplete=""
                 class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
               <label for="TypeCompanyAnother"
                 class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
                   peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Otro</label>
               <div
                 *ngIf="registerForm.get('TypeCompanyAnother')?.invalid && (registerForm.get('TypeCompanyAnother')?.dirty || registerForm.get('TypeCompanyAnother')?.touched)">
-                <div *ngIf="registerForm.get('TypeCompanyAnother')?.hasError('required')" class="text-red-500 text-xs">
+                <div *ngIf="registerForm.get('TypeCompanyAnother')?.hasError('required')"
+                  class="text-red-500 text-xs">
                   El campo es requerido cuando se selecciona "Otro".
                 </div>
               </div>
@@ -228,7 +229,7 @@
           <div id="NaturalPerson" *ngIf="registerForm.get('TypeOfPerson')?.value === 'Natural'" class="mt-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
 
-              <!-- Tipo de empresa -->
+              <!--Tipo de empresa-->
               <div class="relative sm:col-span-1">
                 <select id="TypeCompany" name="TypeCompany" formControlName="TypeCompany" autocomplete=""
                   class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
@@ -238,7 +239,7 @@
                   <option value="grande">Grande</option>
                   <option value="otro">Otro</option>
                 </select>
-                <label for="TypeCompanyAnother"
+                <label for="TypeCompany"
                   class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
                     peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Tipo
                   de empresa</label>

@@ -77,6 +77,8 @@ throw new Error('Method not implemented.');
       this.setupValidators(value);
     });
 
+    
+
     if (typeOfPersonSubscription) {
       this.Subscriptions.push(typeOfPersonSubscription);
     }
@@ -96,6 +98,7 @@ throw new Error('Method not implemented.');
       // Actualiza los validadores del formulario
       this.registerForm.get('TypeCompanyAnother')?.updateValueAndValidity();
     });
+    
     
     if (typeCompanySubscription) {
       this.Subscriptions.push(typeCompanySubscription);

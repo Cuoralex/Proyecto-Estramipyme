@@ -52,7 +52,11 @@ export class EditComponent {
       Phone: 0,
       Email: '',
       Password: '',
-      ConfirmPassword: ''
+      ConfirmPassword: '',
+      NaturalPersonTypeCompany: '',
+      LegalPersonTypeCompany: '',
+      NaturalPersonTypeCompanyAnother: '',
+      LegalPersonTypeCompanyAnother: ''
     };
   
     ngOnInit(): void {

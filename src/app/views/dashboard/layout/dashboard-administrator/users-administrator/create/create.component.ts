@@ -59,7 +59,11 @@ this.userService.getAll().subscribe((ovalues) =>{
     Phone: 0,
     Email: '',
     Password: '',
-    ConfirmPassword: ''
+    ConfirmPassword: '',
+    NaturalPersonTypeCompany: '',
+    LegalPersonTypeCompany: '',
+    NaturalPersonTypeCompanyAnother: '',
+    LegalPersonTypeCompanyAnother: ''
   };
 
   create(){

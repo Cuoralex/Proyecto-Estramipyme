@@ -22,8 +22,10 @@ Diagnosis: any;
     NaturalPersonPassword?: string;
     NaturalPersonConfirmPassword?: string;
     TypeOfAdvice?: string;
-    TypeCompany?: string;
-    TypeCompanyAnother?: string;
+    NaturalPersonTypeCompany: string,
+    LegalPersonTypeCompany: string,
+    NaturalPersonTypeCompanyAnother: string,
+    LegalPersonTypeCompanyAnother: string,
     LegalPersonName?: string;
     LegalPersonCompanyName?: string;
     LegalPersonBusinessName?: string;
@@ -33,5 +35,8 @@ Diagnosis: any;
     LegalPersonEmail?: string;
     LegalPersonPassword?: string;
     LegalPersonConfirmPassword?: string;
+    TypeCompany: string;
+    TypeCompanyAnother: string;
+
   }
   
