@@ -11,7 +11,7 @@ Diagnosis: any;
     Phone: number;
     Email: string,
     Password: string,
-    Rol: string,
+    Role: string,
     ConfirmPassword: string,
     TypeOfPerson?: string;
     NaturalPersonName?: string;

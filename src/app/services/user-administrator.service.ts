@@ -17,13 +17,19 @@ export class UserService {
     return this.httpClient.get<Users[]>(this.baseUrl);
   }
 
+  getUsers(): Observable<Users[]> {
+    return this.httpClient.get<Users[]>(this.baseUrl);
+  }
+
   create(data: Users): Observable<Users> {
     // Asigna el rol 'Cliente' por defecto si no está presente en los datos
-    if (!data.Rol) {
-      data.Rol = 'Cliente';
+    if (!data.Role) {
+      data.Role = 'Cliente';
     }
     return this.httpClient.post<Users>(this.baseUrl, data);
   }
+
+  
 
   edit(id: number): Observable<Users> {
     return this.httpClient.get<Users>(`${this.baseUrl}/${id}`);

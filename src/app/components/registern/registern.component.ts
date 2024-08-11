@@ -77,8 +77,6 @@ throw new Error('Method not implemented.');
       this.setupValidators(value);
     });
 
-    
-
     if (typeOfPersonSubscription) {
       this.Subscriptions.push(typeOfPersonSubscription);
     }

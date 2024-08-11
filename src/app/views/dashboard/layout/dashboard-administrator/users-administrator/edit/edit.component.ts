@@ -46,7 +46,7 @@ export class EditComponent {
       LegalPersonEmail: '',
       LegalPersonPassword: '',
       LegalPersonConfirmPassword: '',
-      Rol: '',
+      Role: '',
       Diagnosis: undefined,
       Adress: '',
       Phone: 0,
