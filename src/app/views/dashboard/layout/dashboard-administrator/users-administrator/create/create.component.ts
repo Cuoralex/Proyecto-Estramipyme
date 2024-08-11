@@ -1,80 +1,71 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { Users } from 'app/models/user-administrator.model';
-import { UserService } from 'app/services/user-administrator.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
   standalone: true,
   imports: [
+    ReactiveFormsModule,
     CommonModule,
-    FormsModule,
-    RouterModule
   ],
   templateUrl: './create.component.html',
-  styleUrl: './create.component.scss',
+  styleUrls: ['./create.component.scss']
 })
-
-
 export class CreateComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router){}
-  
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-this.userService.getAll().subscribe((ovalues) =>{
-  ovalues.forEach((oItem)=>{
-    if(oItem.id>this.formdata.id){
-      this.formdata.id=oItem.id
-    }
-  })
-  this.formdata.id++;
-})
+  userForm: FormGroup;
+  TypeCompanyAnother = false;
+  formdata: any;
 
+  constructor(private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      TypeOfPerson: ['', Validators.required],
+      TypeCompany: ['', Validators.required],
+      TypeCompanyAnother: [''],
+      LegalPersonName: ['', Validators.required],
+      LegalPersonCompanyName: ['', Validators.required],
+      Sector: ['', Validators.required],
+      LegalPersonAddress: ['', Validators.required],
+      LegalPersonPhone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      LegalPersonEmail: ['', [Validators.required, Validators.email]],
+      LegalPersonPassword: ['', [Validators.required, Validators.minLength(6)]],
+      LegalPersonConfirmPassword: ['', Validators.required],
+      TypeOfAdvice: ['', Validators.required],
+      NaturalPersonName: ['', Validators.required],
+      NaturalPersonAddress: ['', Validators.required],
+      NaturalPersonPhone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      NaturalPersonEmail: ['', [Validators.required, Validators.email]],
+      NaturalPersonPassword: ['', [Validators.required, Validators.minLength(6)]],
+      NaturalPersonConfirmPassword: ['', Validators.required],
+    }, { validator: this.passwordMatchValidator });
   }
-  formdata: Users = {
-    id: 0,
-    TypeOfPerson: '',
-    NaturalPersonName: '',
-    NaturalPersonAddress: '',
-    NaturalPersonPhone: 0,
-    NaturalPersonEmail: '',
-    NaturalPersonPassword: '',
-    NaturalPersonConfirmPassword: '',
-    TypeOfAdvice: '',
-    TypeCompany: '',
-    TypeCompanyAnother: '',
-    LegalPersonName: '',
-    LegalPersonCompanyName: '',
-    Sector: '',
-    LegalPersonAddress: '',
-    LegalPersonPhone: 0,
-    LegalPersonEmail: '',
-    LegalPersonPassword: '',
-    LegalPersonConfirmPassword: '',
-    Rol: '',
-    Diagnosis: undefined,
-    Adress: '',
-    Phone: 0,
-    Email: '',
-    Password: '',
-    ConfirmPassword: '',
-    NaturalPersonTypeCompany: '',
-    LegalPersonTypeCompany: '',
-    NaturalPersonTypeCompanyAnother: '',
-    LegalPersonTypeCompanyAnother: ''
-  };
 
-  create(){
-    this.userService.create(this.formdata).subscribe({
-      next: (data)=>{
-        this.router.navigate(['/admin/dashboard/users/home']);
-      },
-      error: (err) => {
-        console.log(err)
+  ngOnInit(): void {
+    this.userForm.get('TypeCompany')?.valueChanges.subscribe(value => {
+      this.TypeCompanyAnother = value === 'otro';
+      if (this.TypeCompanyAnother) {
+        this.userForm.get('TypeCompanyAnother')?.setValidators([Validators.required]);
+      } else {
+        this.userForm.get('TypeCompanyAnother')?.clearValidators();
       }
-    })
+      this.userForm.get('TypeCompanyAnother')?.updateValueAndValidity();
+    });
+  }
+
+  passwordMatchValidator(group: FormGroup) {
+    const password = group.get('LegalPersonPassword')?.value;
+    const confirmPassword = group.get('LegalPersonConfirmPassword')?.value;
+    const naturalPassword = group.get('NaturalPersonPassword')?.value;
+    const naturalConfirmPassword = group.get('NaturalPersonConfirmPassword')?.value;
+
+    return password === confirmPassword && naturalPassword === naturalConfirmPassword ? null : { notMatching: true };
+  }
+
+  createUser() {
+    if (this.userForm.valid) {
+      const formData = this.userForm.value;
+      console.log('User data:', formData);
+      // Aquí se realizaría la lógica para enviar los datos al backend o manejar la creación del usuario
+    }
   }
 }
-

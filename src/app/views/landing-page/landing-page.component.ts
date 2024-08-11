@@ -10,6 +10,7 @@ import { ourServicesComponent } from '../../components/ourServices/ourServices.c
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
+import { VisitsCounterComponent } from 'app/components/visits-counter/visits-counter.component';
 
 
 @Component({
@@ -25,7 +26,8 @@ import { contactUsComponent } from '../../components/contact-us/contact-us.compo
     ourServicesComponent,
     plansComponent,
     contactUsComponent,
-    FooterLandingpageComponent
+    FooterLandingpageComponent,
+    VisitsCounterComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

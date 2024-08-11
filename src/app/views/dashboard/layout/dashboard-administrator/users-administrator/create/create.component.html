@@ -1,42 +1,113 @@
-<div class="container">
-    <legend>Create item</legend>
-    <form>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Tipo de empresa</label>
-            <input type="text" name="name" [(ngModel)]="formdata.EnterpriseName" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Nombre de la empresa</label>
-            <input type="text" name="price" [(ngModel)]="formdata.EnterpriseName" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Razón social</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.BusinessName" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Sector</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.Sector" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Dirección</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.Adress" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Teléfono</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.Phone" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Correo electrónico</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.Email" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Contraseña</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.Password" class="form-control" id="txtName"/>
-        </div>
-        <div class="mb-3">
-            <label for="txtName" class="form-label">Confirmación ontraseña</label>
-            <input type="text" name="quantity" [(ngModel)]="formdata.ConfirmPassword" class="form-control" id="txtName"/>
-        </div>
-        <button type="button" (click)="create()" class="btn btn-primary">Crear usuario</button>
-    </form>
-</div>
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+    <!-- Tipo de Persona -->
+    <div>
+      <label for="TypeOfPerson">Tipo de Persona</label>
+      <select id="TypeOfPerson" formControlName="TypeOfPerson">
+        <option value="">Seleccione</option>
+        <option value="juridica">Persona Jurídica</option>
+        <option value="natural">Persona Natural</option>
+      </select>
+    </div>
+  
+    <!-- Sección para Persona Jurídica -->
+    <div *ngIf="userForm.get('TypeOfPerson')?.value === 'juridica'">
+      <div>
+        <label for="LegalPersonName">Nombre Legal</label>
+        <input id="LegalPersonName" type="text" formControlName="LegalPersonName">
+      </div>
+  
+      <div>
+        <label for="LegalPersonCompanyName">Nombre de la Empresa</label>
+        <input id="LegalPersonCompanyName" type="text" formControlName="LegalPersonCompanyName">
+      </div>
+  
+      <div>
+        <label for="Sector">Sector</label>
+        <input id="Sector" type="text" formControlName="Sector">
+      </div>
+  
+      <div>
+        <label for="LegalPersonAddress">Dirección</label>
+        <input id="LegalPersonAddress" type="text" formControlName="LegalPersonAddress">
+      </div>
+  
+      <div>
+        <label for="LegalPersonPhone">Teléfono</label>
+        <input id="LegalPersonPhone" type="text" formControlName="LegalPersonPhone">
+      </div>
+  
+      <div>
+        <label for="LegalPersonEmail">Correo Electrónico</label>
+        <input id="LegalPersonEmail" type="email" formControlName="LegalPersonEmail">
+      </div>
+  
+      <div>
+        <label for="LegalPersonPassword">Contraseña</label>
+        <input id="LegalPersonPassword" type="password" formControlName="LegalPersonPassword">
+      </div>
+  
+      <div>
+        <label for="LegalPersonConfirmPassword">Confirmar Contraseña</label>
+        <input id="LegalPersonConfirmPassword" type="password" formControlName="LegalPersonConfirmPassword">
+      </div>
+  
+      <div>
+        <label for="TypeCompany">Tipo de Empresa</label>
+        <select id="TypeCompany" formControlName="TypeCompany">
+          <option value="">Seleccione</option>
+          <option value="tech">Tecnología</option>
+          <option value="finance">Finanzas</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+  
+      <div *ngIf="TypeCompanyAnother">
+        <label for="TypeCompanyAnother">Especifique Tipo de Empresa</label>
+        <input id="TypeCompanyAnother" type="text" formControlName="TypeCompanyAnother">
+      </div>
+  
+      <div>
+        <label for="TypeOfAdvice">Tipo de Asesoría</label>
+        <input id="TypeOfAdvice" type="text" formControlName="TypeOfAdvice">
+      </div>
+    </div>
+  
+    <!-- Sección para Persona Natural -->
+    <div *ngIf="userForm.get('TypeOfPerson')?.value === 'natural'">
+      <div>
+        <label for="NaturalPersonName">Nombre Completo</label>
+        <input id="NaturalPersonName" type="text" formControlName="NaturalPersonName">
+      </div>
+  
+      <div>
+        <label for="NaturalPersonAddress">Dirección</label>
+        <input id="NaturalPersonAddress" type="text" formControlName="NaturalPersonAddress">
+      </div>
+  
+      <div>
+        <label for="NaturalPersonPhone">Teléfono</label>
+        <input id="NaturalPersonPhone" type="text" formControlName="NaturalPersonPhone">
+      </div>
+  
+      <div>
+        <label for="NaturalPersonEmail">Correo Electrónico</label>
+        <input id="NaturalPersonEmail" type="email" formControlName="NaturalPersonEmail">
+      </div>
+  
+      <div>
+        <label for="NaturalPersonPassword">Contraseña</label>
+        <input id="NaturalPersonPassword" type="password" formControlName="NaturalPersonPassword">
+      </div>
+  
+      <div>
+        <label for="NaturalPersonConfirmPassword">Confirmar Contraseña</label>
+        <input id="NaturalPersonConfirmPassword" type="password" formControlName="NaturalPersonConfirmPassword">
+      </div>
+    </div>
+  
+    <!-- Botón de Enviar -->
+    <div>
+      <button type="submit" [disabled]="!userForm.valid">Crear Usuario</button>
+    </div>
+  </form>
+  

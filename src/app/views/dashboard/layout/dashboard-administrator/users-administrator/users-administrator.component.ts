@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { EditComponent } from './edit/edit.component';
-import { CreateComponent } from './create/create.component';
+import { CreateComponent } from '../users-administrator/create/create.component';
 import { HomeComponent } from './home/home.component';
 
 
