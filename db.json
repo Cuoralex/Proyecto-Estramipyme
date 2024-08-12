@@ -2,26 +2,26 @@
   "events": [
     {
       "id": "1",
-      "photo": "https://example.com/photo3.jpg",
+      "photo": "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400",
       "date": "2024-07-03T00:00:00.000Z",
       "time": "15:00",
       "description": "Mi fiesta de graduación"
-    },
+    },    
     {
       "id": "2",
-      "photo": "https://example.com/photo2.jpg",
+      "photo": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400",
       "date": "2024-08-15T00:00:00.000Z",
       "time": "15:00",
       "description": "Second event description"
     },
     {
       "id": "3",
-      "photo": "https://example.com/photo3.jpg",
+      "photo": "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400",
       "date": "2024-09-01T00:00:00.000Z",
       "time": "18:00",
       "description": "Third event description"
     }
-  ],
+],
   "metrics": [
     {
       "id": "1",
