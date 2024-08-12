@@ -24,18 +24,24 @@
 			  <div class="flex space-x-4">
 				<!-- Menú desplegable -->
 				<div class="relative">
-				  <button (click)="toggleMenuSobrenosotros()" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-bold text-white focus:outline-none">
-					SOBRE NOSOTROS
-				  </button>
-				  <div *ngIf="menuOpenSobrenostros" class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¿Quienes somos?</a>
-					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenú 2</a>
-					<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenú 3</a>
-				  </div>
+					<button (click)="toggleMenuSobrenosotros()" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">
+						SOBRE NOSOTROS
+					</button>
+					<div *ngIf="menuOpenSobrenostros" class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+						<a (click)="navigateToSection('about')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+						  ¿Quienes somos?
+						</a>
+						<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="closeMenu()">
+						  Submenú 2
+						</a>
+						<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="closeMenu()">
+						  Submenú 3
+						</a>
+					</div>
 				</div>
-				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">NUESTROS SERVICIOS</a>
-				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">RECURSOS</a>
-				<a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">PLANES</a>
+				<a (click)="navigateToSection('services')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">NUESTROS SERVICIOS</a>
+				<a (click)="navigateToSection('plans')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">PLANES</a>
+				<a (click)="navigateToSection('contact')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">CONTACTOS</a>
 			  </div>
 			</div>
 		  </div>
@@ -68,10 +74,11 @@
 			</div>
   
 			<div *ngIf="isMenuOpen" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-			  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Iniciar sesión</a>
+			  <a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Inicia sesión</a>	
+			 <!--  <a [routerLink]="'/login'" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Iniciar sesión</a> -->
 			  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuración</a>
-			  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
-			  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Regístrate</a>
+			  <a  href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
+			  <a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Regístrate</a>
 			</div>
 		  </div>
 		</div>
