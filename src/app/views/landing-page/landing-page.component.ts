@@ -11,7 +11,8 @@ import { FooterLandingpageComponent } from "../../shared/footer-landingpage/foot
 import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
 import { VisitsCounterComponent } from '../../components/visits-counter/visits-counter.component';
-import { EventsDashboardComponent } from '../../components/events-dashboard/events-dashboard.component';
+import { EventsCardComponent } from '../dashboard/layout/dashboard-administrator/events/events-card/events-card.component';
+
 
 
 @Component({
@@ -29,7 +30,7 @@ import { EventsDashboardComponent } from '../../components/events-dashboard/even
     contactUsComponent,
     FooterLandingpageComponent,
     VisitsCounterComponent,
-    EventsDashboardComponent
+    EventsCardComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
