@@ -1,4 +1,27 @@
 {
+  "events": [
+    {
+      "id": "1",
+      "photo": "https://example.com/photo1.jpg",
+      "date": "2024-07-03T00:00:00.000Z",
+      "time": "12:00",
+      "description": "First event description"
+    },
+    {
+      "id": "2",
+      "photo": "https://example.com/photo2.jpg",
+      "date": "2024-08-15T00:00:00.000Z",
+      "time": "15:00",
+      "description": "Second event description"
+    },
+    {
+      "id": "3",
+      "photo": "https://example.com/photo3.jpg",
+      "date": "2024-09-01T00:00:00.000Z",
+      "time": "18:00",
+      "description": "Third event description"
+    }
+  ],
   "metrics": [
     {
       "id": "1",
@@ -144,7 +167,7 @@
       "NaturalPersonPassword": null,
       "NaturalPersonConfirmPassword": null,
       "TypeOfAdvice": "paid",
-        "Role": "Cliente"
+      "Role": "Cliente"
     },
     {
       "id": "9226",
@@ -165,7 +188,7 @@
       "NaturalPersonPassword": "123456",
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "free",
-        "Role": "Cliente"
+      "Role": "Cliente"
     },
     {
       "id": "750c",
@@ -186,7 +209,7 @@
       "NaturalPersonPassword": "123456",
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "free",
-        "Role": "Cliente"
+      "Role": "Cliente"
     },
     {
       "id": "94d0",
@@ -208,7 +231,7 @@
       "NaturalPersonPassword": "123456",
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "paid",
-        "Role": "Cliente"
+      "Role": "Cliente"
     }
   ]
 }

@@ -5,15 +5,15 @@ import { EventService } from '../../../../../services/event.service'; // Corrige
 import { Event } from '../../../../../models/event.model'; // Asegúrate de que la ruta sea correcta
 
 @Component({
-  selector: 'app-events-administrator',
+  selector: 'app-events',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './events-administrator.component.html',
-  styleUrls: ['./events-administrator.component.scss'],
+  templateUrl: './events.component.html',
+  styleUrls: ['./events.component.scss'],
 })
-export default class EventsAdministratorComponent implements OnInit {
+export default class EventsComponent implements OnInit {
   events$!: Observable<Event[]>;
 
   constructor(private eventService: EventService) {}

@@ -4,13 +4,14 @@ import { RouterModule, ActivatedRoute } from '@angular/router';
 import { RegisternComponent } from '../../components/registern/registern.component';
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
-import EventsComponent from '../../components/events/events.component';
+
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
-import { VisitsCounterComponent } from 'app/components/visits-counter/visits-counter.component';
+import { VisitsCounterComponent } from '../../components/visits-counter/visits-counter.component';
+import { EventsDashboardComponent } from '../../components/events-dashboard/events-dashboard.component';
 
 
 @Component({
@@ -27,7 +28,8 @@ import { VisitsCounterComponent } from 'app/components/visits-counter/visits-cou
     plansComponent,
     contactUsComponent,
     FooterLandingpageComponent,
-    VisitsCounterComponent
+    VisitsCounterComponent,
+    EventsDashboardComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],

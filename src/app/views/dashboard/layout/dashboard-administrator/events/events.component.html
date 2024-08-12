@@ -1,0 +1,27 @@
+<div class="events-administrator">
+  <h2>Event Administrator</h2>
+
+  <!-- Botón para agregar un nuevo evento -->
+  <button (click)="addEvent()">Add New Event</button>
+
+  <!-- Lista de eventos -->
+  <div *ngIf="events$ | async as events; else noEvents">
+    <div *ngFor="let event of events" class="event-item">
+      <img [src]="event.photo" alt="{{ event.description }}" class="event-photo">
+      <div class="event-details">
+        <p><strong>Date:</strong> {{ event.date | date:'yyyy-MM-dd' }}</p>
+        <p><strong>Time:</strong> {{ event.time }}</p>
+        <p><strong>Description:</strong> {{ event.description }}</p>
+      </div>
+      <div class="event-actions">
+        <button (click)="editEvent(event)">Edit</button>
+        <button (click)="deleteEvent(event.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje cuando no hay eventos -->
+  <ng-template #noEvents>
+    <p>No events available.</p>
+  </ng-template>
+</div>
