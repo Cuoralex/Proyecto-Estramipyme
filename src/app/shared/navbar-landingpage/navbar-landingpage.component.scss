@@ -1,14 +1,24 @@
-.bg-custom-color {
-    background-color: #020659;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-nav a {
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-#menu {
+.social-icons {
+  @media (max-width: 480px) {
     display: none;
   }
-#menu.show {
-    display: block;
+}
+
+@media (max-width: 480px) {
+  .space-y-1 {
+    a {
+      display: block;
+      text-align: center;
+      padding: 8px;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #049DBF;
+      }
+    }
   }
+}

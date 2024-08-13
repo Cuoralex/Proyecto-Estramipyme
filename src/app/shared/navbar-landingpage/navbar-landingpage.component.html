@@ -1,94 +1,137 @@
-<nav class="bg-custom-color bg-gray-800 fixed top-0 w-full z-50">
+<nav class="bg-custom-color bg-firstColor fixed top-0 w-full z-50">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-	  <div class="relative flex h-16 items-center justify-between">
-		<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-		  <!-- Mobile menu button-->
-		  <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-			<span class="absolute -inset-0.5"></span>
-			<span class="sr-only">Open main menu</span>
-			<svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-			  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-			</svg>
-			<svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-			  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-			</svg>
-		  </button>
-		</div>
-		<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-			<div class="flex flex-shrink-0 items-center">
-			  <a class="text-3xl font-bold leading-none" href="#">
-				<img class="h-10" src="/logo_sintitulo.png" alt="logo">
-			  </a>
+		<div class="relative flex h-16 items-center justify-between">
+			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+
+				<!-- Mobile menu button-->
+				<button (click)="toggleMobileMenu()" type="button"
+					class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+					aria-controls="mobile-menu" aria-expanded="false">
+					<span class="sr-only">Open main menu</span>
+					<svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+						aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+					</svg>
+					<svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+						aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+
 			</div>
-			<div class="hidden sm:ml-6 sm:block relative">
-			  <div class="flex space-x-4">
-				<!-- Menú desplegable -->
-				<div class="relative">
-					<button (click)="toggleMenuSobrenosotros()" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">
-						SOBRE NOSOTROS
-					</button>
-					<div *ngIf="menuOpenSobrenostros" class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-						<a (click)="navigateToSection('about')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-						  ¿Quienes somos?
-						</a>
-						<a (click)="navigateToSection('video')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" (click)="closeMenu()">
-						  Nuetra metodología
-						</a>
+			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+				<div class="flex flex-shrink-0 items-center">
+					<a class="text-3xl font-bold leading-none" href="#">
+						<img class="h-10" src="/logo_sintitulo.png" alt="logo">
+					</a>
+				</div>
+				<div class="hidden sm:ml-6 sm:block relative">
+					<div class="flex space-x-4">
+
+						<!-- Menú desplegable -->
+						<div class="relative">
+							<button (click)="toggleMenuSobrenosotros()"
+								class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">
+								Sobre Nosotros
+							</button>
+							<div *ngIf="menuOpenSobrenostros"
+								class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+								<a (click)="navigateToSection('about')"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">¿Quienes Somos?</a>
+								<a (click)="navigateToSection('services')"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Nuestros Servicios</a>
+								<a (click)="navigateToSection('video')"
+									class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Nuestra Metodología</a>
+							</div>
+						</div>
+						<a (click)="navigateToSection('plans')"
+							class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Planes</a>
+						<a (click)="navigateToSection('register')"
+							class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Regístrate</a>
+						<a (click)="navigateToSection('contact')"
+							class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Contacto</a>
 					</div>
 				</div>
-				<a (click)="navigateToSection('services')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">NUESTROS SERVICIOS</a>
-				<a (click)="navigateToSection('plans')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">PLANES</a>
-				<a (click)="navigateToSection('contact')" class="rounded-md px-3 py-2 text-sm font-bold text-gray-300 hover:bg-gray-700 hover:text-white">CONTACTOS</a>
-			  </div>
 			</div>
-		  </div>
-		<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-			<a href="https://api.whatsapp.com/send?phone=573108992908" target="_blank" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-				<span class="sr-only">Whatsapp</span>
-				<img src="iconowhatsapp.svg" alt="Whatsapp" class="h-6 w-6">
-			</a>
-			<a href="https://www.instagram.com/eafit/" target="_blank" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-				<span class="sr-only">Instagram</span>
-				<img src="iconoinstagram.svg" alt="Instagram" class="h-6 w-6">
-			</a>
-			<a href="https://www.youtube.com/user/ueafit" target="_blank" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-				<span class="sr-only">Youtube</span>
-				<img src="iconoyoutube.svg" alt="Youtube" class="h-6 w-6">
-			</a>
-			<a href="http://www.facebook.com/universidadeafit" target="_blank" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-				<span class="sr-only">Facebook</span>
-				<img src="iconofacebook.svg" alt="Facebook" class="h-6 w-6">
-			</a>
-  
-		  <!-- Profile dropdown -->
-		  <div class="relative ml-3">
-			<div>
-			  <button (click)="toggleMenu()" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-				<span class="absolute -inset-1.5"></span>
-				<span class="sr-only">Open user menu</span>
-				<img class="h-8 w-8 rounded-full" src="iconousuario.svg" alt="">
-			  </button>
+			<div
+				class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 social-icons">
+				<a href="https://api.whatsapp.com/send?phone=573108992908" target="_blank"
+					class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+					<span class="sr-only">Whatsapp</span>
+					<img src="iconowhatsapp.svg" alt="Whatsapp" class="h-6 w-6">
+				</a>
+				<a href="https://www.instagram.com/eafit/" target="_blank"
+					class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+					<span class="sr-only">Instagram</span>
+					<img src="iconoinstagram.svg" alt="Instagram" class="h-6 w-6">
+				</a>
+				<a href="https://www.youtube.com/user/ueafit" target="_blank"
+					class="relative rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+					<span class="sr-only">Youtube</span>
+					<img src="iconoyoutube.svg" alt="Youtube" class="h-6 w-6">
+				</a>
+				<a href="http://www.facebook.com/universidadeafit" target="_blank"
+					class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+					<span class="sr-only">Facebook</span>
+					<img src="iconofacebook.svg" alt="Facebook" class="h-6 w-6">
+				</a>
 			</div>
-  
-			<div *ngIf="isMenuOpen" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-			  <a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Inicia sesión</a>	
-			 <!--  <a [routerLink]="'/login'" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Iniciar sesión</a> -->
-			  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuración</a>
-			  <a  href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Cerrar sesión</a>
-			  <a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Regístrate</a>
+
+			<!-- Profile dropdown -->
+			<div class="relative ml-3">
+				<div>
+					<button (click)="toggleUserMenu()" type="button"
+						class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+						id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+						<span class="absolute -inset-1.5"></span>
+						<span class="sr-only">Open user menu</span>
+						<img class="h-8 w-8 rounded-full" src="iconousuario.svg" alt="">
+					</button>
+				</div>
+
+				<div *ngIf="isUserMenuOpen"
+					class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+					role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+					<a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+						tabindex="-1" id="user-menu-item-2">Inicia sesión</a>
+					<a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+						id="user-menu-item-1">Configuración</a>
+					<a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+						id="user-menu-item-2">Cerrar sesión</a>
+					<a (click)="navigateToSection('register')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+						tabindex="-1" id="user-menu-item-2">Regístrate</a>
+				</div>
 			</div>
-		  </div>
 		</div>
-	  </div>
 	</div>
-  
-	<div class="sm:hidden" id="mobile-menu" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
-	  <div class="space-y-1 px-2 pb-3 pt-2">
-		<a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-		<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-		<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-		<a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-	  </div>
+
+	<div class="sm:hidden" id="mobile-menu" [ngClass]="{'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}">
+		<div class="space-y-1 px-2 pb-3 pt-2">
+			<a (click)="navigateToSection('about')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">¿Quienes
+				somos?</a>
+			<a (click)="navigateToSection('services')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Nuestros
+				servicios</a>
+			<a (click)="navigateToSection('video')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Nuestra
+				metodología</a>
+			<a (click)="navigateToSection('plans')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Planes</a>
+			<a (click)="navigateToSection('register')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Regístrate</a>
+			<a (click)="navigateToSection('contact')"
+				class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
+		</div>
+		<div class="space-y-1 px-2 pb-3 pt-2">
+			<a href="https://api.whatsapp.com/send?phone=573108992908"
+				class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Whatsapp</a>
+			<a href="https://www.instagram.com/eafit/"
+				class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Instagram</a>
+			<a href="https://www.youtube.com/user/ueafit"
+				class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Youtube</a>
+			<a href="http://www.facebook.com/universidadeafit"
+				class="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Facebook</a>
+		</div>
 	</div>
-  </nav>
-  
+</nav>
