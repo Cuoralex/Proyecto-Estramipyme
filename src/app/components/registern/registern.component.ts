@@ -1,11 +1,25 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { RegisterData } from '../../models/register.model';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
+// Función de validación para contraseñas de persona natural
+export const naturalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const naturalPassword = control.get('NaturalPersonPassword');
+  const naturalPasswordConfirm = control.get('NaturalPersonConfirmPassword');
+  return naturalPassword && naturalPasswordConfirm && naturalPassword.value !== naturalPasswordConfirm.value ? { naturalPasswords: true } : null;
+};
+
+// Función de validación para contraseñas de persona juridica
+export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const LegalPassword = control.get('LegalPersonPassword');
+  const LegalPasswordConfirm = control.get('LegalPersonConfirmPassword');
+  return LegalPassword && LegalPasswordConfirm && LegalPassword.value !== LegalPasswordConfirm.value ? { LegalPasswords: true } : null;
+};
 
 @Component({
   selector: 'app-registern',
@@ -15,7 +29,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./registern.component.scss']
 })
 export class RegisternComponent implements OnInit, OnDestroy {
-  myForm!: FormGroup;
+  // myForm!: FormGroup;
   registerForm: FormGroup;
   TypeOfPerson!: FormControl;
   TypeCompany!: FormControl;
@@ -37,6 +51,8 @@ export class RegisternComponent implements OnInit, OnDestroy {
   TypeOfAdvice!: FormControl;
   Subscriptions: Subscription[] = []
 
+  isOtherCompanyType: boolean = false;
+
 register() {
 throw new Error('Method not implemented.');
 }
@@ -50,27 +66,39 @@ throw new Error('Method not implemented.');
   ) {
     this.registerForm = this.fb.group({
       TypeOfPerson: ['', Validators.required],
-      TypeCompany: [''],
-      TypeCompanyAnother: [''],
-      LegalPersonName: [''],
-      LegalPersonCompanyName: [''],
-      Sector: [''],
-      LegalPersonAddress: [''],
-      LegalPersonPhone: [''],
-      LegalPersonEmail: ['', Validators.email],
-      LegalPersonPassword: [''],
-      LegalPersonConfirmPassword: [''],
-      NaturalPersonName: [''],
-      NaturalPersonAddress: [''],
-      NaturalPersonPhone: [''],
-      NaturalPersonEmail: ['', Validators.email],
-      NaturalPersonPassword: [''],
-      NaturalPersonConfirmPassword: [''],
-      TypeOfAdvice: ['']
+      TypeCompany: ['' , Validators.required],
+      TypeCompanyAnother: ['' , Validators.required],
+      LegalPersonName: ['' , Validators.required],
+      LegalPersonCompanyName: ['' , Validators.required],
+      Sector: ['' , Validators.required],
+      LegalPersonAddress: ['' , Validators.required],
+      LegalPersonPhone: ['' , Validators.required],
+      LegalPersonEmail: ['', Validators.required],
+      LegalPersonPassword: ['' , Validators.required],
+      LegalPersonConfirmPassword: ['' , Validators.required],
+      NaturalPersonName: ['' , Validators.required],
+      NaturalPersonAddress: ['' , Validators.required],
+      NaturalPersonPhone: ['' , Validators.required],
+      NaturalPersonEmail: ['', Validators.required],
+      NaturalPersonPassword: ['' , Validators.required],
+      NaturalPersonConfirmPassword: ['' , Validators.required],
+      TypeOfAdvice: ['' , Validators.required]
+    } , {
+      validators: [naturalPasswordsValidator, LegalPasswordsValidator]  // Aplicando los validadores personalizados
     });
   }
 
   ngOnInit() {
+    this.registerForm.get('TypeCompany')?.valueChanges.subscribe(value => {
+      this.isOtherCompanyType = (value === 'otro');
+      if (this.isOtherCompanyType) {
+        this.registerForm.get('TypeCompanyAnother')?.enable();
+        this.registerForm.get('TypeCompanyAnother')?.setValidators(Validators.required);
+      } else {
+        this.registerForm.get('TypeCompanyAnother')?.disable();
+      }
+    });
+
     // Handle TypeOfPerson value changes
     const typeOfPersonSubscription = this.registerForm.get('TypeOfPerson')?.valueChanges.subscribe(value => {
       this.registerForm.reset({ TypeOfPerson: value }, { emitEvent: false });
@@ -101,7 +129,66 @@ throw new Error('Method not implemented.');
     if (typeCompanySubscription) {
       this.Subscriptions.push(typeCompanySubscription);
     }
-  }    
+  }  
+  
+  //funciones de validación persona natural
+  get NaturalPersonNames() {
+    return this.registerForm.get('NaturalPersonName');
+  }
+
+  get NaturalAddress(){
+    return this.registerForm.get('NaturalPersonAddress');
+  }
+
+  get NaturalPhone(){
+    return this.registerForm.get('NaturalPersonPhone');
+  }
+
+  get NaturalEmail() {
+    return this.registerForm.get('NaturalPersonEmail');
+  }
+
+  get NaturalPassword() {
+    return this.registerForm.get('NaturalPersonPassword');
+  }
+
+  //funciones de validación persona jurídica
+  get OptionTypeCompany() {
+    return this.registerForm.get('TypeCompany');
+  }
+
+  get OptTypeCompanyAnother() {
+    return this.registerForm.get('TypeCompanyAnother');
+  }
+
+  get LegalName() {
+    return this.registerForm.get('LegalPersonName');
+  }
+
+  get LegalCompanyName() {
+    return this.registerForm.get('LegalPersonCompanyName');
+  }
+
+  get OptSector() {
+    return this.registerForm.get('Sector');
+  }
+
+  get LegalEmail() {
+    return this.registerForm.get('LegalPersonEmail');
+  }
+
+  get LegalAddress(){
+    return this.registerForm.get('LegalPersonAddress');
+  }
+
+  get LegalPhone(){
+    return this.registerForm.get('LegalPersonPhone');
+  }
+
+  get LegalPassword() {
+    return this.registerForm.get('LegalPersonPassword');
+  }
+
 
   ngOnDestroy() {
     this.Subscriptions.forEach((subscription: { unsubscribe: () => any; }) => subscription.unsubscribe());

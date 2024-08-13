@@ -1,7 +1,7 @@
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { RegisternComponent } from '../../components/registern/registern.component';
+
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
 
@@ -12,15 +12,16 @@ import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
 import { VisitsCounterComponent } from '../../components/visits-counter/visits-counter.component';
 import { EventsCardComponent } from '../dashboard/layout/dashboard-administrator/events/events-card/events-card.component';
+import { RegisternComponent } from 'app/components/registern/registern.component';
+
 
 
 
 @Component({
   selector: 'app-landingpage',
-  standalone: true,
+  standalone: true, 
   imports: [
     RouterModule,
-    RegisternComponent,
     NavbarLandingpageComponent,
     LoginComponent,
     CarouselComponent,
@@ -30,7 +31,8 @@ import { EventsCardComponent } from '../dashboard/layout/dashboard-administrator
     contactUsComponent,
     FooterLandingpageComponent,
     VisitsCounterComponent,
-    EventsCardComponent
+    EventsCardComponent,
+    RegisternComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
