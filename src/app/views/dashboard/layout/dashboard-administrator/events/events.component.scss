@@ -1,36 +1,40 @@
-:host {
-  display: block;
-}
-.events {
-  padding: 20px;
+.container {
+  column-count: 3; // Número de columnas
+  column-gap: 20px; // Espacio entre columnas
 }
 
 .event-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
 
   .event-photo {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 200px; // Ajusta el tamaño de la imagen según sea necesario
     object-fit: cover;
-    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
   }
 
   .event-details {
     flex: 1;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .event-actions {
     display: flex;
+    justify-content: center;
     gap: 10px;
+    margin-top: 10px;
 
     button {
-      padding: 5px 10px;
+      padding: 5px 15px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
