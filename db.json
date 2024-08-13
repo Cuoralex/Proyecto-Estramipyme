@@ -5,8 +5,8 @@
       "photo": "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400",
       "date": "2024-07-03T00:00:00.000Z",
       "time": "15:00",
-      "description": "Mi fiesta de graduación"
-    },    
+      "description": "Mi fiesta de cumpleaños"
+    },
     {
       "id": "2",
       "photo": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=400",
@@ -21,7 +21,7 @@
       "time": "18:00",
       "description": "Third event description"
     }
-],
+  ],
   "metrics": [
     {
       "id": "1",
@@ -127,49 +127,6 @@
       "Role": "Cliente"
     },
     {
-      "id": "2",
-      "TypeOfPerson": "Jurídica",
-      "NaturalPersonName": "",
-      "NaturalPersonAddress": "",
-      "NaturalPersonPhone": "",
-      "NaturalPersonEmail": "",
-      "NaturalPersonPassword": "",
-      "NaturalPersonConfirmPassword": "",
-      "TypeOfAdvice": "paid",
-      "TypeCompany": "grande",
-      "TypeCompanyAnother": "",
-      "LegalPersonName": "Empresa XYZ",
-      "LegalPersonCompanyName": "XYZ Ltda.",
-      "Sector": "Tecnología",
-      "LegalPersonAddress": "Avenida Principal 456",
-      "LegalPersonPhone": "987654321",
-      "LegalPersonEmail": "contacto@xyz.com",
-      "LegalPersonPassword": "pass456",
-      "LegalPersonConfirmPassword": "pass456",
-      "Role": "Cliente"
-    },
-    {
-      "id": "6f23",
-      "TypeOfPerson": "Jurídica",
-      "TypeCompany": "microempresa",
-      "LegalPersonName": "z",
-      "LegalPersonCompanyName": "z",
-      "Sector": "Bienes de Consumo",
-      "LegalPersonAddress": "z",
-      "LegalPersonPhone": "111111111",
-      "LegalPersonEmail": "z@z.com",
-      "LegalPersonPassword": "123456",
-      "LegalPersonConfirmPassword": "123456",
-      "NaturalPersonName": null,
-      "NaturalPersonAddress": null,
-      "NaturalPersonPhone": null,
-      "NaturalPersonEmail": null,
-      "NaturalPersonPassword": null,
-      "NaturalPersonConfirmPassword": null,
-      "TypeOfAdvice": "paid",
-      "Role": "Cliente"
-    },
-    {
       "id": "9226",
       "TypeOfPerson": "Natural",
       "TypeCompany": "pequeña",
@@ -232,6 +189,26 @@
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "paid",
       "Role": "Cliente"
+    },
+    {
+      "id": "8d67",
+      "TypeOfPerson": "Jurídica",
+      "TypeCompany": "mediana",
+      "LegalPersonName": "q",
+      "LegalPersonCompanyName": "q",
+      "Sector": "Metales y Minería",
+      "LegalPersonAddress": "q",
+      "LegalPersonPhone": "1",
+      "LegalPersonEmail": "q@q.com",
+      "LegalPersonPassword": "123456",
+      "LegalPersonConfirmPassword": "123456",
+      "NaturalPersonName": null,
+      "NaturalPersonAddress": null,
+      "NaturalPersonPhone": null,
+      "NaturalPersonEmail": null,
+      "NaturalPersonPassword": null,
+      "NaturalPersonConfirmPassword": null,
+      "TypeOfAdvice": "free"
     }
   ]
 }
