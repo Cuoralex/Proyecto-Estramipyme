@@ -10,7 +10,8 @@ import { ourServicesComponent } from '../../components/ourServices/ourServices.c
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
-import { VideoComponent } from '../../components/video/video.component'
+import { VideoComponent } from '../../components/video/video.component';
+import { AboutUsComponent } from '../../components/about-us/about-us.component';
 
 
 @Component({
@@ -27,7 +28,8 @@ import { VideoComponent } from '../../components/video/video.component'
     plansComponent,
     contactUsComponent,
     FooterLandingpageComponent,
-    VideoComponent
+    VideoComponent,
+    AboutUsComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
