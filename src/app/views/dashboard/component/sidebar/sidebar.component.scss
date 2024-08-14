@@ -1,3 +1,7 @@
+aside{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 aside h2 {
   font-size: 20px;
   margin-bottom: 10px;
@@ -14,9 +18,8 @@ aside ul li {
 
 aside ul li a {
   text-decoration: none;
-  color: #333;
+  // color: #333;
 }
 
-aside ul li a:hover {
-  text-decoration: underline;
-}
+
+
