@@ -129,6 +129,27 @@
       "legalPersonEmail": "",
       "legalPersonPassword": "",
       "legalPersonConfirmPassword": ""
+    },
+    {
+      "id": "bc67",
+      "typeOfPerson": "natural",
+      "naturalPersonName": "q",
+      "NaturalPersonAddress": "q",
+      "NaturalPersonPhone": "1",
+      "naturalPersonEmail": "q@q.com",
+      "naturalPersonPassword": "123",
+      "naturalPersonConfirmPassword": "123",
+      "typeOfAdvice": "free",
+      "typeCompany": "",
+      "typeCompanyAnother": "",
+      "legalPersonName": "",
+      "legalPersonCompanyName": "",
+      "sector": "",
+      "LegalPersonAddress": "",
+      "LegalPersonPhone": "",
+      "legalPersonEmail": "",
+      "legalPersonPassword": "",
+      "legalPersonConfirmPassword": ""
     }
   ]
 }
