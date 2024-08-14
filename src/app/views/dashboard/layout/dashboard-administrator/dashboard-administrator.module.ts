@@ -28,6 +28,13 @@ const routes: Routes = [
             (m) => m.UsersAdministratorModule
           ),
       },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('./events/events.module').then(
+            (m) => m.EventsModule
+          ),
+      },
     ],
   },
 ];

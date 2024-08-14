@@ -1,56 +1,88 @@
+<!-- edit.component.html -->
 <div class="container">
     <div style="border: 3px solid greenyellow">
         <h1>Edición funciona</h1>
     </div>
     <legend>Edit item</legend>
-        <form>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Rol</label>
-                <input type="text" name="name" [(ngModel)]="formdata.rol" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Tipo de empresa</label>
-                <input type="text" name="name" [(ngModel)]="formdata.enterpriseName" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Nombre empresa</label>
-                <input type="text" name="price" [(ngModel)]="formdata.enterpriseName" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Razón social</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.businessName" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Sector</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.sector" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Dirección</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.adress" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Teléfono</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.phone" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Correo electrónico</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.email" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">contraseña</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.password" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Confirmar contraseña</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.confirmPassword" class="form-control" id="txtName" />
-            </div>
-            <div class="mb-3">
-                <label for="txtName" class="form-label">Rol</label>
-                <input type="text" name="quantity" [(ngModel)]="formdata.rol" class="form-control" id="txtName" />
-            </div>
-            <div>
-                <button type="button" (click)="update()" class="btn btn-primary">Update</button>
-
-            </div>
-        </form>
+    <form>
+        <div class="mb-3">
+            <label for="txtId" class="form-label">ID</label>
+            <input type="text" [(ngModel)]="formdata.id" class="form-control" id="txtId" disabled />
+        </div>
+        <div class="mb-3">
+            <label for="txtTypeOfPerson" class="form-label">Tipo de persona</label>
+            <input type="text" [(ngModel)]="formdata.TypeOfPerson" class="form-control" id="txtTypeOfPerson" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonName" class="form-label">Nombre persona natural</label>
+            <input type="text" [(ngModel)]="formdata.NaturalPersonName" class="form-control" id="txtNaturalPersonName" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonAddress" class="form-label">Dirección persona natural</label>
+            <input type="text" [(ngModel)]="formdata.NaturalPersonAddress" class="form-control" id="txtNaturalPersonAddress" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonPhone" class="form-label">Teléfono persona natural</label>
+            <input type="text" [(ngModel)]="formdata.NaturalPersonPhone" class="form-control" id="txtNaturalPersonPhone" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonEmail" class="form-label">Correo electrónico persona natural</label>
+            <input type="text" [(ngModel)]="formdata.NaturalPersonEmail" class="form-control" id="txtNaturalPersonEmail" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonPassword" class="form-label">Contraseña persona natural</label>
+            <input type="password" [(ngModel)]="formdata.NaturalPersonPassword" class="form-control" id="txtNaturalPersonPassword" />
+        </div>
+        <div class="mb-3">
+            <label for="txtNaturalPersonConfirmPassword" class="form-label">Confirmar contraseña persona natural</label>
+            <input type="password" [(ngModel)]="formdata.NaturalPersonConfirmPassword" class="form-control" id="txtNaturalPersonConfirmPassword" />
+        </div>
+        <div class="mb-3">
+            <label for="txtTypeOfAdvice" class="form-label">Tipo de asesoría</label>
+            <input type="text" [(ngModel)]="formdata.TypeOfAdvice" class="form-control" id="txtTypeOfAdvice" />
+        </div>
+        <div class="mb-3">
+            <label for="txtTypeCompany" class="form-label">Tipo de empresa</label>
+            <input type="text" [(ngModel)]="formdata.TypeCompany" class="form-control" id="txtTypeCompany" />
+        </div>
+        <div class="mb-3">
+            <label for="txtTypeCompanyAnother" class="form-label">Otro tipo de empresa</label>
+            <input type="text" [(ngModel)]="formdata.TypeCompanyAnother" class="form-control" id="txtTypeCompanyAnother" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonName" class="form-label">Nombre persona jurídica</label>
+            <input type="text" [(ngModel)]="formdata.LegalPersonName" class="form-control" id="txtLegalPersonName" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonCompanyName" class="form-label">Nombre empresa jurídica</label>
+            <input type="text" [(ngModel)]="formdata.LegalPersonCompanyName" class="form-control" id="txtLegalPersonCompanyName" />
+        </div>
+        <div class="mb-3">
+            <label for="txtSector" class="form-label">Sector</label>
+            <input type="text" [(ngModel)]="formdata.Sector" class="form-control" id="txtSector" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonAddress" class="form-label">Dirección persona jurídica</label>
+            <input type="text" [(ngModel)]="formdata.LegalPersonAddress" class="form-control" id="txtLegalPersonAddress" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonPhone" class="form-label">Teléfono persona jurídica</label>
+            <input type="text" [(ngModel)]="formdata.LegalPersonPhone" class="form-control" id="txtLegalPersonPhone" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonEmail" class="form-label">Correo electrónico persona jurídica</label>
+            <input type="text" [(ngModel)]="formdata.LegalPersonEmail" class="form-control" id="txtLegalPersonEmail" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonPassword" class="form-label">Contraseña persona jurídica</label>
+            <input type="password" [(ngModel)]="formdata.LegalPersonPassword" class="form-control" id="txtLegalPersonPassword" />
+        </div>
+        <div class="mb-3">
+            <label for="txtLegalPersonConfirmPassword" class="form-label">Confirmar contraseña persona jurídica</label>
+            <input type="password" [(ngModel)]="formdata.LegalPersonConfirmPassword" class="form-control" id="txtLegalPersonConfirmPassword" />
+        </div>
+        <div>
+            <button type="button" (click)="update()" class="btn btn-primary">Actualizar</button>
+        </div>
+    </form>
 </div>

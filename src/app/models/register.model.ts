@@ -1,21 +1,21 @@
 
 export interface RegisterData {
-  typeOfPerson: string;
-  typeCompany?: string;
-  typeCompanyAnother?: string;
-  legalPersonName?: string;
-  legalPersonCompanyName?: string;
-  sector?: string;
-  legalPersonEmail?: string;
-  legalPersonPassword?: string;
-  legalPersonConfirmPassword?: string;
-  naturalPersonName?: string;
+  TypeOfPerson: string;
+  TypeCompany?: string;
+  TypeCompanyAnother?: string;
+  LegalPersonName?: string;
+  LegalPersonCompanyName?: string;
+  Sector?: string;
+  LegalPersonEmail?: string;
+  LegalPersonPassword?: string;
+  LegalPersonConfirmPassword?: string;
+  NaturalPersonName?: string;
   NaturalPersonAddress?: string;
   NaturalPersonPhone?: string;
   LegalPersonAddress?: string;
   LegalPersonPhone?: string;
-  naturalPersonEmail?: string;
-  naturalPersonPassword?: string;
-  naturalPersonConfirmPassword?: string;
-  typeOfAdvice?: string;
+  NaturalPersonEmail?: string;
+  NaturalPersonPassword?: string;
+  NaturalPersonConfirmPassword?: string;
+  TypeOfAdvice?: string;
 }

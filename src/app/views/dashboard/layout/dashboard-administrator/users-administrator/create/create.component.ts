@@ -1,62 +1,71 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { User } from 'app/models/user-administrator.model';
-import { UserService } from 'app/services/user-administrator.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
   standalone: true,
   imports: [
+    ReactiveFormsModule,
     CommonModule,
-    FormsModule,
-    RouterModule
   ],
   templateUrl: './create.component.html',
-  styleUrl: './create.component.scss',
+  styleUrls: ['./create.component.scss']
 })
-
-
 export class CreateComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router){}
-  
+  userForm: FormGroup;
+  TypeCompanyAnother = false;
+  formdata: any;
+
+  constructor(private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      TypeOfPerson: ['', Validators.required],
+      TypeCompany: ['', Validators.required],
+      TypeCompanyAnother: [''],
+      LegalPersonName: ['', Validators.required],
+      LegalPersonCompanyName: ['', Validators.required],
+      Sector: ['', Validators.required],
+      LegalPersonAddress: ['', Validators.required],
+      LegalPersonPhone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      LegalPersonEmail: ['', [Validators.required, Validators.email]],
+      LegalPersonPassword: ['', [Validators.required, Validators.minLength(6)]],
+      LegalPersonConfirmPassword: ['', Validators.required],
+      TypeOfAdvice: ['', Validators.required],
+      NaturalPersonName: ['', Validators.required],
+      NaturalPersonAddress: ['', Validators.required],
+      NaturalPersonPhone: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      NaturalPersonEmail: ['', [Validators.required, Validators.email]],
+      NaturalPersonPassword: ['', [Validators.required, Validators.minLength(6)]],
+      NaturalPersonConfirmPassword: ['', Validators.required],
+    }, { validator: this.passwordMatchValidator });
+  }
+
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-this.userService.getAll().subscribe((ovalues) =>{
-  ovalues.forEach((oItem)=>{
-    if(oItem.id>this.formdata.id){
-      this.formdata.id=oItem.id
-    }
-  })
-  this.formdata.id++;
-})
-
-  }
-  formdata: User ={
-    id: 0,
-    enterpriseType: '',
-    enterpriseName: '',
-    businessName: '',
-    fullName:'',
-    sector: '',
-    adress: '',
-    phone: 0,
-    email: '',
-    password: '',
-    confirmPassword: '',
-    rol: ''
-  }
-
-  create(){
-    this.userService.creat(this.formdata).subscribe({
-      next: (data)=>{
-        this.router.navigate(['/admin/dashboard/users/home']);
-      },
-      error: (err) => {
-        console.log(err)
+    this.userForm.get('TypeCompany')?.valueChanges.subscribe(value => {
+      this.TypeCompanyAnother = value === 'otro';
+      if (this.TypeCompanyAnother) {
+        this.userForm.get('TypeCompanyAnother')?.setValidators([Validators.required]);
+      } else {
+        this.userForm.get('TypeCompanyAnother')?.clearValidators();
       }
-    })
+      this.userForm.get('TypeCompanyAnother')?.updateValueAndValidity();
+    });
+  }
+
+  passwordMatchValidator(group: FormGroup) {
+    const password = group.get('LegalPersonPassword')?.value;
+    const confirmPassword = group.get('LegalPersonConfirmPassword')?.value;
+    const naturalPassword = group.get('NaturalPersonPassword')?.value;
+    const naturalConfirmPassword = group.get('NaturalPersonConfirmPassword')?.value;
+
+    return password === confirmPassword && naturalPassword === naturalConfirmPassword ? null : { notMatching: true };
+  }
+
+  createUser() {
+    if (this.userForm.valid) {
+      const formData = this.userForm.value;
+      console.log('User data:', formData);
+      // Aquí se realizaría la lógica para enviar los datos al backend o manejar la creación del usuario
+    }
   }
 }
-

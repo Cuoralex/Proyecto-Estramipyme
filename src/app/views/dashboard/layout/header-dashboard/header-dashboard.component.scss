@@ -1,6 +1,5 @@
 header {
   background-color: #f8f9fa;
-  padding: 20px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
@@ -9,4 +8,37 @@ header h1 {
   margin: 0;
   font-size: 24px;
   color: #333;
+}
+
+/* header-dashboard.component.scss */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.w-3 {
+  width: 0.75rem; /* Ajusta el tamaño del círculo de alerta */
+}
+
+.h-3 {
+  height: 0.75rem; /* Ajusta el tamaño del círculo de alerta */
+}
+
+.bg-red-500 {
+  background-color: #f87171; /* Color de fondo para la alerta */
+}
+
+.rounded-full {
+  border-radius: 9999px; /* Hace que el círculo sea redondeado */
+}
+
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
 }

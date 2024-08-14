@@ -1,25 +1,27 @@
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
-import { RegisternComponent } from '../../components/registern/registern.component';
+
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
-import EventsComponent from '../../components/events/events.component';
+
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
 import { plansComponent } from '../../components/plans/plans.component';
 import { contactUsComponent } from '../../components/contact-us/contact-us.component';
+import { VisitsCounterComponent } from '../../components/visits-counter/visits-counter.component';
+import { EventsCardComponent } from '../dashboard/layout/dashboard-administrator/events/events-card/events-card.component';
+import { RegisternComponent } from 'app/components/registern/registern.component';
 import { VideoComponent } from '../../components/video/video.component';
 import { AboutUsComponent } from '../../components/about-us/about-us.component';
 
 
 @Component({
   selector: 'app-landingpage',
-  standalone: true,
+  standalone: true, 
   imports: [
     RouterModule,
-    RegisternComponent,
     NavbarLandingpageComponent,
     LoginComponent,
     CarouselComponent,
@@ -27,6 +29,10 @@ import { AboutUsComponent } from '../../components/about-us/about-us.component';
     ourServicesComponent,
     plansComponent,
     contactUsComponent,
+    FooterLandingpageComponent,
+    VisitsCounterComponent,
+    EventsCardComponent,
+    RegisternComponent,
     FooterLandingpageComponent,
     VideoComponent,
     AboutUsComponent

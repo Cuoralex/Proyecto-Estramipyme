@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../../../services/user-administrator.service';
-import { User } from '../../../../../../models/user-administrator.model';
+import { Users } from '../../../../../../models/user-administrator.model';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from '../edit/edit.component';
 import { CommonModule } from '@angular/common';
@@ -19,20 +19,20 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  allusers: User[] = [];
-
+  allusers: Users[] = [];
+  
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.getAll().subscribe({
       next: (data) => {
         this.allusers = data;
+        console.log('Datos compartidos', data);
       },
       error: (err) => {
         console.error('Error fetching users:', err);
       }
     });
-    console.log('OnInit ejecutado');
   }
 
   deleteItem(id: number): void {

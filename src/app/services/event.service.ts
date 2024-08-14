@@ -6,12 +6,12 @@ import { Event } from '../models/event.model';
 
 @Injectable({ providedIn: 'root' })
 export class EventService {
-  private apiUrl = 'api/events';
+  private baseUrl = 'http://localhost:3000/events';
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.apiUrl).pipe(
+    return this.httpClient.get<Event[]>(this.baseUrl).pipe(
       map(events => events.map(event => ({
         ...event,
         date: new Date(event.date)
@@ -20,20 +20,20 @@ export class EventService {
   }
 
   addEvent(event: Event): Observable<Event> {
-    return this.http.post<Event>(this.apiUrl, {
+    return this.httpClient.post<Event>(this.baseUrl, {
       ...event,
       date: event.date.toISOString()  // Convertir la fecha a cadena antes de enviarla
     });
   }
 
   updateEvent(event: Event): Observable<Event> {
-    return this.http.put<Event>(`${this.apiUrl}/${event.id}`, {
+    return this.httpClient.put<Event>(`${this.baseUrl}/${event.id}`, {
       ...event,
       date: event.date.toISOString()  // Convertir la fecha a cadena antes de enviarla
     });
   }
 
   deleteEvent(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.httpClient.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

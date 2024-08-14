@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -20,11 +21,18 @@ export class FormComponent implements OnInit {
   risks: Array<{ id: number, text: string }> = [];
   opportunities: Array<{ id: number, text: string }> = [];
 
+  // Asegúrate de inyectar Router aquí
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
     this.user = user;
   }
 
+  redirectToRegister() {
+    this.router.navigate(['/inicio'], { fragment: 'register' });
+  }
+  
   addRisk(): void {
     this.riskCount++;
     this.risks.push({ id: this.riskCount, text: `Riesgo ${this.riskCount}` });

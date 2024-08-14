@@ -32,7 +32,6 @@ export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): 
 
 export class RegisterComponent {
   isOtherCompanyType: boolean = false;
-
   registerForm: FormGroup;
   TypeOfPerson: FormControl;
   TypeCompany: FormControl;
@@ -255,51 +254,51 @@ navigateToCreate: any;
     if (this.registerForm.valid) {
       const formValue = this.registerForm.value;
       let dataToSend: RegisterData = {
-        typeOfPerson: '',
-        naturalPersonName: '',
+        TypeOfPerson: '',
+        NaturalPersonName: '',
         NaturalPersonAddress: '',
         NaturalPersonPhone: '',
-        naturalPersonEmail: '',
-        naturalPersonPassword: '',
-        naturalPersonConfirmPassword: '',
-        typeOfAdvice: '',
-        typeCompany: '',
-        typeCompanyAnother: '',
-        legalPersonName: '',
-        legalPersonCompanyName: '',
-        sector: '',
+        NaturalPersonEmail: '',
+        NaturalPersonPassword: '',
+        NaturalPersonConfirmPassword: '',
+        TypeOfAdvice: '',
+        TypeCompany: '',
+        TypeCompanyAnother: '',
+        LegalPersonName: '',
+        LegalPersonCompanyName: '',
+        Sector: '',
         LegalPersonAddress: '',
         LegalPersonPhone: '',
-        legalPersonEmail: '',
-        legalPersonPassword: '',
-        legalPersonConfirmPassword: '',
+        LegalPersonEmail: '',
+        LegalPersonPassword: '',
+        LegalPersonConfirmPassword: '',
       };
 
       if (formValue.TypeOfPerson === PERSON_TYPE_NATURAL) {
         dataToSend = {
-          typeOfPerson: formValue.TypeOfPerson,
-          naturalPersonName: formValue.NaturalPersonName,
+          TypeOfPerson: formValue.TypeOfPerson,
+          NaturalPersonName: formValue.NaturalPersonName,
           NaturalPersonAddress: formValue.NaturalPersonAddress,
           NaturalPersonPhone: formValue.NaturalPersonPhone,
-          naturalPersonEmail: formValue.NaturalPersonEmail,
-          naturalPersonPassword: formValue.NaturalPersonPassword,
-          naturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword,
-          typeOfAdvice: formValue.TypeOfAdvice || '',
+          NaturalPersonEmail: formValue.NaturalPersonEmail,
+          NaturalPersonPassword: formValue.NaturalPersonPassword,
+          NaturalPersonConfirmPassword: formValue.NaturalPersonConfirmPassword,
+          TypeOfAdvice: formValue.TypeOfAdvice || '',
         };
       } else if (formValue.TypeOfPerson === PERSON_TYPE_JURIDICA) {
         dataToSend = {
-          typeOfPerson: formValue.TypeOfPerson,
-          typeCompany: formValue.TypeCompany,
-          typeCompanyAnother: formValue.TypeCompanyAnother || '',
-          legalPersonName: formValue.LegalPersonName,
-          legalPersonCompanyName: formValue.LegalPersonCompanyName,
-          sector: formValue.Sector,
+          TypeOfPerson: formValue.TypeOfPerson,
+          TypeCompany: formValue.TypeCompany,
+          TypeCompanyAnother: formValue.TypeCompanyAnother || '',
+          LegalPersonName: formValue.LegalPersonName,
+          LegalPersonCompanyName: formValue.LegalPersonCompanyName,
+          Sector: formValue.Sector,
           LegalPersonAddress: formValue.LegalPersonAddress,
           LegalPersonPhone: formValue.LegalPersonPhone,
-          legalPersonEmail: formValue.LegalPersonEmail,
-          legalPersonPassword: formValue.LegalPersonPassword,
-          legalPersonConfirmPassword: formValue.LegalPersonConfirmPassword,
-          typeOfAdvice: formValue.TypeOfAdvice || '',
+          LegalPersonEmail: formValue.LegalPersonEmail,
+          LegalPersonPassword: formValue.LegalPersonPassword,
+          LegalPersonConfirmPassword: formValue.LegalPersonConfirmPassword,
+          TypeOfAdvice: formValue.TypeOfAdvice || '',
         };
       }
 
