@@ -1,8 +1,8 @@
-<div class="event-cards">
-  <div *ngIf="events$ | async as events; else noEvents">
-    <div *ngFor="let event of events" class="event-card">
-      <img [src]="event.photo" alt="{{ event.description }}" class="event-card-photo">
-      <div class="event-card-details">
+<div class="event-cards mt-8">
+  <div class="container-cards" *ngIf="events$ | async as events; else noEvents">
+    <div *ngFor="let event of events" class="card">
+      <img [src]="event.photo" alt="{{ event.description }}" class="card-image">
+      <div class="card-details">
         <p class="event-date">{{ event.date | date:'longDate' }}</p>
         <p class="event-time">{{ event.time }}</p>
         <p class="event-description">{{ event.description }}</p>

@@ -17,6 +17,8 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.1",
     "angular-in-memory-web-api": "^0.18.0",
