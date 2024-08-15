@@ -6,18 +6,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        firstColor: '#020659', //Azul oscuro
-        secondColor: '#010001', //Negro
-        thirdColor: '#FEFFFE', //Blanco
-        fourthColor: '#CCAF01', //Amarillo
-        fifthColor: '#F25E3D', //Salmon
-        paragraphColor: '#2c3e50', //Gris Oscuro
-        azulAlterno: '#049DBF', //Azul claro
-        fondoAlterno: '#DFE3E4'
+        firstColor: '#020659', // Azul oscuro
+        secondColor: '#010001', // Negro
+        thirdColor: '#FEFFFE', // Blanco
+        fourthColor: '#CCAF01', // Amarillo
+        fifthColor: '#F25E3D', // Salmón
+        paragraphColor: '#2c3e50', // Gris oscuro
+        azulAlterno: '#049DBF', // Azul claro
+        fondoAlterno: '#DFE3E4' // Fondo alternativo
+      },
+      fontFamily: {
+        title: ['Montserrat', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
       },
     },
   },
   plugins: [],
 }
-
-

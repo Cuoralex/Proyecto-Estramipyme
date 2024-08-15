@@ -3,13 +3,13 @@
     <div *ngFor="let event of events" class="card">
       <img [src]="event.photo" alt="{{ event.description }}" class="card-image">
       <div class="card-details">
-        <p class="event-date">{{ event.date | date:'longDate' }}</p>
-        <p class="event-time">{{ event.time }}</p>
-        <p class="event-description">{{ event.description }}</p>
+        <p class="event-date font-body">{{ event.date | date:'longDate' }}</p>
+        <p class="event-time font-body">{{ event.time }}</p>
+        <p class="event-description font-body">{{ event.description }}</p>
       </div>
     </div>
   </div>
   <ng-template #noEvents>
-    <p class="no-events">No upcoming events.</p>
+    <p class="no-events font-body">No upcoming events.</p>
   </ng-template>
 </div>
