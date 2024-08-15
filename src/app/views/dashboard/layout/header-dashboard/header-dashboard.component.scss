@@ -1,13 +1,14 @@
 header {
-  background-color: #f8f9fa;
+  // background-color: #f8f9fa;
+  font-family: 'Montserrat', sans-serif !important;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  // border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  // color: #333;
 }
 
 /* header-dashboard.component.scss */
@@ -27,9 +28,9 @@ header h1 {
   height: 0.75rem; /* Ajusta el tamaño del círculo de alerta */
 }
 
-.bg-red-500 {
-  background-color: #f87171; /* Color de fondo para la alerta */
-}
+// .bg-red-500 {
+//   background-color: #f87171; /* Color de fondo para la alerta */
+// }
 
 .rounded-full {
   border-radius: 9999px; /* Hace que el círculo sea redondeado */

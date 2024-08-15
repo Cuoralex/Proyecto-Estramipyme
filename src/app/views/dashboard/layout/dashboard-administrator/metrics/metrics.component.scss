@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr); // Una columna en pantallas pequeñas
   gap: 20px; // Espacio entre los contenedores de las gráficas
-  padding: 20px; // Espaciado interno del contenedor principal
+  padding: 20px 20px 60px 20px; // Espaciado interno del contenedor principal
   background-color: #f4f4f4; // Fondo gris claro para el contenedor principal
 
   @media (min-width: 640px) { // Pantallas pequeñas y medianas
