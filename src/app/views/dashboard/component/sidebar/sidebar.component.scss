@@ -1,25 +1,32 @@
-aside{
+/* Estilo general para la barra lateral */
+#sidebar {
   font-family: 'Montserrat', sans-serif !important;
+  transition: width 0.3s ease; /* Transición para el colapso */
 }
 
-aside h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
+/* Botón para alternar la barra lateral */
+.toggle-sidebar-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros contenidos */
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-aside ul {
-  list-style-type: none;
-  padding: 0;
+.toggle-sidebar-button.rotate-180 {
+  transform: rotate(180deg);
 }
 
-aside ul li {
-  margin-bottom: 10px;
-}
-
-aside ul li a {
+/* Estilo para los enlaces dentro de la barra lateral */
+#sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #FEFFFE;
   text-decoration: none;
-  // color: #333;
 }
 
-
-
+#sidebar a:hover {
+  background-color: #444;
+}

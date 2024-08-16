@@ -2,14 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../services/user-administrator.service';
 
+
 @Component({
   selector: 'app-header-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule
+
+  ],
   templateUrl: './header-dashboard.component.html',
   styleUrls: ['./header-dashboard.component.scss'],
 })
 export class HeaderDashboardComponent implements OnInit {
+  
+  
   // Estado para la colapsación de la barra lateral
   sidebarCollapsed = false;
 
