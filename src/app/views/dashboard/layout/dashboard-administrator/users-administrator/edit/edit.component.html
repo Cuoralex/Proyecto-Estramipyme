@@ -7,79 +7,79 @@
     <form>
         <div class="mb-3">
             <label for="txtId" class="form-label">ID</label>
-            <input type="text" [(ngModel)]="formdata.id" class="form-control" id="txtId" disabled />
+            <input type="text" [(ngModel)]="formdata.id" [ngModelOptions]="{standalone: true}" class="form-control" id="txtId" disabled />
         </div>
         <div class="mb-3">
             <label for="txtTypeOfPerson" class="form-label">Tipo de persona</label>
-            <input type="text" [(ngModel)]="formdata.TypeOfPerson" class="form-control" id="txtTypeOfPerson" />
+            <input type="text" [(ngModel)]="formdata.TypeOfPerson" [ngModelOptions]="{standalone: true}" class="form-control" id="txtTypeOfPerson" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonName" class="form-label">Nombre persona natural</label>
-            <input type="text" [(ngModel)]="formdata.NaturalPersonName" class="form-control" id="txtNaturalPersonName" />
+            <input type="text" [(ngModel)]="formdata.NaturalPersonName" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonName" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonAddress" class="form-label">Dirección persona natural</label>
-            <input type="text" [(ngModel)]="formdata.NaturalPersonAddress" class="form-control" id="txtNaturalPersonAddress" />
+            <input type="text" [(ngModel)]="formdata.NaturalPersonAddress" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonAddress" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonPhone" class="form-label">Teléfono persona natural</label>
-            <input type="text" [(ngModel)]="formdata.NaturalPersonPhone" class="form-control" id="txtNaturalPersonPhone" />
+            <input type="text" [(ngModel)]="formdata.NaturalPersonPhone" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonPhone" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonEmail" class="form-label">Correo electrónico persona natural</label>
-            <input type="text" [(ngModel)]="formdata.NaturalPersonEmail" class="form-control" id="txtNaturalPersonEmail" />
+            <input type="text" [(ngModel)]="formdata.NaturalPersonEmail" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonEmail" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonPassword" class="form-label">Contraseña persona natural</label>
-            <input type="password" [(ngModel)]="formdata.NaturalPersonPassword" class="form-control" id="txtNaturalPersonPassword" />
+            <input type="password" [(ngModel)]="formdata.NaturalPersonPassword" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonPassword" />
         </div>
         <div class="mb-3">
             <label for="txtNaturalPersonConfirmPassword" class="form-label">Confirmar contraseña persona natural</label>
-            <input type="password" [(ngModel)]="formdata.NaturalPersonConfirmPassword" class="form-control" id="txtNaturalPersonConfirmPassword" />
+            <input type="password" [(ngModel)]="formdata.NaturalPersonConfirmPassword" [ngModelOptions]="{standalone: true}" class="form-control" id="txtNaturalPersonConfirmPassword" />
         </div>
         <div class="mb-3">
             <label for="txtTypeOfAdvice" class="form-label">Tipo de asesoría</label>
-            <input type="text" [(ngModel)]="formdata.TypeOfAdvice" class="form-control" id="txtTypeOfAdvice" />
+            <input type="text" [(ngModel)]="formdata.TypeOfAdvice" [ngModelOptions]="{standalone: true}" class="form-control" id="txtTypeOfAdvice" />
         </div>
         <div class="mb-3">
             <label for="txtTypeCompany" class="form-label">Tipo de empresa</label>
-            <input type="text" [(ngModel)]="formdata.TypeCompany" class="form-control" id="txtTypeCompany" />
+            <input type="text" [(ngModel)]="formdata.TypeCompany" [ngModelOptions]="{standalone: true}" class="form-control" id="txtTypeCompany" />
         </div>
         <div class="mb-3">
             <label for="txtTypeCompanyAnother" class="form-label">Otro tipo de empresa</label>
-            <input type="text" [(ngModel)]="formdata.TypeCompanyAnother" class="form-control" id="txtTypeCompanyAnother" />
+            <input type="text" [(ngModel)]="formdata.TypeCompanyAnother" [ngModelOptions]="{standalone: true}" class="form-control" id="txtTypeCompanyAnother" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonName" class="form-label">Nombre persona jurídica</label>
-            <input type="text" [(ngModel)]="formdata.LegalPersonName" class="form-control" id="txtLegalPersonName" />
+            <input type="text" [(ngModel)]="formdata.LegalPersonName" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonName" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonCompanyName" class="form-label">Nombre empresa jurídica</label>
-            <input type="text" [(ngModel)]="formdata.LegalPersonCompanyName" class="form-control" id="txtLegalPersonCompanyName" />
+            <input type="text" [(ngModel)]="formdata.LegalPersonCompanyName" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonCompanyName" />
         </div>
         <div class="mb-3">
             <label for="txtSector" class="form-label">Sector</label>
-            <input type="text" [(ngModel)]="formdata.Sector" class="form-control" id="txtSector" />
+            <input type="text" [(ngModel)]="formdata.Sector" [ngModelOptions]="{standalone: true}" class="form-control" id="txtSector" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonAddress" class="form-label">Dirección persona jurídica</label>
-            <input type="text" [(ngModel)]="formdata.LegalPersonAddress" class="form-control" id="txtLegalPersonAddress" />
+            <input type="text" [(ngModel)]="formdata.LegalPersonAddress" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonAddress" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonPhone" class="form-label">Teléfono persona jurídica</label>
-            <input type="text" [(ngModel)]="formdata.LegalPersonPhone" class="form-control" id="txtLegalPersonPhone" />
+            <input type="text" [(ngModel)]="formdata.LegalPersonPhone" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonPhone" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonEmail" class="form-label">Correo electrónico persona jurídica</label>
-            <input type="text" [(ngModel)]="formdata.LegalPersonEmail" class="form-control" id="txtLegalPersonEmail" />
+            <input type="text" [(ngModel)]="formdata.LegalPersonEmail" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonEmail" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonPassword" class="form-label">Contraseña persona jurídica</label>
-            <input type="password" [(ngModel)]="formdata.LegalPersonPassword" class="form-control" id="txtLegalPersonPassword" />
+            <input type="password" [(ngModel)]="formdata.LegalPersonPassword" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonPassword" />
         </div>
         <div class="mb-3">
             <label for="txtLegalPersonConfirmPassword" class="form-label">Confirmar contraseña persona jurídica</label>
-            <input type="password" [(ngModel)]="formdata.LegalPersonConfirmPassword" class="form-control" id="txtLegalPersonConfirmPassword" />
+            <input type="password" [(ngModel)]="formdata.LegalPersonConfirmPassword" [ngModelOptions]="{standalone: true}" class="form-control" id="txtLegalPersonConfirmPassword" />
         </div>
         <div>
             <button type="button" (click)="update()" class="btn btn-primary">Actualizar</button>

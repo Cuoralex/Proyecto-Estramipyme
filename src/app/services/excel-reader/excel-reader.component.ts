@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-excel-reader',
@@ -12,26 +11,7 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./excel-reader.component.css']
 })
 export class ExcelReaderComponent {
-readExcelFile: any;
 jsonData: any;
-  onChangeInput(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const dataJson = XLSX.utils.sheet_to_json(sheet);
-        console.log(dataJson);
-        this.displayTable(dataJson);
-      };
-      reader.readAsArrayBuffer(file);
-    } else {
-      console.error('No file selected.');
-    }
-  }
 
   displayTable(data: any[]) {
     const tableContainer = document.getElementById('tableContainer');
