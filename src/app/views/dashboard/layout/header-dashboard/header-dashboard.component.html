@@ -20,19 +20,24 @@
         </a>
       </li>
 
-    <li (click)="toggleUserDropdown()">
-      <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white cursor-pointer"
-        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-        alt="User avatar">
-      <ul id="user-dropdown" class="absolute hidden bg-white right-4 top-14 w-28 rounded shadow-md">
-        <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900"><a class="block px-5 py-2"
-            href="#">Profile</a></li>
-        <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900"><a class="block px-5 py-2"
-            href="#">Settings</a></li>
-        <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900"><a class="block px-5 py-2"
-            href="#">Logout</a></li>
-      </ul>
-    </li>
+      <li (click)="toggleUserDropdown()" class="relative">
+        <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white cursor-pointer"
+          src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          alt="User avatar">
+        <ul id="user-dropdown" [ngClass]="{'hidden': !userDropdownOpen, 'block': userDropdownOpen}"
+          class="absolute bg-white right-4 top-14 w-28 rounded shadow-md">
+          <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900">
+            <a class="block px-5 py-2" href="#">Profile</a>
+          </li>
+          <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900">
+            <a class="block px-5 py-2" href="#">Settings</a>
+          </li>
+          <li class="mb-1 hover:bg-gray-50 text-gray-700 hover:text-gray-900">
+            <a class="block px-5 py-2" href="#">Logout</a>
+          </li>
+        </ul>
+      </li>
+      
   </ul>
   </div>
 </header>
