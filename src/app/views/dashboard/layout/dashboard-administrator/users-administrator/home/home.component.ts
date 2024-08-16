@@ -19,6 +19,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
   allusers: Users[] = [];
   
   constructor(private userService: UserService, private router: Router) {}
@@ -33,6 +34,13 @@ export class HomeComponent implements OnInit {
         console.error('Error fetching users:', err);
       }
     });
+  }
+
+  confirmDelete(id: number): void {
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este usuario?');
+    if (confirmed) {
+      this.deleteItem(id);
+    }
   }
 
   deleteItem(id: number): void {

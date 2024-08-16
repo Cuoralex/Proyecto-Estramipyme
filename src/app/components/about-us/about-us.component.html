@@ -1,39 +1,57 @@
 <div class="carousel relative w-full max-w-screen-xl mx-auto bg-[#2596be] shadow-lg rounded-lg overflow-hidden my-8">
   <!-- Carousel Wrapper -->
-  <div class="overflow-y-auto h-[500px] md:h-[600px]">
+  <div class="overflow-y-auto ">
     <!-- Slide 1 - Quiénes Somos -->
     <div
-      class="carousel-item relative transition-all transform duration-500 flex flex-col justify-center items-center text-white p-6 md:p-8"
+      class="carousel-item relative transition-all transform duration-500 flex flex-col justify-center items-center text-white p-4 sm:p-6 md:p-8"
       *ngIf="currentSlide === 0">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">¿QUIÉNES SOMOS?</h2>
-      <p class="text-sm sm:text-base md:text-lg leading-relaxed text-center">
-        En Estramipyme, entendemos que la estrategia empresarial ha sido históricamente accesible solo para grandes corporaciones, a través de consultoras de renombre con altos honorarios o por medio de ejecutivos formados en prestigiosas maestrías de Administración. Sin embargo, reconocemos que muchos empresarios de micronegocios, pequeñas y medianas empresas en Colombia no siempre tienen acceso a estos recursos esenciales debido al alto grado de informalidad y las limitaciones de costos.
+      <h2 class="font-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">¿QUIÉNES SOMOS?</h2>
+      <p class="font-body text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center">
+        En Estramipyme, entendemos que la estrategia empresarial ha sido históricamente accesible solo para grandes
+        corporaciones, a través de consultoras de renombre con altos honorarios o por medio de ejecutivos formados en
+        prestigiosas maestrías de Administración. Sin embargo, reconocemos que muchos empresarios de micronegocios,
+        pequeñas y medianas empresas en Colombia no siempre tienen acceso a estos recursos esenciales debido al alto
+        grado de informalidad y las limitaciones de costos.
         <br><br>
-        Es por eso que hemos desarrollado Estramipyme, una metodología innovadora, fácil y ágil, diseñada específicamente para que estas empresas puedan formular su estrategia de manera efectiva. Este enfoque fue creado a través de un proceso de cocreación y consultoría liderado por docentes y estudiantes de pregrado y posgrado de la Escuela de Administración de la Universidad EAFIT. Nuestro objetivo es fortalecer el tejido empresarial colombiano, brindando herramientas estratégicas accesibles que impulsen el crecimiento y la sostenibilidad de las pequeñas y medianas empresas.
+        Es por eso que hemos desarrollado Estramipyme, una metodología innovadora, fácil y ágil, diseñada
+        específicamente para que estas empresas puedan formular su estrategia de manera efectiva. Este enfoque fue
+        creado a través de un proceso de cocreación y consultoría liderado por docentes y estudiantes de pregrado y
+        posgrado de la Escuela de Administración de la Universidad EAFIT. Nuestro objetivo es fortalecer el tejido
+        empresarial colombiano, brindando herramientas estratégicas accesibles que impulsen el crecimiento y la
+        sostenibilidad de las pequeñas y medianas empresas.
       </p>
     </div>
     <!-- Slide 2 - Biografía del Autor -->
     <div
-      class="carousel-item relative transition-all transform duration-500 flex flex-col justify-center items-center text-white p-6 md:p-8"
+      class="carousel-item relative transition-all transform duration-500 flex flex-col justify-center items-center text-white p-4 sm:p-6 md:p-8"
       *ngIf="currentSlide === 1">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">LA AUTORA</h2>
-      <p class="text-sm sm:text-base md:text-lg leading-relaxed text-center">
-        Luz María Rivas Montoya es una destacada académica y profesional con una sólida formación en el campo de la Administración. Es Doctora en Administración y Magíster en Ciencias de la Administración por la Universidad EAFIT, además de contar con un Magíster en Administración del Instituto Tecnológico de Monterrey y la Universidad Autónoma de Bucaramanga (UNAB). Es Economista egresada de la Universidad Autónoma de Manizales.
+      <h2 class="font-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">LA AUTORA</h2>
+      <p class="font-body text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center">
+        Luz María Rivas Montoya es una destacada académica y profesional con una sólida formación en el campo de la
+        Administración. Es Doctora en Administración y Magíster en Ciencias de la Administración por la Universidad
+        EAFIT, además de contar con un Magíster en Administración del Instituto Tecnológico de Monterrey y la
+        Universidad Autónoma de Bucaramanga (UNAB). Es Economista egresada de la Universidad Autónoma de Manizales.
         <br><br>
-        En la actualidad, Luz María es profesora en la Universidad EAFIT, donde coordina el área de Estrategia y dicta asignaturas clave como Riesgo Estratégico, Estrategia I, Estrategia y Modelos de Negocios, Teoría de la Estrategia y Política de Empresas. Su labor académica se complementa con su participación en el grupo de investigación Administración y Organizaciones, reconocido como A1 por Minciencias.
+        En la actualidad, Luz María es profesora en la Universidad EAFIT, donde coordina el área de Estrategia y dicta
+        asignaturas clave como Riesgo Estratégico, Estrategia I, Estrategia y Modelos de Negocios, Teoría de la
+        Estrategia y Política de Empresas. Su labor académica se complementa con su participación en el grupo de
+        investigación Administración y Organizaciones, reconocido como A1 por Minciencias.
         <br><br>
-        Sus áreas de interés incluyen el riesgo estratégico, los modelos de negocios, la estrategia como práctica y la estrategia corporativa, temas sobre los cuales ha desarrollado una profunda experticia que aplica tanto en su labor docente como en sus investigaciones.
+        Sus áreas de interés incluyen el riesgo estratégico, los modelos de negocios, la estrategia como práctica y la
+        estrategia corporativa, temas sobre los cuales ha desarrollado una profunda experticia que aplica tanto en su
+        labor docente como en sus investigaciones.
       </p>
     </div>
   </div>
 
   <!-- Carousel Controls -->
-  <div class="absolute bottom-4 inset-x-0 flex justify-between px-4">
-    <button (click)="prevSlide()" class="bg-gray-800 text-white p-2 sm:p-3 rounded-full hover:bg-gray-700">
-      &larr;
-    </button>
-    <button (click)="nextSlide()" class="bg-gray-800 text-white p-2 sm:p-3 rounded-full hover:bg-gray-700">
-      &rarr;
-    </button>
+  <div class=" bottom-4 inset-x-0 flex justify-between px-2 sm:px-4 z-10">
+      <button (click)="prevSlide()" class="bg-gray-800 text-white p-2 mb-4 sm:p-3 rounded-full hover:bg-gray-700">
+        &larr;
+      </button>
+      <button (click)="nextSlide()" class="bg-gray-800 text-white p-2 mb-4 sm:p-3 rounded-full hover:bg-gray-700">
+        &rarr;
+      </button>
   </div>
+
 </div>

@@ -189,26 +189,6 @@
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "paid",
       "Role": "Cliente"
-    },
-    {
-      "id": "8d67",
-      "TypeOfPerson": "Jurídica",
-      "TypeCompany": "mediana",
-      "LegalPersonName": "q",
-      "LegalPersonCompanyName": "q",
-      "Sector": "Metales y Minería",
-      "LegalPersonAddress": "q",
-      "LegalPersonPhone": "1",
-      "LegalPersonEmail": "q@q.com",
-      "LegalPersonPassword": "123456",
-      "LegalPersonConfirmPassword": "123456",
-      "NaturalPersonName": null,
-      "NaturalPersonAddress": null,
-      "NaturalPersonPhone": null,
-      "NaturalPersonEmail": null,
-      "NaturalPersonPassword": null,
-      "NaturalPersonConfirmPassword": null,
-      "TypeOfAdvice": "free"
     }
   ]
 }
