@@ -1,9 +1,13 @@
 <div class="events">
-  <h2>Eventos</h2>
 
   <!-- Botón para agregar un nuevo evento -->
-  <button (click)="addEvent()">Add New Event</button>
-
+    <button
+      (click)="addEvent()"
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    >
+      Nuevo Evento
+    </button>
+  
   <!-- Lista de eventos -->
   <div *ngIf="events$ | async as events; else noEvents">
     <div *ngFor="let event of events" class="event-item">

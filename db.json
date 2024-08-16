@@ -69,40 +69,6 @@
       "value": 20
     }
   ],
-  "Persona": [
-    {
-      "type": "Natural",
-      "id": "b5bf"
-    },
-    {
-      "name": "Juan Pérez",
-      "id": "64f1"
-    },
-    {
-      "email": "juan.perez@example.com",
-      "id": "55a7"
-    },
-    {
-      "address": "Calle Falsa 123",
-      "id": "e0fc"
-    },
-    {
-      "phone": "+1 234 567 890",
-      "id": "db4e"
-    },
-    {
-      "cellphone": "+1 987 654 321",
-      "id": "6c14"
-    },
-    {
-      "companyType": "Pequeña Empresa",
-      "id": "4b6d"
-    },
-    {
-      "sector": "Tecnología",
-      "id": "f1df"
-    }
-  ],
   "users": [
     {
       "id": "1",
