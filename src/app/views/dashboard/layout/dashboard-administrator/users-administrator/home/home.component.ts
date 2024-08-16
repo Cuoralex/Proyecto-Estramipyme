@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
       this.deleteItem(id);
     }
   }
-
+  
   deleteItem(id: number): void {
     this.userService.delete(id).subscribe({
       next: () => {

@@ -27,15 +27,23 @@ export default class EventsComponent implements OnInit {
   }
 
   addEvent(): void {
-    const newEvent: Event = {
-      id: 0,
-      photo: 'new-photo-url',
-      date: new Date('2024-07-03'), // Convertir a Date
-      time: '12:00',
-      description: 'New Event'
-    };
-    this.eventService.addEvent(newEvent).subscribe(() => this.getEvents());
+    this.eventService.getEvents().subscribe(events => {
+      // Encontrar el ID más alto en los eventos existentes
+      const highestId = events.reduce((maxId, event) => Math.max(maxId, event.id), 0);
+      const newEventId = highestId + 1; // Asignar el siguiente ID en la secuencia
+  
+      const newEvent: Event = {
+        id: newEventId,
+        photo: 'new-photo-url',
+        date: new Date('2024-07-03'),
+        time: '12:00',
+        description: 'New Event'
+      };
+  
+      this.eventService.addEvent(newEvent).subscribe(() => this.getEvents());
+    });
   }
+  
 
   editEvent(event: Event): void {
     const newPhoto = prompt('Edit photo URL:', event.photo);
@@ -51,7 +59,12 @@ export default class EventsComponent implements OnInit {
     this.eventService.updateEvent(event).subscribe(() => this.getEvents());
   }
 
+  
+
   deleteEvent(id: number): void {
-    this.eventService.deleteEvent(id).subscribe(() => this.getEvents());
-  }
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este evento?');
+    if (confirmed) {
+      this.eventService.deleteEvent(id).subscribe(() => this.getEvents());
+    }
+  }  
 }
