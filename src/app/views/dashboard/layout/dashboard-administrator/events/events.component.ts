@@ -62,7 +62,7 @@ export default class EventsComponent implements OnInit {
   
 
   deleteEvent(id: number): void {
-    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este evento?');
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar definitivamente este evento?');
     if (confirmed) {
       this.eventService.deleteEvent(id).subscribe(() => this.getEvents());
     }

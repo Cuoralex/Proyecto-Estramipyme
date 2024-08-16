@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
   
   deleteItem(id: number): void {
-    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este usuario?');
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar definitivamente este usuario?');
     if (confirmed) {
     this.userService.delete(id).subscribe({
       next: () => {
