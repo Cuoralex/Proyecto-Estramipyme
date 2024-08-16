@@ -2,7 +2,7 @@
 <aside #sidebar id="sidebar" class="transition-all duration-500 ease-in-out fixed bg-firstColor text-[#FEFFFE] shadow overflow-x-hidden lg:w-[240px] w-[60px] h-[calc(100vh-14%)]">
     <div class="flex flex-col justify-between h-full">
       <div>
-        <ul class="flex flex-col gap-1 mt-2">
+        <ul class="flex flex-col gap-1 mt-4">
           <li class="text-thirdColor hover:bg-azulAlterno hover:text-fourthColor hover:font-bold hover:rounded-l-full hover:ml-1">
             <a class="w-full flex items-center py-3" routerLink="/dashboard">
               <i class="fa-solid fa-house text-center w-[60px] lg:w-[60px]"></i>
@@ -43,7 +43,7 @@
   </aside>
   
   <!-- Botón para alternar la barra lateral -->
-  <button #toggleButton (click)="collapseSidebar()" class="toggle-sidebar-button fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-full">
+  <button #toggleButton (click)="collapseSidebar()" class="toggle-sidebar-button fixed top-4 left-4 ml-1 z-50 p-2 bg-gray-800 text-white rounded-full">
     <i class="fa fa-bars"></i>
   </button>
   

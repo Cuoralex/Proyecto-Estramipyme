@@ -18,15 +18,3 @@
   transform: rotate(180deg);
 }
 
-/* Estilo para los enlaces dentro de la barra lateral */
-#sidebar a {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  color: #FEFFFE;
-  text-decoration: none;
-}
-
-#sidebar a:hover {
-  background-color: #444;
-}
