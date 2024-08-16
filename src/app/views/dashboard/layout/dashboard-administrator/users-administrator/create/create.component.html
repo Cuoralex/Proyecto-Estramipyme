@@ -1,113 +1,115 @@
-<form [formGroup]="userForm" (ngSubmit)="createUser()">
-    <!-- Tipo de Persona -->
-    <div>
-      <label for="TypeOfPerson">Tipo de Persona</label>
-      <select id="TypeOfPerson" formControlName="TypeOfPerson">
+<form [formGroup]="userForm" (ngSubmit)="createUser()" class="space-y-4 p-6 mb-8 bg-white shadow-md rounded-md">
+  <!-- Tipo de Persona -->
+  <div class="flex flex-col space-y-2">
+    <label for="TypeOfPerson" class="text-gray-700 font-medium">Tipo de Persona</label>
+    <select id="TypeOfPerson" formControlName="TypeOfPerson" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+      <option value="">Seleccione</option>
+      <option value="juridica">Persona Jurídica</option>
+      <option value="natural">Persona Natural</option>
+    </select>
+  </div>
+
+  <!-- Sección para Persona Jurídica -->
+  <div *ngIf="userForm.get('TypeOfPerson')?.value === 'juridica'" class="space-y-4">
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonName" class="text-gray-700 font-medium">Nombre Legal</label>
+      <input id="LegalPersonName" type="text" formControlName="LegalPersonName" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonCompanyName" class="text-gray-700 font-medium">Nombre de la Empresa</label>
+      <input id="LegalPersonCompanyName" type="text" formControlName="LegalPersonCompanyName" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="Sector" class="text-gray-700 font-medium">Sector</label>
+      <input id="Sector" type="text" formControlName="Sector" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="TypeCompany" class="text-gray-700 font-medium">Tipo de Empresa</label>
+      <select id="TypeCompany" formControlName="TypeCompany" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
         <option value="">Seleccione</option>
-        <option value="juridica">Persona Jurídica</option>
-        <option value="natural">Persona Natural</option>
+        <option value="tech">Tecnología</option>
+        <option value="finance">Finanzas</option>
+        <option value="otro">Otro</option>
       </select>
     </div>
-  
-    <!-- Sección para Persona Jurídica -->
-    <div *ngIf="userForm.get('TypeOfPerson')?.value === 'juridica'">
-      <div>
-        <label for="LegalPersonName">Nombre Legal</label>
-        <input id="LegalPersonName" type="text" formControlName="LegalPersonName">
-      </div>
-  
-      <div>
-        <label for="LegalPersonCompanyName">Nombre de la Empresa</label>
-        <input id="LegalPersonCompanyName" type="text" formControlName="LegalPersonCompanyName">
-      </div>
-  
-      <div>
-        <label for="Sector">Sector</label>
-        <input id="Sector" type="text" formControlName="Sector">
-      </div>
-  
-      <div>
-        <label for="LegalPersonAddress">Dirección</label>
-        <input id="LegalPersonAddress" type="text" formControlName="LegalPersonAddress">
-      </div>
-  
-      <div>
-        <label for="LegalPersonPhone">Teléfono</label>
-        <input id="LegalPersonPhone" type="text" formControlName="LegalPersonPhone">
-      </div>
-  
-      <div>
-        <label for="LegalPersonEmail">Correo Electrónico</label>
-        <input id="LegalPersonEmail" type="email" formControlName="LegalPersonEmail">
-      </div>
-  
-      <div>
-        <label for="LegalPersonPassword">Contraseña</label>
-        <input id="LegalPersonPassword" type="password" formControlName="LegalPersonPassword">
-      </div>
-  
-      <div>
-        <label for="LegalPersonConfirmPassword">Confirmar Contraseña</label>
-        <input id="LegalPersonConfirmPassword" type="password" formControlName="LegalPersonConfirmPassword">
-      </div>
-  
-      <div>
-        <label for="TypeCompany">Tipo de Empresa</label>
-        <select id="TypeCompany" formControlName="TypeCompany">
-          <option value="">Seleccione</option>
-          <option value="tech">Tecnología</option>
-          <option value="finance">Finanzas</option>
-          <option value="otro">Otro</option>
-        </select>
-      </div>
-  
-      <div *ngIf="TypeCompanyAnother">
-        <label for="TypeCompanyAnother">Especifique Tipo de Empresa</label>
-        <input id="TypeCompanyAnother" type="text" formControlName="TypeCompanyAnother">
-      </div>
-  
-      <div>
-        <label for="TypeOfAdvice">Tipo de Asesoría</label>
-        <input id="TypeOfAdvice" type="text" formControlName="TypeOfAdvice">
-      </div>
+
+    <div *ngIf="TypeCompanyAnother" class="flex flex-col space-y-2">
+      <label for="TypeCompanyAnother" class="text-gray-700 font-medium">Especifique Tipo de Empresa</label>
+      <input id="TypeCompanyAnother" type="text" formControlName="TypeCompanyAnother" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
     </div>
-  
-    <!-- Sección para Persona Natural -->
-    <div *ngIf="userForm.get('TypeOfPerson')?.value === 'natural'">
-      <div>
-        <label for="NaturalPersonName">Nombre Completo</label>
-        <input id="NaturalPersonName" type="text" formControlName="NaturalPersonName">
-      </div>
-  
-      <div>
-        <label for="NaturalPersonAddress">Dirección</label>
-        <input id="NaturalPersonAddress" type="text" formControlName="NaturalPersonAddress">
-      </div>
-  
-      <div>
-        <label for="NaturalPersonPhone">Teléfono</label>
-        <input id="NaturalPersonPhone" type="text" formControlName="NaturalPersonPhone">
-      </div>
-  
-      <div>
-        <label for="NaturalPersonEmail">Correo Electrónico</label>
-        <input id="NaturalPersonEmail" type="email" formControlName="NaturalPersonEmail">
-      </div>
-  
-      <div>
-        <label for="NaturalPersonPassword">Contraseña</label>
-        <input id="NaturalPersonPassword" type="password" formControlName="NaturalPersonPassword">
-      </div>
-  
-      <div>
-        <label for="NaturalPersonConfirmPassword">Confirmar Contraseña</label>
-        <input id="NaturalPersonConfirmPassword" type="password" formControlName="NaturalPersonConfirmPassword">
-      </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonAddress" class="text-gray-700 font-medium">Dirección</label>
+      <input id="LegalPersonAddress" type="text" formControlName="LegalPersonAddress" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
     </div>
-  
-    <!-- Botón de Enviar -->
-    <div>
-      <button type="submit" [disabled]="!userForm.valid">Crear Usuario</button>
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonPhone" class="text-gray-700 font-medium">Teléfono</label>
+      <input id="LegalPersonPhone" type="text" formControlName="LegalPersonPhone" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
     </div>
-  </form>
-  
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonEmail" class="text-gray-700 font-medium">Correo Electrónico</label>
+      <input id="LegalPersonEmail" type="email" formControlName="LegalPersonEmail" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonPassword" class="text-gray-700 font-medium">Contraseña</label>
+      <input id="LegalPersonPassword" type="password" formControlName="LegalPersonPassword" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="LegalPersonConfirmPassword" class="text-gray-700 font-medium">Confirmar Contraseña</label>
+      <input id="LegalPersonConfirmPassword" type="password" formControlName="LegalPersonConfirmPassword" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="TypeOfAdvice" class="text-gray-700 font-medium">Tipo de Asesoría</label>
+      <input id="TypeOfAdvice" type="text" formControlName="TypeOfAdvice" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+  </div>
+
+  <!-- Sección para Persona Natural -->
+  <div *ngIf="userForm.get('TypeOfPerson')?.value === 'natural'" class="space-y-4">
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonName" class="text-gray-700 font-medium">Nombre Completo</label>
+      <input id="NaturalPersonName" type="text" formControlName="NaturalPersonName" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonAddress" class="text-gray-700 font-medium">Dirección</label>
+      <input id="NaturalPersonAddress" type="text" formControlName="NaturalPersonAddress" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonPhone" class="text-gray-700 font-medium">Teléfono</label>
+      <input id="NaturalPersonPhone" type="text" formControlName="NaturalPersonPhone" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonEmail" class="text-gray-700 font-medium">Correo Electrónico</label>
+      <input id="NaturalPersonEmail" type="email" formControlName="NaturalPersonEmail" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonPassword" class="text-gray-700 font-medium">Contraseña</label>
+      <input id="NaturalPersonPassword" type="password" formControlName="NaturalPersonPassword" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <label for="NaturalPersonConfirmPassword" class="text-gray-700 font-medium">Confirmar Contraseña</label>
+      <input id="NaturalPersonConfirmPassword" type="password" formControlName="NaturalPersonConfirmPassword" class="p-2 border rounded-md focus:ring focus:ring-indigo-200">
+    </div>
+  </div>
+
+  <!-- Botón de Enviar -->
+  <div class="mt-6 flex items-center justify-center gap-x-6">
+    <button type="submit" class="btnCreateUser"
+      [disabled]="!userForm.valid || userForm.get('TypeOfPerson')?.value === ''">
+      <span class="font-body">Crear Usuario</span>
+    </button>
+  </div>
+</form>
