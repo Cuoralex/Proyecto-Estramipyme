@@ -44,6 +44,8 @@ export class HomeComponent implements OnInit {
   }
   
   deleteItem(id: number): void {
+    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este usuario?');
+    if (confirmed) {
     this.userService.delete(id).subscribe({
       next: () => {
         this.allusers = this.allusers.filter(user => user.id !== id);
@@ -53,6 +55,8 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  }
+  
 
   navigateToCreate(): void {
     this.router.navigate(['dashboard/users/create']);
