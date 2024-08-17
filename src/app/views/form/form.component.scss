@@ -256,3 +256,87 @@ body {
 .explore-button:hover {
   background-color: #0056b3;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* Sección 1 */
+.section-estramipyme-eafit {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.estramipyme, .eafit {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Sección 2 */
+.section-presentacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ccc;
+  padding: 20px;
+}
+
+.presentacion-libro {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.descargable {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Sección 3 */
+.section-libro {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portada img {
+  max-width: 200px;
+  height: auto;
+}
+
+.detalle-libro {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.btn-descarga {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.reseña {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
