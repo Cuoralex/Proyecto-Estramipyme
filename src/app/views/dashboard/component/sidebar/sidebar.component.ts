@@ -21,16 +21,30 @@ export class SidebarComponent {
       const sidebarElement = this.sidebar.nativeElement as HTMLElement;
       const toggleButtonElement = this.toggleButton.nativeElement as HTMLElement;
 
+      // Toggle the sidebar
       if (sidebarElement.classList.contains('lg:w-[240px]')) {
         // Collapse sidebar
         sidebarElement.classList.remove('lg:w-[240px]');
         sidebarElement.classList.add('w-[36px]');
         toggleButtonElement.classList.add('rotate-180');
+
+        // Hide text
+        sidebarElement.querySelectorAll('span').forEach(span => {
+          span.classList.add('hidden');
+          span.classList.remove('lg:block');
+        });
+
       } else {
         // Expand sidebar
         sidebarElement.classList.remove('w-[36px]');
         sidebarElement.classList.add('lg:w-[240px]');
         toggleButtonElement.classList.remove('rotate-180');
+
+        // Show text
+        sidebarElement.querySelectorAll('span').forEach(span => {
+          span.classList.remove('hidden');
+          span.classList.add('lg:block');
+        });
       }
     }
   }
