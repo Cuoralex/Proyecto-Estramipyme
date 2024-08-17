@@ -24,11 +24,11 @@ export class SidebarComponent {
       if (sidebarElement.classList.contains('lg:w-[240px]')) {
         // Collapse sidebar
         sidebarElement.classList.remove('lg:w-[240px]');
-        sidebarElement.classList.add('w-[60px]');
+        sidebarElement.classList.add('w-[36px]');
         toggleButtonElement.classList.add('rotate-180');
       } else {
         // Expand sidebar
-        sidebarElement.classList.remove('w-[60px]');
+        sidebarElement.classList.remove('w-[36px]');
         sidebarElement.classList.add('lg:w-[240px]');
         toggleButtonElement.classList.remove('rotate-180');
       }
