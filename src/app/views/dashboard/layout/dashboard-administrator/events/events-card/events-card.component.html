@@ -1,4 +1,7 @@
 <div class="event-cards mt-8">
+  <br>
+  <h2 class="font-title text-3xl text-firstColor font-bold text-center">Proximos eventos</h2>
+  <br><br>
   <div class="container-cards" *ngIf="events$ | async as events; else noEvents">
     <div *ngFor="let event of events" class="card">
       <img [src]="event.photo" alt="{{ event.description }}" class="card-image">

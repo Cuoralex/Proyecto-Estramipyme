@@ -1,10 +1,8 @@
 import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { NavbarLandingpageComponent } from "../../shared/navbar-landingpage/navbar-landingpage.component";
 import { RouterModule, ActivatedRoute } from '@angular/router';
-
 import { CarouselComponent } from "../../components/carousel/carousel.component";
 import { LoginComponent } from '../../components/login/login.component';
-
 import { SwitcherComponent } from '../../components/switcher/app-switcher.component';
 import { ourServicesComponent } from '../../components/ourServices/ourServices.component';
 import { FooterLandingpageComponent } from "../../shared/footer-landingpage/footer-landingpage.component";
@@ -47,6 +45,8 @@ export class LandingPageComponent implements OnInit {
   private bannerItems!: NodeListOf<HTMLElement>;
   private currentIndex = 0;
   showLogin = true;
+
+  @ViewChild('events') events!: ElementRef;
 
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((fragment) => {
