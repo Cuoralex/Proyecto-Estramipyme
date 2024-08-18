@@ -15,6 +15,7 @@ export class VisitsCounterComponent {
 
 visitCount: number = 0;
   saveVisitCount: any;
+visitNumbers: any;
 
   constructor(private visitsCounterService: VisitsCounterService) { }
 

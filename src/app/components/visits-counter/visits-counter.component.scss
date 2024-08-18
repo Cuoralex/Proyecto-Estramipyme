@@ -2,12 +2,16 @@
   display: block;
 }
 
-.visit-counter {
+.visitor-count {
+  background-image: url('http://bit.ly/23BUKkb');
+  height: 55px;
+  font-family: Pacifico, sans-serif; // Asegúrate de que la fuente está disponible o importada
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+  display: block;
   text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  max-width: 300px;
-  margin: 20px auto;
-  background-color: #f9f9f9;
+  margin-left: 50px;
+  padding-top: 2px;
+  line-height: 55px; // Asegura que el texto esté centrado verticalmente
 }
