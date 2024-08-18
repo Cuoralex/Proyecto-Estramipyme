@@ -47,6 +47,16 @@
     font-size: 2.2rem;
   }
  
+  .scroll-container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
   
   /** Hero Section **/
 
@@ -140,9 +150,78 @@
     filter: grayscale(1);
   }
   
+  /**Libro**/
   .Libro{
     size: 20%;
   }
+
+  // Archivo tooltip.scss
+
+.tooltip-container {
+  color: #ffffff;
+  --background: #00a36d;
+  position: relative;
+  background: var(--background);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 100%;
+  padding: 0;
+
+
+  // El botón de libro se puede ajustar aquí
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.tooltip {
+  background-color: #00a36d;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3em 0.6em;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 50px;
+  color: #fff; // Cambia el color del texto si es necesario
+  font-size: 14px; // Ajusta el tamaño del texto si es necesario
+}
+
+.tooltip::before {
+  background-color: #00a36d;
+  position: absolute;
+  content: "";
+  height: 0.2em;
+  width: 0.2em;
+  bottom: -0.2em;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.tooltip-container:hover .tooltip {
+  top: -50%; // Controla el aviso de descárgame
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+// Agrega el estilo del tooltip para el botón específico
+#Libro {
+  position: relative;
+
+  &:hover .tooltip {
+    top: -50%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
 
   /** Wrap Title **/
   

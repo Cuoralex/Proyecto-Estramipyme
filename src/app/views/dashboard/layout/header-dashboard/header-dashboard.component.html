@@ -11,7 +11,7 @@
 
     <ul class="flex items-center gap-3 lg:gap-5">
       <li class="relative">
-        <a class="px-5 lg:px-3 py-2 rounded-sm" (click)="clearAlert()">
+        <a class="px-5 lg:px-3 py-2 rounded-sm" routerLink="/dashboard/users/home" (click)="clearAlert()">
           <i class="fa-regular fa-bell" [ngStyle]="{'color': '#FEFFFE', 'font-size': '24px'}"></i>
           <span *ngIf="newClientAlert" class="absolute top-0 right-0 block w-3 h-3 bg-red-500 rounded-full"></span>
         </a>

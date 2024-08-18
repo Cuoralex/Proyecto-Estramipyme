@@ -1,7 +1,7 @@
 // user-administrator.service.ts
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { Users } from "../models/user-administrator.model";
 
 @Injectable({ 
@@ -29,8 +29,6 @@ export class UserService {
     return this.httpClient.post<Users>(this.baseUrl, data);
   }
 
-  
-
   edit(id: number): Observable<Users> {
     return this.httpClient.get<Users>(`${this.baseUrl}/${id}`);
   }
@@ -41,5 +39,13 @@ export class UserService {
 
   delete(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  private apiUrl = 'http://localhost:3000/users';
+
+  getLastUser(): Observable<any> {
+    return this.httpClient.get<any[]>(this.baseUrl).pipe(
+      map((users: string | any[]) => users[users.length - 1])
+    );
   }
 }

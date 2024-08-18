@@ -9,14 +9,18 @@
     <!-- Banner / Carousel -->
     <app-carousel></app-carousel>
 
-    <!-- Icono de Libro Flotante para el boton emergente-->
-    <div class="fixed  z-10 bottom-4 right-4">
-      <button id="Libro" >
-        <a [routerLink]="[]" fragment="register">
-          <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
-        </a>
-      </button>
-    </div>  
+    <!-- Icono de Libro Flotante con Tooltip -->
+<div class="fixed z-10 bottom-4 right-4">
+  <div class="tooltip-container">
+    <button id="Libro">
+      <a [routerLink]="[]" fragment="register">
+        <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
+      </a>
+    </button>
+    <span class="tooltip">¡Descárgame!</span>
+  </div>
+</div>
+
 
     <!-- Sección Sobre Nosotros -->
     <section id="about" class="p-8">

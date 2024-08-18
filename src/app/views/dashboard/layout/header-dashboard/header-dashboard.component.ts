@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../services/user-administrator.service';
+import { Router, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-header-dashboard',
   standalone: true,
   imports: [
-    CommonModule
-
+    CommonModule,
+    RouterModule
   ],
   templateUrl: './header-dashboard.component.html',
   styleUrls: ['./header-dashboard.component.scss'],
@@ -27,8 +28,10 @@ export class HeaderDashboardComponent implements OnInit {
 
   // Almacena el ID del último usuario procesado
   private lastUserId = 0;
+  
+  
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.checkNewClients();
@@ -53,6 +56,11 @@ export class HeaderDashboardComponent implements OnInit {
   // Método para limpiar la alerta de nuevos clientes
   clearAlert(): void {
     this.newClientAlert = false;
+    
+  }
+
+  NavigateByUser() {
+    this.router.navigate(['users/home']);
   }
 
   // Método para alternar la colapsación de la barra lateral
@@ -65,4 +73,6 @@ export class HeaderDashboardComponent implements OnInit {
   toggleUserDropdown(): void {
     this.userDropdownOpen = !this.userDropdownOpen;
   }
+
+  
 }

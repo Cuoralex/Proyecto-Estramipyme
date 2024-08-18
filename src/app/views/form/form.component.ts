@@ -20,6 +20,7 @@ export class FormComponent implements OnInit {
   opportunityCount: number = 0;
   risks: Array<{ id: number, text: string }> = [];
   opportunities: Array<{ id: number, text: string }> = [];
+isNaturalPerson: any;
 
   // Asegúrate de inyectar Router aquí
   constructor(private router: Router) {}
