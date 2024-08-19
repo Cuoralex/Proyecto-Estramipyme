@@ -20,6 +20,13 @@
       "date": "2024-09-01T00:00:00.000Z",
       "time": "18:00",
       "description": "Third event description"
+    },
+    {
+      "id": "4",
+      "photo": "new-photo-url",
+      "date": "2024-07-03T00:00:00.000Z",
+      "time": "12:00",
+      "description": "New Event"
     }
   ],
   "metrics": [
@@ -153,6 +160,27 @@
       "NaturalPersonPassword": "123",
       "NaturalPersonConfirmPassword": "123",
       "TypeOfAdvice": "paid"
+    },
+    {
+      "id": "4149",
+      "TypeOfPerson": "Natural",
+      "TypeCompany": "pequeña",
+      "LegalPersonName": null,
+      "LegalPersonCompanyName": null,
+      "Sector": "Automóviles",
+      "LegalPersonAddress": null,
+      "LegalPersonPhone": null,
+      "LegalPersonEmail": null,
+      "LegalPersonPassword": null,
+      "LegalPersonConfirmPassword": null,
+      "NaturalPersonName": "c",
+      "NaturalPersonAddress": "c",
+      "NaturalPersonPhone": "1",
+      "NaturalPersonEmail": "c@c.com",
+      "NaturalPersonPassword": "123",
+      "NaturalPersonConfirmPassword": "123",
+      "TypeOfAdvice": "paid",
+      "Role": "Cliente"
     }
   ]
 }

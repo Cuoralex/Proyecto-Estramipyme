@@ -8,7 +8,7 @@ import { provideHttpClient } from '@angular/common/http';
 //Proyecto
 import { HeaderLandingpageComponent } from './shared/header-landingpage/header-landingpage.component';
 import { NavbarLandingpageComponent } from './shared/navbar-landingpage/navbar-landingpage.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ExcelReaderComponent } from './services/excel-reader/excel-reader.component';
 import { RegisternComponent } from './components/registern/registern.component';
@@ -45,7 +45,7 @@ const routes: Routes= [
       echarts: () => import('echarts'),
     }),
     
-    FooterLandingpageComponent,
+    FooterLandingpageComponent
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers:[provideHttpClient()],

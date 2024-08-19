@@ -1,10 +1,24 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RegisterService } from '../../services/register-users/register.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
+
+// Función de validación para contraseñas de persona natural
+export const NaturalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const NaturalPassword = control.get('NaturalPersonPassword');
+  const NaturalPasswordConfirm = control.get('NaturalPersonConfirmPassword');
+  return NaturalPassword && NaturalPasswordConfirm && NaturalPassword.value !== NaturalPasswordConfirm.value ? { NaturalPasswords: true } : null;
+};
+
+export const LegalPasswordsValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+  const LegalPassword = control.get('LegalPersonPassword');
+  const LegalPasswordConfirm = control.get('LegalPersonConfirmPassword');
+  return LegalPassword && LegalPasswordConfirm && LegalPassword.value !== LegalPasswordConfirm.value ? { LegalPasswords: true } : null;
+};
 
 @Component({
   selector: 'app-registern',
@@ -13,6 +27,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl:'./registern.component.html',
   styleUrls: ['./registern.component.scss']
 })
+
+
 export class RegisternComponent implements OnInit, OnDestroy {
   myForm!: FormGroup;
   registerForm: FormGroup;
@@ -35,7 +51,6 @@ export class RegisternComponent implements OnInit, OnDestroy {
   NaturalPersonConfirmPassword!: FormControl;
   TypeOfAdvice!: FormControl;
   Subscriptions: Subscription[] = []
-NaturalPassword: any;
 
 register() {
 throw new Error('Method not implemented.');
@@ -58,15 +73,18 @@ throw new Error('Method not implemented.');
       LegalPersonAddress: [''],
       LegalPersonPhone: [''],
       LegalPersonEmail: ['', Validators.email],
-      LegalPersonPassword: [''],
-      LegalPersonConfirmPassword: [''],
+      LegalPersonPassword: ['', Validators.required],
+      LegalPersonConfirmPassword: ['', Validators.required],
       NaturalPersonName: [''],
       NaturalPersonAddress: [''],
       NaturalPersonPhone: [''],
       NaturalPersonEmail: ['', Validators.email],
-      NaturalPersonPassword: [''],
-      NaturalPersonConfirmPassword: [''],
-      TypeOfAdvice: ['']
+      NaturalPersonPassword: ['', Validators.required],
+      NaturalPersonConfirmPassword: ['', Validators.required],
+      TypeOfAdvice: [''],
+      Role: ['Cliente'] //Rol por defecto
+    }, {
+      validators: [NaturalPasswordsValidator, LegalPasswordsValidator]
     });
   }
 
@@ -109,7 +127,7 @@ throw new Error('Method not implemented.');
 
   onRegister() {
     if (this.registerForm.valid) {
-      const formData = this.registerForm.value;
+      const formData = {...this.registerForm.value, Role: 'Cliente'};
       
       this.http.post('http://localhost:3000/users', formData)
         .subscribe({

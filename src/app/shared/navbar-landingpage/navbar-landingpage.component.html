@@ -52,8 +52,10 @@
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Planes</a>
 						<a (click)="navigateToSection('register')"
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Regístrate</a>
-						<a (click)="navigateToSection('events')"
-							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Eventos</a>
+						<a (click)="closeMenu()" [routerLink]="[]" fragment="events"
+							class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+							Eventos
+						</a>
 						<a (click)="navigateToSection('contact')"
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Contacto</a>
 					</div>
@@ -126,10 +128,8 @@
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Planes</a>
 			<a (click)="navigateToSection('register')"
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Regístrate</a>
-			<a (click)="closeMenu()" [routerLink]="[]" fragment="events"
-				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-				Eventos
-			</a>
+			<a (click)="navigateToSection('events')"
+				class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Eventos</a>
 			<a (click)="navigateToSection('contact')"
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
 		</div>

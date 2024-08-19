@@ -40,16 +40,15 @@
 
             <!-- Otro tipo de empresa -->
             <div *ngIf="TypeCompanyAnother" class="relative sm:col-span-1">
-              <input type="text" name="TypeCompanyAnother" formControlName="TypeCompanyAnother"
-                id="TypeCompanyAnother" autocomplete=""
+              <input type="text" name="TypeCompanyAnother" formControlName="TypeCompanyAnother" id="TypeCompanyAnother"
+                autocomplete=""
                 class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
               <label for="TypeCompanyAnother"
                 class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
                   peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Otro</label>
               <div
                 *ngIf="registerForm.get('TypeCompanyAnother')?.invalid && (registerForm.get('TypeCompanyAnother')?.dirty || registerForm.get('TypeCompanyAnother')?.touched)">
-                <div *ngIf="registerForm.get('TypeCompanyAnother')?.hasError('required')"
-                  class="text-red-500 text-xs">
+                <div *ngIf="registerForm.get('TypeCompanyAnother')?.hasError('required')" class="text-red-500 text-xs">
                   El campo es requerido cuando se selecciona "Otro".
                 </div>
               </div>
@@ -203,7 +202,7 @@
                 Las contraseñas no coinciden.
               </div>
             </div>
-          
+
 
             <!-- Asesoría -->
             <div class="sm:col-span-2">
@@ -362,65 +361,64 @@
                 </div>
               </div>
 
-                <!-- Contraseña -->
-                <div class="relative sm:col-span-1">
-                  <input type="password" name="NaturalPersonPassword" formControlName="NaturalPersonPassword"
-                    id="NaturalPersonPassword" autocomplete=""
-                    class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
-                  <label for="NaturalPersonPassword"
-                    class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+              <!-- Contraseña -->
+              <div class="relative sm:col-span-1">
+                <input type="password" name="NaturalPersonPassword" formControlName="NaturalPersonPassword"
+                  id="NaturalPersonPassword" autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonPassword"
+                  class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
                         peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Contraseña</label>
-                  <div
-                    *ngIf="NaturalPersonPassword?.invalid && (NaturalPersonPassword?.dirty || NaturalPersonPassword?.touched)"
-                    class="text-red-500 text-xs mt-1">
-                    <div *ngIf="NaturalPersonPassword?.hasError('required')">La contraseña es requerida.</div>
-                  </div>
-                </div>
-
-                <!-- Confirmar Contraseña -->
-                <div class=" mb-4 relative sm:col-span-1">
-                  <input type="password" name="NaturalPersonConfirmPassword"
-                    formControlName="NaturalPersonConfirmPassword" id="NaturalPersonConfirmPassword" autocomplete=""
-                    class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
-                  <label for="NaturalPersonConfirmPassword"
-                    class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
-                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Confirmar
-                    Contraseña</label>
-                  <div *ngIf="registerForm.hasError('naturalPasswords') && (registerForm.touched || registerForm.dirty)"
-                    class="text-red-500 text-xs">
-                    Las contraseñas no coinciden.
-                  </div>
+                <div *ngIf="NaturalPersonPassword?.invalid && (NaturalPersonPassword?.dirty || NaturalPersonPassword?.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="NaturalPersonPassword?.hasError('required')">La contraseña es requerida.</div>
                 </div>
               </div>
 
+              <!-- Confirmar Contraseña -->
+              <div class=" mb-4 relative sm:col-span-1">
+                <input type="password" name="NaturalPersonConfirmPassword"
+                  formControlName="NaturalPersonConfirmPassword" id="NaturalPersonConfirmPassword" autocomplete=""
+                  class="peer w-full border text-stone-950 border-gray-300 rounded px-1 pt-3 pb-2 outline-none focus:ring-2 focus:ring-inset focus:ring-azulAlterno focus:border-azulAlterno">
+                <label for="NaturalPersonConfirmPassword"
+                  class="absolute text-xs left-2 transform translate-y-1 transition-all text-gray-500 cursor-text
+                            peer-placeholder-shown:top-1/2 peer-placeholder-shown:translate-y-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-azulAlterno">Confirmar
+                  Contraseña</label>
+                <div *ngIf="registerForm.hasError('naturalPasswords') && (registerForm.touched || registerForm.dirty)"
+                  class="text-red-500 text-xs">
+                  Las contraseñas no coinciden.
+                </div>
+              </div>
+            </div>
 
-              <!-- Asesoría -->
-              <div class="sm:col-span-2">
-                <div class="grid grid-cols-1 gap-y-2">
-                  <div class="asesoriaContainer flex items-center">
-                    <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-2">
-                    <label for="freeAdvisory" class="asesoria text-xs font-medium text-thirdColor">
-                      ¿Quieres asesoría gratuita con estudiantes de pregrado?
-                    </label>
-                  </div>
-                  <div class="asesoriaContainer flex items-center">
-                    <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-2">
-                    <label for="paidAdvisory" class="asesoria text-xs font-medium text-thirdColor">
-                      ¿Prefieres asesoría con un profesor (con costo)?
-                    </label>
-                  </div>
+
+            <!-- Asesoría -->
+            <div class="sm:col-span-2">
+              <div class="grid grid-cols-1 gap-y-2">
+                <div class="asesoriaContainer flex items-center">
+                  <input type="radio" formControlName="TypeOfAdvice" value="free" id="freeAdvisory" class="mr-2">
+                  <label for="freeAdvisory" class="asesoria text-xs font-medium text-thirdColor">
+                    ¿Quieres asesoría gratuita con estudiantes de pregrado?
+                  </label>
+                </div>
+                <div class="asesoriaContainer flex items-center">
+                  <input type="radio" formControlName="TypeOfAdvice" value="paid" id="paidAdvisory" class="mr-2">
+                  <label for="paidAdvisory" class="asesoria text-xs font-medium text-thirdColor">
+                    ¿Prefieres asesoría con un profesor (con costo)?
+                  </label>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-          <div class="mt-6 flex items-center justify-center gap-x-6">
-            <button type="button" class="btnSingUp" (click)="onRegister()"
-              [disabled]="!registerForm.valid || registerForm.get('TypeOfPerson')?.value === ''">
-              <span class="spanSingUp">Regístrate</span>
-            </button>
-          </div>
+      <div class="mt-6 flex items-center justify-center gap-x-6">
+        <button type="button" class="btnSingUp" (click)="onRegister()"
+          [disabled]="!registerForm.valid || registerForm.get('TypeOfPerson')?.value === ''">
+          <span class="spanSingUp">Regístrate</span>
+        </button>
+      </div>
     </form>
   </div>
 </section>
