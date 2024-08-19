@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Event } from 'app/models/event.model';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-events-card',
   standalone: true,
@@ -14,10 +15,12 @@ import { CommonModule } from '@angular/common';
 export class EventsCardComponent implements OnInit {
   events$!: Observable<Event[]>;
 
+
   constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
     this.getEvents();
+    
   }
 
   getEvents(): void {

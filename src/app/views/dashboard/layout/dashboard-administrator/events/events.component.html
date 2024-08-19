@@ -1,13 +1,19 @@
 <div class="events">
 
+  <div>
+    <p>El contador está en: <strong><span class="visitor-count">{{ visitCount }}</span></strong></p>
+    <button (click)="resetCounter()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Restablecer
+      Contador</button>
+  </div><br><br><br>
+
+
   <!-- Botón para agregar un nuevo evento -->
-    <button
-      (click)="addEvent()"
-      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-    >
-      Nuevo Evento
-    </button>
-  
+  <button (click)="addEvent()"
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    Nuevo Evento
+  </button><br><br>
+
   <!-- Lista de eventos -->
   <div *ngIf="events$ | async as events; else noEvents">
     <div *ngFor="let event of events" class="event-item">

@@ -10,7 +10,8 @@
 					<span class="font-title sr-only">Open main menu</span>
 					<svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
 						aria-hidden="true">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+						<path stroke-linecap="round" stroke-linejoin="round"
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 					</svg>
 					<svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
 						aria-hidden="true">
@@ -37,18 +38,22 @@
 							<div *ngIf="menuOpenSobrenostros"
 								class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 								<a (click)="navigateToSection('about')"
-									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">¿Quienes Somos?</a>
+									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">¿Quienes
+									Somos?</a>
 								<a (click)="navigateToSection('services')"
-									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">Nuestros Servicios</a>
+									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">Nuestros
+									Servicios</a>
 								<a (click)="navigateToSection('video')"
-									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">Nuestra Metodología</a>
+									class="block px-4 py-2 font-title text-sm text-gray-700 hover:bg-gray-100">Nuestra
+									Metodología</a>
 							</div>
 						</div>
 						<a (click)="navigateToSection('plans')"
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Planes</a>
 						<a (click)="navigateToSection('register')"
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Regístrate</a>
-						<a [routerLink]="[]" fragment="events" class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Eventos</a>
+						<a (click)="navigateToSection('events')"
+							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Eventos</a>
 						<a (click)="navigateToSection('contact')"
 							class="rounded-md px-3 py-2 font-title text-sm font-bold text-gray-300 hover:bg-fifthColor hover:text-white">Contacto</a>
 					</div>
@@ -93,14 +98,14 @@
 				<div *ngIf="isUserMenuOpen"
 					class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
 					role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-					<a (click)="navigateToSection('register')" class="block px-4 py-2 font-title text-sm text-gray-700" role="menuitem"
-						tabindex="-1" id="user-menu-item-2">Inicia sesión</a>
+					<a (click)="navigateToSection('register')" class="block px-4 py-2 font-title text-sm text-gray-700"
+						role="menuitem" tabindex="-1" id="user-menu-item-2">Inicia sesión</a>
 					<a href="#" class="block px-4 py-2 font-title text-sm text-gray-700" role="menuitem" tabindex="-1"
 						id="user-menu-item-1">Configuración</a>
 					<a href="#" class="block px-4 py-2 font-title text-sm text-gray-700" role="menuitem" tabindex="-1"
 						id="user-menu-item-2">Cerrar sesión</a>
-					<a (click)="navigateToSection('register')" class="block px-4 py-2 font-title text-sm text-gray-700" role="menuitem"
-						tabindex="-1" id="user-menu-item-2">Regístrate</a>
+					<a (click)="navigateToSection('register')" class="block px-4 py-2 font-title text-sm text-gray-700"
+						role="menuitem" tabindex="-1" id="user-menu-item-2">Regístrate</a>
 				</div>
 			</div>
 		</div>
@@ -121,6 +126,10 @@
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Planes</a>
 			<a (click)="navigateToSection('register')"
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Regístrate</a>
+			<a (click)="closeMenu()" [routerLink]="[]" fragment="events"
+				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+				Eventos
+			</a>
 			<a (click)="navigateToSection('contact')"
 				class="block rounded-md px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contacto</a>
 		</div>
@@ -133,6 +142,6 @@
 				class="block px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Youtube</a>
 			<a href="http://www.facebook.com/universidadeafit"
 				class="block px-3 py-2 font-title text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Facebook</a>
-		</div>font-title 
+		</div>font-title
 	</div>
 </nav>

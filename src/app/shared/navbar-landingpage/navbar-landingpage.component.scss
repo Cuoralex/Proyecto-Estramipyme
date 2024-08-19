@@ -8,6 +8,15 @@
   }
 }
 
+.mobile-menu {
+  display: none; /* Oculto por defecto */
+}
+
+.mobile-menu.open {
+  display: block; /* Visible cuando abierto */
+}
+
+
 @media (max-width: 480px) {
   .space-y-1 {
     a {

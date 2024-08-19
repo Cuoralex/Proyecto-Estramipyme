@@ -3,23 +3,27 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EventService } from '../../../../../services/event.service'; // Corrige la ruta si es necesario
 import { Event } from '../../../../../models/event.model'; // Asegúrate de que la ruta sea correcta
+import { VisitsCounterService } from 'app/services/visits-counter.service';
 
 @Component({
   selector: 'app-events',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss'],
 })
 export default class EventsComponent implements OnInit {
   events$!: Observable<Event[]>;
+  visitCount: number = 0;
 
-  constructor(private eventService: EventService) {}
+  constructor(
+    private eventService: EventService,
+    private visitsCounterService: VisitsCounterService
+  ) {}
 
   ngOnInit(): void {
     this.getEvents();
+    this.visitCount = this.visitsCounterService.getVisitCount();
   }
 
   getEvents(): void {
@@ -27,23 +31,25 @@ export default class EventsComponent implements OnInit {
   }
 
   addEvent(): void {
-    this.eventService.getEvents().subscribe(events => {
+    this.eventService.getEvents().subscribe((events) => {
       // Encontrar el ID más alto en los eventos existentes
-      const highestId = events.reduce((maxId, event) => Math.max(maxId, event.id), 0);
+      const highestId = events.reduce(
+        (maxId, event) => Math.max(maxId, event.id),
+        0
+      );
       const newEventId = highestId + 1; // Asignar el siguiente ID en la secuencia
-  
+
       const newEvent: Event = {
         id: newEventId,
         photo: 'new-photo-url',
         date: new Date('2024-07-03'),
         time: '12:00',
-        description: 'New Event'
+        description: 'New Event',
       };
-  
+
       this.eventService.addEvent(newEvent).subscribe(() => this.getEvents());
     });
   }
-  
 
   editEvent(event: Event): void {
     const newPhoto = prompt('Edit photo URL:', event.photo);
@@ -59,12 +65,16 @@ export default class EventsComponent implements OnInit {
     this.eventService.updateEvent(event).subscribe(() => this.getEvents());
   }
 
-  
-
   deleteEvent(id: number): void {
-    const confirmed = window.confirm('¿Estás seguro de que deseas eliminar definitivamente este evento?');
+    const confirmed = window.confirm(
+      '¿Estás seguro de que deseas eliminar definitivamente este evento?'
+    );
     if (confirmed) {
       this.eventService.deleteEvent(id).subscribe(() => this.getEvents());
     }
-  }  
+  }
+  resetCounter(): void {
+    this.visitsCounterService.resetVisitCount();
+    this.visitCount = this.visitsCounterService.getVisitCount();
+  }
 }

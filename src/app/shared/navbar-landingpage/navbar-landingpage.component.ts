@@ -38,6 +38,7 @@ export class NavbarLandingpageComponent {
   }
 
   closeMenu(): void {
+    console.log('Closing menu');
     this.isMobileMenuOpen = false;
     this.isUserMenuOpen = false;
     this.menuOpenSobrenostros = false;
