@@ -98,7 +98,7 @@
       "LegalPersonPassword": "",
       "LegalPersonConfirmPassword": "",
       "Role": "Cliente",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": 1,

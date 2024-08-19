@@ -21,6 +21,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   allusers: Users[] = [];
+user: any;
   
   constructor(private userService: UserService, private router: Router, private httpClient: HttpClient) {}
 
