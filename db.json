@@ -97,7 +97,8 @@
       "LegalPersonEmail": "",
       "LegalPersonPassword": "",
       "LegalPersonConfirmPassword": "",
-      "Role": "Cliente"
+      "Role": "Cliente",
+      "isActive": true
     },
     {
       "id": "94d0",
@@ -119,7 +120,8 @@
       "NaturalPersonPassword": "123456",
       "NaturalPersonConfirmPassword": "123456",
       "TypeOfAdvice": "paid",
-      "Role": "Cliente"
+      "Role": "Cliente",
+      "isActive": true
     },
     {
       "id": "1d45",
@@ -139,7 +141,8 @@
       "NaturalPersonEmail": "f@f.com",
       "NaturalPersonPassword": "123",
       "NaturalPersonConfirmPassword": "123",
-      "TypeOfAdvice": "free"
+      "TypeOfAdvice": "free",
+      "isActive": true
     },
     {
       "id": "aafa",
@@ -159,7 +162,8 @@
       "NaturalPersonEmail": "n@n.com",
       "NaturalPersonPassword": "123",
       "NaturalPersonConfirmPassword": "123",
-      "TypeOfAdvice": "paid"
+      "TypeOfAdvice": "paid",
+      "isActive": true
     },
     {
       "id": "4149",
@@ -180,7 +184,8 @@
       "NaturalPersonPassword": "123",
       "NaturalPersonConfirmPassword": "123",
       "TypeOfAdvice": "paid",
-      "Role": "Cliente"
+      "Role": "Cliente",
+      "isActive": true
     }
   ]
 }

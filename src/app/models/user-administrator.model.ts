@@ -1,7 +1,8 @@
 // user.model.ts
 
 export interface Users {
-Diagnosis: any;
+    isActive: any;
+    Diagnosis: any;
     id: number;
     EnterpriseType?: string,
     EnterpriseName?: string,

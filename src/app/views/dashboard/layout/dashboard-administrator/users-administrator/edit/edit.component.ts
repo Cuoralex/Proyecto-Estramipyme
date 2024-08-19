@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Users } from 'app/models/user-administrator.model';
 import { UserService } from 'app/services/user-administrator.service';
-import { number } from 'echarts';
+
 
 @Component({
   selector: 'app-edit',
@@ -56,7 +56,8 @@ export class EditComponent {
       NaturalPersonTypeCompany: '',
       LegalPersonTypeCompany: '',
       NaturalPersonTypeCompanyAnother: '',
-      LegalPersonTypeCompanyAnother: ''
+      LegalPersonTypeCompanyAnother: '',
+      isActive:''
     };
   
     ngOnInit(): void {

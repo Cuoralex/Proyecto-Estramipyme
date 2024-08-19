@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { EditComponent } from '../edit/edit.component';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -19,10 +20,9 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
   allusers: Users[] = [];
   
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private httpClient: HttpClient) {}
 
   ngOnInit(): void {
     this.userService.getAll().subscribe({
@@ -55,6 +55,21 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  }
+  
+  toggleUserStatus(user: any): void {
+    this.httpClient.get(`http://localhost:3000/users/${user.id}`)
+      .subscribe((existingUser: any) => {
+        // Copia los campos del usuario existente y solo cambia el estado de activación
+        const updatedUser = { ...existingUser, isActive: !user.isActive };
+  
+        // Luego envía todos los campos del usuario actualizado al backend
+        this.httpClient.put(`http://localhost:3000/users/${user.id}`, updatedUser)
+          .subscribe({
+            next: () => console.log(`El estado del usuario ha sido actualizado a: ${updatedUser.isActive}`),
+            error: (err) => console.error('Error al actualizar el estado del usuario', err)
+          });
+      });
   }
   
 
