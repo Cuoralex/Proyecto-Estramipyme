@@ -1,6 +1,6 @@
 // user.model.ts
 
-export interface Users {
+export interface Clients {
     isActive: any;
     Diagnosis: any;
     id: number;
@@ -38,15 +38,8 @@ export interface Users {
     LegalPersonConfirmPassword?: string;
     TypeCompany: string;
     TypeCompanyAnother: string;
-    ProfileName: string;
-    ProfileAddress: string;
-    ProfilePhone: number;
-    ProfileID: number;
-    ProfileCareer: string;
-    ProfileSemester: string;
-    ProfileEmail: string;
-    ProfilePassword: string;
-    ProfileConfirmPassword: string;
-
+    NaturalPersonCareer: string;
+    NaturalPersonID: number;
+    NaturalPersonSemester: number;
   }
   

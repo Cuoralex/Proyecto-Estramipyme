@@ -57,7 +57,16 @@ export class EditComponent {
       LegalPersonTypeCompany: '',
       NaturalPersonTypeCompanyAnother: '',
       LegalPersonTypeCompanyAnother: '',
-      isActive:''
+      isActive:'',
+      ProfileName: '',
+      ProfileAddress: '',
+      ProfilePhone: 0,
+      ProfileID:0,
+      ProfileCareer:'',
+      ProfileSemester:'',
+      ProfileEmail:'',
+      ProfilePassword:'',
+      ProfileConfirmPassword:'',
     };
   
     ngOnInit(): void {
