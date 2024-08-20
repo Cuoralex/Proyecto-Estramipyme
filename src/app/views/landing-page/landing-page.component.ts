@@ -52,14 +52,13 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   activeRoute: ActivatedRoute = inject(ActivatedRoute);
   @ViewChildren('section') sections!: QueryList<ElementRef<HTMLElement>>;
   private sectionOffsets: number[] = [];
-  private currentIndex = 0;
   private isScrolling = false;
-
-  constructor(private elementRef: ElementRef) {}
+  private isNavigating = false; // Variable para rastrear la navegación desde el navbar
 
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((fragment) => {
       if (fragment) {
+        this.isNavigating = true; // Indica que se ha iniciado una navegación desde el navbar
         this.jumpToSection(fragment);
       }
     });
@@ -73,7 +72,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    if (this.isScrolling) return;
+    if (this.isScrolling || this.isNavigating) return;
 
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -82,16 +81,14 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
         scrollPosition >= offset &&
         scrollPosition < (this.sectionOffsets[index + 1] || Infinity)
       ) {
-        this.currentIndex = index;
-        this.scrollToSection();
+        this.scrollToSection(index);
       }
     });
   }
 
-  scrollToSection() {
+  scrollToSection(index: number) {
     this.isScrolling = true;
-
-    this.sections.toArray()[this.currentIndex].nativeElement.scrollIntoView({
+    this.sections.toArray()[index].nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
@@ -105,6 +102,9 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     const element = document.getElementById(fragment);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        this.isNavigating = false; // Restablece el estado de navegación después de que el scroll termina
+      }, 800);
     }
   }
 }
