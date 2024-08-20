@@ -20,13 +20,6 @@
       "date": "2024-09-01T00:00:00.000Z",
       "time": "18:00",
       "description": "Third event description"
-    },
-    {
-      "id": "4",
-      "photo": "new-photo-url",
-      "date": "2024-07-03T00:00:00.000Z",
-      "time": "12:00",
-      "description": "New Event"
     }
   ],
   "metrics": [
@@ -78,7 +71,7 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "TypeOfPerson": "Natural",
       "NaturalPersonName": "Juan Pérez",
       "NaturalPersonAddress": "Calle Falsa 123",
@@ -101,7 +94,7 @@
       "isActive": true
     },
     {
-      "id": 1,
+      "id": 2,
       "ProfileName": "Juan Pérez",
       "ProfileID": "3333333",
       "ProfileAddress": "Calle Falsa 123",
@@ -115,7 +108,7 @@
       "isActive": true
     },
     {
-      "id": 2,
+      "id": 3,
       "ProfileName": "Ana López",
       "ProfileID": "2222222",
       "ProfileAddress": "Avenida Siempre Viva 742",
@@ -128,7 +121,7 @@
       "isActive": true
     },
     {
-      "id": 3,
+      "id": 4,
       "ProfileName": "Carlos González",
       "ProfileID": "2345644",
       "ProfileAddress": "Calle Luna 345",
