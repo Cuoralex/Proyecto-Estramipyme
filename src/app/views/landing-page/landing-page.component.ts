@@ -52,13 +52,16 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
   activeRoute: ActivatedRoute = inject(ActivatedRoute);
   @ViewChildren('section') sections!: QueryList<ElementRef<HTMLElement>>;
   private sectionOffsets: number[] = [];
+  private currentIndex = 0;
   private isScrolling = false;
-  private isNavigating = false; // Variable para rastrear la navegación desde el navbar
+  private manualScrollTriggered = false;
+
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.activeRoute.fragment.subscribe((fragment) => {
       if (fragment) {
-        this.isNavigating = true; // Indica que se ha iniciado una navegación desde el navbar
+        this.manualScrollTriggered = true;
         this.jumpToSection(fragment);
       }
     });
@@ -72,7 +75,7 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    if (this.isScrolling || this.isNavigating) return;
+    if (this.isScrolling || this.manualScrollTriggered) return;
 
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -81,21 +84,23 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
         scrollPosition >= offset &&
         scrollPosition < (this.sectionOffsets[index + 1] || Infinity)
       ) {
-        this.scrollToSection(index);
+        this.currentIndex = index;
+        this.scrollToSection();
       }
     });
   }
 
-  scrollToSection(index: number) {
+  scrollToSection() {
     this.isScrolling = true;
-    this.sections.toArray()[index].nativeElement.scrollIntoView({
+
+    this.sections.toArray()[this.currentIndex].nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
 
     setTimeout(() => {
       this.isScrolling = false;
-    }, 800); // Permite que la animación de scroll termine
+    }, 800);
   }
 
   jumpToSection(fragment: string): void {
@@ -103,8 +108,8 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setTimeout(() => {
-        this.isNavigating = false; // Restablece el estado de navegación después de que el scroll termina
-      }, 800);
+        this.manualScrollTriggered = false;
+      }, 1000); // Permitir que el scroll manual termine
     }
   }
 }
