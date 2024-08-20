@@ -1,13 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuComponent } from "../../layout/menu/menu.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [
     RouterModule,
-    MenuComponent
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],

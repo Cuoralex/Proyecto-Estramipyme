@@ -7,55 +7,57 @@
   <section class="Hero text-center">
 
     <!-- Banner / Carousel -->
-    <app-carousel></app-carousel>
+    <section #section id="banner" class="p-8">
+      <app-carousel></app-carousel>
+    </section>
 
     <!-- Icono de Libro Flotante con Tooltip -->
-<div class="fixed z-10 bottom-4 right-4">
-  <div class="tooltip-container">
-    <button id="Libro">
-      <a [routerLink]="[]" fragment="register">
-        <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
-      </a>
-    </button>
-    <span class="tooltip"><strong>¡Descárgame!</strong></span>
-  </div>
-</div>
+    <div class="fixed z-10 bottom-4 right-4">
+      <div class="tooltip-container">
+        <button id="Libro">
+          <a [routerLink]="[]" fragment="register">
+            <img src="../../../../Boton.png" alt="Libro descarga" class="w-20 h-20">
+          </a>
+        </button>
+        <span class="tooltip"><strong>¡Descárgame!</strong></span>
+      </div>
+    </div>
 
 
     <!-- Sección Sobre Nosotros -->
-    <section id="about" class="p-8">
+    <section #section id="about" class="p-8">
       <app-about-us></app-about-us>
     </section>
 
     <!-- Sección de Servicios -->
-    <section id="services" class="p-8 bg-fondoAlterno flex-container">
+    <section #section id="services" class="p-8 bg-fondoAlterno flex-container">
       <app-ourServices></app-ourServices>
     </section>
 
-     <!-- Sección de Video -->
-    <section id="video" class="bg-thirdColor py-12">
+    <!-- Sección de Video -->
+    <section #section id="video" class="bg-thirdColor py-12">
       <app-video></app-video>
     </section>
 
     <!-- Sección de Planes -->
-    <section id="plans" class="bg-thirdColor py-12">
+    <section #section id="plans" class="bg-thirdColor py-12">
       <app-plans></app-plans>
     </section>
 
 
     <!-- Sección de Registro -->
-    <section id="register" class="p-8 bg-thirdColor flex-container">
+    <section #section id="register" class="p-8 bg-thirdColor flex-container">
       <app-switcher></app-switcher>
     </section>
 
 
     <!-- Sección de eventos -->
-    <section id="events" class="p-4 px-4 bg-fondoAlterno flex-container">
-     <app-events-card></app-events-card>
+    <section #section id="events" class="p-4 px-4 bg-fondoAlterno flex-container">
+      <app-events-card></app-events-card>
     </section>
 
     <!-- Sección de Contacto -->
-    <section id="contact" class="p-4 px-4 bg-fondoAlterno flex-container">
+    <section #section id="contact" class="p-4 px-4 bg-fondoAlterno flex-container">
       <app-contact-us></app-contact-us>
     </section>
 

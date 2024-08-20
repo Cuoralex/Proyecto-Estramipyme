@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from '../../views/dashboard/component/sidebar/sidebar.component';
