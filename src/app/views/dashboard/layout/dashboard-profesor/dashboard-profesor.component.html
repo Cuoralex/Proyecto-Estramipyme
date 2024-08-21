@@ -1,0 +1,28 @@
+<app-header-dashboard></app-header-dashboard>
+
+<div class="flex flex-col md:flex-row h-screen">
+  <!-- Sidebar -->
+  <div class="container-slidebar w-full md:w-1/4 bg-gray-200">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container-dashboard flex-1 overflow-auto mt-14">
+    <ng-container *ngIf="isDashboard; else defaultTemplate">
+      <!-- Template específico para /dashboard -->
+
+      <div class="bg-azulAlterno pl-[] flex items-center justify-center min-h-full">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold text-white">ESTRAMIPYME</h1>
+          <p class="text-2xl md:text-3xl lg:text-4xl font-light text-white">¡Una transformación estratégica!</p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #defaultTemplate>
+      <!-- Template por defecto -->
+      <router-outlet></router-outlet>
+    </ng-template>
+  </div>
+</div>
+
+<app-footer-dashboard></app-footer-dashboard>

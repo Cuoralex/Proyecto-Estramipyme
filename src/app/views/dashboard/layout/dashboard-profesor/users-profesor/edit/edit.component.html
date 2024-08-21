@@ -1,0 +1,115 @@
+<div class="container mb-8 mx-auto p-4">
+    <legend class="text-lg font-semibold mt-0">Editar ítem</legend>
+    <form class="space-y-4">
+        <div>
+            <label for="txtId" class="block text-sm font-medium">ID</label>
+            <input type="text" [(ngModel)]="formdata.id" [ngModelOptions]="{standalone: true}" id="txtId"
+                class="form-input w-full mt-1 p-2 border rounded bg-gray-100 cursor-not-allowed" disabled />
+        </div>
+        <div>
+            <label for="txtTypeOfPerson" class="block text-sm font-medium">Tipo de persona</label>
+            <input type="text" [(ngModel)]="formdata.TypeOfPerson" [ngModelOptions]="{standalone: true}"
+                id="txtTypeOfPerson" class="form-input w-full mt-1 p-2 border rounded" />
+        </div>
+
+        <!-- Campos para Persona Natural -->
+        <div *ngIf="formdata.TypeOfPerson === 'Natural'">
+            <div>
+                <label for="txtNaturalPersonName" class="block text-sm font-medium">Nombre persona natural</label>
+                <input type="text" [(ngModel)]="formdata.NaturalPersonName" [ngModelOptions]="{standalone: true}"
+                    id="txtNaturalPersonName" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtNaturalPersonAddress" class="block text-sm font-medium">Dirección persona natural</label>
+                <input type="text" [(ngModel)]="formdata.NaturalPersonAddress" [ngModelOptions]="{standalone: true}"
+                    id="txtNaturalPersonAddress" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtNaturalPersonPhone" class="block text-sm font-medium">Teléfono persona natural</label>
+                <input type="text" [(ngModel)]="formdata.NaturalPersonPhone" [ngModelOptions]="{standalone: true}"
+                    id="txtNaturalPersonPhone" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtNaturalPersonEmail" class="block text-sm font-medium">Correo electrónico persona
+                    natural</label>
+                <input type="email" [(ngModel)]="formdata.NaturalPersonEmail" [ngModelOptions]="{standalone: true}"
+                    id="txtNaturalPersonEmail" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtNaturalPersonPassword" class="block text-sm font-medium">Contraseña persona natural</label>
+                <input type="password" [(ngModel)]="formdata.NaturalPersonPassword" [ngModelOptions]="{standalone: true}"
+                    id="txtNaturalPersonPassword" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtNaturalPersonConfirmPassword" class="block text-sm font-medium">Confirmar contraseña persona
+                    natural</label>
+                <input type="password" [(ngModel)]="formdata.NaturalPersonConfirmPassword"
+                    [ngModelOptions]="{standalone: true}" id="txtNaturalPersonConfirmPassword"
+                    class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+        </div>
+
+        <!-- Campos para Persona Jurídica -->
+        <div *ngIf="formdata.TypeOfPerson === 'Jurídica'">
+            <div>
+                <label for="txtTypeCompany" class="block text-sm font-medium">Tipo de empresa</label>
+                <input type="text" [(ngModel)]="formdata.TypeCompany" [ngModelOptions]="{standalone: true}"
+                    id="txtTypeCompany" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtTypeCompanyAnother" class="block text-sm font-medium">Otro tipo de empresa</label>
+                <input type="text" [(ngModel)]="formdata.TypeCompanyAnother" [ngModelOptions]="{standalone: true}"
+                    id="txtTypeCompanyAnother" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonName" class="block text-sm font-medium">Nombre persona jurídica</label>
+                <input type="text" [(ngModel)]="formdata.LegalPersonName" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonName" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonCompanyName" class="block text-sm font-medium">Nombre empresa jurídica</label>
+                <input type="text" [(ngModel)]="formdata.LegalPersonCompanyName" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonCompanyName" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtSector" class="block text-sm font-medium">Sector</label>
+                <input type="text" [(ngModel)]="formdata.Sector" [ngModelOptions]="{standalone: true}" id="txtSector"
+                    class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonAddress" class="block text-sm font-medium">Dirección persona jurídica</label>
+                <input type="text" [(ngModel)]="formdata.LegalPersonAddress" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonAddress" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonPhone" class="block text-sm font-medium">Teléfono persona jurídica</label>
+                <input type="text" [(ngModel)]="formdata.LegalPersonPhone" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonPhone" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonEmail" class="block text-sm font-medium">Correo electrónico persona
+                    jurídica</label>
+                <input type="email" [(ngModel)]="formdata.LegalPersonEmail" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonEmail" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonPassword" class="block text-sm font-medium">Contraseña persona jurídica</label>
+                <input type="password" [(ngModel)]="formdata.LegalPersonPassword" [ngModelOptions]="{standalone: true}"
+                    id="txtLegalPersonPassword" class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+            <div>
+                <label for="txtLegalPersonConfirmPassword" class="block text-sm font-medium">Confirmar contraseña persona
+                    jurídica</label>
+                <input type="password" [(ngModel)]="formdata.LegalPersonConfirmPassword"
+                    [ngModelOptions]="{standalone: true}" id="txtLegalPersonConfirmPassword"
+                    class="form-input w-full mt-1 p-2 border rounded" />
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center">
+            <button class="btnEditUser" (click)="update()">
+                <span class="font-body">Actualizar</span>
+            </button>
+        </div>
+    </form>
+</div>

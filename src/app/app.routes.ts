@@ -16,5 +16,13 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren:() => import('./views/dashboard/layout/dashboard-administrator/dashboard-administrator.module').then(m=>m.DashboardAdministratorModule)
+  },
+  {
+    path: 'dashboard-profesor',
+    loadChildren:() => import('./views/dashboard/layout/dashboard-profesor/dashboard-profesor.module').then(m=>m.DashboardProfesorModule)
+  },
+  {
+    path: 'dashboard-client',
+    loadChildren:() => import('./views/dashboard/layout/dashboard-client/dashboard-client.module').then(m=>m.DashboardClientModule)
   }
 ];
