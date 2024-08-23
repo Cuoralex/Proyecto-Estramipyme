@@ -3,9 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UsersProfesorComponent } from './users-profesor/users-profesor.component';
 
-
-
-
 const routes: Routes = [
   // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
@@ -15,7 +12,7 @@ const routes: Routes = [
       // { path: '', redirectTo: 'users', pathMatch: 'full' },
       
       {
-        path: 'users',
+        path: 'users-profesor',
         loadChildren: () =>
           import('./users-profesor/users-profesor.module').then(
             (m) => m.UsersProfesorModule

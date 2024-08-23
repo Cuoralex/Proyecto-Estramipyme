@@ -35,7 +35,7 @@ export class HeaderDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkNewClients();
-    setInterval(() => this.checkNewClients(), 5000); // Revisa cada 5 segundos
+    setInterval(() => this.checkNewClients(), 500000); // Revisa cada 5 segundos
   }
 
   // Método para verificar nuevos clientes

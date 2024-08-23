@@ -7,7 +7,7 @@ const routes: Routes = [
   // { path: '', redirectTo:'home', pathMatch:'full'},
   {
     title: 'Creación de usuario',
-    path: 'create-client',
+    path: 'create',
     loadChildren: () => import('./create/create.module').then(m => m.CreateModule)
   },
   {

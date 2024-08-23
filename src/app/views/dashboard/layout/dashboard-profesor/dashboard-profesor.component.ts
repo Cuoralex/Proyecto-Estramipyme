@@ -27,7 +27,7 @@ import { UsersProfesorComponent } from './users-profesor/users-profesor.componen
   styleUrls: ['./dashboard-profesor.component.scss'],
 })
 
-export class DashboardAdministratorComponent {
+export class DashboardProfesorComponent {
   isDashboard!: boolean;
 
   constructor(private router: Router){}
@@ -38,11 +38,11 @@ export class DashboardAdministratorComponent {
 
   checkRoute(): void {
     const currentUrl = this.router.url;
-    this.isDashboard = currentUrl === '/dashboard';
+    this.isDashboard = currentUrl === '/dashboard-profesor';
   }
   
   navigateToCreate() {
-    this.router.navigate(['dashboard/users/create']);
+    this.router.navigate(['dashboard-profesor/users/create']);
   }
 }
 
